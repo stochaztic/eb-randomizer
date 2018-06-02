@@ -1,0 +1,5 @@
+event_call,4
+event_flag,2
+y_facing,2
+x,2
+warp_style,1

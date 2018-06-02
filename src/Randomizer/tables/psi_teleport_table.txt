@@ -1,0 +1,4 @@
+name_text,25,list
+flag,2
+x,2
+y,2

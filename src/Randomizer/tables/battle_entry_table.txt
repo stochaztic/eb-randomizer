@@ -1,0 +1,4 @@
+enemies_pointer,4
+event_flag,2
+flag_check_value,1
+letterbox_size,1

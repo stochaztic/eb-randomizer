@@ -1,0 +1,11 @@
+name_index,1
+greek_letter,1
+type,1
+target,1
+effect,2
+ness_level,1
+paula_level,1
+poo_level,1
+greek_letter_position,1
+entry_number,1
+address,4

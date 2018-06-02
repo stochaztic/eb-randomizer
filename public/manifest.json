@@ -1,0 +1,15 @@
+{
+  "short_name": "EB-Randomizer",
+  "name": "EB-Randomizer",
+  "icons": [
+    {
+      "src": "favicon.gif",
+      "sizes": "56x48",
+      "type": "image/gif"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

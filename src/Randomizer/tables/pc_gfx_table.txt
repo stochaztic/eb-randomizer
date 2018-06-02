@@ -1,0 +1,8 @@
+default,2
+dead,2
+ladder,2
+rope,2
+tiny,2
+tiny_dead,2
+robot,2
+unknown,2

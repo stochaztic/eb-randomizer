@@ -1,0 +1,114 @@
+section {
+  margin: 2rem 0;
+}
+
+section h1, section h3 {
+  background-color: lightblue;
+  padding: 0.5rem 1.5rem;
+  border-radius: 3rem 3rem 0 0;
+}
+
+.sectionContent {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: white;
+  border-radius: 0 0 3rem 3rem;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h1, h3, li {
+  margin-bottom: 0;
+}
+
+h1 a {
+  color: #888;
+  text-decoration: none;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.buttonInfo {
+  margin-left: 3rem;
+  color: #666;
+}
+
+.modeButtons {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.modeButtons button {
+  font-size: 1.5em;
+  flex-grow: 1;
+}
+
+.modeButtons :not(.modeSelected) {
+  color: #888;
+}
+
+.modeSelected {
+  background-color: lightgreen;
+  border-color: lightgreen;
+}
+
+.seedContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.seedContainer * {
+  margin-bottom: 0;
+}
+
+.seedContainer p {
+  flex-grow: 1;
+  margin-left: 3rem;
+}
+
+.flagContainer {
+  background-color: rgba(144, 144, 160, 0.3);
+  margin: 0.3em 0;
+  padding: 0 0 0.3em 0;
+  border-radius: 20px;
+}
+
+.flagContainer label {
+  margin: 15px;
+  font-size: 1.4em;
+  display: inline;
+}
+
+.flagContainer p {
+  margin: 1rem;
+}
+
+.flagContainer input {
+  margin-right: 0.5rem;
+}
+
+.flagLabel {
+  display: inline-block;
+  text-align: center;
+  font-size: 2em;
+  min-width: 1.5em; 
+  background-color: lightgreen;
+  border-top-left-radius: 20px;
+}
+
+
+.unsafe {
+  color: red;
+}
+
+.flagSummary {
+  font-style: italic;
+  color: #444;
+}

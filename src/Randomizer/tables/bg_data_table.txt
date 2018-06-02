@@ -1,0 +1,17 @@
+graphics_arrangement,1
+palette,1
+color_depth,1
+palette_cycle,1
+palette_cycle_1_begin,1
+palette_cycle_1_end,1
+palette_cycle_2_begin,1
+palette_cycle_2_end,1
+palette_changing_speed,1
+scrolling_movement_1,1
+scrolling_movement_2,1
+scrolling_movement_3,1
+scrolling_movement_4,1
+distortion_1,1
+distortion_2,1
+distortion_3,1
+distortion_4,1

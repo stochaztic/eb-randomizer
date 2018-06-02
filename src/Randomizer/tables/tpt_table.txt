@@ -1,0 +1,7 @@
+tpt_type,1
+sprite,2
+facing,1
+movement,1
+flag,4
+address,4
+argument,4

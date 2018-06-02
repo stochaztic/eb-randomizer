@@ -1,0 +1,5 @@
+unknown,4
+money,2
+level,1
+xp,3
+item_indexes,10,list

@@ -1,0 +1,216 @@
+!00                                                    : Line Break
+!01                                                    : Start on Blank Line
+!02                                                    : Stop Parsing
+!03                                                    : Halt Parsing with Prompt - Variable
+_04 XX XX                                              : Toggle On Event Flag
+_05 XX XX                                              : Toggle Off Event Flag
+!06 XX XX YY YY YY YY                                  : SUBPTR Event-Dependent Pointer
+!07 XX XX                                              : Return Event Flag
+!08 XX XX XX XX                                        : SUBPTR Reference Pointer
+_09 XX [YY YY YY YY]                                   : SUBPTR Multiple-Address Jump Pointer
+!0A XX XX XX XX                                        : SUBPTR Jump Pointer
+!0B XX                                                 : Perform Boolean True Check - Equal to Working Memory
+!0C XX                                                 : Perform Boolean False Check - Equal to Working Memory
+_0D XX                                                 : Copy to Argumentative Memory
+_0E XX                                                 : Store to Secondary Memory
+_0F                                                    : Increment Secondary Memory
+!10 XX                                                 : Delay Parsing
+_11                                                    : Create Selection Menu from Strings
+!12                                                    : Clear Text Line
+!13                                                    : Halt Parsing without Prompt
+!14                                                    : Halt Parsing with Prompt
+!15 XX                                                 : Display Compressed Text/Bank 0
+!16 XX                                                 : Display Compressed Text/Bank 1
+!17 XX                                                 : Display Compressed Text/Bank 2
+_18 00                                                 : Close Current Window
+_18 01 XX                                              : Open Text Window
+_18 02                                                 : UNKNOWN
+_18 03 XX                                              : Switch To Window
+_18 04                                                 : Close All Windows
+_18 05 XX YY                                           : Force Text Alignment
+_18 06                                                 : Clear Current Window
+_18 07 XX XX XX XX YY                                  : UNKNOWN
+_18 08 XX XX XX                                        : UNKNOWN
+_18 09 XX XX XX                                        : UNKNOWN
+_18 0A                                                 : Show Wallet Window
+_18 0D XX XX                                           : UNKNOWN
+_19 02                                                 : Load String to Memory
+_19 04                                                 : UNKNOWN
+_19 05 XX YY YY                                        : Inflict Status Change
+!19 10 XX                                              : Return Character Number
+!19 11 XX                                              : Return One Letter from a Character's Name
+_19 14                                                 : UNKNOWN
+_19 16 XX YY                                           : Return Byte YY of Character's Status
+_19 18 XX                                              : UNKNOWN
+_19 19 00 00                                           : Pass Item Number to Working Memory
+_19 1A XX                                              : UNKNOWN
+_19 1B XX                                              : UNKNOWN
+_19 1C XX YY                                           : UNKNOWN
+_19 1D XX YY                                           : UNKNOWN
+_19 1E                                                 : UNKNOWN
+_19 1F                                                 : UNKNOWN
+_19 20                                                 : UNKNOWN
+_19 21 XX                                              : UNKNOWN
+_19 22 XX YY ZZ ZZ                                     : Return Direction from Character to Object?
+_19 23 XX XX YY YY                                     : Return Direction from NPC to Object?
+_19 24 XX XX YY YY                                     : Return Direction from Sprite to Object?
+_19 25 XX                                              : UNKNOWN
+_19 26 XX                                              : UNKNOWN
+_19 27 XX                                              : UNKNOWN
+_19 28 XX                                              : UNKNOWN
+_1A 00                                                 : UNKNOWN INCOMPLETE
+_1A 01 WW WW WW WW XX XX XX XX YY YY YY YY ZZ ZZ ZZ ZZ : Current Party Member Selection Menu
+_1A 04                                                 : UNKNOWN INCOMPLETE
+_1A 05 XX YY                                           : Display the inventory of character YY in window XX.
+_1A 06 XX                                              : Display Shop Menu
+_1A 07                                                 : Related to Escargo Express stored goods window
+_1A 08                                                 : UNKNOWN INCOMPLETE
+_1A 09                                                 : UNKNOWN INCOMPLETE
+_1A 0A                                                 : Open Phone Menu - Dummy?
+_1A 0B                                                 : UNKNOWN
+!1B 00                                                 : Copy Active Memory to Storage
+!1B 01                                                 : Copy Storage to Active Memory
+!1B 02 XX XX XX XX                                     : SUBPTR Boolean-False Pointer
+!1B 03 XX XX XX XX                                     : SUBPTR Boolean-True Pointer
+!1B 04                                                 : Swap Working and Argumentative Memory
+_1B 05                                                 : Copy Active Memory to WRAM
+_1B 06                                                 : Copy WRAM to Active Memory
+_1C 00 XX                                              : Text Color Effects
+_1C 01 XX                                              : Display Statistics
+_1C 02 XX                                              : Display Character Name
+_1C 03 XX                                              : Display Text Character
+_1C 04                                                 : Open HP/PP Windows
+!1C 05 XX                                              : Display Item Name
+_1C 06 XX                                              : Display Teleport Destination Name
+_1C 07 XX                                              : Display Text Strings Horizontally
+_1C 08 XX                                              : Display Text Graphics
+_1C 09                                                 : UNKNOWN
+_1C 0A XX XX XX XX                                     : Display Numeric Value
+_1C 0B XX XX XX XX                                     : Display Numeric Value as Money
+_1C 0C XX                                              : Display Text Strings Vertically
+_1C 0D                                                 : Display Action User Name
+_1C 0E                                                 : Display Action Target Name
+_1C 0F                                                 : UNKNOWN
+_1C 11 XX                                              : UNKNOWN
+_1C 12 XX                                              : Display PSI Name
+_1C 13 XX YY                                           : Display Battle Animation
+_1C 14 XX                                              : UNKNOWN
+_1C 15 XX                                              : UNKNOWN
+_1D 00 XX YY                                           : Give Item to Character and Return Recipient
+_1D 01 XX YY                                           : Take Item from Character
+!1D 02 XX                                              : Perform Boolean False Check - Inventory Capacity
+!1D 03 XX                                              : Perform Boolean True Check - Inventory Vacancy
+!1D 04 XX YY                                           : Perform Boolean True Check - Absence of Item
+!1D 05 XX YY                                           : Perform Boolean True Check - Presence of Item
+_1D 06 XX XX XX XX                                     : Increase ATM Balance
+_1D 07 XX XX XX XX                                     : Decrease ATM Balance
+_1D 08 XX XX                                           : Increase Wallet Balance
+_1D 09 XX XX                                           : Decrease Wallet Balance
+!1D 0A XX                                              : Return Price of Item
+!1D 0B XX                                              : Return Selling Price ofItem
+_1D 0C XX XX                                           : UNKNOWN
+!1D 0D XX YY YY                                        : Check for Status Ailment
+_1D 0E XX YY                                           : Give Item to Character, Return Recipient and Number of Items
+_1D 0F XX XX                                           : UNKNOWN
+_1D 10 XX XX                                           : UNKNOWN
+_1D 11 XX XX                                           : UNKNOWN
+_1D 12 XX XX                                           : UNKNOWN
+_1D 13 XX XX                                           : UNKNOWN
+!1D 14 XX XX XX XX                                     : (Check for Cash on Hand) *True if X<$
+_1D 15 XX XX                                           : UNKNOWN
+!1D 17 XX XX XX XX                                     : Check for Cash in ATM
+_1D 18 XX                                              : UNKNOWN
+!1D 19 XX                                              : (Boolean Check for Number of Party Members) NOTE - Teddy doesn't count!
+_1D 20                                                 : Check for User Targeting Self
+_1D 21 XX                                              : Generate Random Number
+_1D 22                                                 : Check for Exit Mouse Compatibility
+_1D 23 XX                                              : UNKNOWN
+_1D 24 XX                                              : "UNKNOWN" (Return Cash Earned Since Last Call?)
+_1E 00 XX YY                                           : Recover HP by Percent
+_1E 01 XX YY                                           : Deplete HP by Percent
+_1E 02 XX YY                                           : Recover HP by Amount
+_1E 03 XX YY                                           : Deplete HP by Amount
+_1E 04 XX YY                                           : Restore PP by Percent
+_1E 05 XX YY                                           : Consume PP by Percent
+_1E 06 XX YY                                           : Restore PP by Amount
+_1E 07 XX YY                                           : Consume PP by Amount
+_1E 08 XX YY                                           : Change Character Level Stat
+_1E 09 XX YY YY YY                                     : Boost Experience Stat
+_1E 0A XX YY                                           : Boost IQ Stat
+_1E 0B XX YY                                           : Boost Guts Stat
+_1E 0C XX YY                                           : Boost Speed Stat
+_1E 0D XX YY                                           : Boost Vitality Stat
+_1E 0E XX YY                                           : Boost Luck Stat
+_1F 00 XX YY                                           : Play Music Track
+_1F 01 XX                                              : "UNKNOWN" (Stop Music)
+!1F 02 XX                                              : Play Sound Effect
+_1F 03                                                 : Restore Default Music
+_1F 04 XX                                              : Toggle Text Printing Sound
+_1F 05                                                 : Disallow Sector Boundaries to Change Music
+_1F 06                                                 : Allow Sector Boundaries to Change Music
+_1F 07 XX                                              : Apply Music Effect
+_1F 11 XX                                              : Add Party Member
+_1F 12 XX                                              : Remove Party Member
+_1F 13 XX YY                                           : Change Direction of Character
+_1F 14 XX                                              : UNKNOWN
+_1F 15 XX XX YY YY ZZ                                  : Generate Active Sprite
+_1F 16 XX XX YY                                        : Change Direction of TPT Entry
+_1F 17 XX XX YY YY ZZ                                  : Generate Active TPT Entry
+_1F 18 XX XX XX XX XX XX XX                            : UNKNOWN
+_1F 19 XX XX XX XX XX XX XX                            : UNKNOWN
+_1F 1A XX XX YY                                        : Generate Floating Sprite near TPT Entry
+_1F 1B XX XX                                           : Delete Floating Sprite - TPT
+_1F 1C XX YY                                           : Generate Floating Sprite near Character
+_1F 1D XX                                              : Delete Floating Sprite - Character
+_1F 1E XX XX YY                                        : Delete TPT Entry from Screen
+_1F 1F XX XX YY                                        : Delete Generated Sprite from Screen
+_1F 20 XX YY                                           : Trigger PSI-style Teleport
+_1F 21 XX                                              : Teleport to Preset Coordinates
+_1F 23 XX XX                                           : Trigger Battle Scene
+_1F 30                                                 : Set Normal Font
+_1F 31                                                 : Set Mr. Saturn Font
+_1F 41 XX                                              : Trigger Special Event
+_1F 50                                                 : Disable Controller Input
+_1F 51                                                 : Enable Controller Input
+_1F 52 XX                                              : Generate Number Selector
+_1F 60 XX                                              : UNKNOWN
+_1F 61                                                 : Movement Code Trigger
+_1F 62 XX                                              : UNKNOWN
+_1F 63 XX XX XX XX                                     : SUBPTR Screen-Reload Pointer
+_1F 64                                                 : Purge All NPCs
+_1F 65                                                 : Purge First NPC
+_1F 66 XX YY ZZ ZZ ZZ ZZ                               : SUBPTR Activate Map Hotspot
+_1F 67 XX                                              : Deactivate Map Hotspot
+_1F 68                                                 : Store Coordinates to Memory
+_1F 69                                                 : Teleport to Stored Coordinates
+_1F 71 XX YY                                           : Realize PSI Power
+_1F 81 XX YY                                           : Check If Character Can Use Item
+_1F 83 XX YY                                           : Equip character XX with his or her YYth item
+_1F 90                                                 : UNKNOWN
+_1F A0                                                 : Change Direction of Current TPT Entry to Up
+_1F A1                                                 : Change Direction of Current TPT Entry to Down
+_1F A2                                                 : UNKNOWN
+_1F B0                                                 : Save the Game
+_1F C0 XX YY YY YY YY                                  : SUBPTR Multiple-entry pointer table (Reference address)
+_1F D0 XX                                              : Attempt to Fix Items
+_1F D1                                                 : Return Direction of Nearby Magic Truffle
+_1F D2 XX                                              : Summon Traveling Photographer
+_1F D3 XX                                              : Trigger Timed Event
+_1F E1 XX YY ZZ                                        : Change Map Pallet
+_1F E4 XX XX YY                                        : Change Direction of Generated Sprite
+_1F E5 XX                                              : Lock Player Movement
+_1F E6 XX XX                                           : Delay Appearance of TPT Entry
+_1F E7 XX XX                                           : UNKNOWN
+_1F E8 XX                                              : UNKNOWN
+_1F E9 XX XX                                           : UNKNOWN
+_1F EA XX XX                                           : UNKNOWN
+_1F EB XX YY                                           : Render Character Invisible
+_1F EC XX YY                                           : Render Character Visible
+_1F ED                                                 : UNKNOWN
+_1F EE XX XX                                           : UNKNOWN
+_1F EF XX XX                                           : UNKNOWN
+_1F F0                                                 : Activate Bicycle
+_1F F1 XX XX YY YY                                     : Give TPT Entry a New Movement Pattern
+_1F F2 XX XX YY YY                                     : Give Sprite a New Movement Pattern
+_1F F3 XX XX YY                                        : Generate Floating Sprite Near Generated Sprite
+_1F F4 XX XX                                           : Delete Floating Sprite - Generated Sprite

@@ -1,0 +1,10 @@
+name_text,25,list
+item_type,1
+price,2
+equipable,bit:ness paula jeff poo transform nogive unk_e one_use
+effect,2
+strength,1
+extra_power_increase,1
+extra_power,1
+special,1
+help_text_addr,4
