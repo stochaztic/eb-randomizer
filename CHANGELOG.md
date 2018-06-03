@@ -1,4 +1,8 @@
 # Changelog
+## v18.1 / 19 (In progress)
+### Bugfixes
+- Ancient Cave: Fixed exit mouse.
+
 ## v18 (2018-06-03)
 - Ancient Cave: Reduced bias towards late-game shiny spot bosses.
 ### Bugfixes

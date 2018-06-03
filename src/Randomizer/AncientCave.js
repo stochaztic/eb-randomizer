@@ -306,6 +306,7 @@ class AncientCave extends ReadWriteObject {
         exitMouse.lines = exitMouse.lines.slice(beginLogic);
         exitMouse.lines.unshift([0x05, 0x0B, 0x00]);          // encounters on
         exitMouse.lines.unshift([0x1d, 0x01, 0xff, 0xc5]);   // one use only
+        exitMouse.writeScript();
 
         this.context.hooks.message("Sanitizing cave events...");
         // Special Events
