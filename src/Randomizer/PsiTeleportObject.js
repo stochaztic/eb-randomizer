@@ -13,6 +13,15 @@ class PsiTeleportObject extends TableObject {
         return this.context.specs.flags.k; // Keysanity
     }
 
+    static serialize() {
+        return this._results.map(resultPair => {
+            return {
+                item: ItemObject.get(resultPair[1]).name,
+                destination: ItemObject.get(resultPair[0]).name,
+            }
+        })
+    }
+
     get name() {
         return ebutils.listToText(this.data.name_text);
     }
@@ -51,7 +60,8 @@ class PsiTeleportObject extends TableObject {
             [0xb7, 0xb6], // Diamond at Signed banana
             [0xd3, 0xa4], // Shyness book at Tendakraut
         ];
-        return invalidPairs.every(pair => this._results[pair[0]] !== pair[1]);
+        return this._results.every(resultPair => !invalidPairs.some(invalidPair => 
+            invalidPair[0] === resultPair[0] && invalidPair[1] === resultPair[1] ));
     }
 
     static intershuffle() {
