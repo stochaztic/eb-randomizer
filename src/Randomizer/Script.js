@@ -45,7 +45,9 @@ class Script {
             });
             s.lines = newlines;
             s.writeScript();
+            delete s._enemyEncounters;
         });
+        delete this._enemyEncounters;
     }
 
     replaceItem(oldItem, newItem) {
