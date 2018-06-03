@@ -16,9 +16,9 @@ class MapEventObject extends ZonePositionMixin(TableObject) {
 
     doorDescription() {
         if(!this.isExit) {
-            return `Enemy Cell: ${this.enemy_cell.index.toString(16)} Loc: (${this.globalX}, ${this.globalY}) NON-DOOR`;
+            return `Enemy Cell: ${this.enemyCell.index.toString(16)} Loc: (${this.globalX}, ${this.globalY}) NON-DOOR`;
         }
-        return `Enemy Cell: ${this.enemy_cell.index.toString(16)} Loc: (${this.globalX}, ${this.globalY}) Dest: (${this.newEvent.x * 8}, ${this.newEvent.y * 8})`;
+        return `Enemy Cell: ${this.enemyCell.index.toString(16)} Loc: (${this.globalX}, ${this.globalY}) Dest: (${this.newEvent.x * 8}, ${this.newEvent.y * 8})`;
     }
 
     serialize() {
@@ -27,7 +27,7 @@ class MapEventObject extends ZonePositionMixin(TableObject) {
             enemyCell: this.enemyCell.index,
             x: this.globalX,
             y: this.globalY,
-            onShortestPath: this.onShortestPath,
+            onShortestPath: this.onShortestPath ? true : false,
         }
         if(this.isExit) {
             result.xDestination = this.newEvent.x * 8;
@@ -69,9 +69,7 @@ class MapEventObject extends ZonePositionMixin(TableObject) {
     }
 
     get newEvent() {
-        if(this._newEvent !== undefined) return this._newEvent;
-        this._newEvent = EventObject.getByPointer(0xF0000 | this.data.event_index);
-        return this.newEvent;
+        return EventObject.getByPointer(0xF0000 | this.data.event_index);
     }
 
     get script() {

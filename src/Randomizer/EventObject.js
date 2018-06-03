@@ -23,7 +23,7 @@ class EventObject extends TableObject {
     }
 
     get y() {
-        return this.data.y_facing & 0x3ff;
+        return this.data.y_facing & 0x3fff;
     }
 
     get globalX() {

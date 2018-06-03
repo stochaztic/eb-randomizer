@@ -1,7 +1,8 @@
 # Changelog
-## v18.1 / 19 (In progress)
+## v18.2 / 19 (In progress)
 ### Bugfixes
 - Ancient Cave: Fixed exit mouse.
+- Fixed incorrect spoiler output.
 
 ## v18 (2018-06-03)
 - Ancient Cave: Reduced bias towards late-game shiny spot bosses.
