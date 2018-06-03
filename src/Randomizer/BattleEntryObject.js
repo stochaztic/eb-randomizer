@@ -8,33 +8,33 @@ import EnemyObject from './EnemyObject.js';
 class BattleEntryObject extends TableObject {
     toString() {
         let str = `BATTLE ENTRY ${this.index.toString(16)}`;
-        this.data.enemyActivites.forEach((enemyActivity, i) => {
+        this.data.enemyActivities.forEach((enemyActivity, i) => {
             str += `\n\t${this.enemyActivity.activity} ${this.enemyAcitivity.enemy}`;
         });
         return str;
     }
 
     serialize() {
-        return this.data.enemyActivites.map(ea => {
+        return this.data.enemyActivities.map(ea => {
             return {activity: ea.activity, enemy: ea.enemy.name};
         });
     }
 
     get rank() {
         if(this._rank !== undefined) return this._rank;
-        this._rank = Math.max(...this.data.enemyActivites.map(ea => ea.enemy.rank));
+        this._rank = Math.max(...this.data.enemyActivities.map(ea => ea.enemy.rank));
         return this.rank;
     }
 
     readData() {
         super.readData();
         let pointer = ebutils.ebToFilePointer(this.data.enemies_pointer);
-        this.data.enemyActivites = [];
+        this.data.enemyActivities = [];
         while(true) {
             const activity = this.context.rom[pointer];
             if(activity === 0xFF) break;
             const enemyId = utils.readMulti(this.context.rom, pointer + 1, 2);
-            this.data.enemyActivites.push({activity: activity, enemy: EnemyObject.get(enemyId)});
+            this.data.enemyActivities.push({activity: activity, enemy: EnemyObject.get(enemyId)});
             pointer += 3;
         }
 
