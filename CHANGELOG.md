@@ -1,4 +1,9 @@
 # Changelog
+## v18 (Unreleased)
+- Ancient Cave: Reduced bias towards late-game shiny spot bosses.
+### Bugfixes
+- Fixed incorrect spoiler output. 
+
 ## v17 (2018-06-02)
 - Complete rewrite and port of the randomizer and the framework to JavaScript and deployment at https://earthbound.app.
 - Multiple new levels added to the different flags, and direct integration of the former cheatcodes into the normal levels of the flags.

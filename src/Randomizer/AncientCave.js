@@ -395,7 +395,10 @@ class AncientCave extends ReadWriteObject {
         while(chosens.length < sClusters.length) {
             const candidates = bosses.filter(b => !chosens.includes(b));
             const maxIndex = candidates.length - 1;
-            const index = this.context.random.randint(this.context.random.randint(0, maxIndex), maxIndex);
+            const index = this.context.random.randint(
+                Math.round(this.context.random.randint(0, maxIndex) / 2),
+                maxIndex
+            );
             chosens.push(candidates[index]);
         }
 
