@@ -3,6 +3,8 @@ import { TableObject } from 'randomtools-js';
 import tableText from '!array-loader!./tables/enemy_table.txt';
 import ebutils from './ebutils.js';
 import ItemObject from './ItemObject.js';
+import SpriteGroupObject from './SpriteGroupObject.js';
+import { battleSpriteNames, enemyAdjectives, superlatives } from './RandomNames.js';
 
 class EnemyObject extends TableObject {
     static shouldRandomize() {
@@ -37,6 +39,49 @@ class EnemyObject extends TableObject {
             e._rank = Math.max(byHp.indexOf(e), byXp.indexOf(e));
         })
         return this.rank;
+    }
+
+    mutate() {
+        super.mutate();
+        if(this.context.specs.flags.m >= 3 && this.data.battle_sprite !== 0) {
+            // Randomize sprite pairs
+            const pairs = this.constructor.existingValues(["battle_sprite", "out_of_battle_sprite", "movement"]);
+            const newPair = this.context.random.choice(pairs);
+            // Don't change to null or Giygas sprites
+            if(![0, 0x6c].includes(newPair.battle_sprite)) {
+                this.data.battle_sprite = newPair.battle_sprite;
+            }
+            if(newPair.out_of_battle_sprite !== 0) {
+                this.data.movement = newPair.movement;
+                this.data.out_of_battle_sprite = newPair.out_of_battle_sprite;
+            }
+        }
+
+        if(this.context.specs.flags.m >= 4 && this.data.battle_sprite !== 0) {
+            // Get any movement and similarly-sized sprite
+            const newMovement = this.context.random.choice(this.constructor.existingValues("movement"));
+            if(newMovement !== 0) this.data.movement = newMovement;
+            const existingSprite = SpriteGroupObject.get(this.data.out_of_battle_sprite);
+            const sprites = SpriteGroupObject.every.filter(sg => 
+                !SpriteGroupObject.badSprites.includes(sg.index) && sg.data.size === existingSprite.data.size);
+            this.data.out_of_battle_sprite = this.context.random.choice(sprites).index;
+        }
+
+        if(this.context.specs.flags.m >= 2 && this.data.battle_sprite !== 0) {
+            // Randomize name
+            let validChanged = false;
+            const baseChoices = battleSpriteNames[this.data.battle_sprite - 1].split(",");
+            while(!validChanged) {
+                let newName = `${this.context.random.choice(enemyAdjectives)} ${this.context.random.choice(baseChoices)}`;
+                if(this.context.random.random() < 0.2) {
+                    newName = `${this.context.random.choice(superlatives)} ${newName}`;
+                }
+                if(newName.length <= this.data.name_text.length) {
+                    this.name = newName;
+                    validChanged = true;
+                }
+            }
+        }
     }
 
     cleanup() {

@@ -35,10 +35,14 @@ const flagDescriptions = {
     },
     m: {
         title: "Enemy stats",
-        max: 1,
-        default: 1, 
+        max: 4,
+        default: 2, 
+        unsafe: 4,
         desc: {
             1: "Enemy stats and palettes will be randomized.",
+            2: "Enemy stats, palettes, and names will be randomized.",
+            3: "Enemy stats, palettes, names, and appearance will be randomized.",
+            4: "Enemy stats, palettes, names, and appearance (completely) will be randomized.",
         }
     },
     n: {

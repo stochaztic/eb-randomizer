@@ -1,5 +1,6 @@
 # Changelog
-## v18.2 / 19 (In progress)
+## v19 (2018-06-08)
+- Enemy stats: New options for randomizing name and appearance, name on by default.
 ### Bugfixes
 - Ancient Cave: Fixed exit mouse.
 - Fixed incorrect spoiler output.

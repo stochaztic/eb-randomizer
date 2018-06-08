@@ -52,6 +52,12 @@ class SpriteGroupObject extends TableObject {
     }
 }
 
+SpriteGroupObject.badSprites = [
+    0, 106, 200, 247, 295, 314, 316, 368,
+    369, 371, 373, 374, 375, 376, 381, 410, 420, 428, 430, 431, 439,
+    440, 441, 456, 462, 463,
+];
+
 SpriteGroupObject.tableSpecs = {
     text: tableText,
     pointers: pointersText,
