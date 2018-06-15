@@ -29,7 +29,7 @@ class App extends Component {
       debug: false,
       specs:  {
         title: "EBRND",
-        version: "19",
+        version: "20",
         lorom: false,
         seed: Math.floor(Math.random() * Math.floor(99999999)),
         flags: defaultFlags

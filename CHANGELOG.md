@@ -1,4 +1,7 @@
 # Changelog
+## v20 (2018-06-15)
+- Ancient Cave: Added Auto-StarMaster (Starstorm-granting item) to the item pool.
+
 ## v19 (2018-06-08)
 - Enemy stats: New options for randomizing name and appearance, name on by default.
 ### Bugfixes

@@ -185,6 +185,9 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
         const franklinBadge = ItemObject.get(0x01);
         equipment.splice(Math.round(equipment.length * 0.3), 0, franklinBadge);
         equipment.splice(Math.round(equipment.length * 0.7), 0, franklinBadge);
+        const autoStarMaster = ItemObject.get(0xb3);
+        equipment.splice(Math.round(equipment.length * 0.4), 0, autoStarMaster);
+        equipment.splice(Math.round(equipment.length * 0.8), 0, autoStarMaster);
 
         let chests = this.unassignedChests;
         const reducedEquipmentCount = Math.round(chests.length * 0.6);

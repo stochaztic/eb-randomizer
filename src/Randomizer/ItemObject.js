@@ -92,6 +92,46 @@ class ItemObject extends TableObject {
         if(this.context.specs.flags.a && !(this.isSellable || this.getBit("nogive"))) {
             this.data.price = Math.max(this.data.price, 2);
         }
+        if(this.context.specs.flags.a && this.index === 0xb3) { //Auto-StarMaster
+            this.name = "Auto-StarMaster";
+            this.setBit("one_use", true);
+            const omegaScriptLines = [
+                [0x1f, 0x71, 0x04, 0x03],
+                ebutils.encodeText("@"),
+                [0x1c, 0x02, 0x04],
+                ebutils.encodeText(" realized the power of Starstorm <OMEGA>!"),
+                [0x13,],
+                [0x02,],
+            ];
+            const omegaScript = Script.writeNewScript(omegaScriptLines);
+
+            const mainScript = Script.getByPointer(0x6fed6);
+            const checkGotoOmega = [0x06, 0xf0, 0x03];
+            checkGotoOmega.push(...ebutils.ccodeAddress(omegaScript.pointer));
+            mainScript.lines = [
+                [0x01],
+                [0x1f, 0x02, 0x63],
+                checkGotoOmega,
+                [0x04, 0xf0, 0x03],
+                [0x1f, 0x71, 0x04, 0x02],
+                ebutils.encodeText("@"),
+                [0x1c, 0x02, 0x04],
+                ebutils.encodeText(" realized the power of Starstorm <ALPHA>!"),
+                [0x13,],
+                [0x02,],
+            ];
+            mainScript.writeScript();
+            
+            const helpScript = Script.getByPointer(0x556c1);
+            helpScript.lines = [
+                [0x01],
+                ebutils.encodeText("@Realizes the next level of PSI Starstorm."),
+                [0x13,],
+                [0x02,],
+            ];
+            helpScript.writeScript();
+
+        }
         if(this.context.specs.flags.devmode && this.index === 0x9e) { // spawn toggler
             this.data.name_text = ebutils.textToList("Spawn Toggler", 25);
             const toggleScript = Script.getByPointer(0x6fc94);
