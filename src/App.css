@@ -5,19 +5,24 @@ section {
 section h1, section h3 {
   background-color: lightblue;
   padding: 0.5rem 1.5rem;
-  border-radius: 3rem 3rem 0 0;
+  border-radius: 1.5rem 1.5rem 0 0;
 }
 
 .sectionContent {
   padding-left: 1rem;
   padding-right: 1rem;
   background-color: white;
-  border-radius: 0 0 3rem 3rem;
+  border-radius: 0 0 1.5rem 1.5rem;
   padding: 1rem;
 }
 
 h1 {
   font-size: 4rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald';
+  font-weight: 400;
 }
 
 h1, h3, li {
@@ -27,6 +32,15 @@ h1, h3, li {
 h1 a {
   color: #888;
   text-decoration: none;
+  font-weight: lighter;
+}
+
+.logo {
+  float: right;
+  max-width: 17rem;
+  shape-outside: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  position: relative;
+  right: -1.5rem;
 }
 
 input[type="file"] {
@@ -98,7 +112,7 @@ input[type="file"] {
   display: inline-block;
   text-align: center;
   font-size: 2em;
-  min-width: 1.5em; 
+  min-width: 1.5em;
   background-color: lightgreen;
   border-top-left-radius: 20px;
 }

@@ -1,6 +1,7 @@
 /* eslint import/no-webpack-loader-syntax: off */
 import React, { Component } from 'react';
 import './App.css';
+import logo from './logo.png';
 import flagDescriptions from './flagDescriptions.js';
 import EarthBoundRandomizer from 'workerize-loader!./Randomizer/index.js';
 import ebutils from './Randomizer/ebutils.js';
@@ -107,12 +108,16 @@ class App extends Component {
     return (
       <div className="container">
         <section className="intro">
-          <h1>EarthBound Randomizer <a href="https://github.com/pickfifteen/eb-randomizer/blob/master/CHANGELOG.md">v{ this.state.specs.version }</a></h1>
+          <h1>
+            <img src={logo} className="logo" alt="Loaded Dice mascot" />
+            EarthBound Randomizer <a href="https://github.com/pickfifteen/eb-randomizer/blob/master/CHANGELOG.md">v{ this.state.specs.version }</a>
+          </h1>
           <div className="sectionContent">
             <p>
               The EarthBound Randomizer is a program that randomizes a ROM for the Super Nintendo game EarthBound, 
               providing endless unique gameplay experiences with many distinct modes. For more information, visit
-              our <a href="https://github.com/pickfifteen/eb-randomizer">GitHub page</a>.
+              our <a href="https://github.com/pickfifteen/eb-randomizer">GitHub page</a>. You can contact the 
+              developer <a href="https://twitter.com/pickfifteen">@pickfifteen</a> on Twitter.
             </p>
           </div>
         </section>
