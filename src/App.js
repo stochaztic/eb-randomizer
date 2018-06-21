@@ -26,6 +26,9 @@ class App extends Component {
       defaultFlags[flag] = flagDescriptions[flag].default;
     })
 
+    const versionParts = process.env.REACT_APP_VERSION.split(".",2);
+    const version = (versionParts.length === 1 || versionParts[1] === "0") ? versionParts[0] : versionParts.join(".");
+
     this.state = {
       generationStatus: null,
       uploadedROM: null,
@@ -35,7 +38,7 @@ class App extends Component {
       flagDetail: false,
       specs:  {
         title: "EBRND",
-        version: "20",
+        version: version,
         lorom: false,
         seed: Math.floor(Math.random() * Math.floor(99999999)),
         flags: defaultFlags
