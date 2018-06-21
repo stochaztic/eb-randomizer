@@ -117,7 +117,6 @@ input[type="file"] {
   border-top-left-radius: 20px;
 }
 
-
 .unsafe {
   color: red;
 }
@@ -125,4 +124,30 @@ input[type="file"] {
 .flagSummary {
   font-style: italic;
   color: #444;
+}
+
+.loading {
+  position: relative;
+  color: #ddd;
+}
+
+.loading:after {
+  content: " ";
+  position: absolute;
+  left: calc(50% - 1.75rem);
+  top: 0;
+  width: 3.5rem;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  border-color: #33C3F0 transparent #33C3F0 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
