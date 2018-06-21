@@ -123,6 +123,19 @@ class App extends Component {
       this.setState({debug: true});
     }
   }
+  
+  get romStatus() {
+    if(!this.state.uploadedROM) return 'None';
+    let start = 0xFFC0;
+    if(this.state.uploadedROM.length & 0x200 === 0x200) start += 0x200;
+    const gameID = Array.from(this.state.uploadedROM.slice(start, start + 20)).map(c => String.fromCharCode(c)).join("");
+    if(gameID !== "EARTH BOUND         ") return 'WARNING: Not valid EarthBound ROM.';
+    if(this.state.uploadedROM.length === 0x300000) return 'Valid EarthBound ROM';
+    if(this.state.uploadedROM.length === 0x300200) return 'Valid EarthBound ROM (Headered)';
+    if(this.state.uploadedROM.length === 0x400000) return 'Valid EarthBound ROM (Expanded)';
+    if(this.state.uploadedROM.length === 0x400200) return 'Valid EarthBound ROM (Headered, Expanded)';
+    return 'WARNING: Invalid ROM size.';
+  }
 
   render() {
     const specs = this.state.specs;
@@ -151,7 +164,7 @@ class App extends Component {
             <p>
               <input name="romInput" id="romInput" type="file" onChange={this.fileSelect} />
               <label htmlFor="romInput" className={this.state.uploadedROM ? 'button' : 'button button-primary'}>Select ROM file</label>
-              <span className="buttonInfo">File loaded: <i>{this.state.uploadedROM ? this.state.uploadedROM.length + ' bytes' : 'None'}</i></span>
+              <span className="buttonInfo">File loaded: <i>{this.romStatus}</i></span>
             </p>
           </div>
         </section>
@@ -276,16 +289,18 @@ class App extends Component {
               Press the button below to generate your ROM file. This will also generate a spoiler file you can
               use <a href="https://map.earthbound.app">here</a> to see relevant data about your seed.
             </p>
-            <p>
-              <button disabled={this.state.generationStatus || !this.state.uploadedROM || !this.state.specs.seed}
-                      onClick={this.generate}
-                      className={this.state.generationStatus ? '' : 'button-primary'}>
-                Generate ROM</button>
-                <span className="buttonInfo">{this.state.generationStatus}</span></p>
+            { !this.state.newROM &&
+              <p>
+                <button disabled={this.state.generationStatus || !this.state.uploadedROM || !this.state.specs.seed}
+                      onClick={this.generate} className={this.state.generationStatus ? '' : 'button-primary'}>
+                  Generate ROM</button>
+                <span className="buttonInfo">{this.state.generationStatus}</span>
+              </p>
+            }
             { this.state.newROM && 
               <p>
                 <button className="button-primary" onClick={this.downloadROM}>Download new ROM</button>
-                <span className="buttonInfo">{this.state.newROM.rom.length} bytes</span>
+                <span className="buttonInfo">Done.</span>
               </p>
             }
             { this.state.newROM && 
