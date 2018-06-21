@@ -88,8 +88,26 @@ const flagDescriptions = {
         max: 1,
         default: 0, 
         desc: {
-            0: "No dev mode.",
-            1: "Dev mode enabled. Extra info in spoiler file and other changes.",
+            0: "Disabled.",
+            1: "Extra info in spoiler file and other development-oriented changes.",
+        }
+    },
+    easymodo: {
+        title: "Easy mode",
+        max: 1,
+        default: 0, 
+        desc: {
+            0: "Disabled.",
+            1: "Lvl 99, protective gear, enemy HP 1, no spawn plates.",
+        }
+    },
+    giygastest: {
+        title: "Giygas test mode",
+        max: 1,
+        default: 0, 
+        desc: {
+            0: "Disabled.",
+            1: "Ness's room connected to Giygas.",
         }
     },
 }
