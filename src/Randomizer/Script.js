@@ -127,9 +127,9 @@ class Script {
     }
 
     removeExitMouseStore() {
-        if(!this.isSanctuaryDoor) return;
+        if(this.isSanctuaryDoor) return;
         if(this._removedExitMouse) return;
-        // NOTE: This only targets 0x9B112, apparently
+        // NOTE: This only targets 0x9B112
         const keys = [[0x1f, 0x68],];
         this.removeInstructions(keys, []);
         this._removedExitMouse = true;

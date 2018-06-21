@@ -1,4 +1,8 @@
 # Changelog
+## v20.1 / v21 (In progress)
+### Bugfixes
+- Ancient Cave: Fixed exit mouse.
+
 ## v20 (2018-06-15)
 - Ancient Cave: Added Auto-StarMaster (Starstorm-granting item) to the item pool.
 
