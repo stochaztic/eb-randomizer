@@ -16,6 +16,7 @@ class App extends Component {
     this.downloadSpoiler = this.downloadSpoiler.bind(this);
     this.showMoreInfo = this.showMoreInfo.bind(this);
     this.showFlagDetail = this.showFlagDetail.bind(this);
+    this.secret = this.secret.bind(this);
     this.flagDescriptions = flagDescriptions;
     const defaultFlags = {
       'a': 1
@@ -116,13 +117,20 @@ class App extends Component {
     this.setState({flagDetail: true});
   }
 
+  secret(event) {
+    if(event.button === 1) {
+      event.stopPropagation();
+      this.setState({debug: true});
+    }
+  }
+
   render() {
     const specs = this.state.specs;
     return (
       <div className="container">
         <section className="intro">
           <h1>
-            <img src={logo} className="logo" alt="Loaded Dice mascot" />
+            <img src={logo} className="logo" alt="Loaded Dice mascot" onMouseUp={this.secret} />
             EarthBound Randomizer <a href="https://github.com/pickfifteen/eb-randomizer/blob/master/CHANGELOG.md">v{ this.state.specs.version }</a>
           </h1>
           <div className="sectionContent">
