@@ -296,7 +296,7 @@ class App extends Component {
             { !this.state.newROM &&
               <p>
                 <button disabled={this.state.generationStatus || !this.state.uploadedROM || !this.state.specs.seed}
-                      onClick={this.generate} className={this.state.generationStatus ? '' : 'button-primary'}>
+                      onClick={this.generate} className={this.state.generationStatus ? 'loading' : 'button-primary'}>
                   Generate ROM</button>
                 <span className="buttonInfo">{this.state.generationStatus}</span>
               </p>
