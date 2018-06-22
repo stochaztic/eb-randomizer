@@ -29,8 +29,8 @@ const flagDescriptions = {
         max: 2,
         default: 1, 
         desc: {
-            1: "If in Ancient Cave, gift boxes will have a logical progression of gear and supplies. If in Normal, gift boxes will be replaced with similar content, with a 20% change of being replaced by anything.",
-            2: "If in Ancient Cave, gift boxes will have a logical progression of gear and supplies. If in Normal, gift boxes will have a 100% change of being replaced by anything.",
+            1: "If in Ancient Cave, gift boxes will have a logical progression of gear and supplies. In other modes, gift boxes will be replaced with similar content, with a 20% change of being replaced by anything.",
+            2: "If in Ancient Cave, gift boxes will have a logical progression of gear and supplies. In other modes, gift boxes will have a 100% change of being replaced by anything.",
         }
     },
     m: {

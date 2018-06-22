@@ -249,8 +249,6 @@ class App extends Component {
                     <p>Be careful with how you proceed through storyline events! If you take a very unusual order, it is possible you may lock yourself out of having a character available until you complete Magicant. Since you can teleport anywhere instantly, you can get the game into very unusual states; this is expected and encouraged to take advantage of to get a lower time.</p>
                     
                     <p>A few events have been made more lenient with regards to in-game triggers; notably, Venus will always give you her item right away, you can access the Pyramid without fighting Kraken (but you still must see the hieroglyphs), and Montague should always appear. It is also possible to get the game into a "spawns-off" condition. This is expected, but note if you game over in a spawns-off condition, you may softlock and have to reset the game, so be sure to save if necessary!</p>
-                    
-                    <p>Keysanity mode is incompatible with Ancient Cave mode, and if both modes are selected, Keysanity will be disabled. (Therefore, if you simply enter a blank line at flag selection, you will be playing Ancient Cave, not Keysanity.)</p>
                   </div>
                 }
                 </div>
@@ -263,7 +261,7 @@ class App extends Component {
               <legend>Other flags:</legend>
               { !(this.state.flagDetail || this.state.debug) ? 
                 <div>
-                  <p>We have chosen a default selection of flags that give an exciting new twist to the game (random backgrounds, enemy names, gift box contents, similar sprites, etc), while also focusing on a strong, fun, playable experience. This includes a run button, activated by holding "Y". You can customize these flags by pressing the button below to increase or decrease the type or severity of the randomization. A few flags are marked dangerous, as they make make the game glitchy or unbeatable.</p>
+                  <p>We have chosen a default selection of flags that give an exciting new twist to the game (random backgrounds, enemy names, gift box contents, similar sprites, etc), while also focusing on a strong, fun, playable experience. This includes a run button, activated by holding "Y". You can customize these flags by pressing the button below to increase or decrease the type or severity of the randomization. A few flags are marked dangerous, as they may make the game glitchy or unbeatable.</p>
                   <button onClick={this.showFlagDetail}>Customize flags...</button>
                 </div>
               :
