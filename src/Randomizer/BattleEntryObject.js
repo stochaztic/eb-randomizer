@@ -16,7 +16,7 @@ class BattleEntryObject extends TableObject {
 
     serialize() {
         return this.data.enemyActivities.map(ea => {
-            return {activity: ea.activity, enemy: ea.enemy.name};
+            return {activity: ea.activity, enemy: ea.enemy.oldName};
         });
     }
 

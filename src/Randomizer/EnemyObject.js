@@ -15,6 +15,10 @@ class EnemyObject extends TableObject {
         return ebutils.listToText(this.data.name_text);
     }
 
+    get oldName() {
+        return ebutils.listToText(this.oldData.name_text);
+    }
+
     set name(str) {
         this.data.name_text = ebutils.textToList(str, this.data.name_text.length);
     }
