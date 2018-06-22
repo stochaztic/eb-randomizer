@@ -1,7 +1,8 @@
 # Changelog
-## v20.1 / v21 (In progress)
+## v20.2 / v21 (In progress)
 ### Bugfixes
 - Ancient Cave: Fixed exit mouse.
+- Ancient Cave: Further logic errors that caused occasional incorrect enemies to appear in Electro Specter cave areas fixed.
 
 ## v20 (2018-06-15)
 - Ancient Cave: Added Auto-StarMaster (Starstorm-granting item) to the item pool.
