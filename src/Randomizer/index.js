@@ -25,6 +25,7 @@ import TeleportObject from './TeleportObject.js';
 import TPTObject from './TPTObject.js';
 import ZoneEventObject from './ZoneEventObject.js';
 import ZoneSpriteObject from './ZoneSpriteObject.js';
+import LudicrousSpeedPatch from './LudicrousSpeedPatch.js';
 import RunButtonPatch from './RunButtonPatch.js';
 import ShowSpritesNoIntroPatch from './ShowSpritesNoIntroPatch.js';
 import ebutils from './ebutils.js';
@@ -72,11 +73,15 @@ export function execute(romfile, specs, hooks) {
     console.log(text);
   };
 
+  const patches = [ShowSpritesNoIntroPatch];
+  if(specs.flags.u >= 1) patches.push(RunButtonPatch);
+  if(specs.flags.u >= 2) patches.push(LudicrousSpeedPatch);
+
 
   const context = {
     rom: romfile, 
     specs: specs,
-    patches: specs.flags.u ? [RunButtonPatch, ShowSpritesNoIntroPatch] : [ShowSpritesNoIntroPatch],
+    patches: patches,
     objects: readWriteObjects,
     hooks: hooks,
   }

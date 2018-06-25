@@ -75,12 +75,14 @@ const flagDescriptions = {
         }
     },
     u: {
-        title: "Run button patch",
-        max: 1,
-        default: 1, 
+        title: "Game improvement patches",
+        max: 2,
+        default: 1,
+        unsafe: 2,
         desc: {
-            0: "No run button patch applied.",
+            0: "No game improvement patches applied.",
             1: "A run button patch will be applied to the game. Hold 'Y' to run. This is the same effect as having used a Skip Sandwich.",
+            2: "In addition to the run button patch, the Ludicrous Speed text patch will be applied.",
         }
     },
     devmode: {

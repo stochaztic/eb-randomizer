@@ -1,5 +1,6 @@
 # Changelog
-## v20.3 / v21 (In progress)
+## v20.4 / v21 (In progress)
+- Game improvement patches: Ludicrous Speed patch for changing text speed added.
 ### Bugfixes
 - Ancient Cave: Fixed exit mouse.
 - Ancient Cave: Further logic errors that caused occasional incorrect enemies to appear in Electro Specter cave areas fixed.
