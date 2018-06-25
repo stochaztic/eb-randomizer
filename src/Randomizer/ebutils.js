@@ -109,7 +109,7 @@ const ebutils = {
         let str = "";
         Object.keys(flags).forEach( flag => {
             if(flags[flag]) {
-            str += flag;
+            str += (flag.length > 1 ? `(${flag})` : flag);
             }
             if(flags[flag] > 1) {
             str += flags[flag];
