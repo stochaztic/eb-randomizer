@@ -17,17 +17,33 @@ class App extends Component {
     this.showMoreInfo = this.showMoreInfo.bind(this);
     this.showFlagDetail = this.showFlagDetail.bind(this);
     this.secret = this.secret.bind(this);
+    this.setQueryString = this.setQueryString.bind(this);
     this.flagDescriptions = flagDescriptions;
-    const defaultFlags = {
-      'a': 1
-    }
-
-    Object.keys(flagDescriptions).forEach( flag => {
-      defaultFlags[flag] = flagDescriptions[flag].default;
-    })
 
     const versionParts = process.env.REACT_APP_VERSION.split(".",2);
     const version = (versionParts.length === 1 || versionParts[1] === "0") ? versionParts[0] : versionParts.join(".");
+    const initialSpecs = {
+      title: "EBRND",
+      version: version,
+      lorom: false,
+      seed: Math.floor(Math.random() * Math.floor(99999999)),
+      flags: {'a': 1},
+    };
+    let compatibleVersion = true;
+    let directLink = false;
+    const params = new URLSearchParams(window.location.search);
+    if(params.has("version")) {
+      directLink = true;
+      compatibleVersion = (params.get("version") === initialSpecs.version);
+      initialSpecs.seed = parseInt(params.get("seed"), 10);
+      initialSpecs.flags = ebutils.parseFlagString(params.get("flags"));
+    }
+    
+    Object.keys(flagDescriptions).forEach( flag => {
+      if(initialSpecs.flags[flag] === undefined) {
+        initialSpecs.flags[flag] = directLink ? 0 : flagDescriptions[flag].default;
+      }
+    });
 
     this.state = {
       generationStatus: null,
@@ -35,14 +51,9 @@ class App extends Component {
       newROM: null,
       debug: false,
       moreInfo: false,
-      flagDetail: false,
-      specs:  {
-        title: "EBRND",
-        version: version,
-        lorom: false,
-        seed: Math.floor(Math.random() * Math.floor(99999999)),
-        flags: defaultFlags
-      },
+      flagDetail: directLink,
+      compatibleVersion: compatibleVersion,
+      specs: initialSpecs,
     };
   }
 
@@ -58,6 +69,7 @@ class App extends Component {
 
   setFlag(flag, val) {
     if(this.state.generationStatus) return;
+    this.setQueryString(false);
     this.setState(s => {
       s.specs.flags[flag] = val;
       if(flag === 'a' || flag === 'k') s.moreInfo = false;
@@ -84,6 +96,7 @@ class App extends Component {
   }
 
   generate(event) {
+    this.setQueryString(true);
     this.setState({generationStatus: 'Beginning randomization...' });
     this.earthBoundRandomizer.execute(this.state.uploadedROM, this.state.specs)
     .then(newROM => {
@@ -103,9 +116,8 @@ class App extends Component {
 
   downloadSpoiler(event) {
     const blob = new Blob([JSON.stringify(this.state.newROM.spoiler)], {type: "application/json"});
-    //const data = "data:text/json;charset=utf-8," + encodeURIComponent();
     const link = document.createElement('a');
-    link.href = window.URL.createObjectURL(blob);//data;
+    link.href = window.URL.createObjectURL(blob);
     link.download = "eb." + this.flagString() + "." + this.state.specs.seed + ".spoiler.json";
     document.body.appendChild(link);
     link.click();
@@ -127,6 +139,20 @@ class App extends Component {
       this.setState({debug: true});
     }
   }
+
+  setQueryString(data=false) {
+    if(!data) {
+      if(window.location.href.split("?").length > 1) {
+        window.history.replaceState(null, "", window.location.href.split("?")[0]);
+      }
+      return;
+    }
+    var params = new URLSearchParams();
+    params.append("version", this.state.specs.version);
+    params.append("seed", this.state.specs.seed);
+    params.append("flags",this.flagString());
+    window.history.replaceState(null, "", `${window.location.href.split("?")[0]}?${params.toString()}`);
+  }
   
   get romStatus() {
     if(!this.state.uploadedROM) return 'None';
@@ -143,22 +169,17 @@ class App extends Component {
 
   render() {
     const specs = this.state.specs;
-    return (
-      <div className="container">
-        <section className="intro">
-          <h1>
-            <img src={logo} className="logo" alt="Loaded Dice mascot" onMouseDown={this.secret} />
-            EarthBound Randomizer <a href="https://github.com/pickfifteen/eb-randomizer/blob/master/CHANGELOG.md">v{ this.state.specs.version }</a>
-          </h1>
+    const badVersion = (
+      <section className="step-badversion">
+        <h3>Incompatible Version</h3>
           <div className="sectionContent">
-            <p>
-              The EarthBound Randomizer is a program that randomizes a ROM for the Super Nintendo game EarthBound, 
-              providing endless unique gameplay experiences with many distinct modes. For more information, visit
-              our <a href="https://github.com/pickfifteen/eb-randomizer">GitHub page</a>. You can contact the 
-              developer <a href="https://twitter.com/pickfifteen">@pickfifteen</a> on Twitter.
-            </p>
+            <p>The direct link you have followed is for an older version of the EarthBound randomizer, and is no longer compatible.</p>
+            <p><a href="?">Click here</a> to create a new ROM.</p>
           </div>
-        </section>
+      </section>
+    );
+    const primarySections = (
+      <div>
         <section className="step-rom">
           <h3>1) Select ROM</h3>
           <div className="sectionContent">
@@ -180,6 +201,7 @@ class App extends Component {
               <div className="seedContainer">
                 <input value={this.state.specs.seed} onChange={e => { 
                     if(this.state.generationStatus) return;
+                    this.setQueryString(false);
                     if(e.target.value === "") this.setState(s => {s.specs.seed = ""; return s})
                     const seed = parseInt(e.target.value, 10); 
                     if(seed > 0 && seed < Number.MAX_SAFE_INTEGER) this.setState(s => {s.specs.seed = seed; return s});
@@ -296,7 +318,7 @@ class App extends Component {
                 <button disabled={this.state.generationStatus || !this.state.uploadedROM || !this.state.specs.seed}
                       onClick={this.generate} className={this.state.generationStatus ? 'loading' : 'button-primary'}>
                   Generate ROM</button>
-                <span className="buttonInfo">{this.state.generationStatus}</span>
+                <span className="buttonInfo">{this.romStatus === "None" ? "You must select a ROM file first." : this.state.generationStatus}</span>
               </p>
             }
             { this.state.newROM && 
@@ -310,6 +332,26 @@ class App extends Component {
             }
           </div>
         </section>
+      </div>
+    );
+
+    return (
+      <div className="container">
+        <section className="intro">
+          <h1>
+            <img src={logo} className="logo" alt="Loaded Dice mascot" onMouseDown={this.secret} />
+            EarthBound Randomizer <a href="https://github.com/pickfifteen/eb-randomizer/blob/master/CHANGELOG.md">v{ this.state.specs.version }</a>
+          </h1>
+          <div className="sectionContent">
+            <p>
+              The EarthBound Randomizer is a program that randomizes a ROM for the Super Nintendo game EarthBound, 
+              providing endless unique gameplay experiences with many distinct modes. For more information, visit
+              our <a href="https://github.com/pickfifteen/eb-randomizer">GitHub page</a>. You can contact the 
+              developer <a href="https://twitter.com/pickfifteen">@pickfifteen</a> on Twitter.
+            </p>
+          </div>
+        </section>
+        { this.state.compatibleVersion ? primarySections : badVersion }
       </div>
     );
   }

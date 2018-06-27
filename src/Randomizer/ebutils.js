@@ -118,6 +118,18 @@ const ebutils = {
         return str;
     },
 
+    parseFlagString: function(str) {
+        const flags = {};
+        const regex = /([a-z]|\([a-z]+\))([0-9]*)/ig;
+        let match;
+        while((match = regex.exec(str)) !== null) {
+            const key = match[1].replace("(","").replace(")","");
+            const val = match[2] ? parseInt(match[2], 10) : 1;
+            flags[key] = val;
+        }
+        return flags;
+    },
+
     SANCTUARY_BOSS_POINTERS: [
         0x68409,
         0x68410,
