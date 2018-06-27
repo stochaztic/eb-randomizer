@@ -57,8 +57,6 @@ Be careful with how you proceed through storyline events! If you take a very unu
 
 A few events have been made more lenient with regards to in-game triggers; notably, Venus will always give you her item right away, you can access the Pyramid without fighting Kraken (but you still must see the hieroglyphs), and Montague should always appear. It is also possible to get the game into a "spawns-off" condition. This is expected, but note if you game over in a spawns-off condition, you may softlock and have to reset the game, so be sure to save if necessary!
 
-Keysanity mode is incompatible with Ancient Cave mode, and if both modes are selected, Keysanity will be disabled. (Therefore, if you simply enter a blank line at flag selection, you will be playing Ancient Cave, not Keysanity.)
-
 ## Gift box contents – `g`
 
 Randomizing gift box contents works differently in Ancient Cave mode and in non-Ancient Cave mode. In Ancient Cave mode, gift boxes will generally increase in value as you proceed deeper into the cave. About 60% of the gift boxes will be equipment. In early levels of the cave, you may get "skip-enabling" items such as the Pencil Eraser that could allow you to skip around in the cave.
