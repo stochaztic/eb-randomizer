@@ -1,7 +1,11 @@
 # Changelog
+## v21.1/v22 (In Progress)
+### Bugfixes
+- Gift box contents: Fix Ancient Cave item distribution bug causing duplicate weapons/gear.
+
 ## v21 (2018-06-27)
 - The website now displays a unique URL after seed creation.
-- Going to one of these unique URLs will set up the randomizer to give you the exact same ROM
+- Going to one of these unique URLs will set up the randomizer to give you the exact same ROM.
 - Game improvement patches: Ludicrous Speed patch for changing text speed added.
 ### Bugfixes
 - Ancient Cave: Fixed exit mouse.

@@ -69,7 +69,7 @@ class ItemObject extends TableObject {
         }
 
         if(this.data.equipable & 0xF) {
-            const equipnum = ["ness", "paula", "jeff", "poo"].map(c => this.getBit(c)).reduce((a, b) => a + b, 0);
+            const equipnum = ["ness", "paula", "jeff", "poo"].map(c => this.getBit(c)).reduce((a, b) => a + (b ? 1 : 0), 0);
             console.assert(equipnum > 0);
             return equipnum === 1;
         }
