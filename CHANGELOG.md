@@ -1,7 +1,8 @@
 # Changelog
-## v21.1/v22 (In Progress)
+## v21.2/v22 (In Progress)
 ### Bugfixes
 - Gift box contents: Fix Ancient Cave item distribution bug causing duplicate weapons/gear.
+- Ancient Cave: Teleport Men in Moonside fixed.
 
 ## v21 (2018-06-27)
 - The website now displays a unique URL after seed creation.

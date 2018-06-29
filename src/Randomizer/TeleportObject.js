@@ -42,12 +42,12 @@ class TeleportObject extends TableObject {
                 this.data.y = 45;
             }
             if(this.index === 0xE8) { // Moonside skipping chests
-                this.data.x = TeleportObject.get(0x70).x;
-                this.data.y = TeleportObject.get(0x70).y;
+                this.data.x = TeleportObject.get(0x70).oldData.x;
+                this.data.y = TeleportObject.get(0x70).oldData.y;
             }
             if(this.index === 0xE9) { // Unused value - for testing
-                this.data.x = 492;
-                this.data.y = 1210;
+                this.data.x = TeleportObject.get(0x70).oldData.x;
+                this.data.y = TeleportObject.get(0x70).oldData.y;
             }
         }
     }
