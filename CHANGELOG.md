@@ -3,7 +3,7 @@
 ### Bugfixes
 - Gift box contents: Fix Ancient Cave item distribution bug causing duplicate weapons/gear.
 - Ancient Cave: Teleport Men in Moonside fixed.
-- Ancient Cave: Occasional incorrect enemies appearing around Giant Step and Entertainer's Shack fixed.
+- Ancient Cave: Occasional incorrect enemies appearing around Noth Onett, Giant Step, and Entertainer's Shack fixed.
 
 ## v21 (2018-06-27)
 - The website now displays a unique URL after seed creation.
