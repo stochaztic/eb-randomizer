@@ -114,5 +114,6 @@ export function execute(romfile, specs, hooks) {
   }
 
   hooks.message("DONE");
+  if(specs.flags.devmode >= 2) debugger;
   return {rom: newROM, spoiler: spoiler};
 }

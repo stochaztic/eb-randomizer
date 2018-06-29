@@ -87,11 +87,12 @@ const flagDescriptions = {
     },
     devmode: {
         title: "Developer mode",
-        max: 1,
+        max: 2,
         default: 0, 
         desc: {
             0: "Disabled.",
             1: "Extra info in spoiler file and other development-oriented changes.",
+            2: "Extra info in spoiler file and other development-oriented changes, and a debugger hook post-generation.",
         }
     },
     easymodo: {
