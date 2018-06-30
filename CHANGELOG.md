@@ -1,9 +1,11 @@
 # Changelog
-## v21.2/v22 (In Progress)
+## v22 (2018-06-29)
+- Ancient Cave: Each "level" of the cave will have at most one sanctuary (or Dr. Saturn or Throne Room spot), to more evenly distribute the free healing opportunities.
+- Ancient Cave: Poo's Master now gives full heal.
 ### Bugfixes
 - Gift box contents: Fix Ancient Cave item distribution bug causing duplicate weapons/gear.
 - Ancient Cave: Teleport Men in Moonside fixed.
-- Ancient Cave: Occasional incorrect enemies appearing around Noth Onett, Giant Step cave, Giant Step, and Entertainer's Shack fixed.
+- Ancient Cave: Occasional incorrect enemies appearing around North Onett, Giant Step cave, Giant Step, and Entertainer's Shack fixed.
 
 ## v21 (2018-06-27)
 - The website now displays a unique URL after seed creation.

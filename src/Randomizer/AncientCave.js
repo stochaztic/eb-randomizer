@@ -200,6 +200,14 @@ class AncientCave extends ReadWriteObject {
                 toBeDone.delete(bb);
                 done.add(bb);
             }
+
+            done.forEach(c => {
+                if(c.caveLevel !== undefined) return;
+                c.caveLevel = i + 1;
+                c.exits.forEach(e => {
+                    e.caveLevel = c.caveLevel;
+                });
+            });
         });
 
         this.classReseed("filling");
@@ -221,12 +229,30 @@ class AncientCave extends ReadWriteObject {
         }
         console.assert(toAssign.length === totalUnassignedExits.length);
 
+        // Ensure even distribution of sanctuaries and sanctuary-alikes
+        const toEvenlyAssign = toAssign.filter(s => ebutils.EVEN_DISTRIBUTE_DOORS.includes(s.exits[0].index));
+        console.assert(toEvenlyAssign.length === checkpoints.length - 1);
+        toEvenlyAssign.forEach((s, i) => {
+            console.assert(s.unassignedExits.length === 1);
+            let x = s.unassignedExits[0];
+            let subset = totalUnassignedExits.filter(e => e.caveLevel === i + 1);
+            let chosen = this.context.random.choice(subset);
+            Cluster.assignExitPair(x, chosen);
+            totalUnassignedExits.splice(totalUnassignedExits.indexOf(chosen), 1);
+            x.caveLevel = chosen.caveLevel;
+            s.caveLevel = chosen.caveLevel;
+        });
+
+        // Assign remainder of singletons
         toAssign.forEach(s => {
+            if(toEvenlyAssign.includes(s)) return;
             console.assert(s.unassignedExits.length === 1);
             let x = s.unassignedExits[0];
             let chosen = this.context.random.choice(totalUnassignedExits);
             Cluster.assignExitPair(x, chosen);
             totalUnassignedExits.splice(totalUnassignedExits.indexOf(chosen), 1);
+            x.caveLevel = chosen.caveLevel;
+            s.caveLevel = chosen.caveLevel;
         })
 
         console.assert(totalUnassignedExits.length === 0);
@@ -352,6 +378,9 @@ class AncientCave extends ReadWriteObject {
         tpt = TPTObject.get(0x1);
         tpt.data.address = tpt.data.address + 14;
 
+        // Dalaam Throne room - always heal
+        tpt = TPTObject.get(1089);
+        tpt.data.address=0xc9cb79;
 
         // War against Giygas is over - go to credits
         script = Script.getByPointer(0x9c293);

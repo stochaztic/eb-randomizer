@@ -166,5 +166,17 @@ const ebutils = {
     SANCTUARY_BOSS_INDEXES: [
         0x147, 0xc0, 0x16e, 0x1f, 0x1d0, 0x30b, 0x19, 0x3a2  // ordered, NOT 0x2b4
     ],
+
+    EVEN_DISTRIBUTE_DOORS: [
+        0x6a,   // Giant Step
+        0x30b,  // Rainy Circle
+        0x35c,  // Magnet Hill
+        0x3f5,  // Milky Well
+        0x52c,  // Pink Cloud
+        0x68c,  // Lilliput Steps
+        0x6a0,  // Dr. Saturn
+        0x6d1,  // Throne Room
+        0x7ce,  // Fire Spring
+    ],
 }
 export default ebutils;

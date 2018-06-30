@@ -28,6 +28,7 @@ class Cluster {
             index: this.index,
             rank: this.rank,
             onShortestPath: this.onShortestPath,
+            caveLevel: this.caveLevel,
             explicitBounds: {
                 x1: Math.min(...exCellBounds.map(b => b.x1)),
                 x2: Math.max(...exCellBounds.map(b => b.x2)),
