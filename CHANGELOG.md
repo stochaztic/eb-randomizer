@@ -1,6 +1,7 @@
 # Changelog
 ## v22.1 / v23 (In progress)
 ### Bugfixes
+- Ancient Cave: Missing North Onett roadblocks restored.
 - Ancient Cave: Occasional incorrect enemies appearing various places fixed.
 
 ## v22 (2018-06-29)

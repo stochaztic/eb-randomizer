@@ -307,7 +307,6 @@ class AncientCave extends ReadWriteObject {
             [0x04, 0xC9, 0x00],     // know escargo express phone number
             [0x04, 0xA6, 0x01],     // daytime in onett
             [0x04, 0x05, 0x02],     // turn on lights at home
-            [0x04, 0xD5, 0x01],     // Mom heal part 1
             [0x04, 0x5E, 0x00],     // Mom heal part 2
             [0x04, 0xAE, 0x00],     // hole dug in dusty dunes
 
@@ -382,6 +381,12 @@ class AncientCave extends ReadWriteObject {
         // Dalaam Throne room - always heal
         tpt = TPTObject.get(1089);
         tpt.data.address=0xc9cb79;
+
+        // Mom heal part 1
+        tpt = TPTObject.get(14);
+        tpt.data.flag = 0x5e;
+        tpt = TPTObject.get(15);
+        tpt.data.flag = 0x5e;
 
         // War against Giygas is over - go to credits
         script = Script.getByPointer(0x9c293);
