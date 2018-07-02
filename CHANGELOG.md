@@ -1,4 +1,8 @@
 # Changelog
+## v22.1 / v23 (In progress)
+### Bugfixes
+- Ancient Cave: Occasional incorrect enemies appearing various places fixed.
+
 ## v22 (2018-06-29)
 - Ancient Cave: Each "level" of the cave will have at most one sanctuary (or Dr. Saturn or Throne Room spot), to more evenly distribute the free healing opportunities.
 - Ancient Cave: Poo's Master now gives full heal.
