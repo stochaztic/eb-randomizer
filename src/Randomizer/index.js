@@ -73,7 +73,9 @@ export function execute(romfile, specs, hooks) {
     console.log(text);
   };
 
-  const patches = [ShowSpritesNoIntroPatch];
+  const patches = [];
+  
+  if(specs.flags.a) patches.push(ShowSpritesNoIntroPatch);
   if(specs.flags.u >= 1) patches.push(RunButtonPatch);
   if(specs.flags.u >= 2) patches.push(LudicrousSpeedPatch);
 
