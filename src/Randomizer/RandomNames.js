@@ -665,7 +665,9 @@ export const enemyAdjectives = [
     "Dancing",
     "Twerking",
     "Wet",
-    "Burning",
+    "Maniacal",
+    "Suspicious",
+    "Reborn",
 ];
 
 export const superlatives = [
