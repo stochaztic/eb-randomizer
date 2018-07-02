@@ -16,7 +16,9 @@ class EnemyObject extends TableObject {
     }
 
     get oldName() {
-        return ebutils.listToText(this.oldData.name_text);
+        if(this._oldName !== undefined) return this._oldName;
+        this._oldName = ebutils.listToText(this.oldData.name_text);
+        return this.oldName;
     }
 
     set name(str) {
@@ -95,6 +97,29 @@ class EnemyObject extends TableObject {
             "weakness_paralysis", "weakness_hypnosis"].forEach(attr => {
                 this.data[attr] = Math.max(this.data[attr], this.oldData[attr]);
             });
+        }
+
+        // Special case for Giygas before dupe sanitizing: The first entry is not the sprite-having entry.
+        if(this.name === "Giygas") {
+            const renamedGiegue = this.constructor.every.find(o => o.oldName === this.name && o.name !== this.name);
+            if(renamedGiegue) this.name = renamedGiegue.name;
+        }
+
+        // Sanitize any duplicate-logic entries to match values that used to match across dupes.
+        let dupes = this.constructor.every.filter(o => !o._dupeChecked && o.index !== this.index && o.oldName === this.oldName);
+        dupes.forEach(dupe => {
+            this.constructor.tableSpecs.attributes.forEach(spec => {
+                dupe.name = this.name;
+                if(dupe.oldData[spec.name] === this.oldData[spec.name] && dupe.data[spec.name] !== this.data[spec.name]) {
+                    dupe.data[spec.name] = this.data[spec.name];
+                }
+            });
+            dupe._dupeChecked = true;
+        });
+        this._dupeChecked = true;
+
+        if(this.oldData.battle_sprite === 0) {
+            this.data.battle_sprite = 0;
         }
 
         if(this.context.specs.flags.a) {

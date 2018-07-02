@@ -1,6 +1,7 @@
 # Changelog
-## v22.1 / v23 (In progress)
+## v22.2 / v23 (In progress)
 ### Bugfixes
+- Enemy stats: Enemies will no longer change names/properties mid-battle.
 - Ancient Cave: Missing North Onett roadblocks restored.
 - Ancient Cave: Occasional incorrect enemies appearing various places fixed.
 
