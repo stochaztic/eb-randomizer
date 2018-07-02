@@ -372,7 +372,8 @@ class AncientCave extends ReadWriteObject {
 
         // Big Foot - always appear
         tpt = TPTObject.get(0x26b);
-        tpt.data.flag = TPTObject.get(0x05).data.flag;
+        tpt.data.flag = 0;
+        tpt.data.flag_appear = 0;
 
         // Shark guarding Frank - always fight
         tpt = TPTObject.get(0x1);

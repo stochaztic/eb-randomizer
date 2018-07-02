@@ -138,6 +138,7 @@ class PsiTeleportObject extends TableObject {
         const montague = TPTObject.get(0x2f8);
         console.assert(montague.data.address === 0xc60349);
         montague.data.flag = 0;
+        montague.data.flag_appear = 0;
 
         // Patch Mr Spoon to request autograph even after he's received it
         const spoon = TPTObject.get(0x38d);

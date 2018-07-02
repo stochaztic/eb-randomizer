@@ -1,7 +1,8 @@
 tpt_type,1
 sprite,2
 facing,1
-movement,1
-flag,4
+movement,2
+flag,2
+flag_appear,1
 address,4
 argument,4
