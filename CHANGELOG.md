@@ -1,5 +1,5 @@
 # Changelog
-## v22.2 / v23 (In progress)
+## v22.3 / v23 (In progress)
 - Enemy stats: Minor additions to the wordlists.
 ### Bugfixes
 - Enemy stats: Enemies will no longer change names/properties mid-battle.
