@@ -388,6 +388,13 @@ class AncientCave extends ReadWriteObject {
         tpt = TPTObject.get(15);
         tpt.data.flag = 0x5e;
 
+        // Topolla Theater backstage attendant - always out of the way
+        tpt = TPTObject.get(840);
+        tpt.data.flag = 0x5e;
+        tpt = TPTObject.get(841);
+        tpt.data.flag = 0x5e;
+
+
         // War against Giygas is over - go to credits
         script = Script.getByPointer(0x9c293);
         console.assert(script.lines.length === 273);
