@@ -149,12 +149,16 @@ class MapEventObject extends ZonePositionMixin(TableObject) {
     }
 
     get caveRank() {
+        if(this._caveRank !== undefined) return this._caveRank;
         const cluster = Cluster.getByExit(this);
         if(cluster && cluster.rank !== null) {
             const maxRank = Math.max(...Cluster.every.map(c => c.rank).filter(n =>!!n));
-            return cluster.rank / maxRank;
+            this._caveRank = cluster.rank / maxRank;
         }
-        return null;
+        else {
+            this._caveRank = null;
+        }
+        return this._caveRank;
     }
 
     get globalX() {

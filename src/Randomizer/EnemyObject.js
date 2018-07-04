@@ -39,8 +39,8 @@ class EnemyObject extends TableObject {
 
     get rank() {
         if(this._rank !== undefined) return this._rank;
-        const byHp = EnemyObject.every.sort((a, b) => a.oldData.hp - b.oldData.hp);
-        const byXp = EnemyObject.every.sort((a, b) => a.oldData.xp - b.oldData.xp);
+        const byHp = EnemyObject.everyMutable.sort((a, b) => a.oldData.hp - b.oldData.hp);
+        const byXp = EnemyObject.everyMutable.sort((a, b) => a.oldData.xp - b.oldData.xp);
         EnemyObject.every.forEach(e => {
             e._rank = Math.max(byHp.indexOf(e), byXp.indexOf(e));
         })
