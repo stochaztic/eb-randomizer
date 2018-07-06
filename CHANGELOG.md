@@ -1,5 +1,6 @@
 # Changelog
-## v22.4 / v23 (In progress)
+## v23 (2018-07-05)
+- PSI abilities: New feature. By default, the levels PSI abilities are learned at is slightly randomized; optionally, you may randomize which abilities are learned by each character.
 - Enemy stats: Minor additions to the wordlists.
 ### Bugfixes
 - Enemy stats: Enemies will no longer change names/properties mid-battle.
