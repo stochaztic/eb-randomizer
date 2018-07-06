@@ -30,7 +30,7 @@ export const battleSpriteNames = [
     "Psychic,Psycho,Lunatic,Maniac,Insano,Killer",
     "Mite,Zap,Cloud,Storm,Thunder,Lightning,Spark,Zippy,Zappy",
     "Fish,Fishman,Dagon,Ichtyoid,Manfish,Gills,Creature",
-    "Hobo,Bum,Man,Theif,Wacko,Crook,Guy,Dude,Burgler",
+    "Hobo,Bum,Man,Thief,Wacko,Crook,Guy,Dude,Burgler",
     "Painter,Old Man,Cult Leader,Fanatic",
     "Party Man,Partier,Drunk,Drunkard,Wino,Reveler,Wet Blanket,Lush",
     "Guy,Creep,Local,Stalker,Creeper,Stabber",
