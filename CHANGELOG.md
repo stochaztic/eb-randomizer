@@ -1,4 +1,7 @@
 # Changelog
+## v23.1 / v24 (In progress)
+- Dialogue: Title screen changes.
+
 ## v23 (2018-07-05)
 - PSI abilities: New feature. By default, the levels PSI abilities are learned at is slightly randomized; optionally, you may randomize which abilities are learned by each character.
 - Enemy stats: Minor additions to the wordlists.

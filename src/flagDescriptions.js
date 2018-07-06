@@ -17,11 +17,12 @@ const flagDescriptions = {
     },
     d: {
         title: "Dialogue",
-        max: 2,
-        default: 2,
+        max: 3,
+        default: 3,
         desc: {
             1: "NPCs with non-vital dialogue will have their lines shuffled.",
             2: "NPCs with non-vital dialogue will have their lines shuffled, and Heavily Armed Pokey will have random special lines.",
+            3: "NPCs with non-vital dialogue will have their lines shuffled, Heavily Armed Pokey will have random special lines, and title screen changes.",
         }
     },
     g: {

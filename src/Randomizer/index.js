@@ -22,12 +22,14 @@ import ShopObject from './ShopObject.js';
 import SpriteGroupObject from './SpriteGroupObject.js';
 import StatGrowthObject from './StatGrowthObject.js';
 import TeleportObject from './TeleportObject.js';
+import TitleScreenCharacterObject from './TitleScreenCharacterObject.js';
 import TPTObject from './TPTObject.js';
 import ZoneEventObject from './ZoneEventObject.js';
 import ZoneSpriteObject from './ZoneSpriteObject.js';
 import LudicrousSpeedPatch from './LudicrousSpeedPatch.js';
 import RunButtonPatch from './RunButtonPatch.js';
 import ShowSpritesNoIntroPatch from './ShowSpritesNoIntroPatch.js';
+import TitleDisableGlowPatch from './TitleDisableGlowPatch.js';
 import ebutils from './ebutils.js';
 import Cluster from './Cluster.js';
 
@@ -55,6 +57,7 @@ export function execute(romfile, specs, hooks) {
     SpriteGroupObject,
     StatGrowthObject,
     TeleportObject,
+    TitleScreenCharacterObject,
     TPTObject,
     ZoneEventObject,
     ZoneSpriteObject,
@@ -78,6 +81,7 @@ export function execute(romfile, specs, hooks) {
   if(specs.flags.a) patches.push(ShowSpritesNoIntroPatch);
   if(specs.flags.u >= 1) patches.push(RunButtonPatch);
   if(specs.flags.u >= 2) patches.push(LudicrousSpeedPatch);
+  if(specs.flags.d >= 3) patches.push(TitleDisableGlowPatch);
 
 
   const context = {
