@@ -189,6 +189,9 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
         equipment.splice(Math.round(equipment.length * 0.4), 0, autoStarMaster);
         equipment.splice(Math.round(equipment.length * 0.8), 0, autoStarMaster);
 
+        const crackedBatIndex = equipment.indexOf(ItemObject.get(17));
+        equipment.splice(crackedBatIndex, 1);
+
         let chests = this.unassignedChests;
         const reducedEquipmentCount = Math.round(chests.length * 0.6);
         if(reducedEquipmentCount < equipment.length) {
