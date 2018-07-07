@@ -30,7 +30,7 @@ export const battleSpriteNames = [
     "Psychic,Psycho,Lunatic,Maniac,Insano,Killer",
     "Mite,Zap,Cloud,Storm,Thunder,Lightning,Spark,Zippy,Zappy",
     "Fish,Fishman,Dagon,Ichtyoid,Manfish,Gills,Creature",
-    "Hobo,Bum,Man,Thief,Wacko,Crook,Guy,Dude,Burgler",
+    "Hobo,Bum,Man,Thief,Wacko,Crook,Guy,Dude,Burglar",
     "Painter,Old Man,Cult Leader,Fanatic",
     "Party Man,Partier,Drunk,Drunkard,Wino,Reveler,Wet Blanket,Lush",
     "Guy,Creep,Local,Stalker,Creeper,Stabber",
@@ -668,6 +668,31 @@ export const enemyAdjectives = [
     "Maniacal",
     "Suspicious",
     "Reborn",
+];
+
+export const enemySuffixes = [
+    "!",
+    "!!!",
+    " of Death",
+    " of Life",
+    " of Peace",
+    " of War",
+    " Playing Rough",
+    " Playing Nice",
+    " Playing Dead",
+    " Deluxe",
+    " Mark II",
+    "'s Brother",
+    "'s Sister",
+    "'s Great-Nephew",
+    " Seven",
+    " Captain",
+    " Jr.",
+    "omatic",
+    " King",
+    " Prince",
+    " Youth",
+    " 2.0",
 ];
 
 export const superlatives = [

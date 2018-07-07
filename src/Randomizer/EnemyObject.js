@@ -4,7 +4,7 @@ import tableText from '!array-loader!./tables/enemy_table.txt';
 import ebutils from './ebutils.js';
 import ItemObject from './ItemObject.js';
 import SpriteGroupObject from './SpriteGroupObject.js';
-import { battleSpriteNames, enemyAdjectives, superlatives } from './RandomNames.js';
+import { battleSpriteNames, enemyAdjectives, enemySuffixes, superlatives } from './RandomNames.js';
 
 class EnemyObject extends TableObject {
     static shouldRandomize() {
@@ -78,8 +78,14 @@ class EnemyObject extends TableObject {
             let validChanged = false;
             const baseChoices = battleSpriteNames[this.data.battle_sprite - 1].split(",");
             while(!validChanged) {
-                let newName = `${this.context.random.choice(enemyAdjectives)} ${this.context.random.choice(baseChoices)}`;
-                if(this.context.random.random() < 0.2) {
+                let newName = this.context.random.choice(baseChoices);
+                if(this.context.random.random() < 0.06) {
+                    newName = `${newName}${this.context.random.choice(enemySuffixes)}`;
+                }
+                else {
+                    newName = `${this.context.random.choice(enemyAdjectives)} ${newName}`;
+                }
+                if(this.context.random.random() < 0.075) {
                     newName = `${this.context.random.choice(superlatives)} ${newName}`;
                 }
                 if(newName.length <= this.data.name_text.length) {
