@@ -43,7 +43,7 @@ class PsiAbilityObject extends TableObject {
                     }
 
                     // A) Chance to have nothing in this slot
-                    if(this.context.random.random() < 0.2) {
+                    if(this.context.random.random() < 0.15) {
                         return;
                     }
 
@@ -55,7 +55,7 @@ class PsiAbilityObject extends TableObject {
                     // C) Assign each instance of the chosen ability a non-zero value
                     bucket.filter(o => o.data.name_index === chosenNameIndex).forEach(o => {
                         // Small chance to not have this instance of this ability
-                        if(this.context.random.random() < 0.1) {
+                        if(this.context.random.random() < 0.075) {
                             return;
                         }
                         const nonZeroValues = [];
