@@ -1,0 +1,2 @@
+2f0ef0: ee 4a 9b    ;inc $9b4a
+64 02               ;stz $02

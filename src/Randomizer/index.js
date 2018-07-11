@@ -3,6 +3,7 @@ import RandomTools from 'randomtools-js';
 import AncientCave from './AncientCave.js';
 import BattleEntryObject from './BattleEntryObject.js';
 import BgDataObect from './BgDataObject.js';
+import Credits from './Credits.js';
 import Dialog from './Dialog.js';
 import EnemyObject from './EnemyObject.js';
 import EnemyPlaceObject from './EnemyPlaceObject.js';
@@ -27,9 +28,11 @@ import TPTObject from './TPTObject.js';
 import ZoneEventObject from './ZoneEventObject.js';
 import ZoneSpriteObject from './ZoneSpriteObject.js';
 import LudicrousSpeedPatch from './LudicrousSpeedPatch.js';
+import CreditsPatch from './CreditsPatch.js';
 import RunButtonPatch from './RunButtonPatch.js';
 import ShowSpritesNoIntroPatch from './ShowSpritesNoIntroPatch.js';
 import TitleDisableGlowPatch from './TitleDisableGlowPatch.js';
+import TrackDoorsPatch from './TrackDoorsPatch.js';
 import ebutils from './ebutils.js';
 import Cluster from './Cluster.js';
 
@@ -38,6 +41,7 @@ export function execute(romfile, specs, hooks) {
     AncientCave,
     BattleEntryObject,
     BgDataObect,
+    Credits,
     Dialog,
     EnemyObject,
     EnemyPlaceObject,
@@ -65,6 +69,7 @@ export function execute(romfile, specs, hooks) {
 
   AncientCave.afterOrder = [PsiTeleportObject];
   BattleEntryObject.afterOrder = [EnemyObject];
+  Credits.afterOrder = [AncientCave];
   Dialog.afterOrder = [PsiTeleportObject];
   EnemyPlaceObject.afterOrder = [BattleEntryObject];
   MapEnemyObject.afterOrder = [AncientCave];
@@ -79,6 +84,8 @@ export function execute(romfile, specs, hooks) {
   const patches = [];
   
   if(specs.flags.a) patches.push(ShowSpritesNoIntroPatch);
+  if(specs.flags.a) patches.push(CreditsPatch);
+  if(specs.flags.a) patches.push(TrackDoorsPatch);
   if(specs.flags.u >= 1) patches.push(RunButtonPatch);
   if(specs.flags.u >= 2) patches.push(LudicrousSpeedPatch);
   if(specs.flags.d >= 3) patches.push(TitleDisableGlowPatch);

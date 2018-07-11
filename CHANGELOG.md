@@ -1,5 +1,6 @@
 # Changelog
-## v23.2 / v24 (In progress)
+## v24 (2018-07-10)
+- Credits: Statistics and randomizer information now displayed in Ancient Cave mode.
 - Dialogue: Title screen changes.
 - Enemy stats: Name suffixes added.
 

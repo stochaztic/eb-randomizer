@@ -36,7 +36,8 @@ class AncientCave extends ReadWriteObject {
             [0x13, 0x02]
         ];
         if(this.context.specs.flags.devmode) {
-            lines.splice(-1, 0, [0x1f, 0x21, 0xe9]); // Teleport to test location 
+            //lines.splice(-1, 0, [0x1f, 0x21, 0xe9]); // Teleport to test location 
+            lines.splice(-1, 0, [0x1f, 0x41, 0x0c]); // Start credits 
         }
         const newAtmHelp = Script.writeNewScript(lines);
         const oldAtmHelp = Script.getByPointer(0x5566b);

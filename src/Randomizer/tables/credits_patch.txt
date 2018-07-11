@@ -1,0 +1,70 @@
+F4E1: 4c d0 f8   ;jmp #$f8d0
+
+f8d0: c9 05 00   ;CMP #$0005
+f0 06      ;BEQ $f8db (+6)
+C9 FF 00   ;CMP #$00FF
+4c e4 f4   ;JMP $F4E4
+
+f8db: a7 1b       ;lda [$1b]    # variable for "next" databyte to read
+85 06       ;sta $06
+e6 1b       ;inc $1b
+e6 1b       ;inc $1b
+a7 1b       ;lda [$1b]
+85 08       ;sta $08
+e6 1b       ;inc $1b
+e6 1b       ;inc $1b
+
+a7 06       ;lda [$06] # this is the address we want to print
+a8          ;tay
+
+a7 1b       ;lda [$1b] # check the next databyte for the number of bytes to read/print
+29 FF 00    ;and #$00ff
+c9 01 00    ;cmp #$0001  # 8-bit print mode
+
+d0 06       ;bne +6 # if it is not, skip the trim to 1 byte
+98          ;tya
+29 FF 00    ;and #$00ff
+f0 01       ;BRA +1
+98          ;tya
+
+85 0e       ;sta $0e
+64 10       ;stz $10
+
+a7 1b       ;lda [$1b] # check the next databyte for the number of bytes to read/print
+29 FF 00    ;and #$00ff
+c9 04 00    ;cmp #$0004 # 32-bit print mode
+d0 07       ;bne +7 # If it's not, skip loading second word
+A0 02 00    ;ldy #$0002
+B7 06       ;lda [$06],y
+85 10       ;sta $10
+
+a5 0e       ;lda $0e
+85 06       ;sta $06
+a5 10       ;lda $10
+85 08       ;sta $08
+e6 1b       ;inc $1b # Note 04 hijack will reduce this back down
+
+22 55 0C C1 ;jsl $c10c55 # result: decimals ending at 8960, length in A
+a8          ;tay
+85 10       ;sta $10     # Length
+a9 61 89    ;lda #$8961  # 8960 is the last digit, so 8961 needs to be terminating 00
+38          ;sec
+E5 10       ;sbc $10
+85 06       ;sta $06     # Beginning of source digits to adjust to ascii and print
+a9 7e 00    ;lda #$007e
+85 08       ;sta $08
+e2 30       ;SEP #$30    # BEGIN 8-BIT MODE
+a9 00       ;lda #$00
+97 06       ;STA [$06],Y # set terminating character
+f0 07       ;BRA MidLoop (+7)
+;BeginLoop:
+B7 06       ;lda [$06],y
+18          ;clc
+69 30       ;adc #$30
+97 06       ;sta [$06],y
+;MidLoop:
+88          ;DEY
+10 f6       ;BPL BeginLoop (-10)
+c2 30       ;REP #$30    # END 8-BIT MODE
+a4 06       ;ldy $06     # Setup location of ascii digits for 04 hijack
+4c 3b f7    ;jmp $f73b   # Hijack into 04 code

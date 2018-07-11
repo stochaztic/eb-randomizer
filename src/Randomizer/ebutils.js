@@ -1,23 +1,36 @@
 /* eslint import/no-webpack-loader-syntax: off */
-import textMapRaw from '!array-loader!./tables/text_mapping.txt';
+import textMapRaw0 from '!array-loader!./tables/text_mapping.txt';
+import textMapRaw1 from '!array-loader!./tables/text_mapping_1.txt';
+import textMapRaw2 from '!array-loader!./tables/text_mapping_2.txt';
 
 const ebutils = {
-    textMap: function() {
-        if(this._textMap) return this._textMap;
+    textMap: function(type = 0) {
+        if(this._textMap) return this._textMap[type];
         this._textMap = [];
-        textMapRaw.forEach(line => {
-            if(line.trim().length === 0) return;
-            const eq = line.indexOf('=');
-            let [code, text] = [line.slice(0, eq), line.slice(eq+1)];
-            if(code.length === 4) {
-                code = [code.substr(0, 2), code.substr(2, 2)].map(i => parseInt(i, 16));
-            }
-            else {
-                code = parseInt(code, 16);
-            }
-            this._textMap.push({code: code, text: text.replace('\r','')});
-        });
-        return this.textMap();
+
+        const loadRawMap = (textMapRaw) => {
+            const arr = [];
+            textMapRaw.forEach(line => {
+                if(line.trim().length === 0) return;
+                const eq = line.indexOf('=');
+                let [code, text] = [line.slice(0, eq), line.slice(eq+1)];
+                if(code.length === 4) {
+                    code = [code.substr(0, 2), code.substr(2, 2)].map(i => parseInt(i, 16));
+                }
+                else {
+                    code = parseInt(code, 16);
+                }
+                arr.push({code: code, text: text.replace('\r','')});
+            });
+            arr.sort((a, b) => b.text.length - a.text.length); // Longest entries first
+            return arr;
+        };
+
+        this._textMap.push(loadRawMap(textMapRaw0));
+        this._textMap.push(loadRawMap(textMapRaw1));
+        this._textMap.push(loadRawMap(textMapRaw2));
+
+        return this.textMap(type);
     },
 
     listToText: function(list) {
@@ -55,18 +68,17 @@ const ebutils = {
         return arr;
     },
 
-    encodeText: function(str, useMulti = true) {
-        let map = this.textMap();
+    encodeText: function(str, useMulti = true, textMap = 0) {
+        let map = this.textMap(textMap);
         if(!useMulti) {
             map = map.filter(i => i.text.length === 1);
         }
-        map.sort((a, b) => b.text.length - a.text.length); // Longest entries first
         const arr = [];
         const matchesBeginning = entry => str.startsWith(entry.text);
         while(str.length) {
             const entry = map.find(matchesBeginning);
             if(!entry) {
-                throw new Error(str + " unable to be encoded.");
+                throw new Error(`${str} unable to be encoded with map ${textMap}.`);
             }
             Array.isArray(entry.code) ? arr.push(...entry.code) : arr.push(entry.code);
             str = str.substring(entry.text.length);
