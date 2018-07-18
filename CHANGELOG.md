@@ -1,4 +1,7 @@
 # Changelog
+## v24.1 / v25 (In progress)
+- Enemy stats: Bosses won't always have more difficult stats than vanilla.
+
 ## v24 (2018-07-10)
 - Credits: Statistics and randomizer information now displayed in Ancient Cave mode.
 - Dialogue: Title screen changes.

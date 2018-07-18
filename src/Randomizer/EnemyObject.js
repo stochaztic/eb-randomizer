@@ -29,6 +29,10 @@ class EnemyObject extends TableObject {
         return this.data.boss_flag || this.data.death_sound;
     }
 
+    get isFinalBoss() {
+        return this.oldName.includes("Pokey") || this.oldName.includes("Giygas");
+    }
+
     get isNpc() {
         return !this.isBoss && this.data.out_of_battle_sprite === 0;
     }
@@ -97,7 +101,7 @@ class EnemyObject extends TableObject {
     }
 
     cleanup() {
-        if(this.isBoss) {
+        if(this.isBoss && !this.isFinalBoss && this.context.random.random() < 0.8) {
             ["hp", "pp", "level", "offense", "defense", "speed", "guts",
             "iq", "weakness_fire", "weakness_freeze", "weakness_flash",
             "weakness_paralysis", "weakness_hypnosis"].forEach(attr => {

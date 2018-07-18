@@ -23,3 +23,7 @@ yarn-error.log*
 /.vscode
 .firebaserc
 firebase.json
+
+/working
+*.smc
+*.srm
