@@ -1,6 +1,7 @@
 # Changelog
-## v24.1 / v25 (In progress)
+## v24.2 / v25 (In progress)
 - Character stats: Growth stats will have a slightly wider range and more diversity.
+- Dialogue: Additional rare title screen randomization.
 - Enemy stats: Bosses won't always have more difficult stats than vanilla.
 ### Bugfixes
 - Ancient Cave: Battles/softlock at Onett police station back room prevented.
