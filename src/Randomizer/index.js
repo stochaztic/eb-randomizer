@@ -82,10 +82,9 @@ export function execute(romfile, specs, hooks) {
     console.log(text);
   };
 
-  const patches = [ExpandSavePatch];
+  const patches = [ExpandSavePatch, CreditsPatch];
   
   if(specs.flags.a) patches.push(ShowSpritesNoIntroPatch);
-  if(specs.flags.a) patches.push(CreditsPatch);
   if(specs.flags.a) patches.push(TrackDoorsPatch);
   if(specs.flags.u >= 1) patches.push(RunButtonPatch);
   if(specs.flags.u >= 2) patches.push(LudicrousSpeedPatch);

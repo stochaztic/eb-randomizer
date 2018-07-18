@@ -1,10 +1,12 @@
 # Changelog
-## v24.2 / v25 (In progress)
+## v24.3 / v25 (In progress)
 - Character stats: Growth stats will have a slightly wider range and more diversity.
+- Credits: Randomizer information displayed in all modes.
 - Dialogue: Additional rare title screen randomization.
 - Enemy stats: Bosses won't always have more difficult stats than vanilla.
 ### Bugfixes
 - Ancient Cave: Battles/softlock at Onett police station back room prevented.
+- Credits: Ness's level displayed correctly.
 
 ## v24 (2018-07-10)
 - Credits: Statistics and randomizer information now displayed in Ancient Cave mode.

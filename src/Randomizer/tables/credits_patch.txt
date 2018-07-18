@@ -24,7 +24,7 @@ c9 01 00    ;cmp #$0001  # 8-bit print mode
 d0 06       ;bne +6 # if it is not, skip the trim to 1 byte
 98          ;tya
 29 FF 00    ;and #$00ff
-f0 01       ;BRA +1
+80 01       ;BRA +1
 98          ;tya
 
 85 0e       ;sta $0e
