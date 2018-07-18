@@ -2,6 +2,8 @@
 ## v24.1 / v25 (In progress)
 - Character stats: Growth stats will have a slightly wider range and more diversity.
 - Enemy stats: Bosses won't always have more difficult stats than vanilla.
+### Bugfixes
+- Ancient Cave: Battles/softlock at Onett police station back room prevented.
 
 ## v24 (2018-07-10)
 - Credits: Statistics and randomizer information now displayed in Ancient Cave mode.

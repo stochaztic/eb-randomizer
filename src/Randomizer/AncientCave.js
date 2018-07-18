@@ -395,6 +395,17 @@ class AncientCave extends ReadWriteObject {
         tpt = TPTObject.get(841);
         tpt.data.flag = 0x5e;
 
+        // Cop room - disable fights
+        tpt = TPTObject.get(73);
+        tpt.data.address=0xc74c85;
+        tpt = TPTObject.get(74);
+        tpt.data.address=0xc74c85;
+        tpt = TPTObject.get(75);
+        tpt.data.address=0xc74c85;
+        tpt = TPTObject.get(76);
+        tpt.data.address=0xc74c85;
+        tpt = TPTObject.get(77);
+        tpt.data.address=0xc74c85;
 
         // War against Giygas is over - go to credits
         script = Script.getByPointer(0x9c293);
