@@ -12,14 +12,16 @@ StatGrowthObject.randomizeAttributes = [
     "offense", "defense", "speed", "guts", "vitality", "iq", "luck"];
     
 StatGrowthObject.mutateAttributes = {
-    "offense": null,
-    "defense": null,
-    "speed": null,
-    "guts": null,
-    "vitality": null,
-    "iq": null,
-    "luck": null,
+    "offense": [8, 25],
+    "defense": [2, 22],
+    "speed": [3, 9],
+    "guts": [2, 9],
+    "vitality": [2, 6],
+    "iq": [3, 12],
+    "luck": [2, 9],
     };
+
+StatGrowthObject.randomDegree = 1;
 
 StatGrowthObject.tableSpecs = {
     text: tableText,

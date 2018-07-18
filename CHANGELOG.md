@@ -1,5 +1,6 @@
 # Changelog
 ## v24.1 / v25 (In progress)
+- Character stats: Growth stats will have a slightly wider range and more diversity.
 - Enemy stats: Bosses won't always have more difficult stats than vanilla.
 
 ## v24 (2018-07-10)
