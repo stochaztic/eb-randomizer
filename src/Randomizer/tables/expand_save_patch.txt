@@ -1,0 +1,15 @@
+; Both saving and loading happen in three chunks despite all sections being continuous.
+; Add the third chunk to the second, then use the third code to point to new memory.
+; New memory in RAM located at 0x7eb600, 77 (0x4d) bytes long. New SRAM block begins 0x4b3.
+
+; Saving function at EF/088F
+2F097E: A9 BA 02    ; LDA #$02BA - existing 0x023A + next section 0x0080
+2F0985: A9 BA 02    ; LDA #$02BA
+2F099B: A9 00 B6    ; LDA #$B600 - new memory location (was #$9C08)
+2F09DA: A9 4D 00    ; LDA #$004D - new memory size
+
+; Loading function at EF/0A68
+2F0B2D: A9 BA 02    ; LDA #$02BA - existing 0x023A + next section 0x0080
+2F0B34: A9 BA 02    ; LDA #$02BA
+2F0B42: A9 00 B6    ; LDA #$B600 - new memory location (was #$9C08)
+2F0B81: A9 4D 00    ; LDA #$004D - new memory size

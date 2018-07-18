@@ -20,7 +20,7 @@ class Credits extends ReadWriteObject {
             ...bigText(Math.floor(Cluster.goal.rank).toString()),
             3, 2,
             ...smallText("YOUR DOOR TRANSITIONS"),
-            ...printAddr(0x7E9B4A, 2),
+            ...printAddr(0x7EB600, 2),
             3, 2,
             ...smallText("NESS LEVEL"),
             ...printAddr(0x7e99d3),

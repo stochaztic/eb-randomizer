@@ -29,6 +29,7 @@ import ZoneEventObject from './ZoneEventObject.js';
 import ZoneSpriteObject from './ZoneSpriteObject.js';
 import LudicrousSpeedPatch from './LudicrousSpeedPatch.js';
 import CreditsPatch from './CreditsPatch.js';
+import ExpandSavePatch from './ExpandSavePatch.js';
 import RunButtonPatch from './RunButtonPatch.js';
 import ShowSpritesNoIntroPatch from './ShowSpritesNoIntroPatch.js';
 import TitleDisableGlowPatch from './TitleDisableGlowPatch.js';
@@ -81,7 +82,7 @@ export function execute(romfile, specs, hooks) {
     console.log(text);
   };
 
-  const patches = [];
+  const patches = [ExpandSavePatch];
   
   if(specs.flags.a) patches.push(ShowSpritesNoIntroPatch);
   if(specs.flags.a) patches.push(CreditsPatch);
