@@ -4,6 +4,7 @@ import textMapRaw1 from '!array-loader!./tables/text_mapping_1.txt';
 import textMapRaw2 from '!array-loader!./tables/text_mapping_2.txt';
 
 const ebutils = {
+    // Note: Music note / Ness placeholder is "&"
     textMap: function(type = 0) {
         if(this._textMap) return this._textMap[type];
         this._textMap = [];
