@@ -34,6 +34,7 @@ import RunButtonPatch from './RunButtonPatch.js';
 import ShowSpritesNoIntroPatch from './ShowSpritesNoIntroPatch.js';
 import TitleDisableGlowPatch from './TitleDisableGlowPatch.js';
 import TrackDoorsPatch from './TrackDoorsPatch.js';
+import TrackStatsPatch from './TrackStatsPatch.js';
 import ebutils from './ebutils.js';
 import Cluster from './Cluster.js';
 
@@ -82,7 +83,7 @@ export function execute(romfile, specs, hooks) {
     console.log(text);
   };
 
-  const patches = [ExpandSavePatch, CreditsPatch];
+  const patches = [ExpandSavePatch, CreditsPatch, TrackStatsPatch];
   
   if(specs.flags.a) patches.push(ShowSpritesNoIntroPatch);
   if(specs.flags.a) patches.push(TrackDoorsPatch);

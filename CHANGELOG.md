@@ -1,7 +1,8 @@
 # Changelog
-## v24.3 / v25 (In progress)
+## v24.4 / v25 (In progress)
 - Character stats: Growth stats will have a slightly wider range and more diversity.
 - Credits: Randomizer information displayed in all modes.
+- Credits: Additional statistics displayed.
 - Dialogue: Additional rare title screen randomization.
 - Enemy stats: Bosses won't always have more difficult stats than vanilla.
 ### Bugfixes

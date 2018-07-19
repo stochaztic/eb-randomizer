@@ -1,0 +1,9 @@
+; Random battles (replacing debug flag check)
+B741: ee 02 b6    ; INC $b602
+B744: 80 09       ; BRA $B74F
+
+; Scripted battles
+17018: 22 30 FF C9 ; JSL $c9FF30
+9FF30: ee 04 b6    ; INC $b604 (New code)
+22 38 2F C2        ; JSL $c22f38
+6b                 ; RTL
