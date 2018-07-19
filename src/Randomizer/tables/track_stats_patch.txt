@@ -7,3 +7,28 @@ B744: 80 09       ; BRA $B74F
 9FF30: ee 04 b6    ; INC $b604 (New code)
 22 38 2F C2        ; JSL $c22f38
 6b                 ; RTL
+
+; Instant wins
+B758:  22 38 FF C9 ; JSL $c9FF38
+9FF38: ee 06 b6    ; INC $b606 (New code)
+22 BD 61 C2        ; JSL $C261BD
+6b                 ; RTL
+
+; Damage received and dealt
+271FD: 22 40 FF c9 ; JSL $C9FF40
+EA                 ; NOP
+9FF40: DA          ; PHX
+A2 00 00           ; LDX #$0000
+C9 10 A2           ; CMP #$A210
+90 03              ; BCC (+3)
+A2 04 00           ; LDX #$0004
+18                 ; CLC
+A5 02              ; LDA $02
+7D 08 b6           ; ADC $b608,X ($b608 for allies, $b60c for enemies)
+9D 08 b6           ; STA $b608,X
+90 03              ; BCC (+3)
+FE 0A b6           ; INC $b60a,X
+FA                 ; PLX
+B9 13 00           ; LDA $0013,Y (overwritten instruction)
+85 0E              ; STA $0E (overwritten instruction)
+6b                 ; RTL
