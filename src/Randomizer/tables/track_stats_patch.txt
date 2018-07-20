@@ -32,3 +32,12 @@ FA                 ; PLX
 B9 13 00           ; LDA $0013,Y (overwritten instruction)
 85 0E              ; STA $0E (overwritten instruction)
 6b                 ; RTL
+
+; No problem here count (L menu only)
+; Rearranges to avoid two unnecessary LDAs for room
+13C6F: 22 61 FF c9  ; JSL $C9FF61
+EA                  ; NOP
+9FF61: ee 10 b6     ; INC $b610
+A9 9E C5            ; LDA #$C59E (overwritten instruction)
+85 06               ; STA $06 (overwritten instruction)
+6b                  ; RTL
