@@ -132,23 +132,6 @@ class ItemObject extends TableObject {
             helpScript.writeScript();
 
         }
-        if(this.context.specs.flags.devmode && this.index === 0x9e) { // spawn toggler
-            this.data.name_text = ebutils.textToList("Spawn Toggler", 25);
-            const toggleScript = Script.getByPointer(0x6fc94);
-            toggleScript.lines = [
-                [0x01,],
-                [0x06, 0x0b, 0x00, 0xaf, 0xfc, 0xc6, 0x00],
-                ebutils.encodeText("@Spawns set off"),
-                [0x04, 0x0b, 0x00],
-                [0x13,],
-                [0x02,],
-                ebutils.encodeText("@Spawns set on"),
-                [0x05, 0x0b, 0x00],
-                [0x13,],
-                [0x02,],
-            ];
-            toggleScript.writeScript();
-        }
     }
 }
 

@@ -38,9 +38,6 @@ class InitialStatsObject extends TableObject {
                 this.addItem(0xC5); // exit mouse
             }
         }
-        if(this.context.specs.flags.devmode && this.index === 0) {
-            this.addItem(0x9E); // spawn toggler
-        }
         if(this.context.specs.flags.easymodo) {
             this.data.level = 99;
             this.addItem(0x01); // franklin badge
