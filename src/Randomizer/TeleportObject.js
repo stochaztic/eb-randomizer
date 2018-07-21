@@ -45,10 +45,6 @@ class TeleportObject extends TableObject {
                 this.data.x = TeleportObject.get(0x70).oldData.x;
                 this.data.y = TeleportObject.get(0x70).oldData.y;
             }
-            if(this.index === 0xE9) { // Unused value - for testing
-                this.data.x = TeleportObject.get(0x70).oldData.x;
-                this.data.y = TeleportObject.get(0x70).oldData.y;
-            }
         }
     }
 }

@@ -36,10 +36,17 @@ class AncientCave extends ReadWriteObject {
             [0x13, 0x02]
         ];
         if(this.context.specs.flags.devmode) {
-            //lines.splice(-1, 0, [0x1f, 0x21, 0xe9]); // Teleport to test location 
             const banana = Script.getByPointer(0x58ed1); // Banana option in X menu
             banana.lines = [[0x1f, 0x41, 0x0c], [0x13, 0x02]]; // Start credits
             banana.writeScript();
+
+            // Change teleport destination in X menu
+            const teleportX = 941;
+            const teleportY = 28;
+
+            const [fullX, fullY] = [teleportX * 8, teleportY * 8];
+            this.context.rom.set([fullX % 256, Math.floor(fullX / 256)], 0x13049);
+            this.context.rom.set([fullY % 256, Math.floor(fullY / 256)], 0x1304e);
         }
         const newAtmHelp = Script.writeNewScript(lines);
         const oldAtmHelp = Script.getByPointer(0x5566b);
