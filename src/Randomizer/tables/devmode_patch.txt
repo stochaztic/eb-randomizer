@@ -1,0 +1,2 @@
+; "Y-button Debug Menu" on X button (instead of town map)
+B90C: 22 63 2E C1  ; JSR $C12E63
