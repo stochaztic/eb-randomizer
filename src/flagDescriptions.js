@@ -89,7 +89,6 @@ const flagDescriptions = {
         title: "Game improvement patches",
         max: 2,
         default: 1,
-        unsafe: 2,
         desc: {
             0: "No game improvement patches applied.",
             1: "A run button patch will be applied to the game. Hold 'Y' to run. This is the same effect as having used a Skip Sandwich.",
