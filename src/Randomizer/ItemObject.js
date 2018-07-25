@@ -76,8 +76,7 @@ class ItemObject extends TableObject {
     }
 
     get scriptSources() {
-        return Script.every.filter(s => s.itemsGiven.includes(s));
-
+        return Script.every.filter(s => s.itemsGiven.includes(this));
     }
 
     get chestSources() {
