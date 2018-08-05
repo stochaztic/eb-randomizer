@@ -467,7 +467,7 @@ export const enemyAdjectives = [
     "Enchanted",
     "Exotic",
     "Quixotic",
-    "Ambitions",
+    "Ambitious",
     "Unambitious",
     "Dramatic",
     "Cynical",
