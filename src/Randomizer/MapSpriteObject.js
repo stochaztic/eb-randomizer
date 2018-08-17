@@ -224,6 +224,7 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
         if(!this.isChest) return;
         if(this.context.specs.flags.a) return;
         let i = this.chestContents;
+        if(i.isKeyItem) return; // Carrot key
         if(this.isMoney) {
             i = ItemObject.get(0x5a); // Hamburger
         }
