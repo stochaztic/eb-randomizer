@@ -1,8 +1,9 @@
 # Changelog
-## v25.1 / v26 (In progress)
+## v25.3 / v26 (In progress)
 ### Bugfixes
 - Credits: Fixed mislabeled damage amounts.
 - Gift box contents: Leave Carrot Key in normal mode.
+- Keysanity: Item distribution bug fixed.
 
 ## v25 (2018-07-24)
 - Character stats: Growth stats will have a slightly wider range and more diversity.

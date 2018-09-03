@@ -101,6 +101,12 @@ class PsiTeleportObject extends TableObject {
             PsiTeleportObject._results = sourceItems.map((si, i) => [si, newItems[i]]);
         }
 
+        // Cache allSources
+        PsiTeleportObject._results.forEach(result => {
+            const [sourceItem, _] = result.map(index => ItemObject.get(index));
+            sourceItem.allSources;
+        });
+
         PsiTeleportObject._results.forEach(result => {
             const [sourceItem, newItem] = result.map(index => ItemObject.get(index));
             sourceItem.allSources.forEach(source => {
