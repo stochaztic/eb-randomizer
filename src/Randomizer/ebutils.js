@@ -38,7 +38,7 @@ const ebutils = {
         let text = "";
         let vals = list.slice();
         const map = this.textMap();
-        const matchesFirstTwo = entry => entry.code === vals.slice(0, 2);
+        const matchesFirstTwo = entry => Array.isArray(entry.code) && entry.code[0] === vals[0] && entry.code[1] === vals[1];
         const matchesFirst = entry => entry.code === vals[0];
         while(vals.length) {
             const longEntry = map.find(matchesFirstTwo);

@@ -477,7 +477,24 @@ class Script {
     }
 
     static getPrettyLineDescription(line) {
-        throw new Error("Unimplemented.");
+        if(line.length === 0) return;
+
+        const prettyLine = line.map(i => ("00" + i.toString(16)).slice(-2)).join(" ");
+        let description = "UNKNOWN SCRIPT KEY";
+        let key = line[0];
+
+        if(key > 0x20 || key === 0x15 || key === 0x16 || key === 0x17) { // Plain or compressed text
+            description = '"' + ebutils.listToText(line) + '"';
+        }
+        else {
+            if(!this.scriptdict[key]) { // Two-character ccode
+                key = (key << 8) | line[1];
+            }
+            if(this.scriptdict[key]) { 
+                description = this.scriptdict[key].description;
+            }
+        }
+        return [prettyLine, description];
     }
 
     get prettyScript() {
@@ -486,14 +503,13 @@ class Script {
 
     get properties() {
         if(this._properties === undefined) {
-            // eslint-disable-next-line
-            const _ = this.prettyScript;
+            this._properties = this.prettyScript;
         }
         return this._properties;
     }
 
     getPrettyScript() {
-        throw new Error("Unimplemented.");
+        return this.lines.map(line => this.constructor.getPrettyLineDescription(line));
     }
 
     getPrettyScriptFull(excludePointers) {
