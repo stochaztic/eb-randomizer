@@ -169,7 +169,7 @@ class PsiTeleportObject extends TableObject {
         patchLines.push( // check the normal flags first
             [0x19, 0x10, 0x01], // check character in slot 1
             [0x0b, 0x03], // is it Jeff?
-            [0x1b, 0x03].splice(2, 0, ...ebutils.ccodeAddress(0x6b18d)), // go to normal andonuts text
+            [0x1b, 0x03, ...ebutils.ccodeAddress(0x6b18d)], // go to normal andonuts text
             ebutils.ccodeGotoAddress(0x6b56e), // go to generic text for Ness
             [0x02, ]);
         patch = Script.writeNewScript(patchLines);
