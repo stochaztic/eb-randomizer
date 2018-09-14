@@ -416,6 +416,11 @@ class AncientCave extends ReadWriteObject {
         tpt = TPTObject.get(77);
         tpt.data.address=0xc74c85;
 
+        // Mom outside house - never appear
+        tpt = TPTObject.get(148);
+        tpt.data.flag = 0x5e;
+        tpt.data.flag_appear = 1;
+
         // War against Giygas is over - go to credits
         script = Script.getByPointer(0x9c293);
         console.assert(script.lines.length === 273);

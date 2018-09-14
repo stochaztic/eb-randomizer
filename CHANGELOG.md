@@ -1,6 +1,7 @@
 # Changelog
-## v25.4 / v26 (In progress)
+## v26 (In progress)
 ### Bugfixes
+- Ancient Cave: Mom never blocks house door.
 - Credits: Fixed mislabeled damage amounts.
 - Gift box contents: Leave Carrot Key in normal mode.
 - Keysanity: Item distribution bug fixed.
