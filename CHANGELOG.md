@@ -1,5 +1,6 @@
 # Changelog
 ## v26 (In progress)
+- Ancient Cave: Scaraba Pyramid doors always open (routing change).
 ### Bugfixes
 - Ancient Cave: Mom never blocks house door.
 - Credits: Fixed mislabeled damage amounts.

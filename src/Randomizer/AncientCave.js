@@ -421,6 +421,14 @@ class AncientCave extends ReadWriteObject {
         tpt.data.flag = 0x5e;
         tpt.data.flag_appear = 1;
 
+        // Pyramid doors - never appear
+        tpt = TPTObject.get(1143);
+        tpt.data.flag = 0x5e;
+        tpt.data.flag_appear = 1;
+        tpt = TPTObject.get(1154);
+        tpt.data.flag = 0x5e;
+        tpt.data.flag_appear = 1;
+
         // War against Giygas is over - go to credits
         script = Script.getByPointer(0x9c293);
         console.assert(script.lines.length === 273);
