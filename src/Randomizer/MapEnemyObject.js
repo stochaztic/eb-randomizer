@@ -96,13 +96,24 @@ class MapEnemyObject extends GridTableObject {
 
     get caveRank() {
         if(this._caveRank !== undefined) return this._caveRank;
-        if(!this.canonicalExit) {
+        if(!this.canonicalExit || this.canonicalExit.caveRank === undefined) {
             this._caveRank = null;
         }
         else {
             this._caveRank = this.canonicalExit.caveRank;
         }
         return this.caveRank;
+    }
+
+    get caveLevel() {
+        if(this._caveLevel !== undefined) return this._caveLevel;
+        if(!this.canonicalExit || this.canonicalExit.caveLevel === undefined) {
+            this._caveLevel = null;
+        }
+        else {
+            this._caveLevel = this.canonicalExit.caveLevel;
+        }
+        return this.caveLevel;
     }
 
     get enemyGroup() {

@@ -302,7 +302,7 @@
 08fc 1f20 0450
 
 :097c
-.09ff 1fd0 04e8
+09ff 1fd0 04e8
 
 :0a00 TRASHCAN IN SEWER
 0b03 00f8 0590
@@ -1368,7 +1368,7 @@
 39fb 1ed0 1ce8
 
 :387c
-.38ff 1fd0 1c68
+38ff 1fd0 1c68
 
 :3a34 HAPPY HAPPY VILLAGE
 3b37 0dc0 1da0
@@ -1834,7 +1834,7 @@
 4df8 1e08 26e8
 
 :4c7c
-.4cff 1fd0 2668
+4cff 1fd0 2668
 
 :4d7c
 4dff 1fd0 26e8

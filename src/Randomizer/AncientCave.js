@@ -41,8 +41,8 @@ class AncientCave extends ReadWriteObject {
             banana.writeScript();
 
             // Change teleport destination in X menu
-            const teleportX = 941;
-            const teleportY = 28;
+            const teleportX = 335;
+            const teleportY = 549;
 
             const [fullX, fullY] = [teleportX * 8, teleportY * 8];
             this.context.rom.set([fullX % 256, Math.floor(fullX / 256)], 0x13049);
@@ -52,6 +52,13 @@ class AncientCave extends ReadWriteObject {
         const oldAtmHelp = Script.getByPointer(0x5566b);
         oldAtmHelp.lines = [ebutils.ccodeGotoAddress(newAtmHelp.pointer)];
         oldAtmHelp.writeScript();
+
+        const sign = Script.getByPointer(0x86900);
+        sign.lines = [
+            ebutils.encodeText("@(Visit fruitfacts.tumblr.com for important fruit facts.)"),
+            [0x13,0x02],
+        ];
+        sign.writeScript();
 
         super.fullCleanup();
     }
@@ -270,7 +277,7 @@ class AncientCave extends ReadWriteObject {
 
         // do AFTER ranking clusters
         this.classReseed("bosses");
-        this.replaceSanctuaryBosses();
+        const bossList = this.replaceSanctuaryBosses();
 
         this.context.hooks.message(`${Math.floor(Cluster.goal.rank)} doors to the finish`);
         Cluster.rankedClusters.forEach(clu => {
@@ -342,6 +349,36 @@ class AncientCave extends ReadWriteObject {
         exitMouse.lines.unshift([0x05, 0x0B, 0x00]);          // encounters on
         exitMouse.lines.unshift([0x1d, 0x01, 0xff, 0xc5]);   // one use only
         exitMouse.writeScript();
+
+        // Hint guys
+
+        const hintGuys = TPTObject.every.filter(o => o.oldData['sprite'] === 136 || o.oldData['sprite'] === 446);
+        let hintMainScript = Script.getByPointer(0x70329);
+        hintMainScript.lines = [
+            ebutils.encodeText(` floor of the ancient cave.`),
+            ...bossList.map((b, i) => [0x03,0x00, ...ebutils.encodeText(`@Spot ${i+1}: ${b.firstEnemy.oldName}`)]),
+            [0x13, 0x02]
+        ];
+        hintMainScript.writeScript();
+        const ordinal = i => {
+            if ((i % 10) === 1) return 'st';
+            if ((i % 10) === 2) return 'nd';
+            if ((i % 10) === 3) return 'rd';
+            return 'th';
+        };
+
+        hintGuys.forEach(o => {
+            const msos = MapSpriteObject.every.filter(mso => mso.data.tpt_number === o.index);
+            console.assert(msos.length === 1);
+            const caveLevel = msos[0].enemyCell.caveLevel;
+            if(!caveLevel) return;
+            const newlines = [
+                ebutils.encodeText(`@This is the ${caveLevel}${ordinal(caveLevel)}`),
+                ebutils.ccodeGotoAddress(hintMainScript.pointer)
+            ];
+            const newScript = Script.writeNewScript(newlines);
+            o.data['address'] = ebutils.fileToEbPointer(newScript.pointer);
+        });
 
         this.context.hooks.message("Sanitizing cave events...");
         // Special Events
@@ -494,6 +531,7 @@ class AncientCave extends ReadWriteObject {
             doneScripts.add(sBoss.script);
         })
         console.assert(doneScripts.size === 8);
+        return chosens;
     }
 }
 

@@ -1,5 +1,6 @@
 # Changelog
-## v26.1 / v27 (In progress)
+## v27 (2018-10-11)
+- Ancient Cave: Hint Man tells you the floor you are on and the shiny spot bosses you will face.
 - Dialogue: Title screen now actual words.
 
 ## v26 (2018-09-14)

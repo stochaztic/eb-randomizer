@@ -9,7 +9,7 @@ class BattleEntryObject extends TableObject {
     toString() {
         let str = `BATTLE ENTRY ${this.index.toString(16)}`;
         this.data.enemyActivities.forEach((enemyActivity, i) => {
-            str += `\n\t${this.enemyActivity.activity} ${this.enemyAcitivity.enemy}`;
+            str += `\n\t${enemyActivity.activity} ${enemyAcitivity.enemy}`;
         });
         return str;
     }
@@ -24,6 +24,10 @@ class BattleEntryObject extends TableObject {
         if(this._rank !== undefined) return this._rank;
         this._rank = Math.max(...this.data.enemyActivities.map(ea => ea.enemy.rank));
         return this.rank;
+    }
+    
+    get firstEnemy() {
+        return this.data.enemyActivities.find(ea => ea.activity > 0).enemy;
     }
 
     readData() {
