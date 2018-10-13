@@ -1,4 +1,7 @@
 # Changelog
+## v27.x / v28 (In progress)
+- Gift box contents: In Ancient Cave mode, Broken items will no longer appear in gift boxes.
+
 ## v27 (2018-10-11)
 - Ancient Cave: Hint Man tells you the floor you are on and the shiny spot bosses you will face.
 - Dialogue: Title screen now actual words.

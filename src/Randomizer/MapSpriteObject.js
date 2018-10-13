@@ -207,8 +207,14 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
             chest.mutated = true;
         })
         
-        // 3) Fill remaining chests - candidates are non-equipment, non-key-item, non-condiment
-        let candidates = ItemObject.ranked.filter(i => i.rank >= 0 && !i.isEquipment && !i.isKeyItem && !i.isCondiment);
+        // 3) Fill remaining chests - candidates are non-equipment, non-key-item, non-condiment, non-broken
+        let candidates = ItemObject.ranked.filter(i => 
+            i.rank >= 0
+            && !i.isEquipment 
+            && !i.isKeyItem 
+            && !i.isCondiment
+            && !i.isBroken
+        );
         candidates = this.context.random.shuffleNormal(candidates, this.randomDegree || this.context.specs.randomDegree);
         chests = this.unassignedChests.sort((a, b) => a.caveRank - b.caveRank);
         chests.forEach((chest, i) => {

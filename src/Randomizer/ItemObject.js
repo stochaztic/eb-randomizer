@@ -37,6 +37,10 @@ class ItemObject extends TableObject {
         return this.data.item_type === 0x28;
     }
 
+    get isBroken() {
+        return this.data.item_type === 0x8;
+    }
+
     get rank() {
         if(this.index === 0) {
             return -1; //  'Null' item has a cost so will get incorrectly ranked
