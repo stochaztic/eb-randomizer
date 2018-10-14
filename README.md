@@ -26,7 +26,7 @@ Known skips:
 - Removing pencil, eraser, or rabbit statues
 - Getting abducted by ghosts in the tunnels
 - Giving the Tiny Ruby to the museum guard
-- Getting teleported by Carpainter's lightning
+- Beating Belch in his base (which requires Fly Honey)
 - Entering Dungeon Man
 - Riding the bus (dangerous, can lock game)
 

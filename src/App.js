@@ -220,7 +220,7 @@ class App extends Component {
               <li>Removing pencil, eraser, or rabbit statues</li>
               <li>Getting abducted by ghosts in the tunnels</li>
               <li>Giving the Tiny Ruby to the museum guard</li>
-              <li>Getting teleported by Carpainter’s lightning</li>
+              <li>Beating Belch in his base (which requires Fly Honey)</li>
               <li>Entering Dungeon Man</li>
               <li>Riding the bus (dangerous, can lock game)</li>
               </ul>
