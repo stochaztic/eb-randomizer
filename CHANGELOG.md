@@ -3,6 +3,7 @@
 - Gift box contents: In Ancient Cave mode, Broken items will no longer appear in gift boxes.
 ### Bugfixes
 - Ancient Cave: Game-over-glitch due to OSS flag fixed.
+- Ancient Cave: Exit mouse no longer eats your ATM card or parts of Poo's name. Bad mouse!
 
 ## v27 (2018-10-11)
 - Ancient Cave: Hint Man tells you the floor you are on and the shiny spot bosses you will face.

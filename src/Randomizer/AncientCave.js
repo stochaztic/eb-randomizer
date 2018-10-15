@@ -344,10 +344,14 @@ class AncientCave extends ReadWriteObject {
         });
 
         const exitMouse = Script.getByPointer(0x2f9ef4);
-        const beginLogic = exitMouse.lines.findIndex(line => line[0] === 0x1f);
-        exitMouse.lines = exitMouse.lines.slice(beginLogic);
-        exitMouse.lines.unshift([0x05, 0x0B, 0x00]);          // encounters on
-        exitMouse.lines.unshift([0x1d, 0x01, 0xff, 0xc5]);   // one use only
+        exitMouse.lines = [
+            ebutils.encodeText("@(The mouse found the way back and waved for you to follow.)"),
+            [0x03],
+            [0x1f, 0x69],               // perform teleport
+            [0x05, 0x0B, 0x00],         // encounters on
+            [0x1d, 0x01, 0xff, 0xc5],   // one use only
+            [0x02]
+        ];
         exitMouse.writeScript();
 
         // Hint guys
