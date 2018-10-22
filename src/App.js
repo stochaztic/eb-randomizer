@@ -213,6 +213,8 @@ class App extends Component {
             <div>
               <p>Enemy spawn locations grow in difficulty as you proceed deeper into the maze, as do gift box rewards (if randomize gift box contents is on, which is recommended). You will not have to do any storyline events, like riding the Sky Runner or beating Carpainter, to beat the game in this mode. Often, you can do story events to "skip" around in the cave. This may take you much deeper into the maze. Use common sense when taking skips, as some may break the game; giving an item to a monkey in Monkey Cave is safe, for example, while riding the bus is often not. If you take no skips, you will encounter each of the 8 shiny spots before reaching Giygas. The Exit Mouse will return you to the last sanctuary you visited.</p>
           
+              <p>There is a <a href="https://github.com/pickfifteen/eb-randomizer/blob/master/ancient_cave_tips.md">document with strategies and tips</a> available.</p>
+
               <p>Known skips:</p>
               <ul>
               <li>Any of the Monkey Cave monkeys who want items</li>
