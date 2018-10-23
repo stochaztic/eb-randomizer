@@ -4,6 +4,7 @@
 ### Bugfixes
 - Ancient Cave: Game-over-glitch due to OSS flag fixed.
 - Ancient Cave: Exit mouse no longer eats your ATM card or parts of Poo's name. Bad mouse!
+- Ancient Cave: Exit mouse mom will only give you a child if you don't have one, including the starting one.
 
 ## v27 (2018-10-11)
 - Ancient Cave: Hint Man tells you the floor you are on and the shiny spot bosses you will face.

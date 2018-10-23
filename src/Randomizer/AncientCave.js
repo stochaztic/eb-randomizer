@@ -41,8 +41,8 @@ class AncientCave extends ReadWriteObject {
             banana.writeScript();
 
             // Change teleport destination in X menu
-            const teleportX = 335;
-            const teleportY = 549;
+            const teleportX = 904;
+            const teleportY = 757;
 
             const [fullX, fullY] = [teleportX * 8, teleportY * 8];
             this.context.rom.set([fullX % 256, Math.floor(fullX / 256)], 0x13049);
@@ -333,6 +333,7 @@ class AncientCave extends ReadWriteObject {
             [0x1F, 0x11, 0x03],     // recruit jeff
             [0x1F, 0x11, 0x04],     // recruit poo
             [0x1F, 0x68],           // store exit mouse coordinates
+            [0x04, 0x00, 0x02],     // set exit mouse currently in possession
             [0x1F, 0xB0],           // save the game
             [0x02,]
         ];
@@ -350,6 +351,7 @@ class AncientCave extends ReadWriteObject {
             [0x1f, 0x69],               // perform teleport
             [0x05, 0x0B, 0x00],         // encounters on
             [0x1d, 0x01, 0xff, 0xc5],   // one use only
+            [0x05, 0x00, 0x02],         // set exit mouse currently not in possession
             [0x02]
         ];
         exitMouse.writeScript();
