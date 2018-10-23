@@ -1,6 +1,7 @@
 # Changelog
 ## v27.x / v28 (In progress)
 - Gift box contents: In Ancient Cave mode, Broken items will no longer appear in gift boxes.
+- Ancient Cave: Guaranteed-free-heal room list now shuffled instead of static.
 ### Bugfixes
 - Ancient Cave: Game-over-glitch due to OSS flag fixed.
 - Ancient Cave: Exit mouse no longer eats your ATM card or parts of Poo's name. Bad mouse!

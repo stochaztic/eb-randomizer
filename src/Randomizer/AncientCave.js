@@ -247,7 +247,8 @@ class AncientCave extends ReadWriteObject {
         console.assert(toAssign.length === totalUnassignedExits.length);
 
         // Ensure even distribution of sanctuaries and sanctuary-alikes
-        const toEvenlyAssign = toAssign.filter(s => ebutils.EVEN_DISTRIBUTE_DOORS.includes(s.exits[0].index));
+        const toEvenlyAssign = this.context.random.shuffle(toAssign.filter(s => 
+            ebutils.EVEN_DISTRIBUTE_DOORS.includes(s.exits[0].index)));
         console.assert(toEvenlyAssign.length === checkpoints.length - 1);
         toEvenlyAssign.forEach((s, i) => {
             console.assert(s.unassignedExits.length === 1);
