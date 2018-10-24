@@ -1,7 +1,9 @@
 # Changelog
-## v27.x / v28 (In progress)
+## v28 (2018-10-24)
+- Dialogue: Option for Giygas prayers to be shortened and made random lines.
 - Gift box contents: In Ancient Cave mode, Broken items will no longer appear in gift boxes.
 - Ancient Cave: Guaranteed-free-heal room list now shuffled instead of static.
+- Title screen: Changes always active.
 ### Bugfixes
 - Ancient Cave: Game-over-glitch due to OSS flag fixed.
 - Ancient Cave: Exit mouse no longer eats your ATM card or parts of Poo's name. Bad mouse!

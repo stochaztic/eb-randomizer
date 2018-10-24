@@ -1,0 +1,36 @@
+2c391: A2 01 00     ; LDX #$0001
+8A           ; TXA
+22 7A 88 C0  ; JSR $C0887A
+20 DE 69     ; JSR $69DE
+;9C 43 96     ; STZ Battle_Flag
+22 5F DD C1  ; JSR $C1DD5F
+
+; additions:
+A2 01 00     ; LDX #$0001
+8A           ; TXA 
+22 6C 88 C0  ; JSR $C0886C
+
+A5 06        ; LDA $06
+85 0E        ; STA $0E
+A5 08        ; LDA $08
+85 10        ; STA $10
+22 1C DC C1  ; JSR $C1DC1C
+A2 01 00     ; LDX #$0001
+8A           ; TXA
+
+
+22 7A 88 C0  ; JSR $C0887A
+20 DE 69     ; JSR $69DE
+A6 02        ; LDX $02
+A4 12        ; LDY $12
+98           ; TYA 
+20 1F C2     ; JSR $C21F
+A9 01 00     ; LDA #$0001
+8D 43 96     ; STA Battle_Flag
+22 3B DD C1  ; JSR $C1DD3B
+A9 0E 00     ; LDA #$000E
+22 47 DD C1  ; JSR $C1DD47
+
+EA EA EA EA EA
+
+; saved: 5 off by 1

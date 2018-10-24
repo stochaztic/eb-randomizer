@@ -6,7 +6,7 @@ const oldWord = "earthound";
 
 class TitleScreenCharacterObject extends TableObject {
     static shouldRandomize() {
-        return this.context.specs.flags.d >= 3;
+        return true;
     }
     
     static mutateAll() {

@@ -191,5 +191,15 @@ const ebutils = {
         0x6d1,  // Throne Room
         0x7ce,  // Fire Spring
     ],
+
+    GIYGAS_PRAYER_SCRIPTS: [
+        0x7b9a1,
+        0x7ba2c,
+        0x7bac7,
+        0x7bb38,
+        0x7bbf3,
+        0x7bc56,
+        0x7bc96,
+    ],
 }
 export default ebutils;

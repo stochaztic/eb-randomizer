@@ -32,6 +32,7 @@ import CreditsPatch from './CreditsPatch.js';
 import DevmodePatch from './DevmodePatch.js';
 import ExpandSavePatch from './ExpandSavePatch.js';
 import RunButtonPatch from './RunButtonPatch.js';
+import ShortenPrayerPatch from './ShortenPrayerPatch.js';
 import ShowSpritesNoIntroPatch from './ShowSpritesNoIntroPatch.js';
 import TitleDisableGlowPatch from './TitleDisableGlowPatch.js';
 import TrackDoorsPatch from './TrackDoorsPatch.js';
@@ -88,9 +89,10 @@ export function execute(romfile, specs, hooks) {
   
   if(specs.flags.a) patches.push(ShowSpritesNoIntroPatch);
   if(specs.flags.a) patches.push(TrackDoorsPatch);
+  if(specs.flags.a) patches.push(TitleDisableGlowPatch);
   if(specs.flags.u >= 1) patches.push(RunButtonPatch);
   if(specs.flags.u >= 2) patches.push(LudicrousSpeedPatch);
-  if(specs.flags.d >= 3) patches.push(TitleDisableGlowPatch);
+  if(specs.flags.d >= 3) patches.push(ShortenPrayerPatch);
   if(specs.flags.devmode) patches.push(DevmodePatch);
 
 
