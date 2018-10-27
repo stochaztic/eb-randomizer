@@ -1,4 +1,8 @@
 # Changelog
+## v28.x / v29 (In progress)
+### Bugfixes
+- Dialogue: Options now correctly applied, fixing broken prayer scenes.
+
 ## v28 (2018-10-24)
 - Dialogue: Option for Giygas prayers to be shortened and made random lines.
 - Gift box contents: In Ancient Cave mode, Broken items will no longer appear in gift boxes.

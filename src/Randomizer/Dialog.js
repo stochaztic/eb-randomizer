@@ -20,7 +20,7 @@ class Dialog extends ReadWriteObject {
 
     static mutateAll() {
         // Pokey lines
-        if(!this.context.specs.flags.d >= 2) return;
+        if(this.context.specs.flags.d < 2) return;
         this.classReseed("mut");
         const pokeyScripts = [
             [Script.getByPointer(0x57e1c), 0, 1],
@@ -45,7 +45,7 @@ class Dialog extends ReadWriteObject {
         })
 
         // Prayer scenes
-        if(!this.context.specs.flags.d >= 3) return;
+        if(this.context.specs.flags.d < 3) return;
         const prayerScripts = ebutils.GIYGAS_PRAYER_SCRIPTS.map(p => Script.getByPointer(p));
         chosen = this.context.random.sample(gameScripts, prayerScripts.length);
         prayerScripts.forEach((prayerScript, i) => {
