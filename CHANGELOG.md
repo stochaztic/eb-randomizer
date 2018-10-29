@@ -1,5 +1,6 @@
 # Changelog
 ## v28.x / v29 (In progress)
+- Website supports 'current' version in direct links. Using this is not recommended as flag definitions may change.
 ### Bugfixes
 - Dialogue: Options now correctly applied, fixing broken prayer scenes.
 

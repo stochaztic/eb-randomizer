@@ -34,7 +34,7 @@ class App extends Component {
     const params = new URLSearchParams(window.location.search);
     if(params.has("version")) {
       directLink = true;
-      compatibleVersion = (params.get("version") === initialSpecs.version);
+      compatibleVersion = (params.get("version") === initialSpecs.version) || (params.get("version") === "current");
       initialSpecs.seed = parseInt(params.get("seed"), 10);
       initialSpecs.flags = ebutils.parseFlagString(params.get("flags"));
     }
