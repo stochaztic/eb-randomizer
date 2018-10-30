@@ -473,6 +473,12 @@ class AncientCave extends ReadWriteObject {
         tpt.data.flag = 0x5e;
         tpt.data.flag_appear = 1;
 
+        // Bus stops - always disabled
+        const buses = TPTObject.every.filter(o => o.oldData.sprite === 202);
+        buses.forEach(bus => { 
+            bus.data.address = 0xc5feac;
+        });
+
         // War against Giygas is over - go to credits
         script = Script.getByPointer(0x9c293);
         console.assert(script.lines.length === 273);

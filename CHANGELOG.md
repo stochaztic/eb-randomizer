@@ -3,6 +3,7 @@
 - Website supports 'current' version in direct links. Using this is not recommended as flag definitions may change.
 ### Bugfixes
 - Ancient Cave: Sky Runner no longer activatable.
+- Ancient Cave: Buses no longer usable.
 - Dialogue: Options now correctly applied, fixing broken prayer scenes.
 
 ## v28 (2018-10-24)
