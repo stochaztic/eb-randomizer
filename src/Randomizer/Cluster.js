@@ -21,10 +21,10 @@ class Cluster {
         return this.index === other.index;
     }
 
-    serialize() {
+    serialize(c) {
         const cellBounds = this.enemyCells.map(c => c.bounds);
         const exCellBounds = this.explicitEnemyCells.map(c => c.bounds);
-        return {
+        return c.specs.flags.t || {
             index: this.index,
             rank: this.rank,
             onShortestPath: this.onShortestPath,

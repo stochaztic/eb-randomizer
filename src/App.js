@@ -47,6 +47,7 @@ class App extends Component {
 
     this.state = {
       generationStatus: null,
+      errorMode: false,
       uploadedROM: null,
       newROM: null,
       debug: false,
@@ -64,6 +65,9 @@ class App extends Component {
       const d = e.data;
       if(d.type === "info") {
         this.setState({generationStatus: d.text});
+      }
+      if(d.type === "error") {
+        this.setState({generationStatus: d.text, errorMode: true});
       }
     });
   }
@@ -101,7 +105,7 @@ class App extends Component {
     this.setState({generationStatus: 'Beginning randomization...' });
     this.earthBoundRandomizer.execute(this.state.uploadedROM, this.state.specs)
     .then(newROM => {
-      this.setState({newROM: newROM, generationStatus: 'Done.' });
+      this.setState({newROM: newROM});
     });
   }
 
@@ -335,18 +339,18 @@ class App extends Component {
             { !this.state.newROM &&
               <p>
                 <button disabled={this.state.generationStatus || !this.state.uploadedROM || !this.state.specs.seed}
-                      onClick={this.generate} className={this.state.generationStatus ? 'loading' : 'button-primary'}>
+                      onClick={this.generate} className={this.state.generationStatus && !this.state.errorMode ? 'loading' : 'button-primary'}>
                   Generate ROM</button>
-                <span className="buttonInfo">{this.romStatus === "None" ? "You must select a ROM file first." : this.state.generationStatus}</span>
+                <span className={this.state.errorMode ? 'buttonInfo buttonInfoError' : 'buttonInfo'}>{this.romStatus === "None" ? "You must select a ROM file first." : this.state.generationStatus}</span>
               </p>
             }
-            { this.state.newROM && 
+            { this.state.newROM && this.state.newROM.rom &&
               <p>
                 <button className="button-primary" onClick={this.downloadROM}>Download new ROM</button>
                 <span className="buttonInfo">Done.</span>
               </p>
             }
-            { this.state.newROM && 
+            { this.state.newROM && this.state.newROM.spoiler &&
               <p><button onClick={this.downloadSpoiler}>Download Spoiler</button></p>
             }
           </div>

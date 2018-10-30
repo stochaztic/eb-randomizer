@@ -84,54 +84,72 @@ export function execute(romfile, specs, hooks) {
     postMessage({type: "info", text: text});
     console.log(text);
   };
-
-  const patches = [ExpandSavePatch, CreditsPatch, TrackStatsPatch];
-  
-  if(specs.flags.a) patches.push(ShowSpritesNoIntroPatch);
-  if(specs.flags.a) patches.push(TrackDoorsPatch);
-  if(specs.flags.a) patches.push(TitleDisableGlowPatch);
-  if(specs.flags.u >= 1) patches.push(RunButtonPatch);
-  if(specs.flags.u >= 2) patches.push(LudicrousSpeedPatch);
-  if(specs.flags.d >= 3) patches.push(ShortenPrayerPatch);
-  if(specs.flags.devmode) patches.push(DevmodePatch);
-
-
-  const context = {
-    rom: romfile, 
-    specs: specs,
-    patches: patches,
-    objects: readWriteObjects,
-    hooks: hooks,
-  }
-
-  if(context.specs.flags.a && context.specs.flags.k) {
-    throw new Error("Ancient Cave and Keysanity modes are incompatible.");
-  }
-
-  const newROM = RandomTools.execute(context);
-
-  hooks.message("Preparing spoiler file...");
-
-  const spoiler = {
-    specs: specs,
-    timestamp: Date.now(),
-    chests: MapSpriteObject.every.filter(m => m.isChest).map(o => o.serialize())
+  if(hooks.error === undefined) hooks.error = text => {
+    postMessage({type: "error", text: `ERROR: ${text}`});
+    console.error(text);
   };
-  if(specs.flags.k) {
-    spoiler.keysanity = PsiTeleportObject.serialize();
-  }
-  if(specs.flags.a) {
-    Cluster.markShortestPath();
-  }
-  if(specs.flags.a || specs.flags.devmode) {
-    spoiler.clusters = Cluster.every.map(o => o.serialize());
-    spoiler.bosses = MapSpriteObject.every.filter(o => ebutils.SANCTUARY_BOSS_INDEXES.includes(o.index)).map(o => o.serialize());
-  }
-  if(specs.flags.devmode) {
-    spoiler.enemies = MapEnemyObject.every.map(o => o.serialize());
-  }
 
-  hooks.message("DONE");
-  if(specs.flags.devmode >= 2) debugger;
-  return {rom: newROM, spoiler: spoiler};
+  try {
+    const patches = [ExpandSavePatch, CreditsPatch, TrackStatsPatch];
+    
+    if(specs.flags.a) patches.push(ShowSpritesNoIntroPatch);
+    if(specs.flags.a) patches.push(TrackDoorsPatch);
+    if(specs.flags.a) patches.push(TitleDisableGlowPatch);
+    if(specs.flags.u >= 1) patches.push(RunButtonPatch);
+    if(specs.flags.u >= 2) patches.push(LudicrousSpeedPatch);
+    if(specs.flags.d >= 3) patches.push(ShortenPrayerPatch);
+    if(specs.flags.devmode) patches.push(DevmodePatch);
+
+
+    const context = {
+      rom: romfile, 
+      specs: specs,
+      patches: patches,
+      objects: readWriteObjects,
+      hooks: hooks,
+    }
+
+    if(context.specs.flags.a && context.specs.flags.k) {
+      throw new Error("Ancient Cave and Keysanity modes are incompatible.");
+    }
+    if(context.specs.flags.t) {
+      hooks.prePatch = c => {
+        readWriteObjects.forEach(rwo => {
+          rwo._displayName += " (tournament mode)";
+        });
+      };
+    }
+
+    const newROM = RandomTools.execute(context);
+
+    let spoiler = undefined;
+    if(!specs.flags.t) {
+      hooks.message("Preparing spoiler file...");
+      spoiler = {
+        specs: specs,
+        timestamp: Date.now(),
+        chests: MapSpriteObject.every.filter(m => m.isChest).map(o => o.serialize())
+      };
+      if(specs.flags.k) {
+        spoiler.keysanity = PsiTeleportObject.serialize();
+      }
+      if(specs.flags.a) {
+        Cluster.markShortestPath();
+      }
+      if(specs.flags.a || specs.flags.devmode) {
+        spoiler.clusters = Cluster.every.map(o => o.serialize(context));
+        spoiler.bosses = MapSpriteObject.every.filter(o => ebutils.SANCTUARY_BOSS_INDEXES.includes(o.index)).map(o => o.serialize());
+      }
+      if(specs.flags.devmode) {
+        spoiler.enemies = MapEnemyObject.every.map(o => o.serialize());
+      }
+    }
+
+    hooks.message("DONE");
+    if(specs.flags.devmode >= 2) debugger;
+    return {rom: newROM, spoiler: spoiler};
+  }
+  catch(e) {
+    hooks.error(e.message);
+  }
 }

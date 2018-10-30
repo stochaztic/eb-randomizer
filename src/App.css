@@ -151,3 +151,12 @@ input[type="file"] {
     transform: rotate(360deg);
   }
 }
+
+.button-primary:disabled {
+  opacity: 0.5;
+}
+
+.buttonInfoError {
+  color: red;
+  font-weight: bold;
+}
