@@ -10,7 +10,7 @@
 
 * As an example of how Clusters work: Onett is divided into a large number of different clusters, especially because the police barricades are up.
   * Onett Cluster list:
-    * Central Onett: 19 doors
+    * Central Onett: 18 doors
     * North Onett: 3 doors (Ness’s house, Minch’s house, Liar’s house)
     * South Onett: 2 doors (Exit Mouse’s house, path to Twoson)
     * Behind the Entertainer’s Shack: 2 doors
