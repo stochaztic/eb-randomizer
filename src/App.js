@@ -215,7 +215,7 @@ class App extends Component {
           
           { !this.state.moreInfo ? <button onClick={this.showMoreInfo}>More info...</button> :
             <div>
-              <p>Enemy spawn locations grow in difficulty as you proceed deeper into the maze, as do gift box rewards (if randomize gift box contents is on, which is recommended). You will not have to do any storyline events, like riding the Sky Runner or beating Carpainter, to beat the game in this mode. Often, you can do story events to "skip" around in the cave. This may take you much deeper into the maze. Use common sense when taking skips, as some may break the game; giving an item to a monkey in Monkey Cave is safe, for example, while riding the bus is often not. If you take no skips, you will encounter each of the 8 shiny spots before reaching Giygas. The Exit Mouse will return you to the last sanctuary you visited.</p>
+              <p>Enemy spawn locations grow in difficulty as you proceed deeper into the maze, as do gift box rewards (if randomize gift box contents is on, which is recommended). You will not have to move any NPC or do any storyline events, like riding the Sky Runner or beating Carpainter, to beat the game in this mode. Often, you can move an NPC or do story events to "skip" around in the cave. This may take you onto a different floor into the maze. If you take no skips, you will encounter each of the 8 shiny spots before reaching Giygas. The Exit Mouse will return you to the last sanctuary you visited.</p>
           
               <p>There is a <a href="https://github.com/pickfifteen/eb-randomizer/blob/master/ancient_cave_tips.md">document with strategies and tips</a> available.</p>
 
@@ -225,10 +225,9 @@ class App extends Component {
               <li>Having a theater ticket attendant move out of the way, in either direction</li>
               <li>Removing pencil, eraser, or rabbit statues</li>
               <li>Getting abducted by ghosts in the tunnels</li>
-              <li>Giving the Tiny Ruby to the museum guard</li>
+              <li>Giving the Tiny Ruby to the museum guard, or buying the Onett house</li>
               <li>Beating Belch in his base (which requires Fly Honey)</li>
-              <li>Entering Dungeon Man</li>
-              <li>Riding the bus (dangerous, can lock game)</li>
+              <li>Entering Dungeon Man or the Waterfall</li>
               </ul>
             </div>
           }

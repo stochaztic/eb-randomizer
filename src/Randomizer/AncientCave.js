@@ -327,8 +327,7 @@ class AncientCave extends ReadWriteObject {
             [0x04, 0x05, 0x02],     // turn on lights at home
             [0x04, 0x5E, 0x00],     // Mom heal part 2
             [0x04, 0xAE, 0x00],     // hole dug in dusty dunes
-
-            //[0x04, 0x74, 0x01],     // become robots
+            [0x04, 0x64, 0x02],     // everdred not on roof
             [0x05, 0x0B, 0x00],     // "enemies won't appear" flag (off)
             [0x1F, 0x11, 0x02],     // recruit paula
             [0x1F, 0x11, 0x03],     // recruit jeff
@@ -428,9 +427,10 @@ class AncientCave extends ReadWriteObject {
         tpt.data.flag = 0;
         tpt.data.flag_appear = 0;
 
-        // Shark guarding Frank - always fight
+        // Shark guarding Frank - never appear
         tpt = TPTObject.get(0x1);
-        tpt.data.address = tpt.data.address + 14;
+        tpt.data.flag = 0x5e;
+        tpt.data.flag_appear = 1;
 
         // Dalaam Throne room - always heal
         tpt = TPTObject.get(1089);

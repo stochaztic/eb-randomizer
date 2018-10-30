@@ -1,5 +1,7 @@
 # Strategies and Tips for EarthBound Ancient Cave
 
+Not all of this information is vital, but the most important information is at the beginning.
+
 ## Cave Layout
 
 * The **most important** thing to understand is the layout of the cave. Every “cluster” in the game (clusters explained soon) has been connected into a giant maze, divided into 9 different floors. There is a Shiny Spot at the end of each of the first 8 floors, and Giygas is at the end of the 9th floor. The goal of the game is to walk to Giygas and beat him, powering up along the way.
