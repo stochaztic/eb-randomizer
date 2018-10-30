@@ -421,7 +421,7 @@ class AncientCave extends ReadWriteObject {
 
         // Andonuts - prevent activating Sky Runner
         tpt = TPTObject.get(0x267);
-        tpt.data.address = 0xc6b4bb;
+        tpt.data.address = 0xc6b5b4;
 
         // Big Foot - always appear
         tpt = TPTObject.get(0x26b);
