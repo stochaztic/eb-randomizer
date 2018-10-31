@@ -61,6 +61,7 @@ class Dialog extends ReadWriteObject {
                 */
                 [0x18, 0x01, 0x01],         // open window 1
                 ebutils.ccodeCallAddress(chosen[i].pointer),
+                [0x10, 0x0f],               // pause 1/4th second
                 [0x18, 0x04],               // close all windows
                 /*[0x04, 0x0a, 0x02],
                 [0x1F, 0xEC, 0xFF, 0x01],   // characters visible
