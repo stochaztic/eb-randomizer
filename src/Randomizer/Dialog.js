@@ -36,6 +36,9 @@ class Dialog extends ReadWriteObject {
 
         chosen.forEach((newScript, i) => {
             const [pokeyScript, preLines, postLines] = pokeyScripts[i];
+            if(this.context.specs.flags.devmode >= 2) {
+                newScript = Script.newlines[Script.newlines.length - 1];
+            }
             if(newScript.constructor !== Script) {
                 newScript = Script.writeNewScript(newScript);
             }
