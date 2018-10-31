@@ -41,8 +41,8 @@ class AncientCave extends ReadWriteObject {
             banana.writeScript();
 
             // Change teleport destination in X menu
-            const teleportX = 904;
-            const teleportY = 757;
+            const teleportX = 949;
+            const teleportY = 295;
 
             const [fullX, fullY] = [teleportX * 8, teleportY * 8];
             this.context.rom.set([fullX % 256, Math.floor(fullX / 256)], 0x13049);
@@ -477,6 +477,13 @@ class AncientCave extends ReadWriteObject {
         const buses = TPTObject.every.filter(o => o.oldData.sprite === 202);
         buses.forEach(bus => { 
             bus.data.address = 0xc5feac;
+        });
+
+        // Cultists - never appear
+        const cultists = TPTObject.every.filter(o => o.oldData.sprite === 101);
+        cultists.forEach(cultist => { 
+            cultist.data.flag = 0x5e;
+            cultist.data.flag_appear = 1;
         });
 
         // War against Giygas is over - go to credits

@@ -1,7 +1,7 @@
 # Changelog
 ## v28.x / v29 (In progress)
 - Website supports 'current' version in direct links. Using this is not recommended as flag definitions may change.
-- Ancient Cave: Everdred and Arcade-Shark no longer appear, making non-skips clearer.
+- Ancient Cave: Everdred, Arcade-Shark, and Cultists no longer appear, making non-skips clearer.
 ### Bugfixes
 - Ancient Cave: Sky Runner no longer activatable.
 - Ancient Cave: Buses no longer usable.
