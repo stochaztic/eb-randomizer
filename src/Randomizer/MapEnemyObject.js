@@ -159,11 +159,17 @@ class MapEnemyObject extends GridTableObject {
             return;
         }
 
+        // Don't place enemy cells on top of doors (can cause softlock)
+        if(this.canonicalExit.enemyCell === this) {
+            this.data.enemy_place_index = 0;
+            return;
+        }
+
         if(!this.enemyAdjacent && this.context.random.random() > this.context.specs.randomDegree) {
             return;
         }
 
-        if(this.context.random.random() > 0.1) {
+        if(this.context.random.random() > 0.105) {
             this.data.enemy_place_index = 0;
             return;
         }

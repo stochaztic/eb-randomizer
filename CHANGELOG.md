@@ -6,6 +6,7 @@
 ### Bugfixes
 - Ancient Cave: Sky Runner no longer activatable.
 - Ancient Cave: Buses no longer usable.
+- Ancient Cave: Enemy spawns no longer appear on top of doors, preventing a potential softlock.
 - Dialogue: Options now correctly applied, fixing broken prayer scenes.
 
 ## v28 (2018-10-24)
