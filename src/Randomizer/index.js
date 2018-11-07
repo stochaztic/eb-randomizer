@@ -120,6 +120,8 @@ export function execute(romfile, specs, hooks) {
       };
     }
 
+    MapSpriteObject.randomDegree = 0.8;
+
     const newROM = RandomTools.execute(context);
 
     let spoiler = undefined;
