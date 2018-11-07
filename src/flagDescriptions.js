@@ -19,7 +19,6 @@ const flagDescriptions = {
         title: "Dialogue",
         max: 3,
         default: 2,
-        unsafe: 3,
         desc: {
             1: "NPCs with non-vital dialogue will have their lines shuffled.",
             2: "NPCs with non-vital dialogue will have their lines shuffled, and Heavily Armed Pokey will have random special lines.",
