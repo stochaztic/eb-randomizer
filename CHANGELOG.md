@@ -1,4 +1,8 @@
 # Changelog
+## v29.x / v30 (In progress)
+### Bugfixes
+- Ancient Cave: Twoson Theatre girl never appears.
+
 ## v29 (2018-11-07)
 - Website supports 'current' version in direct links. Using this is not recommended as flag definitions may change.
 - Ancient Cave: Everdred, Arcade-Shark, and Cultists no longer appear, making non-skips clearer.

@@ -473,6 +473,11 @@ class AncientCave extends ReadWriteObject {
         tpt.data.flag = 0x5e;
         tpt.data.flag_appear = 1;
 
+        // Twoson theatre girl - never appear
+        tpt = TPTObject.get(231);
+        tpt.data.flag = 0x5e;
+        tpt.data.flag_appear = 1;
+
         // Bus stops - always disabled
         const buses = TPTObject.every.filter(o => o.oldData.sprite === 202);
         buses.forEach(bus => { 
