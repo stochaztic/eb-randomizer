@@ -41,3 +41,10 @@ EA                  ; NOP
 A9 9E C5            ; LDA #$C59E (overwritten instruction)
 85 06               ; STA $06 (overwritten instruction)
 6b                  ; RTL
+
+; Freed counter
+1584A0: 6a ff c9
+9FF6A: e2 30        ; SEP #$30    # BEGIN 8-BIT MODE
+ee 12 b6            ; INC $b612
+c2 30               ; REP #$30    # END 8-BIT MODE
+6b                  ; RTL

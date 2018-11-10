@@ -12,6 +12,8 @@ local function main()
     gui.text(0,32,"NPHs: " .. pvar)
     pvar=memory.readbyte(0x7e5d98)
     gui.text(0,42,"OSS: " .. pvar)
+    pvar=memory.readbyte(0x7eb612)
+    gui.text(0,52,"Frees: " .. pvar)
 end
 
 emu.registerbefore(main)

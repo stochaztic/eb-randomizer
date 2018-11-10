@@ -1,5 +1,6 @@
 # Changelog
 ## v29.x / v30 (In progress)
+- Credits: Additional statistics displayed.
 ### Bugfixes
 - Ancient Cave: Twoson Theatre girl never appears.
 - Ancient Cave: Occasional incorrect enemies appearing various places fixed.
