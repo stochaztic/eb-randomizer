@@ -1,5 +1,6 @@
 # Changelog
 ## v29.x / v30 (In progress)
+- Ancient Cave: 1.3x XP boost to enemies to reduce grinding time.
 - Credits: Additional statistics displayed.
 ### Bugfixes
 - Ancient Cave: Twoson Theatre girl never appears.

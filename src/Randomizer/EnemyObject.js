@@ -133,6 +133,7 @@ class EnemyObject extends TableObject {
         }
 
         if(this.context.specs.flags.a) {
+            this.data.xp = Math.ceil(this.data.xp * 1.3);
             this.data.xp = Math.max(this.data.xp, 4);
         }
 
