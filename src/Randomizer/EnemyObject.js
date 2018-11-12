@@ -53,7 +53,8 @@ class EnemyObject extends TableObject {
 
     mutate() {
         super.mutate();
-        if(this.context.specs.flags.m >= 3 && this.data.battle_sprite !== 0) {
+        if( (this.context.specs.flags.m >= 3 && this.data.battle_sprite !== 0) ||
+            (this.context.specs.flags.m >= 2 && this.data.battle_sprite !== 0 && this.oldName === "Giygas")) {
             // Randomize sprite pairs
             const pairs = this.constructor.existingValues(["battle_sprite", "out_of_battle_sprite", "movement"]);
             const newPair = this.context.random.choice(pairs);

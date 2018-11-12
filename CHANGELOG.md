@@ -2,6 +2,7 @@
 ## v29.x / v30 (In progress)
 - Ancient Cave: 1.3x XP boost to enemies to reduce grinding time.
 - Credits: Additional statistics displayed.
+- Enemy stats: Giygas appearance randomized at earlier levels.
 ### Bugfixes
 - Ancient Cave: Twoson Theatre girl never appears.
 - Ancient Cave: Occasional incorrect enemies appearing various places fixed.
