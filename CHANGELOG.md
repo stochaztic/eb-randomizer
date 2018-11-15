@@ -3,6 +3,7 @@
 - Ancient Cave: 1.3x XP boost to enemies to reduce grinding time.
 - Credits: Additional statistics displayed.
 - Enemy stats: Giygas appearance randomized at earlier levels.
+- PC sprites: Added new sprites to the mix, removed some confusing ones (ghost, invisible, diamondized).
 ### Bugfixes
 - Ancient Cave: Twoson Theatre girl never appears.
 - Ancient Cave: Occasional incorrect enemies appearing various places fixed.

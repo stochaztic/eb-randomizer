@@ -34,7 +34,9 @@ class SpriteGroupObject extends TableObject {
     mutate() {
         this.variableSize = true;
         if(!([1,2,3,4].includes(this.index))) return; // Only randomize 4 main PCs
-        const candidates = SpriteGroupObject.every.filter(sg => sg.data.size === this.data.size && this.sameCollision(sg));
+        let candidates = SpriteGroupObject.every.filter(sg => sg.data.size === this.data.size);
+        const invalidIndexes = [8, 9, 10, 11, 12, 343]; // Normal ghosts, diamond
+        candidates = candidates.filter(c => !invalidIndexes.includes(c.index) && !this.constructor.badSprites.includes(c.index));
         const chosen = this.context.random.choice(candidates);
         this.copyData(chosen);
         if(chosen.spriteCount < 16) {
