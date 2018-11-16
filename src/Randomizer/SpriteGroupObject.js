@@ -39,6 +39,10 @@ class SpriteGroupObject extends TableObject {
         candidates = candidates.filter(c => !invalidIndexes.includes(c.index) && !this.constructor.badSprites.includes(c.index));
         const chosen = this.context.random.choice(candidates);
         this.copyData(chosen);
+        this.data.collision_ns_w = this.oldData.collision_ns_w;
+        this.data.collision_ns_h = this.oldData.collision_ns_h;
+        this.data.collision_ew_w = this.oldData.collision_ew_w;
+        this.data.collision_ew_h = this.oldData.collision_ew_h;
         if(chosen.spriteCount < 16) {
             this.data.sprites_diagonal = chosen.data.sprites_cardinal;
         }

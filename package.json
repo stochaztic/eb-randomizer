@@ -1,6 +1,6 @@
 {
   "name": "eb-randomizer",
-  "version": "29.4.0",
+  "version": "29.5.0",
   "description": "Randomizer for SNES game EarthBound, featuring Ancient Cave and Keysanity modes",
   "dependencies": {
     "randomtools-js": "file:../randomtools-js",
