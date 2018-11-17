@@ -5,6 +5,7 @@ import logo from './logo.png';
 import flagDescriptions from './flagDescriptions.js';
 import EarthBoundRandomizer from 'workerize-loader!./Randomizer/index.js';
 import ebutils from './Randomizer/ebutils.js';
+import Cookies from 'js-cookie';
 
 class App extends Component {
   constructor(props) {
@@ -28,7 +29,11 @@ class App extends Component {
       lorom: false,
       seed: Math.floor(Math.random() * Math.floor(99999999)),
       flags: {'a': 1},
+      lastAccess: Cookies.get("lastAccess"),
+      lastGenerated: Cookies.get("lastGenerated"),
+      totalGenerated: Cookies.get("totalGenerated") || 0,
     };
+    Cookies.set("lastAccess", Date.now(), { expires: 6000 });
     let compatibleVersion = true;
     let directLink = false;
     const params = new URLSearchParams(window.location.search);
@@ -106,6 +111,10 @@ class App extends Component {
     this.earthBoundRandomizer.execute(this.state.uploadedROM, this.state.specs)
     .then(newROM => {
       this.setState({newROM: newROM});
+      if(newROM.rom) {
+        Cookies.set("lastGenerated", Date.now(), { expires: 6000 });
+        Cookies.set("totalGenerated", parseInt(this.state.specs.totalGenerated, 10) + 1, { expires: 6000 });
+      }
     });
   }
 
