@@ -20,11 +20,18 @@ class TitleScreenCharacterObject extends TableObject {
 
     static fullCleanup() {
         super.fullCleanup();
-        if(this.shouldRandomize() && this.context.random.random() < 0.05) {
+
+        // Rare Seed Generation
+        if(!this.context.specs.totalGenerated || this.context.specs.flags.t) {
+            return;
+        }
+
+        if(this.context.random.random() < 0.03) {
             const chosen = this.context.random.choice(this.every.map(o => o.oldData.address));
             this.every.forEach(o => {
                 o.data.address = chosen;
             });
+            this.context.rom.set([0x50, 0x00, 0xF0, 0x0C, 0xAD, 0xA7, 0x00, 0x29, 0x7F, 0x00, 0xEA, 0xEA], 0x10D33);
         }
     }
 }

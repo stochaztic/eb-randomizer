@@ -4,6 +4,7 @@
 - Credits: Additional statistics displayed.
 - Enemy stats: Giygas appearance randomized at earlier levels.
 - PC sprites: Added new sprites to the mix, removed some confusing ones (ghost, invisible, diamondized).
+- Rare seeds for established players may get special effects.
 ### Bugfixes
 - Ancient Cave: Twoson Theatre girl never appears.
 - Ancient Cave: Occasional incorrect enemies appearing various places fixed.
