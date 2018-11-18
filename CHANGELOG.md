@@ -1,5 +1,5 @@
 # Changelog
-## v29.x / v30 (In progress)
+## v30 (2018-11-17)
 - Ancient Cave: 1.3x XP boost to enemies to reduce grinding time.
 - Credits: Additional statistics displayed.
 - Enemy stats: Giygas appearance randomized at earlier levels.
