@@ -11,7 +11,7 @@ class ZoneEventObject extends ZoneTableObject {
         if(this._muspalSignature !== undefined) return this._muspalSignature;
         const bounds = this.bounds;
         const me = MapEnemyObject.getByPixel(bounds.x1, bounds.y1);
-        this._muspalSignature = {palette: me.palette, music: me.music};
+        this._muspalSignature = (me.palette * 256) + me.music;
         return this._muspalSignature;
     }
 }

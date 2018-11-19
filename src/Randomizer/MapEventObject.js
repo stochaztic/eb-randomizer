@@ -113,7 +113,7 @@ class MapEventObject extends ZonePositionMixin(TableObject) {
         this._neighbors = MapEventObject.allExits.filter(me => {
             return me.oldData.event_index === this.oldData.event_index
                 && me.zone.muspalSignature === this.zone.muspalSignature
-                && this.getDistance(me.globalX, me.globalY <= 100);
+                && this.getDistance(me.globalX, me.globalY) <= 250;
         });
         console.assert(!this._neighbors.includes(null));
         console.assert(this._neighbors.includes(this));
