@@ -2,6 +2,7 @@
 ## v30.x / v31 (In progress)
 ### Bugfixes
 - Ancient Cave: Doors for Scaraba Pyramid, Threed Hospital, and Topolla Theatre should behave better.
+- Ancient Cave: Peaceful Rest Valley large area enemy spawns made more sensible.
 
 ## v30 (2018-11-17)
 - Ancient Cave: 1.3x XP boost to enemies to reduce grinding time.
