@@ -29,8 +29,14 @@ class ItemObject extends TableObject {
     }
 
     get isKeyItem() {
-        return ([0, 0x34, 0x35, 0x38, 0x3a, 0x3b].includes(this.data.item_type) && 
+        return ([0, 0x34, 0x35, 0x38, 0x3a, 0x3b].includes(this.data.item_type) && !this.isFixedItem &&
             !(this.isBuyable || this.isSellable));
+    }
+
+    get isFixedItem() {
+        if(this._isFixedItem !== undefined) return this._isFixedItem;
+        this._isFixedItem = this.constructor.every.some(s => s.isBroken && s.oldData.extra_power === this.index);
+        return this.isFixedItem;
     }
 
     get isCondiment() {
@@ -41,7 +47,21 @@ class ItemObject extends TableObject {
         return this.data.item_type === 0x8;
     }
 
+    get isWeapon() {
+        return [16, 17].includes(this.data.item_type);
+    }
+
+    get isArmor() {
+        return [20, 24, 28].includes(this.data.item_type);
+    }
+
     get rank() {
+        if(this._rank !== undefined) return this._rank;
+        this._rank = this.computeRank();
+        return this.rank;
+    }
+
+    computeRank() {
         if(this.index === 0) {
             return -1; //  'Null' item has a cost so will get incorrectly ranked
         }
@@ -53,12 +73,24 @@ class ItemObject extends TableObject {
             return -1;
         }
 
-        if(!this.isBuyable && !this.isSellable) {
-            return 1000000;
+        if(this.isBroken) {
+            return Math.ceil(this.constructor.get(this.oldData.extra_power).rank * 3 / 4);
         }
 
-        if(!this.isBuyable) {
-            return 100000 + this.oldData.price;
+        if(!this.isBuyable && !this.isSellable && this.isWeapon) {
+            return (this.oldData.strength + (this.oldData.extra_power_increase * 3)) * 40;
+        }
+
+        if(!this.isBuyable && !this.isSellable && this.isArmor) {
+            return (this.oldData.strength + (this.oldData.extra_power_increase * 3)) * 30;
+        }
+
+        if(this.isFixedItem) {
+            return this.index * 20;
+        }
+
+        if(!this.isBuyable && !this.isSellable) {
+            return 1000000;
         }
 
         return this.oldData.price;
