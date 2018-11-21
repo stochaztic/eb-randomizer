@@ -1,6 +1,7 @@
 # Changelog
 ## v30.x / v31 (In progress)
-- Gift box contents: Item ranking improved, especially with Jeff-repair-associated items.
+- Gift box contents, Shops: Item ranking improved, especially with Jeff-repair-associated items.
+  - To balance Casey Bat being extremely easy to acquire, you can no longer get instant-wins if you have it equipped.
 ### Bugfixes
 - Ancient Cave: Doors for Scaraba Pyramid, Threed Hospital, and Topolla Theatre should behave better.
 - Ancient Cave: Peaceful Rest Valley large area enemy spawns made more sensible.

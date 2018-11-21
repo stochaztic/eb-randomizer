@@ -1,0 +1,11 @@
+
+2663C: 20 ce ff    ; JSR $ffce
+
+2ffce: AD 1f 9a    ; LDA $9a1f
+29 FF 00           ; AND #$00FF
+c9 08 00           ; CMP #$0008
+90 04              ; BCC (+4)
+A9 02 00           ; LDA #$0002
+60                 ; RTS
+AD BC 4D           ; LDA $4DBC
+60                 ; RTS

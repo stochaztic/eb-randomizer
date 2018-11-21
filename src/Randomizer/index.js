@@ -28,6 +28,7 @@ import TPTObject from './TPTObject.js';
 import ZoneEventObject from './ZoneEventObject.js';
 import ZoneSpriteObject from './ZoneSpriteObject.js';
 import LudicrousSpeedPatch from './LudicrousSpeedPatch.js';
+import CaseyNoInstantPatch from './CaseyNoInstantPatch.js';
 import CreditsPatch from './CreditsPatch.js';
 import DevmodePatch from './DevmodePatch.js';
 import ExpandSavePatch from './ExpandSavePatch.js';
@@ -95,6 +96,7 @@ export function execute(romfile, specs, hooks) {
     if(specs.flags.a) patches.push(ShowSpritesNoIntroPatch);
     if(specs.flags.a) patches.push(TrackDoorsPatch);
     if(specs.flags.a) patches.push(TitleDisableGlowPatch);
+    if(specs.flags.g >= 1 || specs.flags.s >= 1) patches.push(CaseyNoInstantPatch);
     if(specs.flags.u >= 1) patches.push(RunButtonPatch);
     if(specs.flags.u >= 2) patches.push(LudicrousSpeedPatch);
     if(specs.flags.d >= 3) patches.push(ShortenPrayerPatch);
