@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import logo from './logo.png';
 import flagDescriptions from './flagDescriptions.js';
-import EarthBoundRandomizer from 'workerize-loader!./Randomizer/index.js';
+import EarthBoundRandomizer from './randomizer.worker.js';
 import ebutils from './Randomizer/ebutils.js';
 import Cookies from 'js-cookie';
 
@@ -65,14 +65,21 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.earthBoundRandomizer = EarthBoundRandomizer();
+    this.earthBoundRandomizer = new EarthBoundRandomizer();
     this.earthBoundRandomizer.addEventListener("message", e => {
       const d = e.data;
       if(d.type === "info") {
-        this.setState({generationStatus: d.text});
+        this.setState({generationStatus: d.content});
       }
       if(d.type === "error") {
-        this.setState({generationStatus: d.text, errorMode: true});
+        this.setState({generationStatus: d.content, errorMode: true});
+      }
+      if(d.type === "complete") {
+        this.setState({newROM: d.content});
+        if(d.content.rom) {
+          Cookies.set("lastGenerated", Date.now(), { expires: 6000 });
+          Cookies.set("totalGenerated", parseInt(this.state.specs.totalGenerated, 10) + 1, { expires: 6000 });
+        }
       }
     });
   }
@@ -108,14 +115,11 @@ class App extends Component {
   generate(event) {
     this.setQueryString(true);
     this.setState({generationStatus: 'Beginning randomization...' });
-    this.earthBoundRandomizer.execute(this.state.uploadedROM, this.state.specs)
-    .then(newROM => {
-      this.setState({newROM: newROM});
-      if(newROM.rom) {
-        Cookies.set("lastGenerated", Date.now(), { expires: 6000 });
-        Cookies.set("totalGenerated", parseInt(this.state.specs.totalGenerated, 10) + 1, { expires: 6000 });
-      }
-    });
+    this.earthBoundRandomizer.postMessage({type: "execute", content: {
+      romfile: this.state.uploadedROM,
+      specs: this.state.specs,
+      hooks: undefined,
+    }});
   }
 
   downloadROM(event) {

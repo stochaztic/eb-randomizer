@@ -80,16 +80,6 @@ export function execute(romfile, specs, hooks) {
   MapEnemyObject.afterOrder = [AncientCave];
   MapSpriteObject.afterOrder = [PsiTeleportObject, AncientCave];
 
-  hooks = hooks || {};
-  if(hooks.message === undefined) hooks.message = text => {
-    postMessage({type: "info", text: text});
-    console.log(text);
-  };
-  if(hooks.error === undefined) hooks.error = text => {
-    postMessage({type: "error", text: `ERROR: ${text}`});
-    console.error(text);
-  };
-
   try {
     const patches = [ExpandSavePatch, CreditsPatch, TrackStatsPatch];
     
