@@ -76,7 +76,7 @@ class App extends Component {
       }
       if(d.type === "complete") {
         this.setState({newROM: d.content});
-        if(d.content.rom) {
+        if(d.content && d.content.rom) {
           Cookies.set("lastGenerated", Date.now(), { expires: 6000 });
           Cookies.set("totalGenerated", parseInt(this.state.specs.totalGenerated, 10) + 1, { expires: 6000 });
         }
@@ -317,7 +317,7 @@ class App extends Component {
           You have followed a direct link to a specific seed ({this.state.specs.seed}) and settings. The ROM will be generated according to these settings.
         </p>
         <p>
-          Alternatively, you may <a href="" onClick={(e) => {e.preventDefault(); this.setState({showDirectLinkInfo: false})}}>change these settings</a> or <a href="?">create a new ROM</a> instead.
+          Alternatively, you may <a href="?" onClick={(e) => {e.preventDefault(); this.setState({showDirectLinkInfo: false})}}>change these settings</a> or <a href="?">create a new ROM</a> instead.
         </p>
       </div>
     );
