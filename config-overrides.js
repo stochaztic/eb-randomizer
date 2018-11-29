@@ -4,5 +4,6 @@ module.exports = function override(config, env) {
         use: { loader: 'worker-loader' }
       });
     config.output.globalObject = 'this';
+    config.optimization.minimizer[0].options.terserOptions.compress.drop_debugger = false;
     return config;
   }
