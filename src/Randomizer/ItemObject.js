@@ -109,6 +109,7 @@ class ItemObject extends TableObject {
             console.assert(equipnum > 0);
             return equipnum === 1;
         }
+        return false;
     }
 
     get scriptSources() {

@@ -49,7 +49,7 @@ class PsiAbilityObject extends TableObject {
 
                     // B) Select one group of abilities in this slot
                     const bucket = buckets[bucketName];
-                    const abilities = [... new Set(bucket.map(o => o.data.name_index))];
+                    const abilities = [...new Set(bucket.map(o => o.data.name_index))];
                     const chosenNameIndex = this.context.random.choice(abilities);
 
                     // C) Assign each instance of the chosen ability a non-zero value

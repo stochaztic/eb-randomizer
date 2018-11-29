@@ -103,8 +103,8 @@ class PsiTeleportObject extends TableObject {
 
         // Cache allSources
         PsiTeleportObject._results.forEach(result => {
-            const [sourceItem, _] = result.map(index => ItemObject.get(index));
-            sourceItem.allSources;
+            const [sourceItem, _] = result.map(index => ItemObject.get(index)); // eslint-disable-line
+            sourceItem.allSources; // eslint-disable-line
         });
 
         PsiTeleportObject._results.forEach(result => {

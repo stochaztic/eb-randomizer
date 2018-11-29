@@ -9,7 +9,7 @@ class BattleEntryObject extends TableObject {
     toString() {
         let str = `BATTLE ENTRY ${this.index.toString(16)}`;
         this.data.enemyActivities.forEach((enemyActivity, i) => {
-            str += `\n\t${enemyActivity.activity} ${enemyAcitivity.enemy}`;
+            str += `\n\t${enemyActivity.activity} ${enemyActivity.enemy}`;
         });
         return str;
     }
