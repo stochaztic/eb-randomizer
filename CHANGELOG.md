@@ -5,7 +5,7 @@
   - To balance Casey Bat being extremely easy to acquire, you can no longer get instant-wins if you have it equipped.
 ### Bugfixes
 - Ancient Cave: Doors for Scaraba Pyramid, Threed Hospital, and Topolla Theatre should behave better.
-- Ancient Cave: Peaceful Rest Valley large area enemy spawns made more sensible.
+- Ancient Cave: Peaceful Rest Valley large area, Electro Specter cave, south Dalaam, and seaside Onett enemy spawns made more sensible.
 
 ## v30 (2018-11-17)
 - Ancient Cave: 1.3x XP boost to enemies to reduce grinding time.
