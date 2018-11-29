@@ -1,5 +1,6 @@
 # Changelog
 ## v30.x / v31 (In progress)
+- Gift box contents: In Ancient Cave, duplicate weapons, Ruler, Protractor, and Show ticket removed from item pool.
 - Gift box contents, Shops: Item ranking improved, especially with Jeff-repair-associated items.
   - To balance Casey Bat being extremely easy to acquire, you can no longer get instant-wins if you have it equipped.
 ### Bugfixes
