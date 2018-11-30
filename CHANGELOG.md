@@ -1,5 +1,6 @@
 # Changelog
 ## v30.x / v31 (In progress)
+- earthbound.app Website: Your base ROM will be cached if possible so you no longer have to select it every time.
 - Gift box contents: In Ancient Cave, duplicate weapons, Ruler, Protractor, and Show ticket removed from item pool.
 - Gift box contents, Shops: Item ranking improved, especially with Jeff-repair-associated items.
   - To balance Casey Bat being extremely easy to acquire, you can no longer get instant-wins if you have it equipped.

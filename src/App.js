@@ -6,6 +6,7 @@ import flagDescriptions from './flagDescriptions.js';
 import EarthBoundRandomizer from './randomizer.worker.js';
 import ebutils from './Randomizer/ebutils.js';
 import Cookies from 'js-cookie';
+import localforage from 'localforage';
 
 class App extends Component {
   constructor(props) {
@@ -79,8 +80,19 @@ class App extends Component {
         if(d.content && d.content.rom) {
           Cookies.set("lastGenerated", Date.now(), { expires: 6000 });
           Cookies.set("totalGenerated", parseInt(this.state.specs.totalGenerated, 10) + 1, { expires: 6000 });
+          localforage.setItem("romCache", this.state.uploadedROM, err => {
+            if(err) console.log("Failed to cache ROM", err);
+          });
         }
       }
+    });
+
+    localforage.getItem("romCache", (err, value) => {
+      if(err) {
+        console.log("Failed to load cached ROM", err);
+        return;
+      }
+      this.setState({uploadedROM: value});
     });
   }
 
