@@ -165,6 +165,11 @@ class MapEnemyObject extends GridTableObject {
             return;
         }
 
+        if(this.constructor.problematicPlates.includes(this.index)) {
+            this.data.enemy_place_index = 0;
+            return;
+        }
+
         if(!this.enemyAdjacent && this.context.random.random() > this.context.specs.randomDegree) {
             return;
         }
@@ -197,6 +202,14 @@ class MapEnemyObject extends GridTableObject {
         }
     }
 }
+
+MapEnemyObject.problematicPlates = [
+    0x4413, // Twoson tunnel exit
+    0x49c6, // Threed tunnel 1 exit
+    0x49e5, // Threed tunnel 2 exit
+    0x2b26, // Thunder & Storm drop spot
+    0x138,  // Fake Electro Specter door
+];
 
 MapEnemyObject.rows = 160;
 MapEnemyObject.columns = 128;

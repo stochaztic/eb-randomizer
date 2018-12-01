@@ -8,6 +8,7 @@
 - Fresh Eggs, Chicks, and Chickens will no longer fail to transform/make noise (vanilla bug fixed).
 - Ancient Cave: Doors for Scaraba Pyramid, Threed Hospital, and Topolla Theatre should behave better.
 - Ancient Cave: Peaceful Rest Valley large area, Electro Specter cave, south Dalaam, and seaside Onett enemy spawns made more sensible.
+- Ancient Cave: Problematic spawn plates at some exits removed.
 
 ## v30 (2018-11-17)
 - Ancient Cave: 1.3x XP boost to enemies to reduce grinding time.
