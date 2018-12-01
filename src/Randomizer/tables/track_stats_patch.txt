@@ -48,3 +48,6 @@ A9 9E C5            ; LDA #$C59E (overwritten instruction)
 ee 12 b6            ; INC $b612
 c2 30               ; REP #$30    # END 8-BIT MODE
 6b                  ; RTL
+
+; No more foul eggs
+5241: EA EA EA EA EA
