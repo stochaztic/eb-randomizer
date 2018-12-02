@@ -73,3 +73,23 @@ Not all of this information is vital, but the most important information is at t
   * The Starmaster full heal at the exit of the Pyramid will repeat itself every time you enter its trigger zone, because Poo does not leave.
   * There is no way to get the Ness stat boost from beating Magicant’s Ness’s Nightmare, even if you encounter it as a Shiny Spot boss, so be sure to take that into account.
   * There is a bug that can occur in Paula’s prayer, where it appears to restore over 65,000 HP to a character, but it actually subtracts a small amount of HP instead. This bug actually exists in the vanilla game, but is extremely rare. It is significantly more common in randomizer due to the stat growth randomization.
+
+## List of clusters with the most doors
+  * 5 - Long sewer room
+  * 5 - Dalaam
+  * 5 - Master Belch's base
+  * 5 - Monotoli Building hall with bathrooms and robots
+  * 5 - Titanic Ant dungeon
+  * 5 - Inside Brick Road entry level
+  * 5 - Saturn Valley
+  * 6 - Winters (north)
+  * 6 - Dusty Dunes Desert
+  * 6 - Scaraba (north)
+  * 6 - Mole tunnels entry level
+  * 7 - Long sewer below Fourside
+  * 9 - Fourside
+  * 9 - Happy Happy Village
+  * 12 - Summers
+  * 13 - Threed
+  * 18 - Onett (central)
+  * 19 - Twoson
