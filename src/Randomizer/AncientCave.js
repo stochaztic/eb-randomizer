@@ -527,6 +527,8 @@ class AncientCave extends ReadWriteObject {
 
         bosses = [...bosses].sort((a,b) => a.rank - b.rank);
 
+        bosses.forEach(b => {b.inBosses = true;});
+
         const BANNED = [0x1ce, 0x1c8]; // Clumsy Robot, Master Belch
         bosses = bosses.filter(b => !BANNED.includes(b.index));
 

@@ -127,10 +127,13 @@ class EnemyPlaceObject extends TableObject {
         mobs.delete(BattleEntryObject.get(0x0)); // Invalid 0th beo
         mobs = [...mobs];
         mobs.sort((a,b) => b.rank - a.rank); // Reverse sort
+        mobs.forEach(m => {m.inMobs = true;});
 
         const butterfly = mobs.pop();
         mobs = this.context.random.shuffleNormal(mobs, this.randomDegree || this.context.specs.randomDegree);
         const butterflyPlace = this.validRankedPlacements[0];
+
+        const blankEntries = [];
 
         this.every.forEach(place => {
             // Erase rank cache
@@ -147,6 +150,7 @@ class EnemyPlaceObject extends TableObject {
             place.data.subgroups[0].entries = [];
             if(mobs.length === 0) {
                 place.data.subgroups[0].rate = 0;
+                blankEntries.push(place);
                 return;
             }
             place.data.subgroups[0].rate = this.context.random.randint(50, 100);
