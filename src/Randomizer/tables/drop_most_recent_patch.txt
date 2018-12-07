@@ -1,0 +1,54 @@
+
+b918: F0 63         ; BEQ $c0b97d 
+
+; Overwrite debug-only main loop content with R-button check
+b97a: 4c 14 b8      ; JMP $b814
+AD 6D 00            ; LDA $006D
+29 10 00            ; AND #$0010
+F0 04               ; BEQ +4
+22 58 f9 C0         ; JSR $C0f958
+4c 23 b9            ; JMP $b923
+ea ea ea ea ea ea ea ea ea ea ea ea ea
+
+; Hijack item-granting in CC 1d 0e. item number is in X
+156a9: 22 50 f9 c0  ; JSL $c0f950
+f950: 8e 50 b6      ; STX $b650
+22 c6 8b c1         ; JSL $c18bc6 (overwritten code)
+6b                  ; RTL
+
+
+; R-button functionality
+f958: AD 50 b6  ; LDA $b650
+F0 1d           ; BEQ +0x1d (RTL)
+
+; Put Item number in the WRAM spots that get transferred in with [1b 06]
+8D CC 97        ; STA $97CC
+9c ce 97        ; STZ $97CE
+8D D0 97        ; STA $97D0
+9c d2 97        ; STZ $97D2
+
+; ShowText(c6146d)
+a9 80 f9
+85 0e
+a9 c0 00
+85 10
+22 b1 86 c1         
+
+9C 50 b6     ; STZ $b650
+6b           ; RTL
+
+
+; Control codes
+f980: 18 01 01      ; (Open Text Window)
+1B 06               ; (Copy WRAM to Active Memory)
+1D 0B 00            ; Get sell price
+1B 02 97 f9 c0 00   ; If 0, go to close windows and end
+1B 06               ; (Copy WRAM to Active Memory)
+;15 11 91 92 16 ea 15 7e 94 15 18    ; Message part 1
+;1C 05 00            ; Item name
+;5e                  ; Message part 2
+;13                  ; halt
+1f 02 11            ; play fall sound
+1D 01 ff 00         ; Delete item in memory from anyone
+18 04               ; (Close All Windows)
+02                  ; end

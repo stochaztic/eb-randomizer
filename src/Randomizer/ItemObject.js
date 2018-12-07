@@ -125,6 +125,10 @@ class ItemObject extends TableObject {
     }
 
     cleanup() {
+        const ignoreCleanup = [177, 197]; // ATM Card, Exit mouse
+        if(ignoreCleanup.includes(this.index)) {
+            return;
+        }
         if(this.context.specs.flags.a && !(this.isSellable || this.getBit("nogive"))) {
             this.data.price = Math.max(this.data.price, 2);
         }

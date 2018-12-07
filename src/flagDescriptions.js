@@ -91,8 +91,8 @@ const flagDescriptions = {
         default: 1,
         desc: {
             0: "No game improvement patches applied.",
-            1: "A run button patch will be applied to the game. Hold 'Y' to run. This is the same effect as having used a Skip Sandwich.",
-            2: "In addition to the run button patch, the Ludicrous Speed text patch will be applied.",
+            1: "A run button patch will be applied to the game. Hold 'Y' to run. This is the same effect as having used a Skip Sandwich. Also, the R button will throw away the item you last received from a chest, battle, or NPC.",
+            2: "In addition to the Run Button patch and the R-Button Discard patch, the Ludicrous Speed text patch will be applied.",
         }
     },
     devmode: {

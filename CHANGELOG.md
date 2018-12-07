@@ -1,6 +1,7 @@
 # Changelog
-## v30.x / v31 (In progress)
+## v31 (2018-12-06)
 - earthbound.app Website: Your base ROM will be cached if possible so you no longer have to select it every time.
+- Game improvement patches: An R-Button-Discard patch lets you use the R Button to discard the item most recently received from a chest, battle, or NPC.
 - Gift box contents: In Ancient Cave, duplicate weapons, Ruler, Protractor, and Show ticket removed from item pool.
 - Gift box contents, Shops: Item ranking improved, especially with Jeff-repair-associated items.
   - To balance Casey Bat being extremely easy to acquire, you can no longer get instant-wins if you have it equipped.
