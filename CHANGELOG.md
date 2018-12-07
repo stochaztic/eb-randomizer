@@ -1,4 +1,8 @@
 # Changelog
+## v31.x / v32 (In progress)
+### Bugfixes
+- Ancient Cave: Problematic rooms (Pokey's Monotoli Room, Snow Wood exit) removed.
+
 ## v31 (2018-12-06)
 - earthbound.app Website: Your base ROM will be cached if possible so you no longer have to select it every time.
 - Game improvement patches: An R-Button-Discard patch lets you use the R Button to discard the item most recently received from a chest, battle, or NPC.
