@@ -27,7 +27,7 @@ F0 1d           ; BEQ +0x1d (RTL)
 8D D0 97        ; STA $97D0
 9c d2 97        ; STZ $97D2
 
-; ShowText(c6146d)
+; ShowText(c0f980)
 a9 80 f9
 85 0e
 a9 c0 00
