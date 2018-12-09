@@ -1,5 +1,6 @@
 # Changelog
 ## v31.x / v32 (In progress)
+- Dialogue: Additional lines are available for randomization.
 ### Bugfixes
 - Ancient Cave: Problematic rooms (Pokey's Monotoli Room, Snow Wood exit) removed.
 

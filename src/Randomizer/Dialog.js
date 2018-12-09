@@ -10,11 +10,12 @@ class Dialog extends ReadWriteObject {
 
     static intershuffle() {
         this.classReseed("inter");
-        const candidates = TPTObject.every.filter(tpt => tpt.script && tpt.script.isSwapSafe);
-        const shuffled = this.context.random.shuffleNormal(candidates, 1);
+        const tptCandidates = TPTObject.every.filter(tpt => tpt.script && tpt.script.isSwapSafe);
+        const scriptCandidates = tptCandidates.flatMap(tpt =>tpt.script.swapSafeScripts);
+        const shuffled = this.context.random.shuffleNormal(scriptCandidates, 1);
 
-        candidates.forEach((tpt, i) => {
-            tpt.data.address = shuffled[i].oldData.address;
+        tptCandidates.forEach((tpt, i) => {
+            tpt.data.address = shuffled[i].snesAddress;
         })
     }
 

@@ -101,6 +101,26 @@ class Script {
         return this._swapSafe && this.subscripts.every(ss => ss.subscripts.length === 0 && ss._swapSafe);
     }
 
+    get swapSafeScripts() {
+        // Itself if it is swapsafe, plus its subscript if it's the End of Game Flag
+        const scripts = [];
+        if(!this.isSwapSafe) return scripts;
+        scripts.push(this);
+        if(this.lines.length > 0 && this.lines[0].length > 3 && 
+           this.lines[0][0] === 0x06 && this.lines[0][1] === 0x49 && this.lines[0][2] === 0x00) {
+            scripts.push(this.subscripts[0]);
+        }
+        return scripts;
+    }
+
+    get plainText() {
+        return this.getPrettyScript().map(x => x[1]).filter(x => x[0] === '"').join("\n");
+    }
+
+    get snesAddress() {
+        return ebutils.fileToEbPointer(this.pointer);
+    }
+
     makeSanctuaryDoorAlwaysActivate() {
         console.assert(this.isSanctuaryDoor);
         console.assert(this.lines[0][0] === 0x07);
