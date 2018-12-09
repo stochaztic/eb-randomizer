@@ -12,7 +12,9 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build"
+    "build": "react-app-rewired build",
+    "push": "firebase deploy --only hosting:main",
+    "pushbeta": "firebase deploy --only hosting:beta"
   },
   "keywords": [
     "earthbound",
