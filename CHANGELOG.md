@@ -1,5 +1,6 @@
 # Changelog
-## v31.x / v32 (In progress)
+## v32 (2018-12-09)
+- Ancient Cave: Exit mouse functionality changed. Now, he can mark a spot and then send you back to the marked spot later.
 - Dialogue: Additional lines are available for randomization.
 ### Bugfixes
 - Ancient Cave: Problematic rooms (Pokey's Monotoli Room, Snow Wood exit) removed.

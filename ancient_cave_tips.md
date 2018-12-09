@@ -29,13 +29,14 @@ Not all of this information is vital, but the most important information is at t
   * Enemy scripted battles in the middle of the room, like Mini Barf or Sentry Robots, **do not** break the room up into different clusters, so beating them may be required. Again, **these are not skips.**
 
 * Each floor has a guaranteed free full heal. The 7 Sanctuaries (Lumine Hall is not in the maze), the Dr Saturn Room, and the Dalaam Palace Room will each be given one to each floor.
-  * The exit mouse will take you back to just outside the door of the last Sanctuary you visited--note this is not the *deepest*, but the *last chronologically*.
   * There are other full heals beyond these. One notable one is at the exit of the Pyramid in Southern Scaraba--this one is repeatable in AC because Poo does not leave your party. Also, Ness’s mom has her free hotel functionality.
   * Staying in hotels will keep you in the hotel lobby, not move you to another room.
 
 * All one-way doors, like holes, are disabled.
   * The exception is holes in the Electro Specter room and the Thunder & Storm room, because these rooms are required to progress through the maze. These holes have been manually reworked to turn them into doors. They may be a bit confusing at first, but they are basically normal 2-door clusters where one of the doors is slightly separated.
   * The “front door” to Dungeon Man is technically a one-way door, so it is disabled. Entering Dungeon Man is a special event that is a skip.
+
+* The Exit Mouse lets you mark a spot you are standing on, then return to the most recently marked spot automatically. You can mark any number of times, but only the most recent will be saved; and actually returning uses up the Exit Mouse. This is useful to easily get back to Full Heals, Shops you can't afford, or to get out of one-way skips. If you don't mark anywhere, it will return you to Ness's Room.
 
 * The Teleport Men in Moonside have been modified to let you visit the whole map of Moonside, but not leave the map. The Teleport Man outside the hospital is the one you want to talk to that begins the chain of teleports that lets you pick up the three gift boxes in only-teleport-accessible areas.
 

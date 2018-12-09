@@ -344,8 +344,7 @@ class AncientCave extends ReadWriteObject {
             script.makeSanctuaryDoorAlwaysActivate();
         });
 
-        const exitMouse = Script.getByPointer(0x2f9ef4);
-        exitMouse.lines = [
+        const exitMouseReturnLines = [
             ebutils.encodeText("@(The mouse found the way back and waved for you to follow.)"),
             [0x03],
             [0x1f, 0x69],               // perform teleport
@@ -354,7 +353,32 @@ class AncientCave extends ReadWriteObject {
             [0x05, 0x00, 0x02],         // set exit mouse currently not in possession
             [0x02]
         ];
-        exitMouse.writeScript();
+        const exitMouseReturn = Script.writeNewScript(exitMouseReturnLines);
+
+        const exitMouseSetLines = [
+            ebutils.encodeText("@(The mouse remembered this spot.)"),
+            [0x1f, 0x68],               // set exit mouse coordinates
+            [0x13, 0x02]
+        ];
+        const exitMouseSet = Script.writeNewScript(exitMouseSetLines);
+
+        const exitMouseMain = Script.getByPointer(0x2f9ef4);
+        exitMouseMain.lines = [
+            ebutils.encodeText("@Should the mouse mark this spot or go to the last spot?"),
+            [0x00],
+            [0x19, 0x02],
+            ebutils.encodeText("Mark", false),
+            [0x02],
+            [0x19, 0x02],
+            ebutils.encodeText("Go", false),
+            [0x02],
+            [0x1C, 0x07, 0x02],
+            [0x11],
+            [0x12],
+            [0x09, 0x02, ...ebutils.ccodeAddress(exitMouseSet.pointer), ...ebutils.ccodeAddress(exitMouseReturn.pointer)],
+            [0x02]
+        ];
+        exitMouseMain.writeScript();
 
         // Hint guys
 
