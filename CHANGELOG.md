@@ -1,4 +1,8 @@
 # Changelog
+## v32.x / v33 (In progress)
+### Bugfixes
+- Ancient Cave: Bugfix to exit mouse behavior.
+
 ## v32 (2018-12-09)
 - Ancient Cave: Exit mouse functionality changed. Now, he can mark a spot and then send you back to the marked spot later.
 - Dialogue: Additional lines are available for randomization.

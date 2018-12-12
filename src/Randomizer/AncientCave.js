@@ -347,10 +347,11 @@ class AncientCave extends ReadWriteObject {
         const exitMouseReturnLines = [
             ebutils.encodeText("@(The mouse found the way back and waved for you to follow.)"),
             [0x03],
+            [0x05, 0x00, 0x02],         // set exit mouse currently not in possession
+            [0x04, 0x0B, 0x00],         // encounters on
             [0x1f, 0x69],               // perform teleport
             [0x05, 0x0B, 0x00],         // encounters on
             [0x1d, 0x01, 0xff, 0xc5],   // one use only
-            [0x05, 0x00, 0x02],         // set exit mouse currently not in possession
             [0x02]
         ];
         const exitMouseReturn = Script.writeNewScript(exitMouseReturnLines);
