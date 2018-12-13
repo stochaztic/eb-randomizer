@@ -2,6 +2,7 @@
 ## v32.x / v33 (In progress)
 ### Bugfixes
 - Ancient Cave: Bugfix to exit mouse behavior.
+- Ancient Cave: Bugfix to prevent Pokey fight softlock in PRV.
 
 ## v32 (2018-12-09)
 - Ancient Cave: Exit mouse functionality changed. Now, he can mark a spot and then send you back to the marked spot later.

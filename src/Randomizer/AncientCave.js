@@ -503,6 +503,20 @@ class AncientCave extends ReadWriteObject {
         tpt.data.flag = 0x5e;
         tpt.data.flag_appear = 1;
 
+        // Pokey and pals in PRV - never appear
+        tpt = TPTObject.get(439);
+        tpt.data.flag = 0x5e;
+        tpt.data.flag_appear = 1;
+        tpt = TPTObject.get(440);
+        tpt.data.flag = 0x5e;
+        tpt.data.flag_appear = 1;
+        tpt = TPTObject.get(441);
+        tpt.data.flag = 0x5e;
+        tpt.data.flag_appear = 1;
+        tpt = TPTObject.get(442);
+        tpt.data.flag = 0x5e;
+        tpt.data.flag_appear = 1;
+
         // Bus stops - always disabled
         const buses = TPTObject.every.filter(o => o.oldData.sprite === 202);
         buses.forEach(bus => { 
