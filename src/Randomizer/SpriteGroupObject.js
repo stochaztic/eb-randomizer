@@ -4,7 +4,7 @@ import tableText from '!array-loader!./tables/sprite_group_table.txt';
 
 class SpriteGroupObject extends TableObject {
     static shouldRandomize() {
-        return this.context.specs.flags.p === 1; // PC sprites
+        return true; // custom PC sprites if they are manually set, shuffled if flag set and not manually set
     }
 
     get spriteCount() {
@@ -32,6 +32,25 @@ class SpriteGroupObject extends TableObject {
 
     mutate() {
         this.variableSize = true;
+        if(!this.context.specs.sprites || !this.context.specs.sprites[this.index]) {
+            if(this.context.specs.flags.p === 1) {
+                this.oldMutate();
+            }
+            return;
+        }
+        const sprite = this.context.specs.sprites[this.index];
+
+        const addressToSet = (this.constructor.expandedBank << 16) + this.constructor.currentExpandedIndex;
+        this.context.rom.set(sprite.data, addressToSet);
+        this.data.bank = this.constructor.expandedBank | 0xc0;
+        this.data.sprites_cardinal = sprite.indexes.slice(0, 8).map(i => i + this.constructor.currentExpandedIndex);
+        this.data.sprites_diagonal = sprite.indexes.slice(8).map(i => i + this.constructor.currentExpandedIndex);
+        this.constructor.currentExpandedIndex += sprite.data.length;
+    }
+
+
+    oldMutate() {
+        this.variableSize = true;
         if(!([1,2,3,4].includes(this.index))) return; // Only randomize 4 main PCs
         let candidates = SpriteGroupObject.every.filter(sg => sg.data.size === this.data.size);
         const invalidIndexes = [8, 9, 10, 11, 12, 343]; // Normal ghosts, diamond
@@ -56,6 +75,9 @@ class SpriteGroupObject extends TableObject {
         return full;
     }
 }
+
+SpriteGroupObject.expandedBank = 0x30;
+SpriteGroupObject.currentExpandedIndex = 0;
 
 SpriteGroupObject.badSprites = [
     0, 106, 200, 247, 295, 314, 316, 368,

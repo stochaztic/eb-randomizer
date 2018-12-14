@@ -15,7 +15,8 @@ selfRef.addEventListener("message", e => {
       console.error(text);
     };
 
-    const result = execute(d.content.romfile, d.content.specs, hooks);
-    selfRef.postMessage({ type: "complete", content: result });
+    execute(d.content.romfile, d.content.specs, hooks).then(result => {
+      selfRef.postMessage({ type: "complete", content: result });
+    });
   }
 });

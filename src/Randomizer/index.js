@@ -42,7 +42,9 @@ import TrackStatsPatch from './TrackStatsPatch.js';
 import ebutils from './ebutils.js';
 import Cluster from './Cluster.js';
 
-export function execute(romfile, specs, hooks) {
+import NessSprite from './../sprites/NessPride.bin';
+
+export async function execute(romfile, specs, hooks) {
   const readWriteObjects = [
     AncientCave,
     BattleEntryObject,
@@ -114,6 +116,18 @@ export function execute(romfile, specs, hooks) {
     }
 
     MapSpriteObject.randomDegree = 0.8;
+
+    if(context.rom.length < 0x400000) {
+      const expandedROM = new Uint8Array(context.rom.length + 0x100000);
+      expandedROM.set(context.rom);
+      context.rom = expandedROM;
+    }
+    const response = await fetch(NessSprite);
+    const buffer = await response.arrayBuffer();
+    const spriteData = new Uint8Array(buffer);
+    const spriteIndexes = [0, 1, 193, 385, 576, 768, 192, 960, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344];
+    context.specs.sprites = {};
+    context.specs.sprites["1"] = {data: spriteData, indexes: spriteIndexes};
 
     const newROM = RandomTools.execute(context);
 
