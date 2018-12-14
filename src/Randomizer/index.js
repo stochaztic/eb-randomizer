@@ -82,11 +82,10 @@ export function execute(romfile, specs, hooks) {
   MapSpriteObject.afterOrder = [PsiTeleportObject, AncientCave];
 
   try {
-    const patches = [ExpandSavePatch, CreditsPatch, TrackStatsPatch];
+    const patches = [ExpandSavePatch, CreditsPatch, TrackStatsPatch, TitleDisableGlowPatch];
     
     if(specs.flags.a) patches.push(ShowSpritesNoIntroPatch);
     if(specs.flags.a) patches.push(TrackDoorsPatch);
-    if(specs.flags.a) patches.push(TitleDisableGlowPatch);
     if(specs.flags.g >= 1 || specs.flags.s >= 1) patches.push(CaseyNoInstantPatch);
     if(specs.flags.u >= 1) patches.push(DropMostRecentPatch);
     if(specs.flags.u >= 1) patches.push(RunButtonPatch);
