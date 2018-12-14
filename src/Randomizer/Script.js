@@ -37,7 +37,7 @@ class Script {
             const newlines = [];
             s.lines.forEach(line => {
                 if(arrEq(line.slice(0, 2), [0x1f, 0x23])) {
-                    newlines.push([0x1f, 0x23, boss.index & 0xFF, boss.index >> 8]);
+                    newlines.push([0x1f, 0x23, boss.index & 0xFF, boss.index >>> 8]);
                 }
                 else {
                     newlines.push(line);

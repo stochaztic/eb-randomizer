@@ -1,7 +1,6 @@
 /* eslint import/no-webpack-loader-syntax: off */
 import { TableObject } from 'randomtools-js';
 import tableText from '!array-loader!./tables/sprite_group_table.txt';
-import pointersText from '!array-loader!./tables/sprite_group_pointers.txt';
 
 class SpriteGroupObject extends TableObject {
     static shouldRandomize() {
@@ -66,7 +65,9 @@ SpriteGroupObject.badSprites = [
 
 SpriteGroupObject.tableSpecs = {
     text: tableText,
-    pointers: pointersText,
+    pointed: true,
+    pointer: 0x2f133f,
+    count: 464,
 };
 
 SpriteGroupObject._displayName = "sprite group";
