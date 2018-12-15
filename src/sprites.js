@@ -1,4 +1,11 @@
 import NessPride from './sprites/NessPride.bin';
+import Ninten from './sprites/Ninten.bin';
+import NintenDead from './sprites/Ninten-Dead.bin';
+import NintenFuzzy from './sprites/Ninten-Fuzzy.bin';
+import Bart from './sprites/Bart.bin';
+import DragonNess from './sprites/DragonNess.bin';
+import DragonPaula from './sprites/DragonPaula.bin';
+import DragonJeff from './sprites/DragonJeff.bin';
 
 export const customCharacters = [
     {
@@ -8,6 +15,71 @@ export const customCharacters = [
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 960, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344],
                 data: NessPride,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Ninten",
+        value: "Ninten",
+        sprites: {
+            main: {
+                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1537, 1729, 1921, 2113, 1920, 2112, 1536, 1728],
+                data: Ninten,
+                palette: 26,
+            },
+            dead: {
+                indexes: [0, 0, 193, 193, 384, 384, 192, 192, 1, 1, 384, 384, 384, 384, 1, 1],
+                data: NintenDead,
+                palette: 26,
+            },
+            fuzzy: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: NintenFuzzy,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Bart",
+        value: "Bart",
+        sprites: {
+            main: {
+                indexes: [0, 1, 193, 385, 576, 768, 192, 384, 961, 1153, 1345, 1537, 1728, 1536, 960, 1920],
+                data: Bart,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Dragon Ness",
+        value: "DragonNess",
+        sprites: {
+            main: {
+                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 0, 192, 768, 960, 768, 960, 0, 192],
+                data: DragonNess,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Dragon Paula",
+        value: "DragonPaula",
+        sprites: {
+            main: {
+                indexes: [0, 192, 385, 577, 768, 769, 960, 576, 0, 192, 768, 769, 768, 769, 0, 192],
+                data: DragonPaula,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Dragon Jeff",
+        value: "DragonJeff",
+        sprites: {
+            main: {
+                indexes: [0, 192, 385, 577, 768, 769, 384, 576, 0, 192, 768, 769, 768, 769, 0, 192],
+                data: DragonJeff,
                 palette: 26,
             },
         },
@@ -136,9 +208,24 @@ export async function prepare(sprite, index) {
     if(sprite.value === "RandomCustom") {
         sprite = customCharacters[Math.floor(Math.random()*customCharacters.length)];
     }
-    const mainResponse = await fetch(sprite.sprites.main.data);
-    const mainBuffer = await mainResponse.arrayBuffer();
-    const mainData = new Uint8Array(mainBuffer);
-    newObj[index + 1] = Object.assign({}, sprite.sprites.main, { data: mainData });
+    let response = await fetch(sprite.sprites.main.data);
+    let buffer = await response.arrayBuffer();
+    let data = new Uint8Array(buffer);
+    newObj[index + 1] = Object.assign({}, sprite.sprites.main, { data: data });
+
+    if(sprite.sprites.dead) {
+        response = await fetch(sprite.sprites.dead.data);
+        buffer = await response.arrayBuffer();
+        data = new Uint8Array(buffer);
+        newObj[index + 8] = Object.assign({}, sprite.sprites.dead, { data: data });
+    }
+
+    if(sprite.sprites.fuzzy && index === 0) {
+        response = await fetch(sprite.sprites.fuzzy.data);
+        buffer = await response.arrayBuffer();
+        data = new Uint8Array(buffer);
+        newObj[index + 14] = Object.assign({}, sprite.sprites.fuzzy, { data: data });
+    }
+
     return newObj;
 }

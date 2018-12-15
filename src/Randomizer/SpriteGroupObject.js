@@ -39,6 +39,12 @@ class SpriteGroupObject extends TableObject {
             return;
         }
 
+        if(sprite.data.length > (0xffff - this.constructor.currentExpandedIndex)) {
+            debugger;
+            this.constructor.expandedBank += 1;
+            this.constructor.currentExpandedIndex = 0;
+        }
+
         const addressToSet = (this.constructor.expandedBank << 16) + this.constructor.currentExpandedIndex;
         this.context.rom.set(sprite.data, addressToSet);
         this.data.bank = this.constructor.expandedBank | 0xc0;
@@ -71,12 +77,12 @@ class SpriteGroupObject extends TableObject {
     }
 
     getVariableSpecsattrs() {
-        const full = this.constructor.tableSpecs.attributes;
+        let attrs = this.constructor.tableSpecs.attributes;
         if(this.spriteCount < 16) {
-            const copy = Object.assign({}, full);
-            delete copy["10"];
+            attrs = attrs.slice();
+            attrs.splice(10, 1);
         }
-        return full;
+        return attrs;
     }
 }
 
