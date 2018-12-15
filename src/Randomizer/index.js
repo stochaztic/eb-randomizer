@@ -122,13 +122,7 @@ export async function execute(romfile, specs, hooks) {
       expandedROM.set(context.rom);
       context.rom = expandedROM;
     }
-    const response = await fetch(NessSprite);
-    const buffer = await response.arrayBuffer();
-    const spriteData = new Uint8Array(buffer);
-    const spriteIndexes = [0, 1, 193, 385, 576, 768, 192, 960, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344];
-    context.specs.sprites = {};
-    context.specs.sprites["1"] = {data: spriteData, indexes: spriteIndexes};
-
+    
     const newROM = RandomTools.execute(context);
 
     let spoiler = undefined;

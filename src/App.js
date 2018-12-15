@@ -5,6 +5,7 @@ import logo from './logo.png';
 import flagDescriptions from './flagDescriptions.js';
 import EarthBoundRandomizer from './randomizer.worker.js';
 import ebutils from './Randomizer/ebutils.js';
+import { prepare } from './sprites.js';
 import Cookies from 'js-cookie';
 import localforage from 'localforage';
 
@@ -124,12 +125,21 @@ class App extends Component {
     reader.readAsArrayBuffer(file);
   }
 
-  generate(event) {
+  async generate(event) {
     this.setQueryString(true);
+
+    const specs = this.state.specs;
+    const nessData = await prepare("NessPride", 0);
+    const paulaData = await prepare(999, 1);
+    const jeffData = await prepare("NoChange", 2);
+    const pooData = await prepare(98, 3);
+    
+    specs.sprites = Object.assign({}, nessData, paulaData, jeffData, pooData);
+
     this.setState({generationStatus: 'Beginning randomization...' });
     this.earthBoundRandomizer.postMessage({type: "execute", content: {
       romfile: this.state.uploadedROM,
-      specs: this.state.specs,
+      specs: specs,
       hooks: undefined,
     }});
   }

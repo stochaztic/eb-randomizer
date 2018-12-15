@@ -4,7 +4,7 @@ import tableText from '!array-loader!./tables/sprite_group_table.txt';
 
 class SpriteGroupObject extends TableObject {
     static shouldRandomize() {
-        return true; // custom PC sprites if they are manually set, shuffled if flag set and not manually set
+        return true; // custom PC sprites if they are manually set
     }
 
     get spriteCount() {
@@ -32,13 +32,12 @@ class SpriteGroupObject extends TableObject {
 
     mutate() {
         this.variableSize = true;
-        if(!this.context.specs.sprites || !this.context.specs.sprites[this.index]) {
-            if(this.context.specs.flags.p === 1) {
-                this.oldMutate();
-            }
+        if(!this.context.specs.sprites || !this.context.specs.sprites[this.index]) return;
+        const sprite = this.context.specs.sprites[this.index];
+        if(!isNaN(sprite)) {
+            this.vanillaMutate(Number.parseInt(sprite));
             return;
         }
-        const sprite = this.context.specs.sprites[this.index];
 
         const addressToSet = (this.constructor.expandedBank << 16) + this.constructor.currentExpandedIndex;
         this.context.rom.set(sprite.data, addressToSet);
@@ -49,13 +48,17 @@ class SpriteGroupObject extends TableObject {
     }
 
 
-    oldMutate() {
-        this.variableSize = true;
-        if(!([1,2,3,4].includes(this.index))) return; // Only randomize 4 main PCs
-        let candidates = SpriteGroupObject.every.filter(sg => sg.data.size === this.data.size);
-        const invalidIndexes = [8, 9, 10, 11, 12, 343]; // Normal ghosts, diamond
-        candidates = candidates.filter(c => !invalidIndexes.includes(c.index) && !this.constructor.badSprites.includes(c.index));
-        const chosen = this.context.random.choice(candidates);
+    vanillaMutate(spriteNumber) {
+        let chosen = spriteNumber;
+        if(chosen >= SpriteGroupObject.every.length) {
+            let candidates = SpriteGroupObject.every.filter(sg => sg.data.size === this.data.size);
+            const invalidIndexes = [8, 9, 10, 11, 12, 343]; // Normal ghosts, diamond
+            candidates = candidates.filter(c => !invalidIndexes.includes(c.index) && !this.constructor.badSprites.includes(c.index));
+            chosen = this.context.random.choice(candidates);
+        }
+        else {
+            chosen = SpriteGroupObject.get(chosen);
+        }
         this.copyData(chosen);
         this.data.collision_ns_w = this.oldData.collision_ns_w;
         this.data.collision_ns_h = this.oldData.collision_ns_h;
