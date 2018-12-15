@@ -1,5 +1,6 @@
 # Changelog
 ## v32.x / v33 (In progress)
+- PC sprites: New custom sprite system.
 ### Bugfixes
 - Ancient Cave: Bugfix to exit mouse behavior.
 - Ancient Cave: Bugfix to prevent Pokey fight softlock in PRV.
