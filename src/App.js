@@ -6,6 +6,7 @@ import flagDescriptions from './flagDescriptions.js';
 import EarthBoundRandomizer from './randomizer.worker.js';
 import ebutils from './Randomizer/ebutils.js';
 import { prepare } from './sprites.js';
+import SpriteSelector from './SpriteSelector.js';
 import Cookies from 'js-cookie';
 import localforage from 'localforage';
 
@@ -14,6 +15,7 @@ class App extends Component {
     super(props);
     this.setFlag = this.setFlag.bind(this);
     this.fileSelect = this.fileSelect.bind(this);
+    this.setSprite = this.setSprite.bind(this);
     this.generate = this.generate.bind(this);
     this.downloadROM = this.downloadROM.bind(this);
     this.downloadSpoiler = this.downloadSpoiler.bind(this);
@@ -63,6 +65,7 @@ class App extends Component {
       showDirectLinkInfo: directLink,
       compatibleVersion: compatibleVersion,
       specs: initialSpecs,
+      chosenSprites: [{},{},{},{}],
     };
   }
 
@@ -125,14 +128,18 @@ class App extends Component {
     reader.readAsArrayBuffer(file);
   }
 
+  setSprite(sprite, index) {
+    this.setState(s => { s.chosenSprites[index] = sprite; return s; });
+  }
+
   async generate(event) {
     this.setQueryString(true);
 
     const specs = this.state.specs;
-    const nessData = await prepare("NessPride", 0);
-    const paulaData = await prepare(999, 1);
-    const jeffData = await prepare("NoChange", 2);
-    const pooData = await prepare(98, 3);
+    const nessData = await prepare(this.state.chosenSprites[0], 0);
+    const paulaData = await prepare(this.state.chosenSprites[1], 1);
+    const jeffData = await prepare(this.state.chosenSprites[2], 2);
+    const pooData = await prepare(this.state.chosenSprites[3], 3);
     
     specs.sprites = Object.assign({}, nessData, paulaData, jeffData, pooData);
 
@@ -219,8 +226,19 @@ class App extends Component {
       </section>
     );
 
+    const selectCharacterSprites = (
+      <fieldset>
+        <legend>Character sprites:</legend>
+        <SpriteSelector character="NESS" backgroundColor="lightblue" onChange={val => this.setSprite(val, 0)} />
+        <SpriteSelector character="PAULA" backgroundColor="lightpink" onChange={val => this.setSprite(val, 1)} />
+        <SpriteSelector character="JEFF" backgroundColor="lightgreen" onChange={val => this.setSprite(val, 2)} />
+        <SpriteSelector character="POO" backgroundColor="lightgray" onChange={val => this.setSprite(val, 3)} />
+      </fieldset>
+    );
+
     const selectModeNormalContent = (
       <div className="sectionContent">
+      { selectCharacterSprites }
       <fieldset>
         <legend>Seed:</legend>
         <div className="seedContainer">
@@ -335,6 +353,7 @@ class App extends Component {
 
     const selectModeDirectLinkContent = (
       <div className="sectionContent">
+        { selectCharacterSprites }
         <p>
           You have followed a direct link to a specific seed ({this.state.specs.seed}) and settings. The ROM will be generated according to these settings.
         </p>

@@ -26,8 +26,8 @@ export const selectData = [
         label: "Random",
         options: [
             { label: "No change", value: "NoChange"},
-            { label: "Random vanilla", value: "RandomVanilla"},
-            { label: "Random custom", value: 999},
+            { label: "Random vanilla", value: 999},
+            { label: "Random custom", value: "RandomCustom"},
         ],
     },
     {
@@ -40,22 +40,21 @@ export const selectData = [
     },
 ];
 
-export async function prepare(value, index) {
+export async function prepare(sprite, index) {
     const newObj = {};
-    if(value === "NoChange") {
+    if(sprite.value === "NoChange") {
         return newObj;
     }
-    if(!isNaN(value)) {
-        newObj[index + 1] = value;
+    if(!isNaN(sprite.value)) {
+        newObj[index + 1] = sprite.value;
         return newObj;
     }
-    let character = customCharacters.find(c => c.value === value);
-    if(!character) {
-        character = customCharacters[Math.floor(Math.random()*customCharacters.length)];
+    if(sprite.value === "RandomCustom") {
+        sprite = customCharacters[Math.floor(Math.random()*customCharacters.length)];
     }
-    const mainResponse = await fetch(character.sprites.main.data);
+    const mainResponse = await fetch(sprite.sprites.main.data);
     const mainBuffer = await mainResponse.arrayBuffer();
     const mainData = new Uint8Array(mainBuffer);
-    newObj[index + 1] = Object.assign({}, character.sprites.main, { data: mainData });
+    newObj[index + 1] = Object.assign({}, sprite.sprites.main, { data: mainData });
     return newObj;
 }

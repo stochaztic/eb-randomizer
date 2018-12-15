@@ -67,16 +67,6 @@ const flagDescriptions = {
             3: "Overworld NPC sprites will be utterly randomized with no exceptions.",
         }
     },
-    p: {
-        title: "PC sprites",
-        max: 2,
-        default: 1,
-        unsafe: 2,
-        desc: {
-            1: "PC sprites will be randomized.",
-            2: "PC sprites will be set to random characters, who may be unusually sized.",
-        }
-    },
     s: {
         title: "Shops",
         max: 1,

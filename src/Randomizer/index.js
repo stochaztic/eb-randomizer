@@ -42,8 +42,6 @@ import TrackStatsPatch from './TrackStatsPatch.js';
 import ebutils from './ebutils.js';
 import Cluster from './Cluster.js';
 
-import NessSprite from './../sprites/NessPride.bin';
-
 export async function execute(romfile, specs, hooks) {
   const readWriteObjects = [
     AncientCave,

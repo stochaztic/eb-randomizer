@@ -8,7 +8,7 @@ class PcGfxObject extends TableObject {
     // an option for the old EarthBound reshuffler PC characters under
     // a special flag.
     static shouldRandomize() {
-        return this.context.specs.flags.p >= 2;
+        return false; // Disabling these old sprite randomizations entirely as they are glitchy.
     }
 
     static mutateAll() {
