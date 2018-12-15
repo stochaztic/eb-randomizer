@@ -1,4 +1,4 @@
-import NessPride from './sprites/NessPride.bin';
+import PrideNess from './sprites/PrideNess.bin';
 import Ninten from './sprites/Ninten.bin';
 import NintenDead from './sprites/Ninten-Dead.bin';
 import NintenFuzzy from './sprites/Ninten-Fuzzy.bin';
@@ -9,12 +9,12 @@ import DragonJeff from './sprites/DragonJeff.bin';
 
 export const customCharacters = [
     {
-        label: "Ness Pride",
-        value: "NessPride",
+        label: "Pride Ness",
+        value: "PrideNess",
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 960, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344],
-                data: NessPride,
+                data: PrideNess,
                 palette: 26,
             },
         },
