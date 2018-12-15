@@ -6,6 +6,9 @@ import Bart from './sprites/Bart.bin';
 import DragonNess from './sprites/DragonNess.bin';
 import DragonPaula from './sprites/DragonPaula.bin';
 import DragonJeff from './sprites/DragonJeff.bin';
+import DragonPoo from './sprites/DragonPoo.bin';
+import Sonic from './sprites/Sonic.bin';
+import WeirdAl from './sprites/WeirdAl.bin';
 
 export const customCharacters = [
     {
@@ -80,6 +83,39 @@ export const customCharacters = [
             main: {
                 indexes: [0, 192, 385, 577, 768, 769, 384, 576, 0, 192, 768, 769, 768, 769, 0, 192],
                 data: DragonJeff,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Dragon Poo",
+        value: "DragonPoo",
+        sprites: {
+            main: {
+                indexes: [0, 1, 193, 385, 576, 768, 192, 384, 0, 1, 576, 768, 576, 768, 0, 1],
+                data: DragonPoo,
+                palette: 20,
+            },
+        },
+    },
+    {
+        label: "Sonic",
+        value: "Sonic",
+        sprites: {
+            main: {
+                indexes: [0, 192, 385, 577, 768, 769, 960, 576, 0, 192, 768, 769, 768, 769, 0, 192],
+                data: Sonic,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Weird Al Yankovic",
+        value: "WeirdAl",
+        sprites: {
+            main: {
+                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 193, 385, 576, 577, 192, 384],
+                data: WeirdAl,
                 palette: 26,
             },
         },
