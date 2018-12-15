@@ -8,6 +8,7 @@ export const customCharacters = [
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 960, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344],
                 data: NessPride,
+                palette: 26,
             },
         },
     },
@@ -55,6 +56,6 @@ export async function prepare(value, index) {
     const mainResponse = await fetch(character.sprites.main.data);
     const mainBuffer = await mainResponse.arrayBuffer();
     const mainData = new Uint8Array(mainBuffer);
-    newObj[index + 1] = { data: mainData, indexes: character.sprites.main.indexes };
+    newObj[index + 1] = Object.assign({}, character.sprites.main, { data: mainData });
     return newObj;
 }

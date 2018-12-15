@@ -42,6 +42,7 @@ class SpriteGroupObject extends TableObject {
         const addressToSet = (this.constructor.expandedBank << 16) + this.constructor.currentExpandedIndex;
         this.context.rom.set(sprite.data, addressToSet);
         this.data.bank = this.constructor.expandedBank | 0xc0;
+        this.data.palette = sprite.palette || this.data.palette;
         this.data.sprites_cardinal = sprite.indexes.slice(0, 8).map(i => i + this.constructor.currentExpandedIndex);
         this.data.sprites_diagonal = sprite.indexes.slice(8).map(i => i + this.constructor.currentExpandedIndex);
         this.constructor.currentExpandedIndex += sprite.data.length;
