@@ -2,6 +2,9 @@ import PrideNess from './sprites/PrideNess.bin';
 import Ninten from './sprites/Ninten.bin';
 import NintenDead from './sprites/Ninten-Dead.bin';
 import NintenFuzzy from './sprites/Ninten-Fuzzy.bin';
+import NessHat from './sprites/NessHat.bin';
+import NessHatClimb from './sprites/NessHat-Climb.bin';
+import Halo from './sprites/Halo.bin';
 import Bart from './sprites/Bart.bin';
 import DragonNess from './sprites/DragonNess.bin';
 import DragonPaula from './sprites/DragonPaula.bin';
@@ -39,6 +42,32 @@ export const customCharacters = [
             fuzzy: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
                 data: NintenFuzzy,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Ness's Hat",
+        value: "NessHat",
+        sprites: {
+            main: {
+                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1152, 1344, 1537, 1729, 1536, 1728, 1920, 2112],
+                data: NessHat,
+                palette: 26,
+            },
+            dead: {
+                indexes: [0, 0, 1, 1, 192, 192, 384, 384, 1, 1, 192, 192, 192, 192, 1, 1],
+                data: Halo,
+                palette: 26,
+            },
+            ladder: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: NessHatClimb,
+                palette: 26,
+            },
+            rope: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: NessHatClimb,
                 palette: 26,
             },
         },
@@ -254,6 +283,20 @@ export async function prepare(sprite, index) {
         buffer = await response.arrayBuffer();
         data = new Uint8Array(buffer);
         newObj[index + 8] = Object.assign({}, sprite.sprites.dead, { data: data });
+    }
+
+    if(sprite.sprites.ladder) {
+        response = await fetch(sprite.sprites.ladder.data);
+        buffer = await response.arrayBuffer();
+        data = new Uint8Array(buffer);
+        newObj[index + 17] = Object.assign({}, sprite.sprites.ladder, { data: data });
+    }
+
+    if(sprite.sprites.rope) {
+        response = await fetch(sprite.sprites.rope.data);
+        buffer = await response.arrayBuffer();
+        data = new Uint8Array(buffer);
+        newObj[index + 21] = Object.assign({}, sprite.sprites.rope, { data: data });
     }
 
     if(sprite.sprites.fuzzy && index === 0) {
