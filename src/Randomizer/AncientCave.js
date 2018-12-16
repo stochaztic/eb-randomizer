@@ -423,12 +423,10 @@ class AncientCave extends ReadWriteObject {
         script.lines[0] = [0x0a, 0x24, 0x51, 0xc7, 0x00];
         script.writeScript();
 
-        // Chaos Theater - remove show, due to panning bug when PC sprites randomized
-        if(this.context.specs.flags.p) {
-            script = Script.getByPointer(0x99fe0);
-            script.lines[0] = [0x0a, 0x2f, 0x99, 0xc9, 0x00];
-            script.writeScript();
-        }
+        // Chaos Theater - remove show
+        script = Script.getByPointer(0x99fe0);
+        script.lines[0] = [0x0a, 0x2f, 0x99, 0xc9, 0x00];
+        script.writeScript();
 
         // Strong - prevent softlock
         let tpt = TPTObject.get(71);
