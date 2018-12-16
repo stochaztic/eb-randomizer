@@ -157,6 +157,7 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
 
         // 1) Place skip-granting items early in the cave
         const earlyItemsIndex = [
+            0x69,   // Jar of Fly Honey
             0x7d,   // Backstage pass
             0xa6,   // King banana
             0xb8,   // Pencil eraser
