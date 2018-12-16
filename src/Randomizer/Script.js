@@ -202,6 +202,7 @@ class Script {
             [0x1f, 0x21, 0x72],
             [0x1f, 0x21, 0xE8],
             [0x1f, 0x21, 0xE9], // Unused value - for testing
+            [0x1f, 0x21, 0x9F], // Entering Dungeon Man
         ];
         this.removeInstructions(keys, exceptions);
         this._removedTeleports = true;

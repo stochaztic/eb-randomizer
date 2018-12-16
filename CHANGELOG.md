@@ -5,6 +5,7 @@
 - Ancient Cave: Bugfix to exit mouse behavior.
 - Ancient Cave: Bugfix to prevent Pokey fight softlock in PRV.
 - Ancient Cave: Occasional incorrect enemies appearing various places fixed.
+- Ancient Cave: Entering Dungeon Man skip a second time after unlocking him fixed.
 - Title screen: Fix glow on some configurations.
 
 ## v32 (2018-12-09)
