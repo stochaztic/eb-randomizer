@@ -1,6 +1,7 @@
 # Changelog
-## v32.x / v33 (In progress)
+## v33 (2018-12-16)
 - PC sprites: New custom sprite system.
+- Ancient Cave: Starting Cracked bat is auto-equipped.
 ### Bugfixes
 - Ancient Cave: Bugfix to exit mouse behavior.
 - Ancient Cave: Bugfix to prevent Pokey fight softlock in PRV.
