@@ -227,12 +227,12 @@ class App extends Component {
     );
 
     const selectCharacterSprites = (
-      <fieldset>
+      <fieldset className="characterSelectors">
         <legend>Character sprites:</legend>
-        <SpriteSelector character="NESS" backgroundColor="lightblue" onChange={val => this.setSprite(val, 0)} />
-        <SpriteSelector character="PAULA" backgroundColor="lightpink" onChange={val => this.setSprite(val, 1)} />
-        <SpriteSelector character="JEFF" backgroundColor="lightgreen" onChange={val => this.setSprite(val, 2)} />
-        <SpriteSelector character="POO" backgroundColor="lightgray" onChange={val => this.setSprite(val, 3)} />
+        <SpriteSelector character="NESS" backgroundColor="#ccd9ff" onChange={val => this.setSprite(val, 0)} />
+        <SpriteSelector character="PAULA" backgroundColor="#ffccd4" onChange={val => this.setSprite(val, 1)} />
+        <SpriteSelector character="JEFF" backgroundColor="#ccffcc" onChange={val => this.setSprite(val, 2)} />
+        <SpriteSelector character="POO" backgroundColor="#ffffcc" onChange={val => this.setSprite(val, 3)} />
       </fieldset>
     );
 

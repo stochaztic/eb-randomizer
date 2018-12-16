@@ -3,7 +3,7 @@ section {
 }
 
 section h1, section h3 {
-  background-color: lightblue;
+  background-color: #3ca7e8;
   padding: 0.5rem 1.5rem;
   border-radius: 1.5rem 1.5rem 0 0;
 }
@@ -21,8 +21,10 @@ h1 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Oswald';
-  font-weight: 400;
+  font-family: "Source Sans Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+  text-shadow: 1px 1px 1px #333;
+  font-weight: 600;
 }
 
 h1, h3, li {
@@ -30,7 +32,7 @@ h1, h3, li {
 }
 
 h1 a {
-  color: #888;
+  color: #ccc;
   text-decoration: none;
   font-weight: lighter;
 }
@@ -61,15 +63,36 @@ input[type="file"] {
 .modeButtons button {
   font-size: 1.5em;
   flex-grow: 1;
+  margin: 2px;
+}
+
+.characterSelectors button {
+	padding-left: 13px;
+	padding-right: 40px;
+  
+}
+.characterSelectors button::after {
+	content: '▾';
+  right: 2px;
+  top: 2px;
+	position: absolute;
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 1px 1px 1px #333;
+  background-color: #3ca7e8;
+  border-radius: 0 4px 4px 0;
+  width: 30px;
 }
 
 .modeButtons :not(.modeSelected) {
   color: #888;
 }
 
-.modeSelected {
-  background-color: lightgreen;
-  border-color: lightgreen;
+.modeSelected, .modeSelected:focus, .modeSelected:hover {
+  background-color: #3ca7e8;
+  border-color: #3ca7e8;
+  color: white;
+  text-shadow: 1px 1px 1px #333;
 }
 
 .seedContainer {

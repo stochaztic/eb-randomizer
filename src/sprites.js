@@ -44,8 +44,8 @@ export const customCharacters = [
         },
     },
     {
-        label: "Bart",
-        value: "Bart",
+        label: "Bart Simpson",
+        value: "BartSimpson",
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 384, 961, 1153, 1345, 1537, 1728, 1536, 960, 1920],
