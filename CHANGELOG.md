@@ -1,4 +1,7 @@
 # Changelog
+## v33.x / v34 (In progress)
+- Ancient Cave: Ghost tunnel skips and Waterfall skip removed.
+
 ## v33 (2018-12-16)
 - PC sprites: New custom sprite system.
 - Ancient Cave: Starting Cracked bat is auto-equipped.

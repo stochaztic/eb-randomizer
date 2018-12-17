@@ -472,6 +472,10 @@ class AncientCave extends ReadWriteObject {
         tpt = TPTObject.get(841);
         tpt.data.flag = 0x5e;
 
+        // Mr Saturn - never give waterfall password
+        tpt = TPTObject.get(739);
+        tpt.data.address=0xc7edd9;
+
         // Cop room - disable fights
         tpt = TPTObject.get(73);
         tpt.data.address=0xc74c85;
