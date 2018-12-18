@@ -7,6 +7,9 @@ import MapSpriteObject from './MapSpriteObject.js';
 class Area {
     constructor(label, cells) {
         this.label = label;
+        if(label.indexOf(" RATE ") !== -1) {
+            this._rate = Number.parseFloat(label.split(" RATE ")[1]);
+        }
         this.cells = cells.sort();
         this.enemyCells.forEach(ec => ec.area = this);
     }
@@ -29,6 +32,10 @@ class Area {
         return this.mapSprites;
     }
 
+    get rate() {
+        return this._rate !== undefined ? this._rate : 1.0;
+    }
+
     static get allAreas() {
         if(this._allAreas !== undefined) return this._allAreas;
         this.initialize();
@@ -47,7 +54,7 @@ class Area {
                 }
                 currentArea = newArea();
                 if(line.startsWith(':')) {
-                    currentArea.label = line.substring(1)
+                    currentArea.label = line.substring(1);
                 }
                 return;
             };

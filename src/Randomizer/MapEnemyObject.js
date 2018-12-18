@@ -174,7 +174,7 @@ class MapEnemyObject extends GridTableObject {
             return;
         }
 
-        if(this.context.random.random() > 0.105) {
+        if(this.context.random.random() > (0.105 * this.area.rate)) {
             this.data.enemy_place_index = 0;
             return;
         }
