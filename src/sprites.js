@@ -3,6 +3,7 @@ import PrideNessPJ from './sprites/PrideNess-PJ.bin';
 import Ninten from './sprites/Ninten.bin';
 import NintenDead from './sprites/Ninten-Dead.bin';
 import NintenFuzzy from './sprites/Ninten-Fuzzy.bin';
+import Teddy from './sprites/Teddy.bin';
 import NessHat from './sprites/NessHat.bin';
 import NessHatClimb from './sprites/NessHat-Climb.bin';
 import Halo from './sprites/Halo.bin';
@@ -17,6 +18,8 @@ import Sonic from './sprites/Sonic.bin';
 import Amy from './sprites/Amy.bin';
 import Tails from './sprites/Tails.bin';
 import Knuckles from './sprites/Knuckles.bin';
+import Dragonair from './sprites/Dragonair.bin';
+import Gordon from './sprites/Gordon.bin';
 import WeirdAl from './sprites/WeirdAl.bin';
 
 export const customCharacters = [
@@ -53,6 +56,17 @@ export const customCharacters = [
             fuzzy: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
                 data: NintenFuzzy,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Teddy",
+        value: "Teddy",
+        sprites: {
+            main: {
+                indexes: [0, 1, 193, 385, 576, 768, 192, 384, 961, 1153, 1345, 1537, 1344, 1536, 960, 1152],
+                data: Teddy,
                 palette: 26,
             },
         },
@@ -188,6 +202,28 @@ export const customCharacters = [
             main: {
                 indexes: [0, 1, 192, 384, 576, 768, 960, 1152, 0, 1, 576, 768, 576, 768, 0, 1],
                 data: Knuckles,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Dragonair",
+        value: "Dragonair",
+        sprites: {
+            main: {
+                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 193, 385, 576, 577, 192, 384],
+                data: Dragonair,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Gordon Freeman",
+        value: "Gordon",
+        sprites: {
+            main: {
+                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 193, 385, 576, 577, 192, 384],
+                data: Gordon,
                 palette: 26,
             },
         },
