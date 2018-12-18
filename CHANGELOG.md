@@ -4,6 +4,7 @@
 - Ancient Cave: Spawn rate reduced in large, wide-open areas like towns and the desert.
 - Ancient Cave: Ghost tunnel skips and Waterfall skip removed.
 - PC sprites: Added Teddy, Dragonair, Gordon Freeman, Amy, Tails, and Knuckles. More sprites for Bart and Pride Ness. Additional vanilla options Ness, Paula, Jeff, and Poo.
+- Dialogue: Additional Pokey lines.
 
 ## v33 (2018-12-16)
 - PC sprites: New custom sprite system.
