@@ -261,17 +261,38 @@ class AncientCave extends ReadWriteObject {
             s.caveLevel = chosen.caveLevel;
         });
 
-        // Assign remainder of singletons
-        toAssign.forEach(s => {
-            if(toEvenlyAssign.includes(s)) return;
+        const assign = (s, chosen) => {
+            if(s.caveLevel !== undefined) return;
             console.assert(s.unassignedExits.length === 1);
             let x = s.unassignedExits[0];
-            let chosen = this.context.random.choice(totalUnassignedExits);
+            if(!chosen) {
+                chosen = this.context.random.choice(totalUnassignedExits);
+            }
             Cluster.assignExitPair(x, chosen);
             totalUnassignedExits.splice(totalUnassignedExits.indexOf(chosen), 1);
             x.caveLevel = chosen.caveLevel;
             s.caveLevel = chosen.caveLevel;
-        })
+        }
+        const normalAssign = s => { assign(s, null) };
+
+        // Assign any unassigned rootStems
+        toAssign.filter(c => c.isRootStem).forEach(normalAssign);
+
+        // Assign rootLeaves to be somewhat, but not very, far away from their stems
+        toAssign.filter(c => c.isRootLeaf).forEach(s => {
+            console.assert(s.caveLevel === undefined);
+            const stemLevel = s.rootStem.caveLevel;
+            const d5 = totalUnassignedExits.filter(x => x.caveLevel === (stemLevel + 5) || x.caveLevel === (stemLevel - 5));
+            const d4 = totalUnassignedExits.filter(x => x.caveLevel === (stemLevel + 4) || x.caveLevel === (stemLevel - 4));
+            const d3 = totalUnassignedExits.filter(x => x.caveLevel === (stemLevel + 3) || x.caveLevel === (stemLevel - 3));
+            const d2 = totalUnassignedExits.filter(x => x.caveLevel === (stemLevel + 2) || x.caveLevel === (stemLevel - 2));
+            const exitPool = [...d3, ...d3, ...d3, ...d2, ...d2, ...d4, ...d4, ...d5];
+            const chosen = this.context.random.choice(exitPool);
+            assign(s, chosen);
+        });
+
+        // Assign remainder of singletons
+        toAssign.forEach(normalAssign);
 
         console.assert(totalUnassignedExits.length === 0);
         Cluster.rankClusters(this.context);

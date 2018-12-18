@@ -191,6 +191,9 @@ class Cluster {
 
         this.exits.push(chosen);
         this.exits.sort((a,b) => a.pointer - b.pointer);
+        if(this.firstCell === undefined) {
+            this.firstCell = meid;
+        }
     }
 
     static assignExitPair(a, b) {
@@ -316,8 +319,26 @@ class Cluster {
     }
 
     get index() {
+        if(this._index !== undefined) return this._index;
         if(this.exits.length === 0) return null;
-        return Math.min(...this.exits.map(x => x.pointer));
+        this._index = Math.min(...this.exits.map(x => x.pointer));
+        return this.index;
+    }
+
+    static getByIndex(index) {
+        return this.every.find(c => c.index === index);
+    }
+
+    static getByCell(meid) {
+        return this.every.find(c => c.firstCell === meid);
+    }
+
+    get isRootStem() {
+        return this.rootLeaves && this.rootLeaves.length > 0;
+    }
+
+    get isRootLeaf() {
+        return this.rootStem !== undefined;
     }
 
     static generateClusters() {
@@ -332,6 +353,7 @@ class Cluster {
                     allClusters.push(clu);
                     clu = new this();
                 }
+                if(line[0] === ':') clu.label = line.slice(1);
                 return;
             }
             clu.addExit(line);
@@ -339,6 +361,15 @@ class Cluster {
 
         console.assert(allClusters.length === (new Set(allClusters.map(clu => clu.index))).size)
         this._allClusters = allClusters.sort((a, b) => a.index - b.index);
+
+        Object.keys(this.rootData).forEach(key => {
+            const stem = this.getByCell(Number.parseInt(key, 0x10));
+            stem.rootLeaves = this.rootData[key].map(meid => this.getByCell(meid));
+            stem.rootLeaves.forEach(rootLeaf => {
+                rootLeaf.rootStem = stem;
+            });
+        });
+
         return this.generateClusters();
     }
 
@@ -346,6 +377,26 @@ class Cluster {
     static get every() {
         return this.generateClusters();
     }
+}
+
+Cluster.rootData = {
+    "28e5": [0x2864, 0x2865],           // Monkey 1
+    "2ae2": [0x2a60, 0x2a61],           // Monkey 2
+    "2ce2": [0x2c60, 0x2c61],           // Monkey 3
+    "2ceb": [0x2c68, 0x2c6a],           // Monkey 4
+    "2cfe": [0x2c7c],                   // Monkey Room with Pencil
+    "2efa": [0x2e78, 0x2e79],           // Monkey 5
+    "30e3": [0x3060, 0x3061],           // Monkey 6
+    "0044": [0x2a9a],                   // Dungeon Man from South Scaraba
+    "0416": [0x0d87],                   // Central Onett from Seaside House
+    "1bc7": [0x20c3],                   // Dalaam from Rabbit Cave
+    "248a": [0x240c],                   // Winters Pencil
+    "11c2": [0x0c5d],                   // PRV Pencil
+    "2e64": [0x31e4],                   // Stonehenge Eraser
+    "2549": [0x24c5],                   // Master Belch
+    "4af4": [0x4a75],                   // Tiny Ruby
+    "2a4b": [0x2b4f],                   // Topolla Theater
+    "39f4": [0x3976],                   // Chaos Theater
 }
 
 Cluster._displayName = "cluster";
