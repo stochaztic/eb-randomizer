@@ -1,5 +1,5 @@
 # Changelog
-## v33.x / v34 (In progress)
+## v34 (2018-12-18)
 - Ancient Cave: Skip logic adjusted. Skips will now take you a moderate number of floors away, rather than none or an extreme amount.
 - Ancient Cave: Spawn rate reduced in large, wide-open areas like towns and the desert.
 - Ancient Cave: Ghost tunnel skips and Waterfall skip removed.
