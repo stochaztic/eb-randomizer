@@ -3,6 +3,7 @@
 - Ancient Cave: Skip logic adjusted. Skips will now take you a moderate number of floors away, rather than none or an extreme amount.
 - Ancient Cave: Spawn rate reduced in large, wide-open areas like towns and the desert.
 - Ancient Cave: Ghost tunnel skips and Waterfall skip removed.
+- PC sprites: Added Amy, Tails, and Knuckles. More sprites for Bart and Pride Ness. Additional vanilla options Ness, Paula, Jeff, and Poo.
 
 ## v33 (2018-12-16)
 - PC sprites: New custom sprite system.

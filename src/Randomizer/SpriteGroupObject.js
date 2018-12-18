@@ -66,11 +66,10 @@ class SpriteGroupObject extends TableObject {
         else {
             chosen = SpriteGroupObject.get(chosen);
         }
-        this.copyData(chosen);
-        this.data.collision_ns_w = this.oldData.collision_ns_w;
-        this.data.collision_ns_h = this.oldData.collision_ns_h;
-        this.data.collision_ew_w = this.oldData.collision_ew_w;
-        this.data.collision_ew_h = this.oldData.collision_ew_h;
+        this.data.sprites_cardinal = chosen.oldData.sprites_cardinal;
+        this.data.sprites_diagonal = chosen.oldData.sprites_diagonal;
+        this.data.palette = chosen.oldData.palette;
+        this.data.bank = chosen.oldData.bank;
         if(chosen.spriteCount < 16) {
             this.data.sprites_diagonal = chosen.data.sprites_cardinal;
         }

@@ -1,4 +1,5 @@
 import PrideNess from './sprites/PrideNess.bin';
+import PrideNessPJ from './sprites/PrideNess-PJ.bin';
 import Ninten from './sprites/Ninten.bin';
 import NintenDead from './sprites/Ninten-Dead.bin';
 import NintenFuzzy from './sprites/Ninten-Fuzzy.bin';
@@ -6,11 +7,16 @@ import NessHat from './sprites/NessHat.bin';
 import NessHatClimb from './sprites/NessHat-Climb.bin';
 import Halo from './sprites/Halo.bin';
 import Bart from './sprites/Bart.bin';
+import BartRope from './sprites/Bart-Rope.bin';
+import BartLadder from './sprites/Bart-Ladder.bin';
 import DragonNess from './sprites/DragonNess.bin';
 import DragonPaula from './sprites/DragonPaula.bin';
 import DragonJeff from './sprites/DragonJeff.bin';
 import DragonPoo from './sprites/DragonPoo.bin';
 import Sonic from './sprites/Sonic.bin';
+import Amy from './sprites/Amy.bin';
+import Tails from './sprites/Tails.bin';
+import Knuckles from './sprites/Knuckles.bin';
 import WeirdAl from './sprites/WeirdAl.bin';
 
 export const customCharacters = [
@@ -21,6 +27,11 @@ export const customCharacters = [
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 960, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344],
                 data: PrideNess,
+                palette: 26,
+            },
+            pj: {
+                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1536, 1728, 1920, 2112, 2304, 2496, 2688, 2880],
+                data: PrideNessPJ,
                 palette: 26,
             },
         },
@@ -81,6 +92,16 @@ export const customCharacters = [
                 data: Bart,
                 palette: 26,
             },
+            ladder: {
+                indexes: [0, 1, 0, 192, 0, 1, 0, 1],
+                data: BartLadder,
+                palette: 26,
+            },
+            rope: {
+                indexes: [0, 192, 0, 384, 0, 192, 0, 192],
+                data: BartRope,
+                palette: 26,
+            },
         },
     },
     {
@@ -139,6 +160,39 @@ export const customCharacters = [
         },
     },
     {
+        label: "Amy",
+        value: "Amy",
+        sprites: {
+            main: {
+                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 576, 577, 576, 577, 0, 1],
+                data: Amy,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Tails",
+        value: "Tails",
+        sprites: {
+            main: {
+                indexes: [0, 1, 193, 385, 576, 768, 192, 960, 0, 1, 576, 768, 576, 768, 0, 1],
+                data: Tails,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Knuckles",
+        value: "Knuckles",
+        sprites: {
+            main: {
+                indexes: [0, 1, 192, 384, 576, 768, 960, 1152, 0, 1, 576, 768, 576, 768, 0, 1],
+                data: Knuckles,
+                palette: 26,
+            },
+        },
+    },
+    {
         label: "Weird Al Yankovic",
         value: "WeirdAl",
         sprites: {
@@ -190,6 +244,7 @@ export const vanillaSprites = [
     { label: "Grandma", value: 53, },
     { label: "Healer", value: 189, },
     { label: "Hippie", value: 361, },
+    { label: "Jeff", value: 3, },
     { label: "Lardna Minch", value: 148, },
     { label: "Liar X Agerate", value: 152, },
     { label: "Lucky", value: 149, },
@@ -202,8 +257,10 @@ export const vanillaSprites = [
     { label: "Mom", value: 145, },
     { label: "Monotoli", value: 164, },
     { label: "Mummy", value: 307, },
+    { label: "Ness", value: 1, },
     { label: "Nurse", value: 140, },
     { label: "Orange Kid", value: 175, },
+    { label: "Paula", value: 2, },
     { label: "Paula's Dad", value: 155, },
     { label: "Paula's Mom", value: 156, },
     { label: "Phone Man", value: 167, },
@@ -213,6 +270,7 @@ export const vanillaSprites = [
     { label: "Pizza Guy", value: 151, },
     { label: "Pokey", value: 44, },
     { label: "Pokey Fancy", value: 48, },
+    { label: "Poo", value: 4, },
     { label: "Poo's Master", value: 166, },
     { label: "Pumpkin Head", value: 444, },
     { label: "Ranboob", value: 292, },
@@ -303,7 +361,15 @@ export async function prepare(sprite, index) {
         response = await fetch(sprite.sprites.fuzzy.data);
         buffer = await response.arrayBuffer();
         data = new Uint8Array(buffer);
-        newObj[index + 14] = Object.assign({}, sprite.sprites.fuzzy, { data: data });
+        newObj[14] = Object.assign({}, sprite.sprites.fuzzy, { data: data });
+    }
+
+    if(sprite.sprites.pj && index === 0) {
+        response = await fetch(sprite.sprites.pj.data);
+        buffer = await response.arrayBuffer();
+        data = new Uint8Array(buffer);
+        newObj[6] = Object.assign({}, sprite.sprites.pj, { data: data });
+        newObj[437] = newObj[6];
     }
 
     return newObj;
