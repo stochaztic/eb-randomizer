@@ -67,7 +67,7 @@ Our method of randomizing the battle backgrounds often leads to extremely good-l
 
 ## Contact and Credits
 
-Custom sprite contributions by: pickfifteen, Quatropus, the salvation phoenix, Zephram, and EBrent.
+Custom sprite contributions by: pickfifteen, Quatropus, the salvation phoenix, Zephram, Aurilliux, and EBrent.
 
 This randomizer thanks greatly the Starmen.Net, PK Hack, and EarthBound Speedrunning communities for their contributions to making it possible, as well as the two predecessor EarthBound randomizers that very much inspired this project.
 

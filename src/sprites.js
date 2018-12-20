@@ -11,6 +11,7 @@ import Bart from './sprites/Bart.bin';
 import BartRope from './sprites/Bart-Rope.bin';
 import BartLadder from './sprites/Bart-Ladder.bin';
 import DragonNess from './sprites/DragonNess.bin';
+import DragonNessMini from './sprites/DragonNess-Mini.bin';
 import DragonPaula from './sprites/DragonPaula.bin';
 import DragonJeff from './sprites/DragonJeff.bin';
 import DragonPoo from './sprites/DragonPoo.bin';
@@ -126,6 +127,11 @@ export const customCharacters = [
             main: {
                 indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1537, 1729, 1921, 2113, 2304, 2112, 2496, 1728],
                 data: DragonNess,
+                palette: 26,
+            },
+            mini: {
+                indexes: [0, 1, 192, 384, 576, 577, 768, 960, 1152, 1153, 576, 577, 1345, 577, 0, 1],
+                data: DragonNessMini,
                 palette: 26,
             },
         },
@@ -379,45 +385,44 @@ export async function prepare(sprite, index) {
     if(sprite.value === "RandomCustom") {
         sprite = customCharacters[Math.floor(Math.random()*customCharacters.length)];
     }
-    let response = await fetch(sprite.sprites.main.data);
-    let buffer = await response.arrayBuffer();
-    let data = new Uint8Array(buffer);
-    newObj[index + 1] = Object.assign({}, sprite.sprites.main, { data: data });
+
+    const prepareSprite = async function(sprite) {
+        let response = await fetch(sprite.data);
+        let buffer = await response.arrayBuffer();
+        let data = new Uint8Array(buffer);
+        return Object.assign({}, sprite, { data: data });
+    };
+
+    newObj[index + 1] = await prepareSprite(sprite.sprites.main);
 
     if(sprite.sprites.dead) {
-        response = await fetch(sprite.sprites.dead.data);
-        buffer = await response.arrayBuffer();
-        data = new Uint8Array(buffer);
-        newObj[index + 8] = Object.assign({}, sprite.sprites.dead, { data: data });
+        newObj[index + 8] = await prepareSprite(sprite.sprites.dead);
     }
 
     if(sprite.sprites.ladder) {
-        response = await fetch(sprite.sprites.ladder.data);
-        buffer = await response.arrayBuffer();
-        data = new Uint8Array(buffer);
-        newObj[index + 17] = Object.assign({}, sprite.sprites.ladder, { data: data });
+        newObj[index + 17] = await prepareSprite(sprite.sprites.ladder);
     }
 
     if(sprite.sprites.rope) {
-        response = await fetch(sprite.sprites.rope.data);
-        buffer = await response.arrayBuffer();
-        data = new Uint8Array(buffer);
-        newObj[index + 21] = Object.assign({}, sprite.sprites.rope, { data: data });
+        newObj[index + 21] = await prepareSprite(sprite.sprites.rope);
+    }
+
+    if(sprite.sprites.mini) {
+        newObj[index + 27] = await prepareSprite(sprite.sprites.mini);
     }
 
     if(sprite.sprites.fuzzy && index === 0) {
-        response = await fetch(sprite.sprites.fuzzy.data);
-        buffer = await response.arrayBuffer();
-        data = new Uint8Array(buffer);
-        newObj[14] = Object.assign({}, sprite.sprites.fuzzy, { data: data });
+        newObj[14] = await prepareSprite(sprite.sprites.fuzzy);
     }
 
     if(sprite.sprites.pj && index === 0) {
-        response = await fetch(sprite.sprites.pj.data);
-        buffer = await response.arrayBuffer();
-        data = new Uint8Array(buffer);
-        newObj[6] = Object.assign({}, sprite.sprites.pj, { data: data });
-        newObj[437] = newObj[6];
+        newObj[437] = await prepareSprite(sprite.sprites.pj);
+        if(sprite.sprites.nude) {
+            newObj[6] = await prepareSprite(sprite.sprites.nude);
+        }
+        else {
+            newObj[6] = newObj[437];
+        }
     }
 
     return newObj;
