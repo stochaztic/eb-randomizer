@@ -51,9 +51,9 @@ Randomizing gift box contents works differently in Ancient Cave mode and in non-
 
 In non-Ancient Cave mode, gift boxes will be replaced with an item that is similar in value to their contents in the normal game. However, every gift box has a 20% chance of being replaced by an item of any value, so there is a chance you could get a very good item very early.
 
-## PC and NPC sprites – `p` and `n`
+## NPC and PC sprites – `n` and character selector
 
-A special note should be made when playing with these flags enabled in non-Ancient-Cave modes, either Keysanity or "normal" EarthBound: There are a few scripted events that are bugged when these flags are used. It will appear that the game is softlocked, but usually it will proceed after waiting 5-10 minutes. (Usually an NPC is walking all the way across the entire world map after spawning at an incorrect location.)
+A special note should be made when playing with these options in non-Ancient-Cave modes, either Keysanity or "normal" EarthBound: There are a few scripted events that are bugged when these options are used. It will appear that the game is softlocked, but usually it will proceed after waiting 5-10 minutes. (Usually an NPC is walking all the way across the entire world map after spawning at an incorrect location.)
 
 At this time, we believe we have patched all scripted events to be safe for all modes not marked unsafe. If you do encounter one of these situations, let us know where it is, as we would like to eventually fix all of them.
 
@@ -61,11 +61,9 @@ At this time, we believe we have patched all scripted events to be safe for all 
 
 Our method of randomizing the battle backgrounds often leads to extremely good-looking results, but rarely, there will be a bright flashing palette used. If you are sensitive to bright flashing lights causing epilepsy or seizures, you may not want to enable this mode.
 
-## Known issues
-
-- Possible Lost World "geyser softlock" in Ancient Cave mode. More information is needed.
-
 ## Contact and Credits
+
+There is a discussion channel for this randomizer at the [EarthBound Speedrunning Discord](https://discord.gg/WWVYwkE).
 
 Custom sprite contributions by: pickfifteen, Quatropus, the salvation phoenix, Zephram, Aurilliux, and EBrent.
 
