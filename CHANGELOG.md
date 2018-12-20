@@ -1,4 +1,9 @@
 # Changelog
+## v34.x / v35 (In Progress)
+- PC sprites: Added Blue. More sprites for Dragon Ness.
+### Bugfixes
+- Ancient Cave: Heiroglyph room softlock fixed.
+
 ## v34 (2018-12-18)
 - Ancient Cave: Skip logic adjusted. Skips will now take you a moderate number of floors away, rather than none or an extreme amount.
 - Ancient Cave: Spawn rate reduced in large, wide-open areas like towns and the desert.

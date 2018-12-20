@@ -527,6 +527,18 @@ class AncientCave extends ReadWriteObject {
         tpt.data.flag = 0x5e;
         tpt.data.flag_appear = 1;
 
+        // Hieroglpyh room man - never appear
+        tpt = TPTObject.get(1038);
+        tpt.data.flag = 0x5e;
+        tpt.data.flag_appear = 1;
+
+        // Hieroglpyhs - don't trigger room events
+        const heiroScript = Script.getByPointer(0x86e3d);
+        heiroScript.lines = [
+            ebutils.ccodeGotoAddress(0x870a4),
+        ];
+        heiroScript.writeScript();
+
         // Pokey and pals in PRV - never appear
         tpt = TPTObject.get(439);
         tpt.data.flag = 0x5e;
