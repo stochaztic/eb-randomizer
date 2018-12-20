@@ -18,6 +18,7 @@ import Sonic from './sprites/Sonic.bin';
 import Amy from './sprites/Amy.bin';
 import Tails from './sprites/Tails.bin';
 import Knuckles from './sprites/Knuckles.bin';
+import Blue from './sprites/Blue.bin';
 import Dragonair from './sprites/Dragonair.bin';
 import Gordon from './sprites/Gordon.bin';
 import WeirdAl from './sprites/WeirdAl.bin';
@@ -123,7 +124,7 @@ export const customCharacters = [
         value: "DragonNess",
         sprites: {
             main: {
-                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 0, 192, 768, 960, 768, 960, 0, 192],
+                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1537, 1729, 1921, 2113, 2304, 2112, 2496, 1728],
                 data: DragonNess,
                 palette: 26,
             },
@@ -202,6 +203,17 @@ export const customCharacters = [
             main: {
                 indexes: [0, 1, 192, 384, 576, 768, 960, 1152, 0, 1, 576, 768, 576, 768, 0, 1],
                 data: Knuckles,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Blue",
+        value: "Blue",
+        sprites: {
+            main: {
+                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 768, 960, 768, 960, 1152, 1344],
+                data: Blue,
                 palette: 26,
             },
         },

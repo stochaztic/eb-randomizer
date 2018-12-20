@@ -79,6 +79,15 @@ class App extends Component {
       if(d.type === "error") {
         this.setState({generationStatus: d.content, errorMode: true});
       }
+      if(d.type === "download") {
+        const blob = new Blob([d.content.data], {type: "application/octet-stream"} );
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = d.content.name;
+        document.body.appendChild(link); 
+        link.click();
+        link.remove();
+      }
       if(d.type === "complete") {
         this.setState({newROM: d.content});
         if(d.content && d.content.rom) {

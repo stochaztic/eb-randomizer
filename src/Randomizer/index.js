@@ -147,7 +147,39 @@ export async function execute(romfile, specs, hooks) {
     }
 
     hooks.message("DONE");
-    if(specs.flags.devmode >= 2) debugger;
+    if(specs.flags.devmode >= 2) {
+      const extract = index => {
+        const spriteSize = 192;
+        const sgo = SpriteGroupObject.every[index];
+        let ptrs = sgo.spriteCount > 8 ? [...sgo.oldData.sprites_cardinal, ...sgo.oldData.sprites_diagonal] : sgo.oldData.sprites_cardinal;
+        ptrs = ptrs.map(ptr => (sgo.oldData.bank << 16) | ptr);
+        const usedSet = {};
+        let currentOffset = 0;
+        const offsets = [];
+        const data = new Uint8Array(spriteSize * ptrs.length);
+        ptrs.forEach(ptr => {
+            const isFlip = ptr & 1;
+            const truePtr = (ptr - isFlip) & 0x3fffff;
+            if(usedSet[truePtr] !== undefined) {
+                offsets.push(usedSet[truePtr] + isFlip);
+                return;
+            }
+            data.set(newROM.slice(truePtr, truePtr + spriteSize), currentOffset);
+            usedSet[truePtr] = currentOffset;
+            offsets.push(currentOffset + isFlip);
+            currentOffset += spriteSize;
+        });
+        console.log(offsets);
+
+        const content = {
+          name: `${index.toString().padStart(3,'0')}.bin`,
+          data: data.slice(0, currentOffset),
+        };
+        hooks.download(content);
+      };
+      console.log(extract.name);
+      debugger;
+    }
     return {rom: newROM, spoiler: spoiler};
   }
   catch(e) {

@@ -14,6 +14,9 @@ selfRef.addEventListener("message", e => {
       selfRef.postMessage({ type: "error", content: `ERROR: ${text}` });
       console.error(text);
     };
+    if (hooks.download === undefined) hooks.download = content => {
+      selfRef.postMessage({ type: "download", content: content });
+    };
 
     execute(d.content.romfile, d.content.specs, hooks).then(result => {
       selfRef.postMessage({ type: "complete", content: result });
