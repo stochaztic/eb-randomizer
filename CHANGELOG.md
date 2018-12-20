@@ -2,6 +2,7 @@
 ## v34.x / v35 (In Progress)
 - PC sprites: Added Blue. More sprites for Dragon Ness.
 ### Bugfixes
+- Happy Happy Village free stand will correctly give items even if Ness's inventory is full (vanilla bug fixed).
 - Ancient Cave: Heiroglyph room softlock fixed.
 
 ## v34 (2018-12-18)

@@ -51,3 +51,6 @@ c2 30               ; REP #$30    # END 8-BIT MODE
 
 ; No more foul eggs
 5241: EA EA EA EA EA
+
+; Fix HHV store
+64FA5: FF
