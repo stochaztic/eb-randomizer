@@ -20,6 +20,8 @@ import Amy from './sprites/Amy.bin';
 import Tails from './sprites/Tails.bin';
 import Knuckles from './sprites/Knuckles.bin';
 import Blue from './sprites/Blue.bin';
+import Red from './sprites/Red.bin';
+import GenericPokemon from './sprites/GenericPokemon.bin';
 import Dragonair from './sprites/Dragonair.bin';
 import Gordon from './sprites/Gordon.bin';
 import WeirdAl from './sprites/WeirdAl.bin';
@@ -220,6 +222,28 @@ export const customCharacters = [
             main: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 768, 960, 768, 960, 1152, 1344],
                 data: Blue,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Red",
+        value: "Red",
+        sprites: {
+            main: {
+                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 768, 960, 768, 960, 1152, 1344],
+                data: Red,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Generic Pokemon",
+        value: "GenericPokemon",
+        sprites: {
+            main: {
+                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1153, 1345, 768, 960, 768, 960, 1152, 192],
+                data: GenericPokemon,
                 palette: 26,
             },
         },
