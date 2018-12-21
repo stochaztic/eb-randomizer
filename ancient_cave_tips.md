@@ -28,7 +28,7 @@ Not all of this information is vital, but the most important information is at t
   * Most notably, all three of the doors in each of the Monkey Cave trading rooms are their own cluster; since there are many of these rooms, this is where the largest number of skips are found.
   * Enemy scripted battles in the middle of the room, like Mini Barf or Sentry Robots, **do not** break the room up into different clusters, so beating them may be required. Again, **these are not skips.**
 
-* Each floor has a guaranteed free full heal. The 7 Sanctuaries (Lumine Hall is not in the maze), the Dr Saturn Room, and the Dalaam Palace Room will each be given one to each floor.
+* Each floor has a guaranteed free full heal. The 7 Sanctuaries (Lumine Hall is not in the maze), the Brick Road's Head Room, and the Dalaam Palace Room will each be given one to each floor.
   * There are other full heals beyond these. One notable one is at the exit of the Pyramid in Southern Scaraba--this one is repeatable in AC because Poo does not leave your party. Also, Ness’s mom has her free hotel functionality.
   * Staying in hotels will keep you in the hotel lobby, not move you to another room.
 

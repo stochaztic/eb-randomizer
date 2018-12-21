@@ -187,7 +187,7 @@ const ebutils = {
         0x3f5,  // Milky Well
         0x52c,  // Pink Cloud
         0x68c,  // Lilliput Steps
-        0x6a0,  // Dr. Saturn
+        0x6b5,  // Brick Road's Head
         0x6d1,  // Throne Room
         0x7ce,  // Fire Spring
     ],

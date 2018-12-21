@@ -458,6 +458,11 @@ class AncientCave extends ReadWriteObject {
         tpt = TPTObject.get(1383);
         tpt.data.address = 0xc96e22;
 
+        // Brick Road's head - don't set flags or give long speech
+        script = Script.getByPointer(0x57955);
+        script.lines =  [...script.lines.slice(0,7), ebutils.ccodeGotoAddress(0x57ad9)];
+        script.writeScript();
+
         // Bubble Monkey - prevent joining
         script = Script.getByPointer(0x6af6c);
         script.lines =  script.lines.slice(2);

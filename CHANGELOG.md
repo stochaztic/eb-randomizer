@@ -1,5 +1,6 @@
 # Changelog
 ## v34.x / v35 (In Progress)
+- Ancient Cave: Dr Saturn room replaced by Brickroad's Head room in the guaranteed-full-heal-per-floor pool.
 - PC sprites: Added Blue. More sprites for Dragon Ness.
 ### Bugfixes
 - Happy Happy Village free stand will correctly give items even if Ness's inventory is full (vanilla bug fixed).
