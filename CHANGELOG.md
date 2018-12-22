@@ -5,6 +5,7 @@
 ### Bugfixes
 - Happy Happy Village free stand will correctly give items even if Ness's inventory is full (vanilla bug fixed).
 - Ancient Cave: Heiroglyph room softlock fixed.
+- Ancient Cave: Magic Cake Lady softlock fixed.
 
 ## v34 (2018-12-18)
 - Ancient Cave: Skip logic adjusted. Skips will now take you a moderate number of floors away, rather than none or an extreme amount.

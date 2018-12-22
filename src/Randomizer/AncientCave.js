@@ -454,6 +454,10 @@ class AncientCave extends ReadWriteObject {
         let tpt = TPTObject.get(71);
         tpt.data.address = 0xc76b0b;
 
+        // Magic Cake Lady - prevent softlock
+        tpt = TPTObject.get(1069);
+        tpt.data.address = 0xc8b22f;
+
         // Moonside right side #3 teleporter - return to central Moonside
         tpt = TPTObject.get(1383);
         tpt.data.address = 0xc96e22;
