@@ -91,7 +91,7 @@ class EnemyObject extends TableObject {
                     newName = `${this.context.random.choice(enemyAdjectives)} ${newName}`;
                 }
                 if(this.context.random.random() < 0.075) {
-                    newName = `${this.context.random.choice(superlatives)} ${newName}`;
+                    newName = `${this.context.random.choice(superlatives)}${newName}`;
                 }
                 if(newName.length <= this.data.name_text.length) {
                     this.name = newName;
