@@ -149,8 +149,9 @@ export async function execute(romfile, specs, hooks) {
     hooks.message("DONE");
     if(specs.flags.devmode >= 2) {
       const extract = index => {
-        const spriteSize = 192;
         const sgo = SpriteGroupObject.every[index];
+        const spriteMult = 32;
+        const spriteSize = spriteMult * sgo.oldData.height * (sgo.oldData.width >> 4);
         let ptrs = sgo.spriteCount > 8 ? [...sgo.oldData.sprites_cardinal, ...sgo.oldData.sprites_diagonal] : sgo.oldData.sprites_cardinal;
         ptrs = ptrs.map(ptr => (sgo.oldData.bank << 16) | ptr);
         const usedSet = {};

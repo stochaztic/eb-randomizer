@@ -26,7 +26,110 @@ import Dragonair from './sprites/Dragonair.bin';
 import Gordon from './sprites/Gordon.bin';
 import WeirdAl from './sprites/WeirdAl.bin';
 
+import ProtoMan001 from './sprites/ProtoMan/001.bin';
+import ProtoMan005 from './sprites/ProtoMan/005.bin';
+import ProtoMan006 from './sprites/ProtoMan/006.bin';
+import ProtoMan007 from './sprites/ProtoMan/007.bin';
+import ProtoMan008 from './sprites/ProtoMan/008.bin';
+import ProtoMan014 from './sprites/ProtoMan/014.bin';
+import ProtoMan015 from './sprites/ProtoMan/015.bin';
+import ProtoMan016 from './sprites/ProtoMan/016.bin';
+import ProtoMan017 from './sprites/ProtoMan/017.bin';
+import ProtoMan021 from './sprites/ProtoMan/021.bin';
+import ProtoMan027 from './sprites/ProtoMan/027.bin';
+import ProtoMan335 from './sprites/ProtoMan/335.bin';
+import ProtoMan362 from './sprites/ProtoMan/362.bin';
+import ProtoMan378 from './sprites/ProtoMan/378.bin';
+import ProtoMan437 from './sprites/ProtoMan/437.bin';
+import ProtoMan457 from './sprites/ProtoMan/457.bin';
+
 export const customCharacters = [
+    {
+        label: "Proto Man",
+        value: "ProtoMan",
+        sprites: {
+            main: {
+                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1536, 1728, 1920, 2112, 2304, 2496, 2688, 2880],
+                data: ProtoMan001,
+                palette: 26,
+            },
+            robot: {
+                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344],
+                data: ProtoMan005,
+                palette: 26,
+            },
+            nude: {
+                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1153, 1345, 1536, 1728, 1920, 2112, 1152, 1344],
+                data: ProtoMan006,
+                palette: 26,
+            },
+            bike: {
+                indexes: [0, 768, 1536, 2304, 3072, 3840, 4608, 5376, 6145, 6913, 7681, 8449, 7680, 9216, 6144, 6912],
+                data: ProtoMan007,
+                palette: 26,
+            },
+            dead: {
+                indexes: [0, 192, 385, 577, 768, 768, 384, 576, 960, 192, 1152, 768, 1152, 768, 960, 192],
+                data: ProtoMan008,
+                palette: 26,
+            },
+            fuzzy: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: ProtoMan014,
+                palette: 26,
+            },
+            bedJeff: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: ProtoMan015,
+                palette: 26,
+            },
+            down: {
+                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
+                data: ProtoMan016,
+                palette: 26,
+            },
+            ladder: {
+                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
+                data: ProtoMan017,
+                palette: 26,
+            },
+            rope: {
+                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
+                data: ProtoMan021,
+                palette: 26,
+            },
+            mini: {
+                indexes: [0, 128, 257, 385, 0, 128, 256, 384, 0, 128, 0, 128, 0, 128, 0, 128],
+                data: ProtoMan027,
+                palette: 26,
+            },
+            jump: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: ProtoMan335,
+                palette: 26,
+            },
+            meditate: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: ProtoMan362,
+                palette: 26,
+            },
+            bedNess: {
+                indexes: [0, 128, 0, 256, 0, 128, 0, 256],
+                data: ProtoMan378,
+                palette: 26,
+            },
+            pj: {
+                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1152, 192, 1344, 960, 1344, 960, 1152, 192],
+                data: ProtoMan437,
+                palette: 26,
+            },
+            deadRobot: {
+                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
+                data: ProtoMan457,
+                palette: 26,
+            },
+        },
+    },
     {
         label: "Pride Ness",
         value: "PrideNess",
@@ -419,8 +522,39 @@ export async function prepare(sprite, index) {
 
     newObj[index + 1] = await prepareSprite(sprite.sprites.main);
 
+    if(sprite.sprites.robot && index === 0) {
+        newObj[5] = await prepareSprite(sprite.sprites.robot);
+    }
+
+    if(sprite.sprites.pj && index === 0) {
+        newObj[437] = await prepareSprite(sprite.sprites.pj);
+        if(sprite.sprites.nude) {
+            newObj[6] = await prepareSprite(sprite.sprites.nude);
+        }
+        else {
+            newObj[6] = newObj[437];
+        }
+    }
+
+    if(sprite.sprites.bike && index === 0) {
+        newObj[7] = await prepareSprite(sprite.sprites.bike);
+    }
+
     if(sprite.sprites.dead) {
         newObj[index + 8] = await prepareSprite(sprite.sprites.dead);
+    }
+
+    if(sprite.sprites.fuzzy && index === 0) {
+        newObj[14] = await prepareSprite(sprite.sprites.fuzzy);
+    }
+
+    if(sprite.sprites.bedJeff && index === 2) {
+        newObj[15] = await prepareSprite(sprite.sprites.bedJeff);
+    }
+
+    if(sprite.sprites.down) {
+        const newIdx = (index === 0) ? 16 : (392 + index);
+        newObj[newIdx] = await prepareSprite(sprite.sprites.down);
     }
 
     if(sprite.sprites.ladder) {
@@ -435,18 +569,20 @@ export async function prepare(sprite, index) {
         newObj[index + 27] = await prepareSprite(sprite.sprites.mini);
     }
 
-    if(sprite.sprites.fuzzy && index === 0) {
-        newObj[14] = await prepareSprite(sprite.sprites.fuzzy);
+    if(sprite.sprites.jump) {
+        newObj[index + 335] = await prepareSprite(sprite.sprites.jump);
     }
 
-    if(sprite.sprites.pj && index === 0) {
-        newObj[437] = await prepareSprite(sprite.sprites.pj);
-        if(sprite.sprites.nude) {
-            newObj[6] = await prepareSprite(sprite.sprites.nude);
-        }
-        else {
-            newObj[6] = newObj[437];
-        }
+    if(sprite.sprites.meditate && index === 3) {
+        newObj[362] = await prepareSprite(sprite.sprites.meditate);
+    }
+
+    if(sprite.sprites.bedNess && index === 0) {
+        newObj[378] = await prepareSprite(sprite.sprites.bedNess);
+    }
+
+    if(sprite.sprites.deadRobot && index === 0) {
+        newObj[457] = await prepareSprite(sprite.sprites.deadRobot);
     }
 
     return newObj;

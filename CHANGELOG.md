@@ -2,7 +2,7 @@
 ## v34.x / v35 (In Progress)
 - Ancient Cave: Dr Saturn room replaced by Brickroad's Head room in the guaranteed-full-heal-per-floor pool.
 - Enemy stats: Minor additions to the wordlists.
-- PC sprites: Added Red, Blue, and Generic Pokemon. More sprites for Dragon Ness.
+- PC sprites: Added Proto Man, Red, Blue, and Generic Pokemon. More sprites for Dragon Ness.
 ### Bugfixes
 - Happy Happy Village free stand will correctly give items even if Ness's inventory is full (vanilla bug fixed).
 - Ancient Cave: Heiroglyph room softlock fixed.
