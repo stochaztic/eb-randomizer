@@ -3,6 +3,7 @@
 - Ancient Cave: Dr Saturn room replaced by Brickroad's Head room in the guaranteed-full-heal-per-floor pool.
 - Ancient Cave: Endgame script changes to make defeated robot sprite viewable.
 - Enemy stats: Minor additions to the wordlists.
+- Enemy stats: Enemies that normally begin with Cannot Concentrate will keep that status (balance issue).
 - PC sprites: Added Proto Man, Red, Blue, Generic Pokemon, Mole, and Mouse. More sprites for Dragon Ness.
 ### Bugfixes
 - Happy Happy Village free stand will correctly give items even if Ness's inventory is full (vanilla bug fixed).

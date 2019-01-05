@@ -110,6 +110,11 @@ class EnemyObject extends TableObject {
             });
         }
 
+        // Starting-status Cannot Concentrate enemies keep that status
+        if(this.oldData.status === 6) {
+            this.data.status = 6;
+        }
+
         // Special case for Giygas before dupe sanitizing: The first entry is not the sprite-having entry.
         if(this.name === "Giygas") {
             const renamedGiegue = this.constructor.every.find(o => o.oldName === this.name && o.name !== this.name);
