@@ -10,8 +10,6 @@ import Halo from './sprites/Halo.bin';
 import Bart from './sprites/Bart.bin';
 import BartRope from './sprites/Bart-Rope.bin';
 import BartLadder from './sprites/Bart-Ladder.bin';
-import DragonNess from './sprites/DragonNess.bin';
-import DragonNessMini from './sprites/DragonNess-Mini.bin';
 import DragonPaula from './sprites/DragonPaula.bin';
 import DragonJeff from './sprites/DragonJeff.bin';
 import DragonPoo from './sprites/DragonPoo.bin';
@@ -25,6 +23,9 @@ import GenericPokemon from './sprites/GenericPokemon.bin';
 import Dragonair from './sprites/Dragonair.bin';
 import Gordon from './sprites/Gordon.bin';
 import WeirdAl from './sprites/WeirdAl.bin';
+
+import Mole from './sprites/Mole.bin';
+import Mouse from './sprites/Mouse.bin';
 
 import ProtoMan001 from './sprites/ProtoMan/001.bin';
 import ProtoMan005 from './sprites/ProtoMan/005.bin';
@@ -42,6 +43,19 @@ import ProtoMan362 from './sprites/ProtoMan/362.bin';
 import ProtoMan378 from './sprites/ProtoMan/378.bin';
 import ProtoMan437 from './sprites/ProtoMan/437.bin';
 import ProtoMan457 from './sprites/ProtoMan/457.bin';
+
+import DragonNess001 from './sprites/DragonNess/001.bin';
+import DragonNess008 from './sprites/DragonNess/008.bin';
+import DragonNess014 from './sprites/DragonNess/014.bin';
+import DragonNess015 from './sprites/DragonNess/015.bin';
+import DragonNess016 from './sprites/DragonNess/016.bin';
+import DragonNess017 from './sprites/DragonNess/017.bin';
+import DragonNess021 from './sprites/DragonNess/021.bin';
+import DragonNess027 from './sprites/DragonNess/027.bin';
+import DragonNess335 from './sprites/DragonNess/335.bin';
+import DragonNess362 from './sprites/DragonNess/362.bin';
+import DragonNess378 from './sprites/DragonNess/378.bin';
+import DragonNess437 from './sprites/DragonNess/437.bin';
 
 export const customCharacters = [
     {
@@ -231,12 +245,62 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1537, 1729, 1921, 2113, 2304, 2112, 2496, 1728],
-                data: DragonNess,
+                data: DragonNess001,
+                palette: 26,
+            },
+            dead: {
+                indexes: [0, 0, 193, 193, 384, 384, 192, 192, 0, 0, 384, 384, 384, 384, 0, 0],
+                data: DragonNess008,
+                palette: 26,
+            },
+            fuzzy: {
+                indexes: [0, 192, 0, 0, 0, 0, 0, 0],
+                data: DragonNess014,
+                palette: 26,
+            },
+            bedJeff: {
+                indexes: [0, 256, 0, 0, 0, 0, 0, 0],
+                data: DragonNess015,
+                palette: 26,
+            },
+            down: {
+                indexes: [0, 0, 0, 0, 0, 0, 576, 576],
+                data: DragonNess016,
+                palette: 26,
+            },
+            ladder: {
+                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
+                data: DragonNess017,
+                palette: 26,
+            },
+            rope: {
+                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
+                data: DragonNess021,
                 palette: 26,
             },
             mini: {
-                indexes: [0, 1, 192, 384, 576, 577, 768, 960, 1152, 1153, 576, 577, 1345, 577, 0, 1],
-                data: DragonNessMini,
+                indexes: [0, 1, 128, 256, 384, 385, 512, 640, 768, 769, 384, 385, 897, 385, 0, 1],
+                data: DragonNess027,
+                palette: 26,
+            },
+            jump: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: DragonNess335,
+                palette: 26,
+            },
+            meditate: {
+                indexes: [0, 0, 0, 0, 192, 192, 192, 192],
+                data: DragonNess362,
+                palette: 26,
+            },
+            bedNess: {
+                indexes: [0, 128, 0, 128, 0, 128, 0, 128],
+                data: DragonNess378,
+                palette: 26,
+            },
+            pj: {
+                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1536, 1728, 1920, 2112, 2304, 2496, 2688, 2880],
+                data: DragonNess437,
                 palette: 26,
             },
         },
@@ -435,8 +499,30 @@ export const vanillaSprites = [
     { label: "Mayor Pirkle", value: 154, },
     { label: "Mr Saturn", value: 171, },
     { label: "Mr T", value: 79, },
+    {
+        label: "Mole",
+        value: "Mole",
+        sprites: {
+            main: {
+                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 769, 577, 576, 577, 961, 1],
+                data: Mole,
+                palette: 22,
+            },
+        },
+    },
     { label: "Mom", value: 145, },
     { label: "Monotoli", value: 164, },
+    {
+        label: "Mouse",
+        value: "Mouse",
+        sprites: {
+            main: {
+                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 768, 960, 576, 577, 576, 577, 0, 1],
+                data: Mouse,
+                palette: 20,
+            },
+        },
+    },
     { label: "Mummy", value: 307, },
     { label: "Ness", value: 1, },
     { label: "Nurse", value: 140, },
