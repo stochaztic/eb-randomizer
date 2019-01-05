@@ -65,7 +65,7 @@ Our method of randomizing the battle backgrounds often leads to extremely good-l
 
 There is a discussion channel for this randomizer at the [EarthBound Speedrunning Discord](https://discord.gg/WWVYwkE).
 
-Custom sprite contributions by: pickfifteen, Artheau, Quatropus, the salvation phoenix, Zephram, Aurilliux, and EBrent.
+Custom sprite contributions by: pickfifteen, Artheau, Quatropus, the salvation phoenix, Zephram, Aurilliux, MrMouser7, and EBrent.
 
 This randomizer thanks greatly the Starmen.Net, PK Hack, and EarthBound Speedrunning communities for their contributions to making it possible, as well as the two predecessor EarthBound randomizers that very much inspired this project.
 
