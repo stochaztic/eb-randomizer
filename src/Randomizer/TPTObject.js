@@ -27,6 +27,7 @@ class TPTObject extends TableObject {
     }
 
     mutate() {
+        const phones = [167, 215, 412, 385, 216];
         const chests = [33, 195, 214, 233, 262, 322, 408];
         const tptExclusions = [198, //# Meteorite (causes Buzz Buzz scene problems)
             884]; //# Runaway 5 in Clumsy room (causes softlock)
@@ -34,7 +35,10 @@ class TPTObject extends TableObject {
             369, 371, 373, 374, 375, 376, 381, 410, 420, 428, 430, 431, 439,
             440, 441, 456, 462, 463,
             457, // Defeated Ness Robot
-            //# Also exclude all chest sprites
+            427, // Tiny bird phone
+            // Also exclude all phone sprites
+            167, 215, 412, 385, 216,
+            // Also exclude all chest sprites
             33, 195, 214, 233, 262, 322, 408];
         if(this.context.specs.flags.n >= 3) {
             spriteExclusions = [];
@@ -42,6 +46,10 @@ class TPTObject extends TableObject {
         if(tptExclusions.includes(this.index)) return;
         if(chests.includes(this.data.sprite)) {
             this.data.sprite = this.context.random.choice(chests);
+            return;
+        }
+        if(phones.includes(this.data.sprite)) {
+            this.data.sprite = this.context.random.choice(phones);
             return;
         }
         if(spriteExclusions.includes(this.data.sprite)) return;
