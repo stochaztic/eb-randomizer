@@ -14,6 +14,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.setFlag = this.setFlag.bind(this);
+    this.setBitfield = this.setBitfield.bind(this);
     this.fileSelect = this.fileSelect.bind(this);
     this.setSprite = this.setSprite.bind(this);
     this.generate = this.generate.bind(this);
@@ -115,6 +116,16 @@ class App extends Component {
     this.setState(s => {
       s.specs.flags[flag] = val;
       if(flag === 'a' || flag === 'k') s.moreInfo = false;
+      return s;
+    });
+  }
+
+  setBitfield(flag, val, checked) {
+    if(this.state.generationStatus) return;
+    this.setQueryString(false);
+    val = parseInt(val);
+    this.setState(s => {
+      s.specs.flags[flag] = s.specs.flags[flag] + (checked ? val : -val);
       return s;
     });
   }
@@ -225,6 +236,41 @@ class App extends Component {
 
   render() {
     const specs = this.state.specs;
+
+    const bitfieldDesc = str => {
+      const parts = str.split(" - ");
+      if(parts.length < 2) return parts;
+      return <span><span className="bitfieldTitle">{parts[0]}</span> - {parts[1]}</span>;
+    }
+
+    const flagBody = flag => {
+      const flagInfo = this.flagDescriptions[flag];
+
+      if(flagInfo.bitfield) {
+        return <div className="flagContainer bitFlagContainer" key={flag}>
+          <span className="flagLabel">{flag}</span><span className="flagTitle">{flagInfo.title}</span>
+        { Object.keys(flagInfo.desc).map(i => { 
+          return <p key={i}><label>
+            <input type="checkbox" checked={specs.flags[flag] & i} onChange={e => this.setBitfield(flag, i, e.target.checked)} />
+            {bitfieldDesc(flagInfo.desc[i])}
+            </label>
+          </p>
+        })}
+        </div>
+      }
+      return <div className="flagContainer nonbitFlagContainer" key={flag}>
+        <span className="flagLabel">{flag}</span>
+        { [...Array(flagInfo.max + 1).keys()].map(i => { 
+          return <label key={i} className={flagInfo.unsafe && flagInfo.unsafe <= i ? "unsafe" : ""}>
+            <input type="radio" checked={specs.flags[flag] === i} onChange={e => this.setFlag(flag, i)} />
+            {i}
+          </label>
+        })}
+        <p><strong>{flagInfo.title}: </strong>{flagInfo.desc[specs.flags[flag]] || 'No randomization.'} <span className="unsafe">
+        {flagInfo.unsafe && flagInfo.unsafe <= specs.flags[flag] ? 'This is unsafe and may cause errors. Not recommended.' : ''}</span></p>
+      </div>
+    }
+
     const badVersion = (
       <section className="step-badversion">
         <h3>Incompatible Version</h3>
@@ -341,20 +387,7 @@ class App extends Component {
         :
         this.flagDescriptions && Object.keys(this.flagDescriptions)
           .filter(f => this.state.debug || f.length === 1)
-          .map( flag => {
-            const flagInfo = this.flagDescriptions[flag];
-            return <div className="flagContainer" key={flag}>
-              <span className="flagLabel">{flag}</span>
-              { [...Array(flagInfo.max + 1).keys()].map(i => { 
-                return <label key={i} className={flagInfo.unsafe && flagInfo.unsafe <= i ? "unsafe" : ""}>
-                  <input type="radio" checked={specs.flags[flag] === i} onChange={e => this.setFlag(flag, i)} />
-                  {i}
-                </label>
-              })}
-              <p><strong>{flagInfo.title}: </strong>{flagInfo.desc[specs.flags[flag]] || 'No randomization.'} <span className="unsafe">
-              {flagInfo.unsafe && flagInfo.unsafe <= specs.flags[flag] ? 'This is unsafe and may cause errors. Not recommended.' : ''}</span></p>
-            </div>
-        })}
+          .map( flag => flagBody(flag) )}
       </fieldset>
     </div>
     );

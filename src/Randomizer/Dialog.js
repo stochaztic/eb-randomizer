@@ -31,7 +31,7 @@ class Dialog extends ReadWriteObject {
             [Script.getByPointer(0x8fd11), 5, 4],
             [Script.getByPointer(0x8ff31), 4, 4],
         ];
-        const gameScripts =  TPTObject.every.map(tpt => tpt.script).filter(script => script && script.isSwapSafe);
+        const gameScripts = TPTObject.every.map(tpt => tpt.script).filter(script => script && script.isSwapSafe);
         let candidates = Script.newlines;
         candidates = candidates.concat(this.context.random.sample(gameScripts, candidates.length * 3));
         let chosen = this.context.random.sample(candidates, pokeyScripts.length);
@@ -48,29 +48,21 @@ class Dialog extends ReadWriteObject {
             pokeyScript.lines.splice(preLines, pokeyScript.lines.length - (preLines + postLines), callLine);
             pokeyScript.writeScript();
         })
+    }
 
+    static fullCleanup() {
+        super.fullCleanup();
         // Prayer scenes
-        if(this.context.specs.flags.d < 3) return;
+        if(!(this.context.specs.flags.u & 8)) return;
+        const gameScripts = TPTObject.every.map(tpt => tpt.script).filter(script => script && script.isSwapSafe);
         const prayerScripts = ebutils.GIYGAS_PRAYER_SCRIPTS.map(p => Script.getByPointer(p));
-        chosen = this.context.random.sample(gameScripts, prayerScripts.length);
+        const chosen = this.context.random.sample(gameScripts, prayerScripts.length);
         prayerScripts.forEach((prayerScript, i) => {
             prayerScript.lines = [
-                /*[0x04, 0x0b, 0x00],
-                [0x1F, 0xEB, 0xFF, 0x06],   // characters invisible
-                [0x05, 0x0a, 0x02],
-
-                [0x1F, 0x21, 0x51],         // teleport
-                [0x1f, 0xe5, 0xff],         // lock player movement
-
-
-                */
                 [0x18, 0x01, 0x01],         // open window 1
                 ebutils.ccodeCallAddress(chosen[i].pointer),
                 [0x10, 0x0f],               // pause 1/4th second
                 [0x18, 0x04],               // close all windows
-                /*[0x04, 0x0a, 0x02],
-                [0x1F, 0xEC, 0xFF, 0x01],   // characters visible
-                [0x05, 0x0b, 0x00],*/
                 [0x02],
             ];
             prayerScript.writeScript();

@@ -117,7 +117,23 @@ input[type="file"] {
   border-radius: 20px;
 }
 
-.flagContainer label {
+.flagTitle {
+  margin-left: 10px;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.bitfieldTitle {
+  font-weight: 600;
+  color: black;
+}
+
+.bitFlagContainer label { 
+  font-weight: normal;
+  color: #666;
+}
+
+.nonbitFlagContainer label {
   margin: 15px;
   font-size: 1.4em;
   display: inline;

@@ -1,4 +1,8 @@
 # Changelog
+## v35.x / v36 (In progress)
+- Dialogue: Short Giygas Prayers feature moved to Game improvement patches.
+- Game improvement patches: User interface improved to allow users to select any combination of patches.
+
 ## v35 (2019-01-08)
 - Ancient Cave: Dr Saturn room replaced by Brickroad's Head room in the guaranteed-full-heal-per-floor pool.
 - Ancient Cave: Endgame script changes to make defeated robot sprite viewable.

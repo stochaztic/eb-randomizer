@@ -17,12 +17,11 @@ const flagDescriptions = {
     },
     d: {
         title: "Dialogue",
-        max: 3,
+        max: 2,
         default: 2,
         desc: {
             1: "NPCs with non-vital dialogue will have their lines shuffled.",
             2: "NPCs with non-vital dialogue will have their lines shuffled, and Heavily Armed Pokey will have random special lines.",
-            3: "NPCs with non-vital dialogue will have their lines shuffled, Heavily Armed Pokey will have random special lines, and Giygas prayers will be shortened.",
         }
     },
     g: {
@@ -77,12 +76,13 @@ const flagDescriptions = {
     },
     u: {
         title: "Game improvement patches",
-        max: 2,
-        default: 1,
+        bitfield: true,
+        default: 5,
         desc: {
-            0: "No game improvement patches applied.",
-            1: "A run button patch will be applied to the game. Hold 'Y' to run. This is the same effect as having used a Skip Sandwich. Also, the R button will throw away the item you last received from a chest, battle, or NPC.",
-            2: "In addition to the Run Button patch and the R-Button Discard patch, the Ludicrous Speed text patch will be applied.",
+            1: "Run Button - Hold the Y Button to run at Skip Sandwich speed.",
+            2: "Ludicrous Speed Text - Text boxes, including in battle, finish instantaneously.",
+            4: "Discard Button - Press the R Button while on the overworld to discard the last item received from an item box, NPC, or battle.",
+            8: "Short Giygas Prayers - The cutscenes during the Giygas battle are shortened.",
         }
     },
     devmode: {
