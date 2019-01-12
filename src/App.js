@@ -154,6 +154,7 @@ class App extends Component {
 
   async generate(event) {
     this.setQueryString(true);
+    this.setState({generationStatus: 'Beginning randomization...' });
 
     const specs = this.state.specs;
     const nessData = await prepare(this.state.chosenSprites[0], 0);
@@ -163,7 +164,7 @@ class App extends Component {
     
     specs.sprites = Object.assign({}, nessData, paulaData, jeffData, pooData);
 
-    this.setState({generationStatus: 'Beginning randomization...' });
+    this.setState({generationStatus: 'Sending data to randomization engine...' });
     this.earthBoundRandomizer.postMessage({type: "execute", content: {
       romfile: this.state.uploadedROM,
       specs: specs,
