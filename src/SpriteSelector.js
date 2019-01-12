@@ -12,6 +12,7 @@ const selectStyles = {
 export default class SpriteSelector extends Component {
   state = { isOpen: false, value: selectData[0].options[1] };
   toggleOpen = () => {
+    if(!this.props.active) return;
     this.setState(state => ({ isOpen: !state.isOpen }));
   };
   onSelectChange = value => {
