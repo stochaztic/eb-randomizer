@@ -86,7 +86,6 @@ class AncientCave extends ReadWriteObject {
                 ebutils.ccodeGotoAddress(0x5e136)
             ];
             oldUse.writeScript();
-            //const newUse = Script.writeNewScript(newUseLines);
 
             const loadZero = Script.writeNewScript([
                 [0x05, 0xF0, 0x03],
@@ -103,10 +102,6 @@ class AncientCave extends ReadWriteObject {
             const newCheck = Script.writeNewScript(newCheckLines);
             hijackedCheck.lines = [ebutils.ccodeGotoAddress(newCheck.pointer)];
             hijackedCheck.writeScript();
-
-            //const oldUse = Script.getByPointer(0x7c742);
-            //oldUse.lines = [ebutils.ccodeGotoAddress(newUse.pointer)];
-            //oldUse.writeScript();
         }
 
         super.fullCleanup();
