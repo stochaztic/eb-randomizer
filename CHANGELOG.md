@@ -2,6 +2,7 @@
 ## v35.x / v36 (In progress)
 - Dialogue: Short Giygas Prayers feature moved to Game improvement patches.
 - Game improvement patches: User interface improved to allow users to select any combination of patches.
+- Game improvement patches: Added Goods Menu Equip patch.
 - PC sprites: Added Kris.
 
 ## v35 (2019-01-08)

@@ -60,6 +60,55 @@ class AncientCave extends ReadWriteObject {
         ];
         sign.writeScript();
 
+        if(this.context.specs.flags.u & 16) { // Goods Menu Equip
+            const failLines = [
+                ebutils.encodeText("@"),
+                [0x1C, 0x0D],
+                ebutils.encodeText(" can't equip the "),
+                [0x19, 0x1F],
+                [0x1B, 0x04],
+                [0x1C, 0x05, 0x00],
+                ebutils.encodeText("."),
+                [0x13, 0x02]
+            ];
+            const fail = Script.writeNewScript(failLines);
+            
+            const oldUse = Script.getByPointer(0x7c742);
+            oldUse.lines = [
+                [0x1B, 0x00],
+                [0x1D, 0x11, 0x00, 0x00],
+                [0x1B, 0x02, ...ebutils.ccodeAddress(fail.pointer)],
+                [0x19, 0x1F],
+                [0x1B, 0x04],
+                ebutils.ccodeCallAddress(0x5e25b),
+                [0x1B, 0x01],
+                [0x04, 0xF0, 0x03],
+                ebutils.ccodeGotoAddress(0x5e136)
+            ];
+            oldUse.writeScript();
+            //const newUse = Script.writeNewScript(newUseLines);
+
+            const loadZero = Script.writeNewScript([
+                [0x05, 0xF0, 0x03],
+                [0x07, 0xF0, 0x03],
+                [0x02]
+            ]);
+
+            const hijackedCheck = Script.getByPointer(0x5e36e);
+            const newCheckLines = [
+                [0x07, 0xF0, 0x03],
+                [0x1b, 0x03, ...ebutils.ccodeAddress(loadZero.pointer)],
+                ...hijackedCheck.lines
+            ];
+            const newCheck = Script.writeNewScript(newCheckLines);
+            hijackedCheck.lines = [ebutils.ccodeGotoAddress(newCheck.pointer)];
+            hijackedCheck.writeScript();
+
+            //const oldUse = Script.getByPointer(0x7c742);
+            //oldUse.lines = [ebutils.ccodeGotoAddress(newUse.pointer)];
+            //oldUse.writeScript();
+        }
+
         super.fullCleanup();
     }
 

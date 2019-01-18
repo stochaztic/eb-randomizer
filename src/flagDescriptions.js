@@ -77,12 +77,13 @@ const flagDescriptions = {
     u: {
         title: "Game improvement patches",
         bitfield: true,
-        default: 5,
+        default: 21,
         desc: {
             1: "Run Button - Hold the Y Button to run at Skip Sandwich speed.",
             2: "Ludicrous Speed Text - Text boxes, including in battle, finish instantaneously.",
             4: "Discard Button - Press the R Button while on the overworld to discard the last item received from an item box, NPC, or battle.",
             8: "Short Giygas Prayers - The cutscenes during the Giygas battle are shortened.",
+            16: "Goods Menu Equip - If you 'Use' an item in the Goods menu, it will equip if possible."
         }
     },
     devmode: {
