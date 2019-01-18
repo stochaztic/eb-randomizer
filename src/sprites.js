@@ -44,6 +44,18 @@ import ProtoMan378 from './sprites/ProtoMan/378.bin';
 import ProtoMan437 from './sprites/ProtoMan/437.bin';
 import ProtoMan457 from './sprites/ProtoMan/457.bin';
 
+import Kris001 from './sprites/Kris/001.bin';
+import Kris007 from './sprites/Kris/007.bin';
+import Kris008 from './sprites/Kris/008.bin';
+import Kris014 from './sprites/Kris/014.bin';
+import Kris015 from './sprites/Kris/015.bin';
+import Kris016 from './sprites/Kris/016.bin';
+import Kris017 from './sprites/Kris/017.bin';
+import Kris021 from './sprites/Kris/021.bin';
+import Kris027 from './sprites/Kris/027.bin';
+import Kris378 from './sprites/Kris/378.bin';
+import Kris437 from './sprites/Kris/437.bin';
+
 import DragonNess001 from './sprites/DragonNess/001.bin';
 import DragonNess008 from './sprites/DragonNess/008.bin';
 import DragonNess014 from './sprites/DragonNess/014.bin';
@@ -378,6 +390,67 @@ export const customCharacters = [
             main: {
                 indexes: [0, 1, 192, 384, 576, 768, 960, 1152, 0, 1, 576, 768, 576, 768, 0, 1],
                 data: Knuckles,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Kris",
+        value: "Kris",
+        sprites: {
+            main: {
+                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 768, 960, 193, 385, 192, 384, 768, 0],
+                data: Kris001,
+                palette: 26,
+            },
+            bike: {
+                indexes: [0, 768, 1537, 2305, 3072, 3840, 1536, 2304, 4608, 5376, 1537, 2305, 6144, 6912, 7680, 8448],
+                data: Kris007,
+                palette: 26,
+            },
+            dead: {
+                indexes: [0, 192, 385, 577, 768, 960, 576, 384, 0, 192, 768, 960, 768, 960, 0, 192],
+                data: Kris008,
+                palette: 26,
+            },
+            fuzzy: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: Kris014,
+                palette: 26,
+            },
+            bedJeff: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: Kris015,
+                palette: 26,
+            },
+            down: {
+                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
+                data: Kris016,
+                palette: 26,
+            },
+            ladder: {
+                indexes: [0, 1, 0, 1, 0, 1, 0, 1],
+                data: Kris017,
+                palette: 26,
+            },
+            rope: {
+                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
+                data: Kris021,
+                palette: 26,
+            },
+            mini: {
+                indexes:  [0, 1, 129, 257, 0, 1, 128, 256, 0, 1, 0, 1, 0, 1, 0, 1],
+                data: Kris027,
+                palette: 26,
+            },
+            bedNess: {
+                indexes: [0, 128, 0, 128, 0, 128, 0, 128],
+                data: Kris378,
+                palette: 26,
+            },
+            pj: {
+                indexes: [0, 192, 384, 576, 768, 769, 960, 1152, 1344, 192, 384, 576, 960, 1152, 1344, 0],
+                data: Kris437,
                 palette: 26,
             },
         },
