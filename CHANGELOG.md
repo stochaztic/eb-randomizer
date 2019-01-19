@@ -4,6 +4,8 @@
 - Game improvement patches: User interface improved to allow users to select any combination of patches.
 - Game improvement patches: Added Goods Menu Equip patch.
 - PC sprites: Added Kris.
+### Bugfixes
+- Game improvement patches: Added Goods Menu Equip patch that caused wront item to be sold at stores fixed.
 
 ## v35 (2019-01-08)
 - Ancient Cave: Dr Saturn room replaced by Brickroad's Head room in the guaranteed-full-heal-per-floor pool.
