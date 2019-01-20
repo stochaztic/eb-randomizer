@@ -546,7 +546,7 @@ class Script {
 
 Script._allScripts = [];
 Script._cachedByPointer = {};
-Script._freespace = {start: 0x1545c0, end: 0x154fff};
+Script._freespace = {start: 0x300000, end: 0x30ffff};
 
 Script._displayName = "script";
 export default Script;

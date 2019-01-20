@@ -33,7 +33,7 @@ class Dialog extends ReadWriteObject {
         ];
         const gameScripts = TPTObject.every.map(tpt => tpt.script).filter(script => script && script.isSwapSafe);
         let candidates = Script.newlines;
-        candidates = candidates.concat(this.context.random.sample(gameScripts, candidates.length * 3));
+        candidates = candidates.concat(this.context.random.sample(gameScripts, candidates.length));
         let chosen = this.context.random.sample(candidates, pokeyScripts.length);
 
         chosen.forEach((newScript, i) => {

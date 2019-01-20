@@ -85,7 +85,7 @@ class SpriteGroupObject extends TableObject {
     }
 }
 
-SpriteGroupObject.expandedBank = 0x30;
+SpriteGroupObject.expandedBank = 0x31;
 SpriteGroupObject.currentExpandedIndex = 0;
 
 SpriteGroupObject.badSprites = [

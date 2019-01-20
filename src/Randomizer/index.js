@@ -178,7 +178,9 @@ export async function execute(romfile, specs, hooks) {
         };
         hooks.download(content);
       };
-      console.log(extract.name);
+      const encode = x => ebutils.encodeText(x);
+      console.log(`extract: ${extract.name}`);
+      console.log(`encode: ${encode.name}`);
       debugger;
     }
     return {rom: newROM, spoiler: spoiler};
