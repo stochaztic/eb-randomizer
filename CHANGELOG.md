@@ -4,7 +4,7 @@
 - Dialogue: Additional Pokey lines and increased chance of custom Pokey lines.
 - Game improvement patches: User interface improved to allow users to select any combination of patches.
 - Game improvement patches: Added Goods Menu Equip patch.
-- PC sprites: Added Kris.
+- PC sprites: Added Kris and Tessie.
 ### Bugfixes
 - Game improvement patches: Added Goods Menu Equip patch that caused wront item to be sold at stores fixed.
 

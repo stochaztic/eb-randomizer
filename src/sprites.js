@@ -44,6 +44,22 @@ import ProtoMan378 from './sprites/ProtoMan/378.bin';
 import ProtoMan437 from './sprites/ProtoMan/437.bin';
 import ProtoMan457 from './sprites/ProtoMan/457.bin';
 
+import Tessie001 from './sprites/Tessie/001.bin';
+import Tessie005 from './sprites/Tessie/005.bin';
+import Tessie007 from './sprites/Tessie/007.bin';
+import Tessie008 from './sprites/Tessie/008.bin';
+import Tessie014 from './sprites/Tessie/014.bin';
+import Tessie015 from './sprites/Tessie/015.bin';
+import Tessie016 from './sprites/Tessie/016.bin';
+import Tessie017 from './sprites/Tessie/017.bin';
+import Tessie021 from './sprites/Tessie/021.bin';
+import Tessie027 from './sprites/Tessie/027.bin';
+import Tessie335 from './sprites/Tessie/335.bin';
+import Tessie362 from './sprites/Tessie/362.bin';
+import Tessie378 from './sprites/Tessie/378.bin';
+import Tessie437 from './sprites/Tessie/437.bin';
+import Tessie457 from './sprites/Tessie/457.bin';
+
 import Kris001 from './sprites/Kris/001.bin';
 import Kris007 from './sprites/Kris/007.bin';
 import Kris008 from './sprites/Kris/008.bin';
@@ -152,6 +168,87 @@ export const customCharacters = [
             deadRobot: {
                 indexes: [0, 0, 0, 0, 0, 0, 1, 1],
                 data: ProtoMan457,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Tessie",
+        value: "Tessie",
+        sprites: {
+            main: {
+                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 1153, 1345, 1152, 1344, 0, 192],
+                data: Tessie001,
+                palette: 20,
+            },
+            robot: {
+                indexes: [0, 192, 385, 577, 768, 769, 384, 576, 961, 1153, 1345, 1537, 1344, 1536, 960, 1152],
+                data: Tessie005,
+                palette: 26,
+            },
+            bike: {
+                indexes: [0, 768, 1537, 2305, 3072, 3840, 1536, 2304, 0, 768, 4608, 5376, 6144, 6912, 0, 768],
+                data: Tessie007,
+                palette: 20,
+            },
+            dead: {
+                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 1153, 1345, 1152, 1344, 0, 192],
+                data: Tessie008,
+                palette: 20,
+            },
+            fuzzy: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: Tessie014,
+                palette: 20,
+            },
+            bedJeff: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: Tessie015,
+                palette: 20,
+            },
+            down: {
+                indexes: [0, 192, 0, 192, 0, 192, 193, 1],
+                data: Tessie016,
+                palette: 20,
+            },
+            ladder: {
+                indexes: [0, 1, 0, 1, 0, 1, 0, 1],
+                data: Tessie017,
+                palette: 20,
+            },
+            rope: {
+                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
+                data: Tessie021,
+                palette: 20,
+            },
+            mini: {
+                indexes: [0, 128, 257, 385, 512, 640, 256, 384, 0, 128, 512, 640, 512, 640, 0, 128],
+                data: Tessie027,
+                palette: 20,
+            },
+            jump: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: Tessie335,
+                palette: 20,
+            },
+            meditate: {
+                indexes: [0, 0, 0, 0, 192, 192, 192, 192],
+                data: Tessie362,
+                palette: 20,
+            },
+            bedNess: {
+                indexes: [0, 128, 0, 128, 0, 128, 0, 128],
+                data: Tessie378,
+                palette: 20,
+            },
+            pj: {
+                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 1153, 1345, 1152, 1344, 0, 192],
+                data: Tessie437,
+                palette: 20,
+            },
+            deadRobot: {
+                indexes: [0, 0, 0, 0, 0, 0, 1, 193],
+                data: Tessie457,
                 palette: 26,
             },
         },
