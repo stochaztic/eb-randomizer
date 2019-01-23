@@ -29,7 +29,7 @@ Not all of this information is vital, but the most important information is at t
   * Enemy scripted battles in the middle of the room, like Mini Barf or Sentry Robots, **do not** break the room up into different clusters, so beating them may be required. Again, **these are not skips.**
 
 * Each floor has a guaranteed free full heal. The 7 Sanctuaries (Lumine Hall is not in the maze), the Brick Road's Head Room, and the Dalaam Palace Room will each be given one to each floor.
-  * There are other full heals beyond these. One notable one is at the exit of the Pyramid in Southern Scaraba--this one is repeatable in AC because Poo does not leave your party. Also, Ness’s mom has her free hotel functionality.
+  * There are other full heals beyond these. One notable one is at the exit of the Pyramid in Southern Scaraba--this one is repeatable in AC because Poo does not leave your party. Also, Ness’s mom in Onett has her free hotel functionality, and Ness's mom in Magicant is a full heal.
   * Staying in hotels will keep you in the hotel lobby, not move you to another room.
 
 * All one-way doors, like holes, are disabled.
@@ -60,6 +60,7 @@ Not all of this information is vital, but the most important information is at t
   * This means that the Runaway Dog may have, for example, the Spiteful Crow’s speed + 4%.
   * Because of this, the Caterpillars may or may not have a big XP prize compared to their power; the XP prize may have been given to someone else instead.
   * One thing I have noticed often is that Foppies and Fobbies seem to regularly get much better stats due to the intershuffling than people expect at first. Don’t take them lightly.
+  * Enemy shields and weaknesses can be changed, but will *usually* be the same as normal. Just be aware it is always a possibility. Pokey has gotten a reflective psychic shield before.
 
 ## Miscellaneous things you might not expect
 
@@ -74,6 +75,10 @@ Not all of this information is vital, but the most important information is at t
   * The Starmaster full heal at the exit of the Pyramid will repeat itself every time you enter its trigger zone, because Poo does not leave.
   * There is no way to get the Ness stat boost from beating Magicant’s Ness’s Nightmare, even if you encounter it as a Shiny Spot boss, so be sure to take that into account.
   * There is a bug that can occur in Paula’s prayer, where it appears to restore over 65,000 HP to a character, but it actually subtracts a small amount of HP instead. This bug actually exists in the vanilla game, but is extremely rare. It is significantly more common in randomizer due to the stat growth randomization.
+  * If you encounter the Paula's Shack Interior room, you can talk to Paula to get a Franklin Badge. (This means you could theoretically get 3 badges at once with a lucky seed.)
+  * Ness's Mom in Magicant is a full heal.
+  * If you have an equipment equipped (for example, a Platinum Band) and pick up another copy of the same equipment, and drop it with the R button, your equipped item may be dropped instead. Basically, the first item the game finds with the right name will be dropped. Be careful when dropping equipment for this reason.
+  
 
 ## List of clusters with the most doors
   * 5 - Long sewer room
