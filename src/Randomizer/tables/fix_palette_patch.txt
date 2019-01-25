@@ -1,0 +1,43 @@
+7ACC: 4c a0 f9  ;JMP $F9A0
+F9A0: 9D 42 2A  ;STA $2A42,X   # Overwritten instruction
+A5 02           ;LDA $02
+48              ;PHA
+
+A0 03 00        ;LDY #$0003
+B7 0E           ;LDA [$0E],Y  # Get palette byte
+29 FF 00        ;AND #$00FF
+85 02           ;STA $02
+
+A0 02 00        ;LDY #$0002 
+B7 0E           ;LDA [$0E],Y # Get sprite size byte. $0e / $10 can now be used.
+29 04 00        ;AND #$0004
+D0 02           ;BNE +2 # if nonzero, skip next instruction(s)
+1A              ;INC
+1A              ;INC # Our loop counter is now either 2 or 4
+A8              ;TAY
+
+BD 2e 11        ;LDA $112e,X
+38              ;SEC 
+E9 03 00        ;SBC $#0003 # so after our first +5 we are looking at index 2 of the 5 bytes
+85 0e           ;STA $0e
+BD 6a 11        ;LDA $116A,X
+85 10           ;STA $10
+
+e2 30           ;SEP #$30    # BEGIN 8-BIT MODE
+
+A5 0e           ;LDA $0e # _begin loop_
+18              ;CLC 
+69 05           ;ADC #$05 # To next entry in sprite component table (size: 5 bytes)
+85 0e           ;STA $0e
+A7 0e           ;LDA [$0E]
+29 F0           ;AND #$F0
+05 02           ;ORA $02
+87 0e           ;STA [$0E]
+88              ;DEY # decrement and check counter
+D0 EE           ;BNE _begin loop_
+
+c2 30           ;REP #$30    # END 8-BIT MODE
+68              ;PLA
+85 02           ;STA $02
+
+4c cf 7a        ;JMP 7ACF
