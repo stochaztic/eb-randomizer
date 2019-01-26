@@ -192,9 +192,9 @@ export const customCharacters = [
                 palette: 20,
             },
             dead: {
-                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 1153, 1345, 1152, 1344, 0, 192],
+                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 1153, 1345, 1152, 1152, 0, 192],
                 data: Tessie008,
-                palette: 20,
+                palette: 26,
             },
             fuzzy: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
