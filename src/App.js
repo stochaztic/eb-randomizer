@@ -7,6 +7,7 @@ import EarthBoundRandomizer from './randomizer.worker.js';
 import ebutils from './Randomizer/ebutils.js';
 import { prepare } from './sprites.js';
 import SpriteSelector from './SpriteSelector.js';
+import SpritePreviewer from './SpritePreviewer.js';
 import Cookies from 'js-cookie';
 import localforage from 'localforage';
 
@@ -51,6 +52,7 @@ class App extends Component {
       newROM: null,
       debug: false,
       moreInfo: false,
+      showPreview: false,
       flagDetail: directLink,
       showDirectLinkInfo: directLink,
       compatibleVersion: compatibleVersion,
@@ -273,7 +275,9 @@ class App extends Component {
 
     const selectCharacterSprites = (
       <fieldset className="characterSelectors">
-        <legend>Character sprites:</legend>
+        <legend>Character sprites: 
+          <a className="previewToggle" href="?" onClick={(e) => {e.preventDefault(); this.setState({showPreview: !this.state.showPreview})}}>({this.state.showPreview ? 'hide' : 'show'})</a></legend>
+        { this.state.showPreview ? <SpritePreviewer /> : '' }
         <SpriteSelector character="NESS" backgroundColor="#ccd9ff" active={!(this.state.generationStatus)} onChange={val => this.setSprite(val, 0)} />
         <SpriteSelector character="PAULA" backgroundColor="#ffccd4" active={!(this.state.generationStatus)} onChange={val => this.setSprite(val, 1)} />
         <SpriteSelector character="JEFF" backgroundColor="#ccffcc" active={!(this.state.generationStatus)} onChange={val => this.setSprite(val, 2)} />

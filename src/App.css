@@ -199,3 +199,9 @@ input[type="file"] {
   color: red;
   font-weight: bold;
 }
+
+.previewToggle {
+  font-weight: normal;
+  font-size: 0.9em;
+  padding-left: 0.5em;
+}

@@ -1,0 +1,74 @@
+.animatedSprite {
+    height: 48px;
+    width: 32px;
+    min-width: 32px;
+    background-size: 128px 192px;     
+    image-rendering: pixelated;
+    animation: walk 10s steps(1) infinite;
+}
+
+@keyframes walk {   
+    0% {       
+        background-position: 0px 0px;
+    }   
+    5% {
+        background-position: -32px 0px;
+    }
+    10% {       
+        background-position: 0px 0px;
+    }   
+    15% {
+        background-position: -32px 0px;
+    }
+    20% {       
+        background-position: 0px -48px;
+    }   
+    25% {
+        background-position: -32px -48px;
+    }
+    30% {       
+        background-position: 0px -48px;
+    }   
+    35% {
+        background-position: -32px -48px;
+    }
+    40% {       
+        background-position: -64px 0px;
+    }   
+    45% {
+        background-position: -96px 0px;
+    }
+    50% {       
+        background-position: -64px 0px;
+    }   
+    55% {
+        background-position: -96px 0px;
+    }
+    60% {       
+        background-position: -64px -48px;
+    }   
+    65% {
+        background-position: -96px -48px;
+    }
+    70% {       
+        background-position: -64px -48px;
+    }   
+    75% {
+        background-position: -96px -48px;
+    }
+    80% {       
+        background-position: 0px -144px;
+    }   
+    85% {
+        background-position: -32px -144px;
+    }
+    90% {       
+        background-position: 0px -144px;
+    }   
+    95% {
+        background-position: -32px -144px;
+    }
+    100% {       
+        background-position: 0px 0px;
+    }   
+  }

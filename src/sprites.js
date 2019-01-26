@@ -89,6 +89,7 @@ export const customCharacters = [
     {
         label: "Proto Man",
         value: "ProtoMan",
+        creator: "Artheau",
         sprites: {
             main: {
                 indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1536, 1728, 1920, 2112, 2304, 2496, 2688, 2880],
@@ -175,6 +176,7 @@ export const customCharacters = [
     {
         label: "Tessie",
         value: "Tessie",
+        creator: "TheKubliest",
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 1153, 1345, 1152, 1344, 0, 192],
@@ -256,6 +258,7 @@ export const customCharacters = [
     {
         label: "Pride Ness",
         value: "PrideNess",
+        creator: "pickfifteen",
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 960, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344],
@@ -272,6 +275,7 @@ export const customCharacters = [
     {
         label: "Ninten",
         value: "Ninten",
+        creator: "the salvation phoenix",
         sprites: {
             main: {
                 indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1537, 1729, 1921, 2113, 1920, 2112, 1536, 1728],
@@ -293,6 +297,7 @@ export const customCharacters = [
     {
         label: "Teddy",
         value: "Teddy",
+        creator: "EBrent",
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 384, 961, 1153, 1345, 1537, 1344, 1536, 960, 1152],
@@ -304,6 +309,7 @@ export const customCharacters = [
     {
         label: "Ness's Hat",
         value: "NessHat",
+        creator: "pickfifteen",
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1152, 1344, 1537, 1729, 1536, 1728, 1920, 2112],
@@ -330,6 +336,7 @@ export const customCharacters = [
     {
         label: "Bart Simpson",
         value: "BartSimpson",
+        creator: "Quatropus",
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 384, 961, 1153, 1345, 1537, 1728, 1536, 960, 1920],
@@ -351,6 +358,7 @@ export const customCharacters = [
     {
         label: "Dragon Ness",
         value: "DragonNess",
+        creator: "Quatropus / Aurilliux",
         sprites: {
             main: {
                 indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1537, 1729, 1921, 2113, 2304, 2112, 2496, 1728],
@@ -417,6 +425,7 @@ export const customCharacters = [
     {
         label: "Dragon Paula",
         value: "DragonPaula",
+        creator: "Quatropus",
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 769, 960, 576, 0, 192, 768, 769, 768, 769, 0, 192],
@@ -428,6 +437,7 @@ export const customCharacters = [
     {
         label: "Dragon Jeff",
         value: "DragonJeff",
+        creator: "Quatropus",
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 769, 384, 576, 0, 192, 768, 769, 768, 769, 0, 192],
@@ -439,6 +449,7 @@ export const customCharacters = [
     {
         label: "Dragon Poo",
         value: "DragonPoo",
+        creator: "Quatropus",
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 384, 0, 1, 576, 768, 576, 768, 0, 1],
@@ -450,6 +461,7 @@ export const customCharacters = [
     {
         label: "Sonic",
         value: "Sonic",
+        creator: "Quatropus",
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 769, 960, 576, 0, 192, 768, 769, 768, 769, 0, 192],
@@ -461,6 +473,7 @@ export const customCharacters = [
     {
         label: "Amy",
         value: "Amy",
+        creator: "Quatropus",
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 576, 577, 576, 577, 0, 1],
@@ -472,6 +485,7 @@ export const customCharacters = [
     {
         label: "Tails",
         value: "Tails",
+        creator: "Quatropus",
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 960, 0, 1, 576, 768, 576, 768, 0, 1],
@@ -483,6 +497,7 @@ export const customCharacters = [
     {
         label: "Knuckles",
         value: "Knuckles",
+        creator: "Quatropus",
         sprites: {
             main: {
                 indexes: [0, 1, 192, 384, 576, 768, 960, 1152, 0, 1, 576, 768, 576, 768, 0, 1],
@@ -494,6 +509,7 @@ export const customCharacters = [
     {
         label: "Kris",
         value: "Kris",
+        creator: "TheKubliest",
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 768, 960, 193, 385, 192, 384, 768, 0],
@@ -555,6 +571,7 @@ export const customCharacters = [
     {
         label: "Blue",
         value: "Blue",
+        creator: "Arithium",
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 768, 960, 768, 960, 1152, 1344],
@@ -566,6 +583,7 @@ export const customCharacters = [
     {
         label: "Red",
         value: "Red",
+        creator: "Arithium",
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 768, 960, 768, 960, 1152, 1344],
@@ -577,6 +595,7 @@ export const customCharacters = [
     {
         label: "Generic Pokemon",
         value: "GenericPokemon",
+        creator: "EBrent",
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1153, 1345, 768, 960, 768, 960, 1152, 192],
@@ -588,6 +607,7 @@ export const customCharacters = [
     {
         label: "Dragonair",
         value: "Dragonair",
+        creator: "EBrent",
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 193, 385, 576, 577, 192, 384],
@@ -599,6 +619,7 @@ export const customCharacters = [
     {
         label: "Gordon Freeman",
         value: "Gordon",
+        creator: "EBrent",
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 193, 385, 576, 577, 192, 384],
@@ -610,6 +631,7 @@ export const customCharacters = [
     {
         label: "Weird Al Yankovic",
         value: "WeirdAl",
+        creator: "EBrent",
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 193, 385, 576, 577, 192, 384],
