@@ -334,28 +334,6 @@ export const customCharacters = [
         },
     },
     {
-        label: "Bart Simpson",
-        value: "BartSimpson",
-        creator: "Quatropus",
-        sprites: {
-            main: {
-                indexes: [0, 1, 193, 385, 576, 768, 192, 384, 961, 1153, 1345, 1537, 1728, 1536, 960, 1920],
-                data: Bart,
-                palette: 26,
-            },
-            ladder: {
-                indexes: [0, 1, 0, 192, 0, 1, 0, 1],
-                data: BartLadder,
-                palette: 26,
-            },
-            rope: {
-                indexes: [0, 192, 0, 384, 0, 192, 0, 192],
-                data: BartRope,
-                palette: 26,
-            },
-        },
-    },
-    {
         label: "Dragon Ness",
         value: "DragonNess",
         creator: "Quatropus / Aurilliux",
@@ -612,6 +590,28 @@ export const customCharacters = [
             main: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 193, 385, 576, 577, 192, 384],
                 data: Dragonair,
+                palette: 26,
+            },
+        },
+    },
+    {
+        label: "Bart Simpson",
+        value: "BartSimpson",
+        creator: "Quatropus",
+        sprites: {
+            main: {
+                indexes: [0, 1, 193, 385, 576, 768, 192, 384, 961, 1153, 1345, 1537, 1728, 1536, 960, 1920],
+                data: Bart,
+                palette: 26,
+            },
+            ladder: {
+                indexes: [0, 1, 0, 192, 0, 1, 0, 1],
+                data: BartLadder,
+                palette: 26,
+            },
+            rope: {
+                indexes: [0, 192, 0, 384, 0, 192, 0, 192],
+                data: BartRope,
                 palette: 26,
             },
         },
