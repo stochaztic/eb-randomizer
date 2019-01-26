@@ -13,17 +13,6 @@ import localforage from 'localforage';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.setFlag = this.setFlag.bind(this);
-    this.setBitfield = this.setBitfield.bind(this);
-    this.fileSelect = this.fileSelect.bind(this);
-    this.setSprite = this.setSprite.bind(this);
-    this.generate = this.generate.bind(this);
-    this.downloadROM = this.downloadROM.bind(this);
-    this.downloadSpoiler = this.downloadSpoiler.bind(this);
-    this.showMoreInfo = this.showMoreInfo.bind(this);
-    this.showFlagDetail = this.showFlagDetail.bind(this);
-    this.secret = this.secret.bind(this);
-    this.setQueryString = this.setQueryString.bind(this);
     this.flagDescriptions = flagDescriptions;
 
     const versionParts = process.env.REACT_APP_VERSION.split(".",2);
@@ -110,7 +99,7 @@ class App extends Component {
     });
   }
 
-  setFlag(flag, val) {
+  setFlag = (flag, val) => {
     if(this.state.generationStatus) return;
     this.setQueryString(false);
     this.setState(s => {
@@ -120,7 +109,7 @@ class App extends Component {
     });
   }
 
-  setBitfield(flag, val, checked) {
+  setBitfield = (flag, val, checked) => {
     if(this.state.generationStatus) return;
     this.setQueryString(false);
     val = parseInt(val);
@@ -130,11 +119,11 @@ class App extends Component {
     });
   }
 
-  flagString() {
+  flagString = () => {
     return ebutils.flagString(this.state.specs.flags);
   }
 
-  fileSelect(event) {
+  fileSelect = (event) => {
     if(this.state.generationStatus) return;
     const file = event.target.files[0];
     if(!file) {
@@ -148,11 +137,11 @@ class App extends Component {
     reader.readAsArrayBuffer(file);
   }
 
-  setSprite(sprite, index) {
+  setSprite = (sprite, index) => {
     this.setState(s => { s.chosenSprites[index] = sprite; return s; });
   }
 
-  async generate(event) {
+  generate = async (event) => {
     this.setQueryString(true);
     this.setState({generationStatus: 'Beginning randomization...' });
 
@@ -172,7 +161,7 @@ class App extends Component {
     }});
   }
 
-  downloadROM(event) {
+  downloadROM = (event) => {
     const blob = new Blob([this.state.newROM.rom], {type: "application/octet-stream"} );
     const link = document.createElement('a');
     link.href = window.URL.createObjectURL(blob);
@@ -182,7 +171,7 @@ class App extends Component {
     link.remove();
   }
 
-  downloadSpoiler(event) {
+  downloadSpoiler = (event) => {
     const blob = new Blob([JSON.stringify(this.state.newROM.spoiler)], {type: "application/json"});
     const link = document.createElement('a');
     link.href = window.URL.createObjectURL(blob);
@@ -192,15 +181,15 @@ class App extends Component {
     link.remove();
   }
 
-  showMoreInfo(event) {
+  showMoreInfo = (event) => {
     this.setState({moreInfo: true});
   }
 
-  showFlagDetail(event) {
+  showFlagDetail = (event) => {
     this.setState({flagDetail: true});
   }
 
-  secret(event) {
+  secret = (event) => {
     if(event.button === 1) {
       event.stopPropagation();
       event.preventDefault();
@@ -208,7 +197,7 @@ class App extends Component {
     }
   }
 
-  setQueryString(data=false) {
+  setQueryString = (data=false) => {
     if(!data) {
       if(window.location.href.split("?").length > 1) {
         window.history.replaceState(null, "", window.location.href.split("?")[0]);
