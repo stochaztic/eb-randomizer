@@ -41,6 +41,7 @@ import TrackDoorsPatch from './TrackDoorsPatch.js';
 import TrackStatsPatch from './TrackStatsPatch.js';
 import ebutils from './ebutils.js';
 import Cluster from './Cluster.js';
+import FixPalettePatch from './FixPalettePatch.js';
 
 export async function execute(romfile, specs, hooks) {
   const readWriteObjects = [
@@ -82,7 +83,7 @@ export async function execute(romfile, specs, hooks) {
   MapSpriteObject.afterOrder = [PsiTeleportObject, AncientCave];
 
   try {
-    const patches = [ExpandSavePatch, CreditsPatch, TrackStatsPatch, TitleDisableGlowPatch];
+    const patches = [ExpandSavePatch, CreditsPatch, TrackStatsPatch, TitleDisableGlowPatch, FixPalettePatch];
     
     if(specs.flags.a) patches.push(ShowSpritesNoIntroPatch);
     if(specs.flags.a) patches.push(TrackDoorsPatch);

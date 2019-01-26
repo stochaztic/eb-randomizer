@@ -6,6 +6,7 @@
 - Game improvement patches: Added Goods Menu Equip patch.
 - PC sprites: Added Kris and Tessie.
 ### Bugfixes
+- Sprites that change palettes upon changing states will appear with appropriate colors (vanilla bug fixed).
 - Game improvement patches: Added Goods Menu Equip patch that caused wront item to be sold at stores fixed.
 
 ## v35 (2019-01-08)
