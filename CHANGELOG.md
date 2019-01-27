@@ -1,6 +1,7 @@
 # Changelog
-## v35.x / v36 (In progress)
+## v36 (2019-01-28)
 - earthbound.app Website: Available custom sprites can be visually shown with animations.
+- Ancient Cave: You are warned before engaging Belch without Fly Honey.
 - Dialogue: Short Giygas Prayers feature moved to Game improvement patches.
 - Dialogue: Additional Pokey lines and increased chance of custom Pokey lines.
 - Game improvement patches: User interface improved to allow users to select any combination of patches.

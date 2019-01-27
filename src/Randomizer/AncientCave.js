@@ -487,6 +487,30 @@ class AncientCave extends ReadWriteObject {
         script.lines[0] = [0x04, 0x74, 0x01];
         script.writeScript();
 
+        // Belch - confirm fight if no Fly Honey
+        let tpt = TPTObject.get(697);
+        const newBelchLines = [
+            [0x1D, 0x05, 0xFF, 0x69],
+            [0x1B, 0x03, ...ebutils.ccodeAddress(tpt.data.address)],
+            ebutils.encodeText("@(You don't have Fly Honey."),
+            [0x03, 0x00],
+            ebutils.encodeText("@Do you really want to talk to Belch?)"),
+            [0x00],
+            [0x19, 0x02],
+            ebutils.encodeText("No", false),
+            [0x02],
+            [0x19, 0x02],
+            ebutils.encodeText("Yes", false),
+            [0x02],
+            [0x1C, 0x07, 0x02],
+            [0x11],
+            [0x12],
+            [0x09, 0x02, ...ebutils.ccodeAddress(0x99ff9), ...ebutils.ccodeAddress(tpt.data.address)],
+            [0x02]
+        ];
+        let newBelch = Script.writeNewScript(newBelchLines);
+        tpt.data.address = ebutils.fileToEbPointer(newBelch.pointer);
+
         // Mom in Ness's house - manual changes to get to heal state
         script = Script.getByPointer(0x750e3);
         script.lines[0] = [0x0a, 0x24, 0x51, 0xc7, 0x00];
@@ -498,7 +522,7 @@ class AncientCave extends ReadWriteObject {
         script.writeScript();
 
         // Strong - prevent softlock
-        let tpt = TPTObject.get(71);
+        tpt = TPTObject.get(71);
         tpt.data.address = 0xc76b0b;
 
         // Magic Cake Lady - prevent softlock
