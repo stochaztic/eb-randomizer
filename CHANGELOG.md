@@ -9,7 +9,7 @@
 - PC sprites: Added Kris and Tessie.
 ### Bugfixes
 - Sprites that change palettes upon changing states will appear with appropriate colors (vanilla bug fixed).
-- Game improvement patches: Added Goods Menu Equip patch that caused wront item to be sold at stores fixed.
+- Game improvement patches: Added Goods Menu Equip patch that caused wrong item to be sold at stores fixed.
 
 ## v35 (2019-01-08)
 - Ancient Cave: Dr Saturn room replaced by Brickroad's Head room in the guaranteed-full-heal-per-floor pool.
