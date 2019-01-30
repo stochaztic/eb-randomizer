@@ -10,7 +10,7 @@ class Dialog extends ReadWriteObject {
 
     static intershuffle() {
         this.classReseed("inter");
-        const tptCandidates = TPTObject.every.filter(tpt => tpt.script && tpt.script.isSwapSafe);
+        const tptCandidates = TPTObject.every.filter(tpt => tpt.script && tpt.script.isSwapSafe && tpt.oldData.argument === 0);
         //const scriptCandidates = tptCandidates.flatMap(tpt =>tpt.script.swapSafeScripts); //flatMap replacement:
         const scriptCandidates = tptCandidates.reduce((acc, x) => acc.concat(x.script.swapSafeScripts), []);
         const shuffled = this.context.random.shuffleNormal(scriptCandidates, 1);

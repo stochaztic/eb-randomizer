@@ -1,6 +1,8 @@
 # Changelog
 ## v36.x / v37 (In progress)
 - PC sprites: Added Mega Man.
+### Bugfixes
+- Dialogue: For clarity, NPCs that have interactions with items (pencil/eraser/rabbit statues, etc) will not have Talk To dialogue shuffled.
 
 ## v36 (2019-01-28)
 - earthbound.app Website: Available custom sprites can be visually shown with animations.
