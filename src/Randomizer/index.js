@@ -30,9 +30,11 @@ import ZoneSpriteObject from './ZoneSpriteObject.js';
 import LudicrousSpeedPatch from './LudicrousSpeedPatch.js';
 import CaseyNoInstantPatch from './CaseyNoInstantPatch.js';
 import CreditsPatch from './CreditsPatch.js';
+import DeadWithHpPatch from './DeadWithHpPatch.js';
 import DevmodePatch from './DevmodePatch.js';
 import DropMostRecentPatch from './DropMostRecentPatch.js';
 import ExpandSavePatch from './ExpandSavePatch.js';
+import FixPalettePatch from './FixPalettePatch.js';
 import RunButtonPatch from './RunButtonPatch.js';
 import ShortenPrayerPatch from './ShortenPrayerPatch.js';
 import ShowSpritesNoIntroPatch from './ShowSpritesNoIntroPatch.js';
@@ -41,7 +43,6 @@ import TrackDoorsPatch from './TrackDoorsPatch.js';
 import TrackStatsPatch from './TrackStatsPatch.js';
 import ebutils from './ebutils.js';
 import Cluster from './Cluster.js';
-import FixPalettePatch from './FixPalettePatch.js';
 
 export async function execute(romfile, specs, hooks) {
   const readWriteObjects = [
@@ -83,7 +84,7 @@ export async function execute(romfile, specs, hooks) {
   MapSpriteObject.afterOrder = [PsiTeleportObject, AncientCave];
 
   try {
-    const patches = [ExpandSavePatch, CreditsPatch, TrackStatsPatch, TitleDisableGlowPatch, FixPalettePatch];
+    const patches = [ExpandSavePatch, CreditsPatch, TrackStatsPatch, TitleDisableGlowPatch, FixPalettePatch, DeadWithHpPatch];
     
     if(specs.flags.a) patches.push(ShowSpritesNoIntroPatch);
     if(specs.flags.a) patches.push(TrackDoorsPatch);

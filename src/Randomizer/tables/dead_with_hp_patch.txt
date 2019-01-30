@@ -1,0 +1,19 @@
+
+2BB98: B9 BF 9F     ;LDA $9FBF,Y # Rolling HP target in Battlers table
+D0 58        ;BNE $BBF5
+EA EA EA EA EA EA EA EA EA EA EA EA EA ;13 no-ops
+
+98           ;TYA  # Overwritten / moved code
+18           ;CLC 
+69 AC 9F     ;ADC #$9FAC
+8D 72 A9     ;STA $A972
+AA           ;TAX 
+E2 20        ;SEP #$20
+A9 01        ;LDA #$01
+9D 1D 00     ;STA $001D,X # Irrelevant lines have been removed, saving 18 bytes
+9E 23 00     ;STZ $0023,X
+9E 22 00     ;STZ $0022,X
+9E 21 00     ;STZ $0021,X
+9E 20 00     ;STZ $0020,X
+9E 1F 00     ;STZ $001F,X
+9E 1E 00     ;STZ $001E,X
