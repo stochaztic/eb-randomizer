@@ -44,6 +44,22 @@ import ProtoMan378 from './sprites/ProtoMan/378.bin';
 import ProtoMan437 from './sprites/ProtoMan/437.bin';
 import ProtoMan457 from './sprites/ProtoMan/457.bin';
 
+import MegaMan001 from './sprites/MegaMan/001.bin';
+import MegaMan005 from './sprites/MegaMan/005.bin';
+import MegaMan007 from './sprites/MegaMan/007.bin';
+import MegaMan008 from './sprites/MegaMan/008.bin';
+import MegaMan014 from './sprites/MegaMan/014.bin';
+import MegaMan015 from './sprites/MegaMan/015.bin';
+import MegaMan016 from './sprites/MegaMan/016.bin';
+import MegaMan017 from './sprites/MegaMan/017.bin';
+import MegaMan021 from './sprites/MegaMan/021.bin';
+import MegaMan027 from './sprites/MegaMan/027.bin';
+import MegaMan335 from './sprites/MegaMan/335.bin';
+import MegaMan362 from './sprites/MegaMan/362.bin';
+import MegaMan378 from './sprites/MegaMan/378.bin';
+import MegaMan437 from './sprites/MegaMan/437.bin';
+import MegaMan457 from './sprites/MegaMan/457.bin';
+
 import Tessie001 from './sprites/Tessie/001.bin';
 import Tessie005 from './sprites/Tessie/005.bin';
 import Tessie007 from './sprites/Tessie/007.bin';
@@ -86,6 +102,88 @@ import DragonNess378 from './sprites/DragonNess/378.bin';
 import DragonNess437 from './sprites/DragonNess/437.bin';
 
 export const customCharacters = [
+    {
+        label: "Mega Man",
+        value: "MegaMan",
+        creator: "Artheau",
+        sprites: {
+            main: {
+                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1536, 1728, 1920, 2112, 2304, 2496, 2688, 2880],
+                data: MegaMan001,
+                palette: 26,
+            },
+            robot: {
+                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 769, 961, 1152, 1344, 1536, 1728, 768, 1920],
+                data: MegaMan005,
+                palette: 26,
+            },
+            bike: {
+                indexes: [0, 768, 1537, 2305, 3072, 3073, 1536, 3840, 4609, 5377, 6145, 6913, 6144, 6912, 4608, 5376],
+                data: MegaMan007,
+                palette: 26,
+            },
+            dead: {
+                indexes: [0, 192, 385, 577, 768, 768, 384, 576, 960, 192, 1152, 768, 1152, 768, 960, 192],
+                data: MegaMan008,
+                palette: 26,
+            },
+            fuzzy: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: MegaMan014,
+                palette: 26,
+            },
+            bedJeff: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: MegaMan015,
+                palette: 26,
+            },
+            down: {
+                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
+                data: MegaMan016,
+                palette: 26,
+            },
+            ladder: {
+                indexes: [0, 1, 0, 1, 0, 1, 0, 1],
+                data: MegaMan017,
+                palette: 26,
+            },
+            rope: {
+                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
+                data: MegaMan021,
+                palette: 26,
+            },
+            mini: {
+                indexes: [0, 1, 129, 257, 0, 1, 128, 256, 0, 1, 0, 1, 0, 1, 0, 1],
+                data: MegaMan027,
+                palette: 26,
+            },
+            jump: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: MegaMan335,
+                palette: 26,
+            },
+            meditate: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: MegaMan362,
+                palette: 26,
+            },
+            bedNess: {
+                indexes: [0, 128, 0, 128, 0, 128, 0, 128],
+                data: MegaMan378,
+                palette: 26,
+            },
+            pj: {
+                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1537, 1729, 1921, 2113, 1920, 2112, 1536, 1728],
+                data: MegaMan437,
+                palette: 26,
+            },
+            deadRobot: {
+                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
+                data: MegaMan457,
+                palette: 26,
+            },
+        },
+    },
     {
         label: "Proto Man",
         value: "ProtoMan",

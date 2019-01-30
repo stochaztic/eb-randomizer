@@ -1,4 +1,7 @@
 # Changelog
+## v36.x / v37 (In progress)
+- PC sprites: Added Mega Man.
+
 ## v36 (2019-01-28)
 - earthbound.app Website: Available custom sprites can be visually shown with animations.
 - Ancient Cave: You are warned before engaging Belch without Fly Honey.
