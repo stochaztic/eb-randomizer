@@ -684,7 +684,7 @@ class AncientCave extends ReadWriteObject {
 
         bosses.forEach(b => {b.inBosses = true;});
 
-        const BANNED = [0x1ce, 0x1c8]; // Clumsy Robot, Master Belch
+        const BANNED = [0x1c8]; // Master Belch
         bosses = bosses.filter(b => !BANNED.includes(b.index));
 
         const chosens = [];

@@ -1,5 +1,7 @@
 # Changelog
 ## v36.x / v37 (In progress)
+- Ancient Cave: Clumsy Robot added to list of potential Shiny Spot bosses.
+- Enemy stats: Exploding-on-death-or-not has a small chance to be randomized.
 - PC sprites: Added Mega Man.
 ### Bugfixes
 - Dialogue: For clarity, NPCs that have interactions with items (pencil/eraser/rabbit statues, etc) will not have Talk To dialogue shuffled.

@@ -53,6 +53,19 @@ class EnemyObject extends TableObject {
 
     mutate() {
         super.mutate();
+
+        if((this.data.final_action === 64 || this.data.final_action === 65) && this.context.random.random() < 0.01) {
+            this.data.final_action = 0;
+        }
+
+        if(this.data.final_action === 0 && this.data.hp > 140 && this.context.random.random() < 0.005) {
+            this.data.final_action = 64;
+        }
+
+        if(this.data.final_action === 0 && this.data.hp > 140 && this.context.random.random() < 0.005) {
+            this.data.final_action = 65;
+        }
+
         if( (this.context.specs.flags.m >= 3 && this.data.battle_sprite !== 0) ||
             (this.context.specs.flags.m >= 2 && this.data.battle_sprite !== 0 && this.oldName === "Giygas")) {
             // Randomize sprite pairs
@@ -141,6 +154,11 @@ class EnemyObject extends TableObject {
         if(this.context.specs.flags.a) {
             this.data.xp = Math.ceil(this.data.xp * 1.3);
             this.data.xp = Math.max(this.data.xp, 4);
+
+            // Clumsy Robot
+            if(this.data.final_action === 243) {
+                this.data.final_action = 0;
+            }
         }
 
         if(this.context.specs.flags.easymodo) {
