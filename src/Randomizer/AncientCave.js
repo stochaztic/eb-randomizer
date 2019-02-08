@@ -123,18 +123,14 @@ class AncientCave extends ReadWriteObject {
         const checkpoints = sBosses.map(mso => mso.nearestCluster);
         this.context.random.shuffle(checkpoints);
 
-        // Remove the middle door from the Electro Specter cluster.
-        // This turns this cluster into a two-exit cluster, where the left exit 
-        // arrives from the middle hole and departs from the left hole.
-        // This prevents non-Euclidian layouts and can guarantee the boss cannot be 
-        // skipped if incoming-outgoing preferences are set on the remaining doors.
-        // This must be done after the above section to find the boss cluster.
-        let electroSpecter = Cluster.every.filter(c => c.index === 0xf2696);
-        console.assert(electroSpecter.length === 1);
-        electroSpecter = electroSpecter[0];
-        const badExits = electroSpecter.exits.filter(e => e.enemyCell.index === 0x0138);
-        console.assert(badExits.length === 1);
-        electroSpecter.exits.splice(electroSpecter.exits.indexOf(badExits[0]), 1);
+        // Electro Specter fix. We have assigned an unused door in meo_friends to be the 
+        // friend door for the hole after the Shiny Spot. We will change that door's 
+        // event to point to the same location as the hole. This room is now a 3-exit room.
+        const electroExit = MapEventObject.get(0x9);
+        const electroHijack = electroExit.friend;
+        electroHijack.event.data.x = electroExit.globalX >> 3;
+        electroHijack.event.data.y_facing = electroExit.globalY >> 3;
+
         checkpoints.unshift(Cluster.home);
         checkpoints.push(Cluster.goal);
 

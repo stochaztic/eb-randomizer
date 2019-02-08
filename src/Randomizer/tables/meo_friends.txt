@@ -1073,6 +1073,6 @@ fd 9a
 # thunder and storm
 43a 6f4
 43b 6f4
-# electro spectre (on the other side of ES but w/e)
-9 1c6
-a 1c6
+# electro spectre (hijacking unused door)
+9 5bb
+a 5bb

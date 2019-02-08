@@ -4,6 +4,7 @@
 - Enemy stats: Exploding-on-death-or-not has a small chance to be randomized.
 - PC sprites: Added Mega Man.
 ### Bugfixes
+- Ancient Cave: Awkward entrances and exits around Electro Specter's Shiny Spot have been made normal.
 - Dialogue: For clarity, NPCs that have interactions with items (pencil/eraser/rabbit statues, etc) will not have Talk To dialogue shuffled.
 - Game improvement patches: Bug with Ludicrous Text Speed that occasionally caused PCs to be dead but still gain HP fixed (probably).
 
