@@ -88,6 +88,23 @@ import Kris027 from './sprites/Kris/027.bin';
 import Kris378 from './sprites/Kris/378.bin';
 import Kris437 from './sprites/Kris/437.bin';
 
+import TheBatter001 from './sprites/TheBatter/001.bin';
+import TheBatter005 from './sprites/TheBatter/005.bin';
+import TheBatter006 from './sprites/TheBatter/006.bin';
+import TheBatter007 from './sprites/TheBatter/007.bin';
+import TheBatter008 from './sprites/TheBatter/008.bin';
+import TheBatter014 from './sprites/TheBatter/014.bin';
+import TheBatter015 from './sprites/TheBatter/015.bin';
+import TheBatter016 from './sprites/TheBatter/016.bin';
+import TheBatter017 from './sprites/TheBatter/017.bin';
+import TheBatter021 from './sprites/TheBatter/021.bin';
+import TheBatter027 from './sprites/TheBatter/027.bin';
+import TheBatter335 from './sprites/TheBatter/335.bin';
+import TheBatter362 from './sprites/TheBatter/362.bin';
+import TheBatter378 from './sprites/TheBatter/378.bin';
+import TheBatter437 from './sprites/TheBatter/437.bin';
+import TheBatter457 from './sprites/TheBatter/457.bin';
+
 import DragonNess001 from './sprites/DragonNess/001.bin';
 import DragonNess008 from './sprites/DragonNess/008.bin';
 import DragonNess014 from './sprites/DragonNess/014.bin';
@@ -349,6 +366,94 @@ export const customCharacters = [
             deadRobot: {
                 indexes: [0, 0, 0, 0, 0, 0, 1, 193],
                 data: Tessie457,
+                palette: 26,
+            },
+        },
+    },
+    
+    {
+        label: "The Batter",
+        value: "TheBatter",
+        creator: "Bacon",
+        sprites: {
+            main: {
+                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 577, 576, 576, 577, 1, 0],
+                data: TheBatter001,
+                palette: 26,
+            },
+            robot: {
+                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344],
+                data: TheBatter005,
+                palette: 26,
+            },
+            nude: {
+                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 576, 577, 577, 576, 1, 0],
+                data: TheBatter006,
+                palette: 26,
+            },
+            bike: {
+                indexes: [0, 768, 1536, 2304, 3072, 3840, 4608, 5376, 0, 768, 3072, 3840, 3072, 3840, 0, 768],
+                data: TheBatter007,
+                palette: 26,
+            },
+            dead: {
+                indexes: [0, 0, 193, 193, 384, 384, 192, 192, 0, 0, 384, 384, 384, 384, 0, 0],
+                data: TheBatter008,
+                palette: 26,
+            },
+            fuzzy: {
+                indexes: [1, 1, 1, 1, 0, 0, 1, 1],
+                data: TheBatter014,
+                palette: 26,
+            },
+            bedJeff: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                data: TheBatter015,
+                palette: 26,
+            },
+            down: {
+                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
+                data: TheBatter016,
+                palette: 26,
+            },
+            ladder: {
+                indexes: [0, 1, 0, 1, 0, 1, 0, 1],
+                data: TheBatter017,
+                palette: 26,
+            },
+            rope: {
+                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
+                data: TheBatter021,
+                palette: 26,
+            },
+            mini: {
+                indexes: [0, 1, 129, 257, 0, 1, 128, 256, 0, 1, 0, 1, 0, 1, 0, 1],
+                data: TheBatter027,
+                palette: 26,
+            },
+            jump: {
+                indexes: [1, 1, 1, 1, 0, 0, 1, 1],
+                data: TheBatter335,
+                palette: 26,
+            },
+            meditate: {
+                indexes: [0, 0, 1, 1, 192, 192, 193, 193],
+                data: TheBatter362,
+                palette: 26,
+            },
+            bedNess: {
+                indexes: [0, 128, 0, 128, 0, 128, 0, 128],
+                data: TheBatter378,
+                palette: 26,
+            },
+            pj: {
+                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 577, 576, 576, 577, 1, 0],
+                data: TheBatter437,
+                palette: 26,
+            },
+            deadRobot: {
+                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
+                data: TheBatter457,
                 palette: 26,
             },
         },
