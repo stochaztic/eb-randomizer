@@ -478,6 +478,13 @@ class AncientCave extends ReadWriteObject {
 
         this.context.hooks.message("Sanitizing cave events...");
         // Special Events
+
+        const removeTPT = index => {
+            const tpt = TPTObject.get(index);
+            tpt.data.flag = 0x5e;
+            tpt.data.flag_appear = 1;
+        };
+
         // Giygas - flags necessary to be set upon entering for battle to function
         let script = Script.getByPointer(0x9af3a);
         script.lines[0] = [0x04, 0x74, 0x01];
@@ -549,9 +556,7 @@ class AncientCave extends ReadWriteObject {
         tpt.data.flag_appear = 0;
 
         // Shark guarding Frank - never appear
-        tpt = TPTObject.get(0x1);
-        tpt.data.flag = 0x5e;
-        tpt.data.flag_appear = 1;
+        removeTPT(0x1);
 
         // Dalaam Throne room - always heal
         tpt = TPTObject.get(1089);
@@ -586,27 +591,17 @@ class AncientCave extends ReadWriteObject {
         tpt.data.address=0xc74c85;
 
         // Mom outside house - never appear
-        tpt = TPTObject.get(148);
-        tpt.data.flag = 0x5e;
-        tpt.data.flag_appear = 1;
+        removeTPT(148);
 
         // Pyramid doors - never appear
-        tpt = TPTObject.get(1143);
-        tpt.data.flag = 0x5e;
-        tpt.data.flag_appear = 1;
-        tpt = TPTObject.get(1154);
-        tpt.data.flag = 0x5e;
-        tpt.data.flag_appear = 1;
+        removeTPT(1143);
+        removeTPT(1154);
 
         // Twoson theatre girl - never appear
-        tpt = TPTObject.get(231);
-        tpt.data.flag = 0x5e;
-        tpt.data.flag_appear = 1;
+        removeTPT(231);
 
         // Hieroglpyh room man - never appear
-        tpt = TPTObject.get(1038);
-        tpt.data.flag = 0x5e;
-        tpt.data.flag_appear = 1;
+        removeTPT(1038);
 
         // Hieroglpyhs - don't trigger room events
         const heiroScript = Script.getByPointer(0x86e3d);
@@ -616,18 +611,23 @@ class AncientCave extends ReadWriteObject {
         heiroScript.writeScript();
 
         // Pokey and pals in PRV - never appear
-        tpt = TPTObject.get(439);
-        tpt.data.flag = 0x5e;
-        tpt.data.flag_appear = 1;
-        tpt = TPTObject.get(440);
-        tpt.data.flag = 0x5e;
-        tpt.data.flag_appear = 1;
-        tpt = TPTObject.get(441);
-        tpt.data.flag = 0x5e;
-        tpt.data.flag_appear = 1;
-        tpt = TPTObject.get(442);
-        tpt.data.flag = 0x5e;
-        tpt.data.flag_appear = 1;
+        removeTPT(439);
+        removeTPT(440);
+        removeTPT(441);
+        removeTPT(442);
+
+        // Non-critical NPCs in Lost Underworld Tenda Village - never appear
+        // Critical: 1297 phone, 1291 atm, 1282 shop, 1298 inn
+        removeTPT(1283);
+        removeTPT(1284);
+        removeTPT(1285);
+        removeTPT(1286);
+        removeTPT(1288);
+        removeTPT(1289);
+        removeTPT(1290);
+        removeTPT(1292);
+        removeTPT(1299);
+        removeTPT(1300);
 
         // Bus stops - always disabled
         const buses = TPTObject.every.filter(o => o.oldData.sprite === 202);

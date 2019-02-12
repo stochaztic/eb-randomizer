@@ -5,6 +5,7 @@
 - PC sprites: Added Mega Man and The Batter.
 ### Bugfixes
 - Ancient Cave: Awkward entrances and exits around Electro Specter's Shiny Spot have been made normal.
+- Ancient Cave: Several Lost Underworld NPCs removed to prevent game crash.
 - Dialogue: For clarity, NPCs that have interactions with items (pencil/eraser/rabbit statues, etc) will not have Talk To dialogue shuffled.
 - Game improvement patches: Bug with Ludicrous Text Speed that occasionally caused PCs to be dead but still gain HP fixed (probably).
 
