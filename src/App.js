@@ -10,6 +10,8 @@ import SpriteSelector from './SpriteSelector.js';
 import SpritePreviewer from './SpritePreviewer.js';
 import Cookies from 'js-cookie';
 import localforage from 'localforage';
+import preval from 'preval.macro';
+const buildDate = preval`module.exports = (new Date()).toLocaleDateString('en',{day: "numeric", month: "short", year: "numeric"})`;
 
 class App extends Component {
   constructor(props) {
@@ -455,10 +457,11 @@ class App extends Component {
           </h1>
           <div className="sectionContent">
             <p>
-              The EarthBound Randomizer is a program that randomizes a ROM for the Super Nintendo game EarthBound, 
+              The EarthBound Randomizer is a web app that randomizes a ROM for the Super Nintendo game EarthBound, 
               providing endless unique gameplay experiences with many distinct modes. For more information, visit
               our <a href="https://github.com/pickfifteen/eb-randomizer">GitHub page</a>. You can contact the 
-              developer <a href="https://twitter.com/pickfifteen">@pickfifteen</a> on Twitter.
+              developer <a href="https://twitter.com/pickfifteen">@pickfifteen</a> on Twitter. <strong>Most recent  
+              update:</strong> {buildDate}, v{ this.state.specs.version } <a href="https://github.com/pickfifteen/eb-randomizer/blob/master/CHANGELOG.md">(changelog)</a>
             </p>
           </div>
         </section>
