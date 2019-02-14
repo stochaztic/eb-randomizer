@@ -33,12 +33,14 @@ class App extends Component {
     Cookies.set("lastAccess", Date.now(), { expires: 6000 });
     let compatibleVersion = true;
     let directLink = false;
-    const params = new URLSearchParams(window.location.search);
-    if(params.has("version")) {
-      directLink = true;
-      compatibleVersion = (params.get("version") === initialSpecs.version) || (params.get("version") === "current");
-      initialSpecs.seed = parseInt(params.get("seed"), 10);
-      initialSpecs.flags = ebutils.parseFlagString(params.get("flags"));
+    if(window.URLSearchParams !== undefined) {
+      const params = new URLSearchParams(window.location.search);
+      if(params.has("version")) {
+        directLink = true;
+        compatibleVersion = (params.get("version") === initialSpecs.version) || (params.get("version") === "current");
+        initialSpecs.seed = parseInt(params.get("seed"), 10);
+        initialSpecs.flags = ebutils.parseFlagString(params.get("flags"));
+      }
     }
     
     Object.keys(flagDescriptions).forEach( flag => {
@@ -208,11 +210,13 @@ class App extends Component {
       }
       return;
     }
-    var params = new URLSearchParams();
-    params.append("version", this.state.specs.version);
-    params.append("seed", this.state.specs.seed);
-    params.append("flags",this.flagString());
-    window.history.replaceState(null, "", `${window.location.href.split("?")[0]}?${params.toString()}`);
+    if(window.URLSearchParams !== undefined) {
+      var params = new URLSearchParams();
+      params.append("version", this.state.specs.version);
+      params.append("seed", this.state.specs.seed);
+      params.append("flags",this.flagString());
+      window.history.replaceState(null, "", `${window.location.href.split("?")[0]}?${params.toString()}`);
+    }
   }
   
   get romStatus() {
