@@ -1,122 +1,5 @@
-import PrideNess from './sprites/PrideNess.bin';
-import PrideNessPJ from './sprites/PrideNess-PJ.bin';
-import Ninten from './sprites/Ninten.bin';
-import NintenDead from './sprites/Ninten-Dead.bin';
-import NintenFuzzy from './sprites/Ninten-Fuzzy.bin';
-import Teddy from './sprites/Teddy.bin';
-import NessHat from './sprites/NessHat.bin';
-import NessHatClimb from './sprites/NessHat-Climb.bin';
-import Halo from './sprites/Halo.bin';
-import Bart from './sprites/Bart.bin';
-import BartRope from './sprites/Bart-Rope.bin';
-import BartLadder from './sprites/Bart-Ladder.bin';
-import DragonPaula from './sprites/DragonPaula.bin';
-import DragonJeff from './sprites/DragonJeff.bin';
-import DragonPoo from './sprites/DragonPoo.bin';
-import Sonic from './sprites/Sonic.bin';
-import Amy from './sprites/Amy.bin';
-import Tails from './sprites/Tails.bin';
-import Knuckles from './sprites/Knuckles.bin';
-import Blue from './sprites/Blue.bin';
-import Red from './sprites/Red.bin';
-import GenericPokemon from './sprites/GenericPokemon.bin';
-import Dragonair from './sprites/Dragonair.bin';
-import Gordon from './sprites/Gordon.bin';
-import WeirdAl from './sprites/WeirdAl.bin';
-
-import Mole from './sprites/Mole.bin';
-import Mouse from './sprites/Mouse.bin';
-
-import ProtoMan001 from './sprites/ProtoMan/001.bin';
-import ProtoMan005 from './sprites/ProtoMan/005.bin';
-import ProtoMan006 from './sprites/ProtoMan/006.bin';
-import ProtoMan007 from './sprites/ProtoMan/007.bin';
-import ProtoMan008 from './sprites/ProtoMan/008.bin';
-import ProtoMan014 from './sprites/ProtoMan/014.bin';
-import ProtoMan015 from './sprites/ProtoMan/015.bin';
-import ProtoMan016 from './sprites/ProtoMan/016.bin';
-import ProtoMan017 from './sprites/ProtoMan/017.bin';
-import ProtoMan021 from './sprites/ProtoMan/021.bin';
-import ProtoMan027 from './sprites/ProtoMan/027.bin';
-import ProtoMan335 from './sprites/ProtoMan/335.bin';
-import ProtoMan362 from './sprites/ProtoMan/362.bin';
-import ProtoMan378 from './sprites/ProtoMan/378.bin';
-import ProtoMan437 from './sprites/ProtoMan/437.bin';
-import ProtoMan457 from './sprites/ProtoMan/457.bin';
-
-import MegaMan001 from './sprites/MegaMan/001.bin';
-import MegaMan005 from './sprites/MegaMan/005.bin';
-import MegaMan007 from './sprites/MegaMan/007.bin';
-import MegaMan008 from './sprites/MegaMan/008.bin';
-import MegaMan014 from './sprites/MegaMan/014.bin';
-import MegaMan015 from './sprites/MegaMan/015.bin';
-import MegaMan016 from './sprites/MegaMan/016.bin';
-import MegaMan017 from './sprites/MegaMan/017.bin';
-import MegaMan021 from './sprites/MegaMan/021.bin';
-import MegaMan027 from './sprites/MegaMan/027.bin';
-import MegaMan335 from './sprites/MegaMan/335.bin';
-import MegaMan362 from './sprites/MegaMan/362.bin';
-import MegaMan378 from './sprites/MegaMan/378.bin';
-import MegaMan437 from './sprites/MegaMan/437.bin';
-import MegaMan457 from './sprites/MegaMan/457.bin';
-
-import Tessie001 from './sprites/Tessie/001.bin';
-import Tessie005 from './sprites/Tessie/005.bin';
-import Tessie007 from './sprites/Tessie/007.bin';
-import Tessie008 from './sprites/Tessie/008.bin';
-import Tessie014 from './sprites/Tessie/014.bin';
-import Tessie015 from './sprites/Tessie/015.bin';
-import Tessie016 from './sprites/Tessie/016.bin';
-import Tessie017 from './sprites/Tessie/017.bin';
-import Tessie021 from './sprites/Tessie/021.bin';
-import Tessie027 from './sprites/Tessie/027.bin';
-import Tessie335 from './sprites/Tessie/335.bin';
-import Tessie362 from './sprites/Tessie/362.bin';
-import Tessie378 from './sprites/Tessie/378.bin';
-import Tessie437 from './sprites/Tessie/437.bin';
-import Tessie457 from './sprites/Tessie/457.bin';
-
-import Kris001 from './sprites/Kris/001.bin';
-import Kris007 from './sprites/Kris/007.bin';
-import Kris008 from './sprites/Kris/008.bin';
-import Kris014 from './sprites/Kris/014.bin';
-import Kris015 from './sprites/Kris/015.bin';
-import Kris016 from './sprites/Kris/016.bin';
-import Kris017 from './sprites/Kris/017.bin';
-import Kris021 from './sprites/Kris/021.bin';
-import Kris027 from './sprites/Kris/027.bin';
-import Kris378 from './sprites/Kris/378.bin';
-import Kris437 from './sprites/Kris/437.bin';
-
-import TheBatter001 from './sprites/TheBatter/001.bin';
-import TheBatter005 from './sprites/TheBatter/005.bin';
-import TheBatter006 from './sprites/TheBatter/006.bin';
-import TheBatter007 from './sprites/TheBatter/007.bin';
-import TheBatter008 from './sprites/TheBatter/008.bin';
-import TheBatter014 from './sprites/TheBatter/014.bin';
-import TheBatter015 from './sprites/TheBatter/015.bin';
-import TheBatter016 from './sprites/TheBatter/016.bin';
-import TheBatter017 from './sprites/TheBatter/017.bin';
-import TheBatter021 from './sprites/TheBatter/021.bin';
-import TheBatter027 from './sprites/TheBatter/027.bin';
-import TheBatter335 from './sprites/TheBatter/335.bin';
-import TheBatter362 from './sprites/TheBatter/362.bin';
-import TheBatter378 from './sprites/TheBatter/378.bin';
-import TheBatter437 from './sprites/TheBatter/437.bin';
-import TheBatter457 from './sprites/TheBatter/457.bin';
-
-import DragonNess001 from './sprites/DragonNess/001.bin';
-import DragonNess008 from './sprites/DragonNess/008.bin';
-import DragonNess014 from './sprites/DragonNess/014.bin';
-import DragonNess015 from './sprites/DragonNess/015.bin';
-import DragonNess016 from './sprites/DragonNess/016.bin';
-import DragonNess017 from './sprites/DragonNess/017.bin';
-import DragonNess021 from './sprites/DragonNess/021.bin';
-import DragonNess027 from './sprites/DragonNess/027.bin';
-import DragonNess335 from './sprites/DragonNess/335.bin';
-import DragonNess362 from './sprites/DragonNess/362.bin';
-import DragonNess378 from './sprites/DragonNess/378.bin';
-import DragonNess437 from './sprites/DragonNess/437.bin';
+import importAll from 'import-all.macro';
+const urls = importAll.sync('./sprites/**/*.bin');
 
 export const customCharacters = [
     {
@@ -126,78 +9,48 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1536, 1728, 1920, 2112, 2304, 2496, 2688, 2880],
-                data: MegaMan001,
-                palette: 26,
             },
             robot: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 769, 961, 1152, 1344, 1536, 1728, 768, 1920],
-                data: MegaMan005,
-                palette: 26,
             },
             bike: {
                 indexes: [0, 768, 1536, 2304, 3072, 3840, 4608, 5376, 0, 768, 3072, 3840, 3072, 3840, 0, 768],
-                data: MegaMan007,
-                palette: 26,
             },
             dead: {
                 indexes: [0, 192, 385, 577, 768, 768, 384, 576, 960, 192, 1152, 768, 1152, 768, 960, 192],
-                data: MegaMan008,
-                palette: 26,
             },
             fuzzy: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: MegaMan014,
-                palette: 26,
             },
             bedJeff: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: MegaMan015,
-                palette: 26,
             },
             down: {
                 indexes: [0, 0, 0, 0, 0, 0, 1, 1],
-                data: MegaMan016,
-                palette: 26,
             },
             ladder: {
                 indexes: [0, 1, 0, 1, 0, 1, 0, 1],
-                data: MegaMan017,
-                palette: 26,
             },
             rope: {
                 indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-                data: MegaMan021,
-                palette: 26,
             },
             mini: {
                 indexes: [0, 1, 129, 257, 384, 385, 128, 256, 0, 1, 384, 385, 384, 385, 0, 1],
-                data: MegaMan027,
-                palette: 26,
             },
             jump: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: MegaMan335,
-                palette: 26,
             },
             meditate: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: MegaMan362,
-                palette: 26,
             },
             bedNess: {
                 indexes: [0, 128, 0, 128, 0, 128, 0, 128],
-                data: MegaMan378,
-                palette: 26,
             },
             pj: {
                 indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1537, 1729, 1921, 2113, 1920, 2112, 1536, 1728],
-                data: MegaMan437,
-                palette: 26,
             },
             deadRobot: {
                 indexes: [0, 0, 0, 0, 0, 0, 1, 1],
-                data: MegaMan457,
-                palette: 26,
             },
         },
     },
@@ -208,83 +61,51 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1536, 1728, 1920, 2112, 2304, 2496, 2688, 2880],
-                data: ProtoMan001,
-                palette: 26,
             },
             robot: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344],
-                data: ProtoMan005,
-                palette: 26,
             },
             nude: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1153, 1345, 1536, 1728, 1920, 2112, 1152, 1344],
-                data: ProtoMan006,
-                palette: 26,
             },
             bike: {
                 indexes: [0, 768, 1536, 2304, 3072, 3840, 4608, 5376, 6145, 6913, 7681, 8449, 7680, 9216, 6144, 6912],
-                data: ProtoMan007,
-                palette: 26,
             },
             dead: {
                 indexes: [0, 192, 385, 577, 768, 768, 384, 576, 960, 192, 1152, 768, 1152, 768, 960, 192],
-                data: ProtoMan008,
-                palette: 26,
             },
             fuzzy: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: ProtoMan014,
-                palette: 26,
             },
             bedJeff: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: ProtoMan015,
-                palette: 26,
             },
             down: {
                 indexes: [0, 0, 0, 0, 0, 0, 1, 1],
-                data: ProtoMan016,
-                palette: 26,
             },
             ladder: {
                 indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-                data: ProtoMan017,
-                palette: 26,
             },
             rope: {
                 indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-                data: ProtoMan021,
-                palette: 26,
             },
             mini: {
                 indexes: [0, 128, 257, 385, 0, 128, 256, 384, 0, 128, 0, 128, 0, 128, 0, 128],
-                data: ProtoMan027,
-                palette: 26,
             },
             jump: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: ProtoMan335,
-                palette: 26,
             },
             meditate: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: ProtoMan362,
-                palette: 26,
             },
             bedNess: {
                 indexes: [0, 128, 0, 256, 0, 128, 0, 256],
-                data: ProtoMan378,
-                palette: 26,
             },
             pj: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1152, 192, 1344, 960, 1344, 960, 1152, 192],
-                data: ProtoMan437,
-                palette: 26,
             },
             deadRobot: {
                 indexes: [0, 0, 0, 0, 0, 0, 1, 1],
-                data: ProtoMan457,
-                palette: 26,
             },
         },
     },
@@ -295,78 +116,60 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 1153, 1345, 1152, 1344, 0, 192],
-                data: Tessie001,
                 palette: 20,
             },
             robot: {
                 indexes: [0, 192, 385, 577, 768, 769, 384, 576, 961, 1153, 1345, 1537, 1344, 1536, 960, 1152],
-                data: Tessie005,
-                palette: 26,
             },
             bike: {
                 indexes: [0, 768, 1537, 2305, 3072, 3840, 1536, 2304, 0, 768, 4608, 5376, 6144, 6912, 0, 768],
-                data: Tessie007,
                 palette: 20,
             },
             dead: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 1153, 1345, 1152, 1152, 0, 192],
-                data: Tessie008,
-                palette: 26,
             },
             fuzzy: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: Tessie014,
                 palette: 20,
             },
             bedJeff: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: Tessie015,
                 palette: 20,
             },
             down: {
                 indexes: [0, 192, 0, 192, 0, 192, 193, 1],
-                data: Tessie016,
                 palette: 20,
             },
             ladder: {
                 indexes: [0, 1, 0, 1, 0, 1, 0, 1],
-                data: Tessie017,
                 palette: 20,
             },
             rope: {
                 indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-                data: Tessie021,
                 palette: 20,
             },
             mini: {
                 indexes: [0, 128, 257, 385, 512, 640, 256, 384, 0, 128, 512, 640, 512, 640, 0, 128],
-                data: Tessie027,
                 palette: 20,
             },
             jump: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: Tessie335,
                 palette: 20,
             },
             meditate: {
                 indexes: [0, 0, 0, 0, 192, 192, 192, 192],
-                data: Tessie362,
                 palette: 20,
             },
             bedNess: {
                 indexes: [0, 128, 0, 128, 0, 128, 0, 128],
-                data: Tessie378,
                 palette: 20,
             },
             pj: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 1153, 1345, 1152, 1344, 0, 192],
-                data: Tessie437,
                 palette: 20,
             },
             deadRobot: {
                 indexes: [0, 0, 0, 0, 0, 0, 1, 193],
-                data: Tessie457,
-                palette: 26,
             },
         },
     },
@@ -378,83 +181,51 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 577, 576, 576, 577, 1, 0],
-                data: TheBatter001,
-                palette: 26,
             },
             robot: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344],
-                data: TheBatter005,
-                palette: 26,
             },
             nude: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 576, 577, 577, 576, 1, 0],
-                data: TheBatter006,
-                palette: 26,
             },
             bike: {
                 indexes: [0, 768, 1536, 2304, 3072, 3840, 4608, 5376, 0, 768, 3072, 3840, 3072, 3840, 0, 768],
-                data: TheBatter007,
-                palette: 26,
             },
             dead: {
                 indexes: [0, 0, 193, 193, 384, 384, 192, 192, 0, 0, 384, 384, 384, 384, 0, 0],
-                data: TheBatter008,
-                palette: 26,
             },
             fuzzy: {
                 indexes: [1, 1, 1, 1, 0, 0, 1, 1],
-                data: TheBatter014,
-                palette: 26,
             },
             bedJeff: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: TheBatter015,
-                palette: 26,
             },
             down: {
                 indexes: [0, 0, 0, 0, 0, 0, 1, 1],
-                data: TheBatter016,
-                palette: 26,
             },
             ladder: {
                 indexes: [0, 1, 0, 1, 0, 1, 0, 1],
-                data: TheBatter017,
-                palette: 26,
             },
             rope: {
                 indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-                data: TheBatter021,
-                palette: 26,
             },
             mini: {
                 indexes: [0, 1, 129, 257, 0, 1, 128, 256, 0, 1, 0, 1, 0, 1, 0, 1],
-                data: TheBatter027,
-                palette: 26,
             },
             jump: {
                 indexes: [1, 1, 1, 1, 0, 0, 1, 1],
-                data: TheBatter335,
-                palette: 26,
             },
             meditate: {
                 indexes: [0, 0, 1, 1, 192, 192, 193, 193],
-                data: TheBatter362,
-                palette: 26,
             },
             bedNess: {
                 indexes: [0, 128, 0, 128, 0, 128, 0, 128],
-                data: TheBatter378,
-                palette: 26,
             },
             pj: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 577, 576, 576, 577, 1, 0],
-                data: TheBatter437,
-                palette: 26,
             },
             deadRobot: {
                 indexes: [0, 0, 0, 0, 0, 0, 1, 1],
-                data: TheBatter457,
-                palette: 26,
             },
         },
     },
@@ -465,13 +236,9 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 960, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344],
-                data: PrideNess,
-                palette: 26,
             },
             pj: {
                 indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1536, 1728, 1920, 2112, 2304, 2496, 2688, 2880],
-                data: PrideNessPJ,
-                palette: 26,
             },
         },
     },
@@ -482,18 +249,12 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1537, 1729, 1921, 2113, 1920, 2112, 1536, 1728],
-                data: Ninten,
-                palette: 26,
             },
             dead: {
                 indexes: [0, 0, 193, 193, 384, 384, 192, 192, 1, 1, 384, 384, 384, 384, 1, 1],
-                data: NintenDead,
-                palette: 26,
             },
             fuzzy: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: NintenFuzzy,
-                palette: 26,
             },
         },
     },
@@ -504,8 +265,6 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 384, 961, 1153, 1345, 1537, 1344, 1536, 960, 1152],
-                data: Teddy,
-                palette: 26,
             },
         },
     },
@@ -516,23 +275,15 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1152, 1344, 1537, 1729, 1536, 1728, 1920, 2112],
-                data: NessHat,
-                palette: 26,
             },
             dead: {
                 indexes: [0, 0, 1, 1, 192, 192, 384, 384, 1, 1, 192, 192, 192, 192, 1, 1],
-                data: Halo,
-                palette: 26,
             },
             ladder: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: NessHatClimb,
-                palette: 26,
             },
             rope: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: NessHatClimb,
-                palette: 26,
             },
         },
     },
@@ -543,63 +294,39 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1537, 1729, 1921, 2113, 2304, 2112, 2496, 1728],
-                data: DragonNess001,
-                palette: 26,
             },
             dead: {
                 indexes: [0, 0, 193, 193, 384, 384, 192, 192, 0, 0, 384, 384, 384, 384, 0, 0],
-                data: DragonNess008,
-                palette: 26,
             },
             fuzzy: {
                 indexes: [0, 192, 0, 0, 0, 0, 0, 0],
-                data: DragonNess014,
-                palette: 26,
             },
             bedJeff: {
                 indexes: [0, 256, 0, 0, 0, 0, 0, 0],
-                data: DragonNess015,
-                palette: 26,
             },
             down: {
                 indexes: [0, 0, 0, 0, 0, 0, 576, 576],
-                data: DragonNess016,
-                palette: 26,
             },
             ladder: {
                 indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-                data: DragonNess017,
-                palette: 26,
             },
             rope: {
                 indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-                data: DragonNess021,
-                palette: 26,
             },
             mini: {
                 indexes: [0, 1, 128, 256, 384, 385, 512, 640, 768, 769, 384, 385, 897, 385, 0, 1],
-                data: DragonNess027,
-                palette: 26,
             },
             jump: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: DragonNess335,
-                palette: 26,
             },
             meditate: {
                 indexes: [0, 0, 0, 0, 192, 192, 192, 192],
-                data: DragonNess362,
-                palette: 26,
             },
             bedNess: {
                 indexes: [0, 128, 0, 128, 0, 128, 0, 128],
-                data: DragonNess378,
-                palette: 26,
             },
             pj: {
                 indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1536, 1728, 1920, 2112, 2304, 2496, 2688, 2880],
-                data: DragonNess437,
-                palette: 26,
             },
         },
     },
@@ -610,8 +337,6 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 769, 960, 576, 0, 192, 768, 769, 768, 769, 0, 192],
-                data: DragonPaula,
-                palette: 26,
             },
         },
     },
@@ -622,8 +347,6 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 769, 384, 576, 0, 192, 768, 769, 768, 769, 0, 192],
-                data: DragonJeff,
-                palette: 26,
             },
         },
     },
@@ -634,7 +357,6 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 384, 0, 1, 576, 768, 576, 768, 0, 1],
-                data: DragonPoo,
                 palette: 20,
             },
         },
@@ -646,8 +368,6 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 769, 960, 576, 0, 192, 768, 769, 768, 769, 0, 192],
-                data: Sonic,
-                palette: 26,
             },
         },
     },
@@ -658,8 +378,6 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 576, 577, 576, 577, 0, 1],
-                data: Amy,
-                palette: 26,
             },
         },
     },
@@ -670,8 +388,6 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 960, 0, 1, 576, 768, 576, 768, 0, 1],
-                data: Tails,
-                palette: 26,
             },
         },
     },
@@ -682,8 +398,6 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 1, 192, 384, 576, 768, 960, 1152, 0, 1, 576, 768, 576, 768, 0, 1],
-                data: Knuckles,
-                palette: 26,
             },
         },
     },
@@ -694,58 +408,36 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 768, 960, 193, 385, 192, 384, 768, 0],
-                data: Kris001,
-                palette: 26,
             },
             bike: {
                 indexes: [0, 768, 1537, 2305, 3072, 3840, 1536, 2304, 4608, 5376, 1537, 2305, 6144, 6912, 7680, 8448],
-                data: Kris007,
-                palette: 26,
             },
             dead: {
                 indexes: [0, 192, 385, 577, 768, 960, 576, 384, 0, 192, 768, 960, 768, 960, 0, 192],
-                data: Kris008,
-                palette: 26,
             },
             fuzzy: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: Kris014,
-                palette: 26,
             },
             bedJeff: {
                 indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                data: Kris015,
-                palette: 26,
             },
             down: {
                 indexes: [0, 0, 0, 0, 0, 0, 1, 1],
-                data: Kris016,
-                palette: 26,
             },
             ladder: {
                 indexes: [0, 1, 0, 1, 0, 1, 0, 1],
-                data: Kris017,
-                palette: 26,
             },
             rope: {
                 indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-                data: Kris021,
-                palette: 26,
             },
             mini: {
                 indexes:  [0, 1, 129, 257, 0, 1, 128, 256, 0, 1, 0, 1, 0, 1, 0, 1],
-                data: Kris027,
-                palette: 26,
             },
             bedNess: {
                 indexes: [0, 128, 0, 128, 0, 128, 0, 128],
-                data: Kris378,
-                palette: 26,
             },
             pj: {
                 indexes: [0, 192, 384, 576, 768, 769, 960, 1152, 1344, 192, 384, 576, 960, 1152, 1344, 0],
-                data: Kris437,
-                palette: 26,
             },
         },
     },
@@ -756,8 +448,6 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 768, 960, 768, 960, 1152, 1344],
-                data: Blue,
-                palette: 26,
             },
         },
     },
@@ -768,8 +458,6 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 768, 960, 768, 960, 1152, 1344],
-                data: Red,
-                palette: 26,
             },
         },
     },
@@ -780,8 +468,6 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1153, 1345, 768, 960, 768, 960, 1152, 192],
-                data: GenericPokemon,
-                palette: 26,
             },
         },
     },
@@ -792,30 +478,22 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 193, 385, 576, 577, 192, 384],
-                data: Dragonair,
-                palette: 26,
             },
         },
     },
     {
         label: "Bart Simpson",
-        value: "BartSimpson",
+        value: "Bart",
         creator: "Quatropus",
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 384, 961, 1153, 1345, 1537, 1728, 1536, 960, 1920],
-                data: Bart,
-                palette: 26,
             },
             ladder: {
                 indexes: [0, 1, 0, 192, 0, 1, 0, 1],
-                data: BartLadder,
-                palette: 26,
             },
             rope: {
                 indexes: [0, 192, 0, 384, 0, 192, 0, 192],
-                data: BartRope,
-                palette: 26,
             },
         },
     },
@@ -826,8 +504,6 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 193, 385, 576, 577, 192, 384],
-                data: Gordon,
-                palette: 26,
             },
         },
     },
@@ -838,8 +514,6 @@ export const customCharacters = [
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 193, 385, 576, 577, 192, 384],
-                data: WeirdAl,
-                palette: 26,
             },
         },
     },
@@ -900,7 +574,6 @@ export const vanillaSprites = [
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 769, 577, 576, 577, 961, 1],
-                data: Mole,
                 palette: 22,
             },
         },
@@ -913,7 +586,6 @@ export const vanillaSprites = [
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 577, 192, 384, 768, 960, 576, 577, 576, 577, 0, 1],
-                data: Mouse,
                 palette: 20,
             },
         },
@@ -994,23 +666,33 @@ export async function prepare(sprite, index) {
         sprite = customCharacters[Math.floor(Math.random()*customCharacters.length)];
     }
 
-    const prepareSprite = async function(sprite) {
-        let response = await fetch(sprite.data);
+    const prepareSprite = async function(individualSprite, index) {
+        let url = urls[`./sprites/${sprite.value}/${index.toString().padStart(3, '0')}.bin`];
+        if(!url && index === 1) {
+            url = urls[`./sprites/${sprite.value}.bin`];
+        }
+        if(!url) {
+            url = urls[`./sprites/${sprite.value}-${index.toString().padStart(3, '0')}.bin`];
+        }
+        if(!url) {
+            throw new Error(`Could not find sprite bin file for ${sprite.value} ${index.toString().padStart(3, '0')}`);
+        }
+        let response = await fetch(url);
         let buffer = await response.arrayBuffer();
         let data = new Uint8Array(buffer);
-        return Object.assign({}, sprite, { data: data });
+        return Object.assign({palette: 26}, individualSprite, { data: data });
     };
 
-    newObj[index + 1] = await prepareSprite(sprite.sprites.main);
+    newObj[index + 1] = await prepareSprite(sprite.sprites.main, 1);
 
     if(sprite.sprites.robot && index === 0) {
-        newObj[5] = await prepareSprite(sprite.sprites.robot);
+        newObj[5] = await prepareSprite(sprite.sprites.robot, 5);
     }
 
     if(sprite.sprites.pj && index === 0) {
-        newObj[437] = await prepareSprite(sprite.sprites.pj);
+        newObj[437] = await prepareSprite(sprite.sprites.pj, 437);
         if(sprite.sprites.nude) {
-            newObj[6] = await prepareSprite(sprite.sprites.nude);
+            newObj[6] = await prepareSprite(sprite.sprites.nude, 6);
         }
         else {
             newObj[6] = newObj[437];
@@ -1018,52 +700,52 @@ export async function prepare(sprite, index) {
     }
 
     if(sprite.sprites.bike && index === 0) {
-        newObj[7] = await prepareSprite(sprite.sprites.bike);
+        newObj[7] = await prepareSprite(sprite.sprites.bike, 7);
     }
 
     if(sprite.sprites.dead) {
-        newObj[index + 8] = await prepareSprite(sprite.sprites.dead);
+        newObj[index + 8] = await prepareSprite(sprite.sprites.dead, 8);
     }
 
     if(sprite.sprites.fuzzy && index === 0) {
-        newObj[14] = await prepareSprite(sprite.sprites.fuzzy);
+        newObj[14] = await prepareSprite(sprite.sprites.fuzzy, 14);
     }
 
     if(sprite.sprites.bedJeff && index === 2) {
-        newObj[15] = await prepareSprite(sprite.sprites.bedJeff);
+        newObj[15] = await prepareSprite(sprite.sprites.bedJeff, 15);
     }
 
     if(sprite.sprites.down) {
         const newIdx = (index === 0) ? 16 : (392 + index);
-        newObj[newIdx] = await prepareSprite(sprite.sprites.down);
+        newObj[newIdx] = await prepareSprite(sprite.sprites.down, 16);
     }
 
     if(sprite.sprites.ladder) {
-        newObj[index + 17] = await prepareSprite(sprite.sprites.ladder);
+        newObj[index + 17] = await prepareSprite(sprite.sprites.ladder, 17);
     }
 
     if(sprite.sprites.rope) {
-        newObj[index + 21] = await prepareSprite(sprite.sprites.rope);
+        newObj[index + 21] = await prepareSprite(sprite.sprites.rope, 21);
     }
 
     if(sprite.sprites.mini) {
-        newObj[index + 27] = await prepareSprite(sprite.sprites.mini);
+        newObj[index + 27] = await prepareSprite(sprite.sprites.mini, 27);
     }
 
     if(sprite.sprites.jump) {
-        newObj[index + 335] = await prepareSprite(sprite.sprites.jump);
+        newObj[index + 335] = await prepareSprite(sprite.sprites.jump, 335);
     }
 
     if(sprite.sprites.meditate && index === 3) {
-        newObj[362] = await prepareSprite(sprite.sprites.meditate);
+        newObj[362] = await prepareSprite(sprite.sprites.meditate, 362);
     }
 
     if(sprite.sprites.bedNess && index === 0) {
-        newObj[378] = await prepareSprite(sprite.sprites.bedNess);
+        newObj[378] = await prepareSprite(sprite.sprites.bedNess, 378);
     }
 
     if(sprite.sprites.deadRobot && index === 0) {
-        newObj[457] = await prepareSprite(sprite.sprites.deadRobot);
+        newObj[457] = await prepareSprite(sprite.sprites.deadRobot, 457);
     }
 
     return newObj;
