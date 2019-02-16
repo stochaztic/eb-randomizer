@@ -2,6 +2,7 @@
 ## v36.x / v37 (In progress)
 - Ancient Cave: Clumsy Robot added to list of potential Shiny Spot bosses.
 - Enemy stats: Exploding-on-death-or-not has a small chance to be randomized.
+- Music: Randomization added. Different effects for Ancient Cave mode vs other modes. Not on by default.
 - PC sprites: Added Mega Man and The Batter.
 ### Bugfixes
 - Ancient Cave: Awkward entrances and exits around Electro Specter's Shiny Spot have been made normal.

@@ -122,13 +122,13 @@ class MapEnemyObject extends GridTableObject {
 
     get palette() {
         if(this._palette !== undefined) return this._palette;
-        this._palette = MapPaletteObject.getByGrid(this.gridX / 4, this.gridY / 2).data.palette_index;
+        this._palette = MapPaletteObject.getByGrid(Math.floor(this.gridX / 4), Math.floor(this.gridY / 2));
         return this.palette;
     }
 
     get music() {
         if(this._music !== undefined) return this._music;
-        this._music = MapMusicObject.getByGrid(this.gridX / 4, this.gridY / 2).data.music_index;
+        this._music = MapMusicObject.getByGrid(Math.floor(this.gridX / 4), Math.floor(this.gridY / 2));
         return this.music;
     }
 

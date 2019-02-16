@@ -86,6 +86,14 @@ const flagDescriptions = {
             16: "Goods Menu Equip - If you 'Use' an item in the Goods menu, it will equip if possible."
         }
     },
+    w: {
+        title: "Music",
+        max: 1,
+        default: 1,
+        desc: {
+            1: "In Ancient Cave, each floor will have its own music. In other modes, areas will have randomized music.",
+        }
+    },
     devmode: {
         title: "Developer mode",
         max: 2,
