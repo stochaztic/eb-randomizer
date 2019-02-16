@@ -81,7 +81,7 @@ export async function execute(romfile, specs, hooks) {
   Dialog.afterOrder = [PsiTeleportObject];
   EnemyPlaceObject.afterOrder = [BattleEntryObject];
   MapEnemyObject.afterOrder = [AncientCave];
-  MapMusicObject.afterOrder = [AncientCave];
+  MapMusicObject.afterOrder = [AncientCave, EnemyObject];
   MapSpriteObject.afterOrder = [PsiTeleportObject, AncientCave];
 
   try {
