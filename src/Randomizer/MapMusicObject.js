@@ -29,6 +29,15 @@ class MapMusicObject extends GridTableObject {
         }
         else {
             // Non-Ancient Cave mode
+            const originalMusics = Array.from(this.validMusics);
+            const chosenMusics = this.context.random.shuffle(Array.from(this.validMusics));
+            const assign = {};
+            originalMusics.forEach((o, i) => assign[o] = chosenMusics[i]);
+
+            this.every.forEach(mmo => {
+                mmo.data.music_index = assign[mmo.oldData.music_index];
+                mmo.mutated = true;
+            });
         }
     }
 }
