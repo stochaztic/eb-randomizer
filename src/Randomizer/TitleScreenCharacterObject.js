@@ -10,6 +10,7 @@ class TitleScreenCharacterObject extends TableObject {
     }
     
     static mutateAll() {
+        super.mutateAll();
         const newWord = this.context.random.choice(firstWords) + this.context.random.choice(secondWords).substring(1);
         this.every.forEach((o, i) => {
             const newLetter = newWord[i];

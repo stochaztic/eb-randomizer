@@ -15,6 +15,7 @@ class PsiAbilityObject extends TableObject {
     }
 
     static mutateAll() {
+        this.classReseed("mut");
         if(this.context.specs.flags.i >= 2) {
             // Redistribute the PSI skills among the kids
             // TODO: Starstorm consequences?
