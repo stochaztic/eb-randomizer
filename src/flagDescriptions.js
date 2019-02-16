@@ -89,7 +89,7 @@ const flagDescriptions = {
     w: {
         title: "Music",
         max: 3,
-        default: 1,
+        default: 0,
         desc: {
             1: "In Ancient Cave, each floor will have its own music. In other modes, areas will have shuffled music.",
             2: "Battle music will be shuffled. In Ancient Cave, each floor will have its own music. In other modes, areas will have shuffled music.",
