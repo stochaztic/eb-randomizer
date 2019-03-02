@@ -325,7 +325,7 @@ class App extends Component {
             <div>
               <p>Enemy spawn locations grow in difficulty as you proceed deeper into the maze, as do gift box rewards (if randomize gift box contents is on, which is recommended). You will not have to move any NPC or do any storyline events, like riding the Sky Runner or beating Carpainter, to beat the game in this mode. Often, you can move an NPC or do story events to "skip" around in the cave. This may take you onto a different floor into the maze. If you take no skips, you will encounter each of the 8 shiny spots before reaching Giygas. The Exit Mouse can remember a spot, and return you to that spot later.</p>
           
-              <p>There is a <a href="https://github.com/pickfifteen/eb-randomizer/blob/master/ancient_cave_tips.md">document with strategies and tips</a> available.</p>
+              <p>There is a <a href="https://github.com/stochaztic/eb-randomizer/blob/master/ancient_cave_tips.md">document with strategies and tips</a> available.</p>
 
               <p>Known skips:</p>
               <ul>
@@ -457,15 +457,15 @@ class App extends Component {
         <section className="intro">
           <h1>
             <img src={logo} className="logo" alt="Loaded Dice mascot" onMouseDown={this.secret} />
-            EarthBound Randomizer <a href="https://github.com/pickfifteen/eb-randomizer/blob/master/CHANGELOG.md">v{ this.state.specs.version }</a>
+            EarthBound Randomizer <a href="https://github.com/stochaztic/eb-randomizer/blob/master/CHANGELOG.md">v{ this.state.specs.version }</a>
           </h1>
           <div className="sectionContent">
             <p>
               The EarthBound Randomizer is a web app that randomizes a ROM for the Super Nintendo game EarthBound, 
               providing endless unique gameplay experiences with many distinct modes. For more information, visit
-              our <a href="https://github.com/pickfifteen/eb-randomizer">GitHub page</a>. You can contact the 
-              developer <a href="https://twitter.com/pickfifteen">@pickfifteen</a> on Twitter. <strong>Most recent  
-              update:</strong> {buildDate}, v{ this.state.specs.version } <a href="https://github.com/pickfifteen/eb-randomizer/blob/master/CHANGELOG.md">(changelog)</a>
+              our <a href="https://github.com/stochaztic/eb-randomizer">GitHub page</a>. You can contact the 
+              developer <a href="https://twitter.com/stochaztic">@stochaztic</a> on Twitter. <strong>Most recent  
+              update:</strong> {buildDate}, v{ this.state.specs.version } <a href="https://github.com/stochaztic/eb-randomizer/blob/master/CHANGELOG.md">(changelog)</a>
             </p>
           </div>
         </section>

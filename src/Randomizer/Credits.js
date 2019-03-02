@@ -94,7 +94,7 @@ class Credits extends ReadWriteObject {
                 .toUpperCase().replace(/\(|\)/g,"*")),
             ...space(6),
             ...smallText("LEAD DEVELOPER"),
-            ...bigText("PICKFIFTEEN"),
+            ...bigText("STOCHAZTIC"),
             ...space(2),
             ...smallText("LEAD PLAYTESTER"),
             ...bigText("TSJONTE"),

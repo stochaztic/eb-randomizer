@@ -232,7 +232,7 @@ export const customCharacters = [
     {
         label: "Pride Ness",
         value: "PrideNess",
-        creator: "pickfifteen",
+        creator: "stochaztic",
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 960, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344],
@@ -271,7 +271,7 @@ export const customCharacters = [
     {
         label: "Ness's Hat",
         value: "NessHat",
-        creator: "pickfifteen",
+        creator: "stochaztic",
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1152, 1344, 1537, 1729, 1536, 1728, 1920, 2112],

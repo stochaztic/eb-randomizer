@@ -65,7 +65,7 @@ Our method of randomizing the battle backgrounds often leads to extremely good-l
 
 There is a discussion channel for this randomizer at the [EarthBound Speedrunning Discord](https://discord.gg/WWVYwkE).
 
-Custom sprite contributions by: pickfifteen, Artheau, Quatropus, the salvation phoenix, Zephram, Aurilliux, Mouser, TheKubliest, Bacon, and EBrent.
+Custom sprite contributions by: stochaztic, Artheau, Quatropus, the salvation phoenix, Zephram, Aurilliux, Mouser, TheKubliest, Bacon, and EBrent.
 
 This randomizer thanks greatly the Starmen.Net, PK Hack, and EarthBound Speedrunning communities for their contributions to making it possible, as well as the two predecessor EarthBound randomizers that very much inspired this project.
 
@@ -73,4 +73,4 @@ This version of the EarthBound Randomizer was originally based on and ported fro
 
 Some features were originally developed for the [EarthBound Reshuffler](https://earthboundcentral.com/reshuffler/), version 1.5 by [Tomato](https://twitter.com/ClydeMandelin) and version 2.1 by [Rydel](https://forum.starmen.net/forum/Community/PKHack/EarthBound-Reshuffler-2-0). 
 
-Current development of this randomizer is being led by pickfifteen; you can contact him either via the Issue Tracker on this repo, [Twitter](https://www.twitter.com/pickfifteen), or on the [EarthBound Speedrunning Discord](https://discord.gg/WWVYwkE).
+Current development of this randomizer is being led by stochaztic; you can contact him either via the Issue Tracker on this repo, [Twitter](https://www.twitter.com/stochaztic), or on the [EarthBound Speedrunning Discord](https://discord.gg/WWVYwkE).
