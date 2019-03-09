@@ -288,6 +288,125 @@ export const customCharacters = [
         },
     },
     {
+        label: "Kris (Deltarune)",
+        value: "KrisDeltarune",
+        creator: "Quatropus",
+        sprites: {
+            main: {
+                indexes: [0,192,384,576,768,960,1152,1344,0,192,768,960,768,960,0,192],
+                palette: 16,
+            },
+            dead: {
+                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
+            },
+            fuzzy: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                palette: 16,
+            },
+            ladder: {
+                indexes: [0,192,0,192,0,192,0,192],
+                palette: 16,
+            },
+            rope: {
+                indexes: [0,192,0,192,384,576,0,192],
+                palette: 16,
+            },
+            jump: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                palette: 16,
+            },
+            pj: {
+                indexes: [0,192,385,577,768,960,384,576,0,192,768,960,768,960,0,192],
+            },
+        },
+    },
+    {
+        label: "Lancer",
+        value: "Lancer",
+        creator: "Quatropus",
+        sprites: {
+            main: {
+                indexes: [0,192,385,577,768,769,384,576,960,961,768,769,768,769,960,961],
+                palette: 16,
+            },
+            dead: {
+                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
+            },
+            fuzzy: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                palette: 16,
+            },
+            ladder: {
+                indexes: [0, 1, 0, 1, 0, 1, 0, 1],
+                palette: 16,
+            },
+            rope: {
+                indexes: [0,192,0,192,0,192,0,192],
+                palette: 16,
+            },
+            meditate: {
+                indexes: [0, 0, 0, 0, 192, 192, 192, 192],
+                palette: 16,
+            },
+        },
+    },
+    {
+        label: "Ralsei",
+        value: "Ralsei",
+        creator: "Quatropus",
+        sprites: {
+            main: {
+                indexes: [0,192,385,577,768,960,384,576,0,1152,768,1344,768,960,0,1152],
+                palette: 16,
+            },
+            dead: {
+                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
+            },
+            fuzzy: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                palette: 16,
+            },
+            ladder: {
+                indexes: [0,192,0,192,0,192,0,192],
+                palette: 16,
+            },
+            rope: {
+                indexes: [0,192,0,192,0,192,0,192],
+                palette: 16,
+            },
+        },
+    },
+    {
+        label: "Susie",
+        value: "Susie",
+        creator: "Quatropus",
+        sprites: {
+            main: {
+                indexes: [0,1,193,385,576,577,192,384,0,1,576,577,769,577,0,1],
+                palette: 16,
+            },
+            dead: {
+                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
+            },
+            fuzzy: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                palette: 16,
+            },
+            ladder: {
+                indexes: [0,192,0,192,0,192,0,192],
+                palette: 16,
+            },
+            rope: {
+                indexes: [0,192,0,192,0,192,0,192],
+                palette: 16,
+            },
+            jump: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                palette: 16,
+            },
+        },
+    },
+    {
         label: "Dragon Ness",
         value: "DragonNess",
         creator: "Quatropus / Aurilliux",
@@ -336,7 +455,16 @@ export const customCharacters = [
         creator: "Quatropus",
         sprites: {
             main: {
-                indexes: [0, 192, 385, 577, 768, 769, 960, 576, 0, 192, 768, 769, 768, 769, 0, 192],
+                indexes: [0,192,385,577,768,769,384,576,0,192,768,769,768,769,0,192],
+            },
+            dead: {
+                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
+            },
+            ladder: {
+                indexes: [0,1,0,1,0,1,0,1],
+            },
+            rope: {
+                indexes: [0,192,0,192,0,192,0,192],
             },
         },
     },
@@ -346,7 +474,19 @@ export const customCharacters = [
         creator: "Quatropus",
         sprites: {
             main: {
-                indexes: [0, 192, 385, 577, 768, 769, 384, 576, 0, 192, 768, 769, 768, 769, 0, 192],
+                indexes: [0,192,385,577,768,769,384,576,0,192,768,769,768,769,0,192],
+            },
+            dead: {
+                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
+            },
+            ladder: {
+                indexes: [0,1,0,1,0,1,0,1],
+            },
+            rope: {
+                indexes: [0,192,0,192,0,192,0,192],
+            },
+            jump: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
             },
         },
     },
@@ -356,7 +496,22 @@ export const customCharacters = [
         creator: "Quatropus",
         sprites: {
             main: {
-                indexes: [0, 1, 193, 385, 576, 768, 192, 384, 0, 1, 576, 768, 576, 768, 0, 1],
+                indexes: [0,1,193,385,576,577,192,384,768,769,576,577,576,577,768,769],
+                palette: 20,
+            },
+            dead: {
+                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
+            },
+            ladder: {
+                indexes: [0,1,0,1,0,1,0,1],
+                palette: 20,
+            },
+            rope: {
+                indexes: [0,192,0,192,0,192,0,192],
+                palette: 20,
+            },
+            meditate: {
+                indexes: [0,0,0,0,192,192,192,192],
                 palette: 20,
             },
         },
@@ -367,7 +522,16 @@ export const customCharacters = [
         creator: "Quatropus",
         sprites: {
             main: {
-                indexes: [0, 192, 385, 577, 768, 769, 960, 576, 0, 192, 768, 769, 768, 769, 0, 192],
+                indexes: [0,192,385,577,768,960,1152,576,0,192,768,960,768,960,0,192],
+            },
+            dead: {
+                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
+            },
+            ladder: {
+                indexes: [0,1,0,1,0,1,0,1],
+            },
+            rope: {
+                indexes: [0,192,0,192,0,192,0,192],
             },
         },
     },
@@ -377,7 +541,16 @@ export const customCharacters = [
         creator: "Quatropus",
         sprites: {
             main: {
-                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 576, 577, 576, 577, 0, 1],
+                indexes: [0,1,193,385,576,768,192,384,0,1,576,768,576,768,0,1],
+            },
+            dead: {
+                indexes: [0,0,193,193,384,384,192,192,0,0,384,576,384,768,0,0],
+            },
+            ladder: {
+                indexes: [0,1,0,1,0,1,0,1],
+            },
+            rope: {
+                indexes: [0,192,0,192,0,192,0,192],
             },
         },
     },
@@ -387,7 +560,16 @@ export const customCharacters = [
         creator: "Quatropus",
         sprites: {
             main: {
-                indexes: [0, 1, 193, 385, 576, 768, 192, 960, 0, 1, 576, 768, 576, 768, 0, 1],
+                indexes: [0,1,193,385,576,768,192,384,0,1,576,768,576,768,0,1],
+            },
+            dead: {
+                indexes: [0,0,193,385,576,576,384,192,0,0,576,576,576,576,0,0],
+            },
+            ladder: {
+                indexes: [0,1,0,1,0,1,0,1],
+            },
+            rope: {
+                indexes: [0,192,0,192,0,192,0,192],
             },
         },
     },
@@ -397,12 +579,49 @@ export const customCharacters = [
         creator: "Quatropus",
         sprites: {
             main: {
-                indexes: [0, 1, 192, 384, 576, 768, 960, 1152, 0, 1, 576, 768, 576, 768, 0, 1],
+                indexes: [0,1,192,384,576,768,960,1152,0,1,576,768,576,768,0,1],
+            },
+            dead: {
+                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
+            },
+            ladder: {
+                indexes: [0,1,0,1,0,1,0,1],
+            },
+            rope: {
+                indexes: [0,192,0,192,0,192,0,192],
             },
         },
     },
     {
-        label: "Kris",
+        label: "Aya",
+        value: "Aya",
+        creator: "Quatropus",
+        sprites: {
+            main: {
+                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 768, 960, 768, 960, 0, 192],
+            },
+            dead: {
+                indexes: [0, 0, 193, 193, 384, 384, 192, 192, 0, 0, 384, 384, 384, 384, 0, 0],
+            },
+            fuzzy: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+            },
+            ladder: {
+                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
+            },
+            rope: {
+                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
+            },
+            jump: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+            },
+            meditate: {
+                indexes:  [0, 0, 0, 0, 192, 192, 192, 192],
+            },
+        },
+    },
+    {
+        label: "Kris (Pokemon)",
         value: "Kris",
         creator: "TheKubliest",
         sprites: {

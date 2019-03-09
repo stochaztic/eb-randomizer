@@ -1,4 +1,7 @@
 # Changelog
+## v37.x / v38 (In progress)
+- PC sprites: Added Aya, Kris (Deltarune), Susie, Ralsei, and Lancer. More sprites for Dragons Jeff/Poo/Paula, Sonic, Amy, Tails, and Knuckles.
+
 ## v37 (2019-03-01)
 - Ancient Cave: Clumsy Robot added to list of potential Shiny Spot bosses.
 - Enemy stats: Exploding-on-death-or-not has a small chance to be randomized.

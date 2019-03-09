@@ -180,6 +180,7 @@ export async function execute(romfile, specs, hooks) {
           data: data.slice(0, currentOffset),
         };
         hooks.download(content);
+        return JSON.stringify(offsets);
       };
       const encode = x => ebutils.encodeText(x);
       console.log(`extract: ${extract.name}`);
