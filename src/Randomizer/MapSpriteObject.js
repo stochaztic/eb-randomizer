@@ -175,14 +175,21 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
 
         // 2) Fill up to 60% of remaining chests with equipment
         const equipmentOnce = ItemObject.ranked.filter(i => i.rank >= 0 && i.isEquipment);
+        const uniqueEquipmentOnce = [];
+        equipmentOnce.forEach(i => {
+            if(Math.min(...equipmentOnce.filter(j => j.name === i.name).map(j => j.oldData.price)) === i.oldData.price) {
+                uniqueEquipmentOnce.push(i);
+            }
+        });
+        
         let equipment = [];
-        equipmentOnce.forEach(item => {
+        uniqueEquipmentOnce.forEach(item => {
             equipment.push(item);
             if(!item.limitOne && !item.isWeapon) {
                 equipment.push(item);
                 equipment.push(item);
             }
-        })
+        });
         const franklinBadge = ItemObject.get(0x01);
         equipment.splice(Math.round(equipment.length * 0.3), 0, franklinBadge);
         equipment.splice(Math.round(equipment.length * 0.7), 0, franklinBadge);

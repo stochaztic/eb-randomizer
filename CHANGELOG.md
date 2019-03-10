@@ -1,6 +1,8 @@
 # Changelog
 ## v37.x / v38 (In progress)
 - PC sprites: Added Aya, Kris (Deltarune), Susie, Ralsei, and Lancer. More sprites for Dragons Jeff/Poo/Paula, Sonic, Amy, Tails, Knuckles, and Proto Man.
+### Bugfixes
+- Gift box contents: In Ancient Cave, the Big League Bat, Platinum Band, and Diamond Band will no longer show up in excess of expected odds. (This makes other equipment slightly more likely to show up.)
 
 ## v37 (2019-03-01)
 - Ancient Cave: Clumsy Robot added to list of potential Shiny Spot bosses.
