@@ -663,7 +663,7 @@ export const customCharacters = [
     {
         label: "Blue",
         value: "Blue",
-        creator: "Arithium",
+        creator: "Zephram",
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 768, 960, 768, 960, 1152, 1344],
@@ -673,7 +673,7 @@ export const customCharacters = [
     {
         label: "Red",
         value: "Red",
-        creator: "Arithium",
+        creator: "Zephram",
         sprites: {
             main: {
                 indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 768, 960, 768, 960, 1152, 1344],
@@ -703,7 +703,7 @@ export const customCharacters = [
     {
         label: "Bart Simpson",
         value: "Bart",
-        creator: "Quatropus",
+        creator: "Zephram",
         sprites: {
             main: {
                 indexes: [0, 1, 193, 385, 576, 768, 192, 384, 961, 1153, 1345, 1537, 1728, 1536, 960, 1920],
