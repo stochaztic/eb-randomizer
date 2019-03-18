@@ -38,7 +38,7 @@ class EnemyObject extends TableObject {
     }
 
     get intershuffleValid() {
-        return !this.isBoss && !this.isNpc
+        return !this.isBoss && !this.isFinalBoss && !this.isNpc && !(this.index === 225); // Magic Butterfly
     }
 
     get rank() {
