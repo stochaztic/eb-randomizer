@@ -6,10 +6,10 @@
     "js-cookie": "^2.2.0",
     "localforage": "^1.7.3",
     "randomtools-js": "file:../randomtools-js",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-scripts": "3.0.1",
-    "react-select": "^2.1.2"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "^3.0.1",
+    "react-select": "^2.4.3"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -34,10 +34,15 @@
     "react-snap": "^1.23.0",
     "worker-loader": "^2.0.0"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version"
+    ]
+  }
 }
