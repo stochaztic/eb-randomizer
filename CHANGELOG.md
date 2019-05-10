@@ -3,6 +3,7 @@
 - Credits: EBSS AC 2019 winner Aurilliux added.
 - PC sprites: Added Aya, Kris (Deltarune), Susie, Ralsei, and Lancer. More sprites for Dragons Jeff/Poo/Paula, Sonic, Amy, Tails, Knuckles, and Proto Man.
 ### Bugfixes
+- Ancient Cave: Second Auto-StarMaster now correctly gives Starstorm Omega.
 - Enemy stats: Unusual entries (Pokey, Magic Butterfly) removed from intershuffle (was causing weird data on other enemies)
 - Gift box contents: In Ancient Cave, the Big League Bat, Platinum Band, and Diamond Band will no longer show up in excess of expected odds. (This makes other equipment slightly more likely to show up.)
 

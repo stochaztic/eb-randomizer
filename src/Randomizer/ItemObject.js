@@ -146,13 +146,13 @@ class ItemObject extends TableObject {
             const omegaScript = Script.writeNewScript(omegaScriptLines);
 
             const mainScript = Script.getByPointer(0x6fed6);
-            const checkGotoOmega = [0x06, 0xf0, 0x03];
+            const checkGotoOmega = [0x06, 0xf1, 0x03];
             checkGotoOmega.push(...ebutils.ccodeAddress(omegaScript.pointer));
             mainScript.lines = [
                 [0x01],
                 [0x1f, 0x02, 0x63],
                 checkGotoOmega,
-                [0x04, 0xf0, 0x03],
+                [0x04, 0xf1, 0x03],
                 [0x1f, 0x71, 0x04, 0x02],
                 ebutils.encodeText("@"),
                 [0x1c, 0x02, 0x04],
