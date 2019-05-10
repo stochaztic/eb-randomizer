@@ -1,5 +1,6 @@
 # Changelog
 ## v37.x / v38 (In progress)
+- Credits: EBSS AC 2019 winner Aurilliux added.
 - PC sprites: Added Aya, Kris (Deltarune), Susie, Ralsei, and Lancer. More sprites for Dragons Jeff/Poo/Paula, Sonic, Amy, Tails, Knuckles, and Proto Man.
 ### Bugfixes
 - Enemy stats: Unusual entries (Pokey, Magic Butterfly) removed from intershuffle (was causing weird data on other enemies)
