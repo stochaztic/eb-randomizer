@@ -135,28 +135,49 @@ class ItemObject extends TableObject {
         if(this.context.specs.flags.a && this.index === 0xb3) { //Auto-StarMaster
             this.name = "Auto-StarMaster";
             this.setBit("one_use", true);
-            const omegaScriptLines = [
+
+            const omegaGrantLines = [
                 [0x1f, 0x71, 0x04, 0x03],
-                ebutils.encodeText("@"),
-                [0x1c, 0x02, 0x04],
-                ebutils.encodeText(" realized the power of Starstorm <OMEGA>!"),
+                [0x04, 0xf2, 0x03],
+                [0x02,],
+            ];
+            const omegaGrant = Script.writeNewScript(omegaGrantLines);
+
+            const checkGotoOmegaGrant = [0x06, 0xf1, 0x03];
+            checkGotoOmegaGrant.push(...ebutils.ccodeAddress(omegaGrant.pointer));
+            const nextGrantLines = [
+                [0x01],
+                checkGotoOmegaGrant,
+                [0x1f, 0x71, 0x04, 0x02],
+                [0x04, 0xf1, 0x03],
+                [0x02,],
+            ];
+            const nextGrant = Script.writeNewScript(nextGrantLines);
+
+            // Replace action in Master Barf fight with nextGrant call
+            this.context.rom.set(ebutils.ccodeCallAddress(nextGrant.pointer), 0x2f743b);
+
+            const omegaScriptLines = [
+                ebutils.encodeText("<OMEGA>!"),
                 [0x13,],
                 [0x02,],
             ];
             const omegaScript = Script.writeNewScript(omegaScriptLines);
 
+            const checkGotoOmegaScript = [0x06, 0xf2, 0x03];
+            checkGotoOmegaScript.push(...ebutils.ccodeAddress(omegaScript.pointer));
             const mainScript = Script.getByPointer(0x6fed6);
-            const checkGotoOmega = [0x06, 0xf1, 0x03];
-            checkGotoOmega.push(...ebutils.ccodeAddress(omegaScript.pointer));
             mainScript.lines = [
                 [0x01],
                 [0x1f, 0x02, 0x63],
-                checkGotoOmega,
+                ebutils.ccodeCallAddress(nextGrant.pointer),
                 [0x04, 0xf1, 0x03],
                 [0x1f, 0x71, 0x04, 0x02],
                 ebutils.encodeText("@"),
                 [0x1c, 0x02, 0x04],
-                ebutils.encodeText(" realized the power of Starstorm <ALPHA>!"),
+                ebutils.encodeText(" realized the power of Starstorm "),
+                checkGotoOmegaScript,
+                ebutils.encodeText("<ALPHA>!"),
                 [0x13,],
                 [0x02,],
             ];

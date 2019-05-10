@@ -1,5 +1,6 @@
 # Changelog
-## v37.x / v38 (In progress)
+## v38 (2019-05-10)
+- Ancient Cave: Starstorm grant from Master Barf fight works like Auto-StarMaster. (If fought after using an Auto-Starmaster, fight will grant Omega; if use a Auto-Starmaster after fight, Auto-Starmaster will grant Omega.)
 - Credits: EBSS AC 2019 winner Aurilliux added.
 - PC sprites: Added Aya, Kris (Deltarune), Susie, Ralsei, and Lancer. More sprites for Dragons Jeff/Poo/Paula, Sonic, Amy, Tails, Knuckles, and Proto Man.
 ### Bugfixes
