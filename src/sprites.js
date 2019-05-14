@@ -173,6 +173,70 @@ export const customCharacters = [
             },
         },
     },
+    {
+        label: "Dog (Laika)",
+        value: "Laika",
+        creator: "TheKubliest",
+        sprites: {
+            main: {
+                indexes: [0,192,384,576,768,960,1152,1344,0,192,384,576,1536,1344,0,192],
+                palette: 18,
+            },
+            robot: {
+                indexes: [0,192,384,576,768,960,1152,1344,0,192,384,576,1152,1344,0,192],
+            },
+            bike: {
+                indexes: [0,768,1536,2304,3072,3840,4608,5376,0,768,6144,6912,3072,3840,0,768],
+                palette: 18,
+            },
+            dead: {
+                indexes: [0,192,384,576,768,960,1152,1344,0,192,768,960,768,960,0,192],
+            },
+            fuzzy: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                palette: 18,
+            },
+            bedJeff: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                palette: 18,
+            },
+            down: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                palette: 18,
+            },
+            ladder: {
+                indexes: [0,192,0,192,0,192,0,192],
+                palette: 18,
+            },
+            rope: {
+                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
+                palette: 18,
+            },
+            mini: {
+                indexes: [0,128,256,384,512,640,768,896,0,128,512,640,512,640,0,128],
+                palette: 18,
+            },
+            jump: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+                palette: 18,
+            },
+            meditate: {
+                indexes: [0, 0, 0, 0, 192, 192, 192, 192],
+                palette: 18,
+            },
+            bedNess: {
+                indexes: [0, 128, 0, 128, 0, 128, 0, 128],
+                palette: 18,
+            },
+            pj: {
+                indexes: [0,192,384,576,768,960,1152,1344,0,192,384,1536,1152,1344,0,192],
+                palette: 18,
+            },
+            deadRobot: {
+                indexes: [0, 0, 0, 0, 0, 0, 192, 192],
+            },
+        },
+    },
     
     {
         label: "The Batter",
