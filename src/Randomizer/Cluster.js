@@ -138,6 +138,16 @@ class Cluster {
     }
 
     addExit(s) {
+        if(s.startsWith("##")) {
+            return;
+        }
+
+        let donor = false;
+        if(s.startsWith("#")) {
+            donor = true;
+            s = s.substring(1);
+        }
+
         if(s.startsWith(".")) {
             this.optional = true;
             s = s.substring(1);
@@ -162,20 +172,25 @@ class Cluster {
         }
 
         let [meid, x, y] = s.split(" ").map(v => parseInt(v, 0x10));
-        let candidates;
-        if(!force) {
-            candidates = MapEnemyObject.get(meid).mapEvents.filter(c => 
-                c.isExit && c.hasMutualFriend && c.globalX === x && c.globalY === y);
-        }
-        else {
-            candidates = MapEnemyObject.get(meid).mapEvents.filter(c => 
-                c.isExit && c.globalX === x && c.globalY === y);
-        }
+        let candidates = MapEnemyObject.get(meid).mapEvents.filter(c => 
+            c.isExit && c.globalX === x && c.globalY === y);
         if(candidates.length === 0) return;
         if(candidates.length !== 1) {
             throw new Error(`Incorrect candidates length: ${candidates.length}`);
         }
         const chosen = candidates[0].canonicalNeighbor;
+
+        if(chosen.dialogueDoor) {
+            return;
+        }
+
+        if(donor) {
+            if(!Cluster.donorExits.map(exit => exit.event).includes(chosen.event)) {
+                Cluster.donorExits.push(chosen);
+            }
+            return;
+        }
+
         let earlyExit = false;
         this.exits.forEach(x => {
             if(x.neighbors.includes(chosen)) {
@@ -347,7 +362,6 @@ class Cluster {
         const allClusters = [];
         exitsText.forEach(line => {
             line = line.trim();
-            if(line[0] === '#') return;
             if(line[0] === ':' || line.length === 0) {
                 if(clu.exits.length > 0) {
                     allClusters.push(clu);
@@ -378,6 +392,8 @@ class Cluster {
         return this.generateClusters();
     }
 }
+
+Cluster.donorExits = [];
 
 Cluster.rootData = {
     "28e5": [0x2864, 0x2865],           // Monkey 1

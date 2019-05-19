@@ -41,16 +41,25 @@ class MapEventObject extends ZonePositionMixin(TableObject) {
             console.assert(!this.connected);
             if(other.connected) console.assert(other.connected === this);
         }
-        
+
         if(other === this) {
             if(this.event.data.event_flag !== 0x8154) {
                 this.neighbors.forEach(x => { x.data.event_type = 5; });
             }
         }
         else {
-            const friend = other.friend;
-            friend.event.data.event_flag = 0;
-            this.neighbors.forEach(x => { x.data.event_index = friend.oldData.event_index });
+            if(other.hasMutualFriend) {
+                const friend = other.friend;
+                friend.event.data.event_flag = 0;
+                this.neighbors.forEach(x => { x.data.event_index = friend.oldData.event_index });
+            }
+            else {
+                console.assert(Cluster.donorExits.length > 0);
+                const donor = Cluster.donorExits.pop();
+                donor.event.data.x = other.globalX >> 3;
+                donor.event.data.y_facing = other.globalY >> 3;
+                this.neighbors.forEach(x => { x.data.event_index = donor.oldData.event_index });
+            }
         }
 
         this.neighbors.forEach(x => { x.connected = other });
@@ -60,6 +69,10 @@ class MapEventObject extends ZonePositionMixin(TableObject) {
         if(this._dialogueDoors !== undefined) return this._dialogueDoors;
         this._dialogueDoors = MapEventObject.allExits.filter(x => x.event.data.event_flag === 0x8154);
         return this.dialogueDoors;
+    }
+
+    get dialogueDoor() {
+        return this.event.data.event_flag === 0x8154 && this.index !== 0x106; // Special case: Dungeon Man front exit
     }
 
     get event() {

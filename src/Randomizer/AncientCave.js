@@ -123,14 +123,6 @@ class AncientCave extends ReadWriteObject {
         const checkpoints = sBosses.map(mso => mso.nearestCluster);
         this.context.random.shuffle(checkpoints);
 
-        // Electro Specter fix. We have assigned an unused door in meo_friends to be the 
-        // friend door for the hole after the Shiny Spot. We will change that door's 
-        // event to point to the same location as the hole. This room is now a 3-exit room.
-        const electroExit = MapEventObject.get(0x9);
-        const electroHijack = electroExit.friend;
-        electroHijack.event.data.x = electroExit.globalX >> 3;
-        electroHijack.event.data.y_facing = electroExit.globalY >> 3;
-
         checkpoints.unshift(Cluster.home);
         checkpoints.push(Cluster.goal);
 
@@ -348,7 +340,6 @@ class AncientCave extends ReadWriteObject {
         Cluster.rankedClusters.forEach(clu => {
             clu.exits.forEach(a => {
                 const b = Cluster.assignDict[a.index];
-                console.assert(b.force || b.hasMutualFriend);
                 a.connectExit(b);
             });
         });
