@@ -41,8 +41,8 @@ class AncientCave extends ReadWriteObject {
             banana.writeScript();
 
             // Change teleport destination in X menu
-            const teleportX = 270;
-            const teleportY = 691;
+            const teleportX = 209;
+            const teleportY = 1037;
 
             const [fullX, fullY] = [teleportX * 8, teleportY * 8];
             this.context.rom.set([fullX % 256, Math.floor(fullX / 256)], 0x13049);
@@ -651,6 +651,18 @@ class AncientCave extends ReadWriteObject {
             cultist.data.flag = 0x5e;
             cultist.data.flag_appear = 1;
         });
+
+        // Sign in Brick Road room - always appear, move over hole
+        tpt = TPTObject.get(1220);
+        const mso = MapSpriteObject.every.find(mso => mso.data.tpt_number === tpt.index);
+        mso.data.x = 80;
+        tpt.data.flag = 0;
+        tpt.data.flag_appear = 0;
+        tpt.script.lines = [
+            ebutils.encodeText("@BAD HOLE"),
+            [0x13, 0x02]
+        ];
+        tpt.script.writeScript();
 
         // War against Giygas is over - go to credits
         script = Script.getByPointer(0x9c293);

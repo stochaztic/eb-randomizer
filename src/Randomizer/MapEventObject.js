@@ -55,7 +55,12 @@ class MapEventObject extends ZonePositionMixin(TableObject) {
             }
             else {
                 console.assert(Cluster.donorExits.length > 0);
-                const donor = Cluster.donorExits.pop();
+                let donor = Cluster.donorExits.pop();
+                donor = donor.friend;
+                console.assert(!donor.isDonated);
+                console.assert(!donor.event.isDonated);
+                donor.isDonated = true;
+                donor.event.isDonated = true;
                 donor.event.data.x = other.globalX >> 3;
                 donor.event.data.y_facing = other.globalY >> 3;
                 this.neighbors.forEach(x => { x.data.event_index = donor.oldData.event_index });

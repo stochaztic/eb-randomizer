@@ -186,7 +186,10 @@ class Cluster {
         }
 
         if(donor) {
-            if(!Cluster.donorExits.map(exit => exit.event).includes(chosen.event)) {
+            if(!chosen.hasMutualFriend) {
+                return;
+            }
+            if(!Cluster.donorExits.map(exit => exit.friend.event.index).includes(chosen.friend.event.index)) {
                 Cluster.donorExits.push(chosen);
             }
             return;
