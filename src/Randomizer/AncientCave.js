@@ -270,16 +270,7 @@ class AncientCave extends ReadWriteObject {
         });
 
         this.context.hooks.message("Assigning remaining exits...");
-
         const toAssign = singletons.filter(s => !s.optional);
-        console.assert(toAssign.length < totalUnassignedExits.length);
-        const remainingSingletons = singletons.filter(s => s.optional);
-        while(toAssign.length < totalUnassignedExits.length) {
-            const x = this.context.random.choice(remainingSingletons);
-            remainingSingletons.splice(remainingSingletons.indexOf(x), 1);
-            toAssign.push(x);
-        }
-        console.assert(toAssign.length === totalUnassignedExits.length);
 
         // Ensure even distribution of sanctuaries and sanctuary-alikes
         const toEvenlyAssign = this.context.random.shuffle(toAssign.filter(s => 
@@ -299,6 +290,7 @@ class AncientCave extends ReadWriteObject {
         const assign = (s, chosen) => {
             if(s.caveLevel !== undefined) return;
             console.assert(s.unassignedExits.length === 1);
+            console.assert(totalUnassignedExits.length > 0);
             let x = s.unassignedExits[0];
             if(!chosen) {
                 chosen = this.context.random.choice(totalUnassignedExits);
@@ -326,8 +318,35 @@ class AncientCave extends ReadWriteObject {
             assign(s, chosen);
         });
 
-        // Assign remainder of singletons
+        // Create loops within caveLevels
+        const caveLevelGroups = {};
+        totalUnassignedExits.forEach(exit => {
+            const bucket = exit.caveLevel;
+            caveLevelGroups[bucket] = caveLevelGroups[bucket] || [];
+            caveLevelGroups[bucket].push(exit);
+        });
+
+        Object.keys(caveLevelGroups).forEach(caveLevel => {
+            const exitArray = caveLevelGroups[caveLevel];
+            while(exitArray.length > 5 && this.context.random.random() < 0.6) {
+                // Add a loop to this level
+                const chosenLoop = this.context.random.sample(exitArray, 2);
+                exitArray.splice(exitArray.indexOf(chosenLoop[0]), 1);
+                exitArray.splice(exitArray.indexOf(chosenLoop[1]), 1);
+                Cluster.assignExitPair(chosenLoop[0], chosenLoop[1]);
+                totalUnassignedExits.splice(totalUnassignedExits.indexOf(chosenLoop[0]), 1);
+                totalUnassignedExits.splice(totalUnassignedExits.indexOf(chosenLoop[1]), 1);
+            }
+        });
+
+        // Assign remainder of required singletons
         toAssign.forEach(normalAssign);
+        
+        // Assign optional singletons until no unassigned exits remain
+        const remainingSingletons = singletons.filter(s => s.optional);
+        const optionalAssign = this.context.random.sample(remainingSingletons, totalUnassignedExits.length);
+        Array.prototype.push.apply(toAssign, optionalAssign);
+        optionalAssign.forEach(normalAssign);
 
         console.assert(totalUnassignedExits.length === 0);
         Cluster.rankClusters(this.context);

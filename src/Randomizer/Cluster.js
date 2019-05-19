@@ -42,6 +42,7 @@ class Cluster {
                 y2: Math.max(...cellBounds.map(b => b.y2)),
             },
             doors: this.exits.map(d => d.serialize()),
+            optional: this.optional,
         }
     }
 
