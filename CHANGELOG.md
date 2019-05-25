@@ -1,7 +1,8 @@
 # Changelog
-## v38.x / v39 (In progress)
+## v39 (2019-05-25)
 - Ancient Cave: All previously-disabled one-way doors are now enabled, and properly two-way. This will cause major routing changes.
 - Ancient Cave: Loops may now appear within a floor.
+- Dialogue: Additional Pokey lines.
 - PC sprites: Added Dog (Laika).
 
 ## v38 (2019-05-10)

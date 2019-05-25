@@ -1,0 +1,31 @@
+[debug] [2019-05-25T18:33:57.501Z] ----------------------------------------------------------------------
+[debug] [2019-05-25T18:33:57.503Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Chaz\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting:main
+[debug] [2019-05-25T18:33:57.503Z] CLI Version:   6.4.0
+[debug] [2019-05-25T18:33:57.503Z] Platform:      win32
+[debug] [2019-05-25T18:33:57.503Z] Node Version:  v10.3.0
+[debug] [2019-05-25T18:33:57.503Z] Time:          Sat May 25 2019 14:33:57 GMT-0400 (US Eastern Daylight Time)
+[debug] [2019-05-25T18:33:57.503Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-05-25T18:33:57.512Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-05-25T18:33:57.513Z] > authorizing via signed-in user
+[debug] [2019-05-25T18:33:57.513Z] [iam] checking project ebrandomizer for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-05-25T18:33:57.515Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/ebrandomizer:testIamPermissions  
+
+[debug] [2019-05-25T18:33:57.709Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-25T18:33:57.710Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/ebrandomizer  
+ 
+[debug] [2019-05-25T18:33:57.967Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'ebrandomizer'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-05-25T18:33:57.972Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/ebrandomizer/versions  
+
+[debug] [2019-05-25T18:33:58.799Z] <<< HTTP RESPONSE 200
+[info] i  hosting[ebrandomizer]: beginning deploy...
+[info] i  hosting[ebrandomizer]: found 234 files in build
+[debug] [2019-05-25T18:33:58.851Z] [hosting] hash cache [YnVpbGQ] load error: lines is not defined
+[debug] [2019-05-25T18:33:59.167Z] [hosting] hash cache [YnVpbGQ] stored for 234 files
+[debug] [2019-05-25T18:33:59.168Z] [hosting][hash queue][FINAL]
+[debug] [2019-05-25T18:33:59.168Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/ebrandomizer/versions/7c5898277f2a432f:populateFiles  
+ <request body omitted>
