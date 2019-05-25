@@ -668,6 +668,9 @@ class AncientCave extends ReadWriteObject {
         script = Script.getByPointer(0x9c293);
         console.assert(script.lines.length === 273);
         script.lines = script.lines.slice(0, 69);
+        if(this.context.random.random() < 0.1) {
+            script.lines[61]= [21, 20, 167, 145, 162, 21, 91, 163, 164, 80, 119, 153, 151, 151, 145, 151, 145, 163];
+        }
         script.lines.push([0x1f, 0x00, 0x00, this.context.random.randint(1, 191)]); // Music
         script.lines.push([0x1f, 0x41, 0x0c]); // Credits
         script.lines.push(ebutils.ccodeGotoAddress(0x9c96e)); // The End
