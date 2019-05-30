@@ -1,4 +1,7 @@
 # Changelog
+## v39.x / v40 (In progress)
+- PC sprites: Added Chu.
+
 ## v39 (2019-05-25)
 - Ancient Cave: All previously-disabled one-way doors are now enabled, and properly two-way. This will cause major routing changes.
 - Ancient Cave: Loops may now appear within a floor.
