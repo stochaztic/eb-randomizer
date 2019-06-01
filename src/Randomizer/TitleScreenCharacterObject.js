@@ -27,7 +27,7 @@ class TitleScreenCharacterObject extends TableObject {
             return;
         }
 
-        if(this.context.random.random() < 0.03) {
+        if(this.context.specs.rarity[0] < 0.03) {
             const chosen = this.context.random.choice(this.every.map(o => o.oldData.address));
             this.every.forEach(o => {
                 o.data.address = chosen;
