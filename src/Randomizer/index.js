@@ -6,6 +6,7 @@ import BgDataObect from './BgDataObject.js';
 import Credits from './Credits.js';
 import Dialog from './Dialog.js';
 import EnemyObject from './EnemyObject.js';
+import EnemyPaletteObject from './EnemyPaletteObject.js';
 import EnemyPlaceObject from './EnemyPlaceObject.js';
 import EventObject from './EventObject.js';
 import ExperienceObject from './ExperienceObject.js';
@@ -52,6 +53,7 @@ export async function execute(romfile, specs, hooks) {
     Credits,
     Dialog,
     EnemyObject,
+    EnemyPaletteObject,
     EnemyPlaceObject,
     EventObject,
     ExperienceObject,

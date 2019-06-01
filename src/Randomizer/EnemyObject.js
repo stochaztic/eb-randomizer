@@ -171,6 +171,13 @@ class EnemyObject extends TableObject {
     }
 }
 
+const battlePaletteMutator = (o) => {
+    if(o.context.specs.rarity[1] < 0.3) {
+        return o.context.random.randint(0, 31);
+    }
+    return o.data.battle_palette;
+};
+
 EnemyObject.mutateAttributes = {
     "hp": null,
     "pp": null,
@@ -192,7 +199,7 @@ EnemyObject.mutateAttributes = {
     "weakness_flash": null,
     "weakness_paralysis": null,
     "weakness_hypnosis": null,
-    "battle_palette": null,
+    "battle_palette": battlePaletteMutator,
 };
 
 EnemyObject.intershuffleAttributes = [
@@ -200,7 +207,6 @@ EnemyObject.intershuffleAttributes = [
     "offense", "defense", "speed", "guts", "iq", "miss_rate",
     ["drop_item_index", "drop_frequency"], "status",
     "mirror_success_rate",
-    "battle_palette",
 ];
 
 EnemyObject.tableSpecs = {

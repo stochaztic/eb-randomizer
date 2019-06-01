@@ -1,5 +1,6 @@
 # Changelog
 ## v39.x / v40 (In progress)
+- Enemy stats: Battle palette randomization improved.
 - PC sprites: Added Chu.
 
 ## v39 (2019-05-25)
