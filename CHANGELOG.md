@@ -1,6 +1,7 @@
 # Changelog
 ## v39.x / v40 (In progress)
 - Enemy stats: Battle palette randomization improved and moved to Palettes flag.
+- Game improvement patches: Ludicrous speed patch now displays new speed names.
 - Palettes: New feature with multiple levels.
 - PC sprites: Added Chu.
 
