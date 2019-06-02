@@ -2,6 +2,8 @@
 import textMapRaw0 from '!array-loader!./tables/text_mapping.txt';
 import textMapRaw1 from '!array-loader!./tables/text_mapping_1.txt';
 import textMapRaw2 from '!array-loader!./tables/text_mapping_2.txt';
+import { utils } from 'randomtools-js';
+import Color from 'color';
 
 const ebutils = {
     // Note: Music note / Ness placeholder is "&"
@@ -141,6 +143,16 @@ const ebutils = {
             flags[key] = val;
         }
         return flags;
+    },
+
+    rotateEbPalette: function(palette, degrees) {
+        return palette.map((color, i) => {
+            if(i === 0) return color;
+            const oldRgb = utils.snesColorToRgb(color);
+            const oldColor = Color(oldRgb);
+            const newRbg = oldColor.rotate(degrees).rgb().object();
+            return utils.rgbToSnesColor(newRbg);
+        });
     },
 
     SANCTUARY_BOSS_POINTERS: [

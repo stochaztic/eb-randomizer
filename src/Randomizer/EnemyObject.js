@@ -172,7 +172,7 @@ class EnemyObject extends TableObject {
 }
 
 const battlePaletteMutator = (o) => {
-    if(o.context.specs.rarity[1] < 0.3) {
+    if(o.context.specs.flags.p >= 1 && o.context.specs.rarity[1] < 0.3) {
         return o.context.random.randint(0, 31);
     }
     return o.data.battle_palette;

@@ -49,10 +49,10 @@ const flagDescriptions = {
         default: 2,
         unsafe: 4,
         desc: {
-            1: "Enemy stats and palettes will be randomized.",
-            2: "Enemy stats, palettes, and names will be randomized.",
-            3: "Enemy stats, palettes, names, and appearance will be randomized.",
-            4: "Enemy stats, palettes, names, and appearance (completely) will be randomized.",
+            1: "Enemy stats will be randomized.",
+            2: "Enemy stats and names will be randomized.",
+            3: "Enemy stats, names, and appearance will be randomized.",
+            4: "Enemy stats, names, and appearance (completely) will be randomized.",
         }
     },
     n: {
@@ -64,6 +64,16 @@ const flagDescriptions = {
             1: "Overworld NPC sprites will be randomized.",
             2: "Overworld NPC sprites will be randomized, without taking into consideration appropriate size.",
             3: "Overworld NPC sprites will be utterly randomized with no exceptions.",
+        }
+    },
+    p: {
+        title: "Palettes",
+        max: 3,
+        default: 2,
+        desc: {
+            1: "Enemy battle palettes will be randomized.",
+            2: "Enemy battle palettes and window colors will be randomized.",
+            3: "Enemy battle palettes, window colors, and map palettes will be randomized.",
         }
     },
     s: {

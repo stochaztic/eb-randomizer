@@ -1,6 +1,7 @@
 # Changelog
 ## v39.x / v40 (In progress)
-- Enemy stats: Battle palette randomization improved.
+- Enemy stats: Battle palette randomization improved and moved to Palettes flag.
+- Palettes: New feature with multiple levels.
 - PC sprites: Added Chu.
 
 ## v39 (2019-05-25)
