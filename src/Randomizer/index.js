@@ -16,6 +16,7 @@ import MapEnemyObject from './MapEnemyObject.js';
 import MapEventObject from './MapEventObject.js';
 import MapMusicObject from './MapMusicObject.js';
 import MapPaletteObject from './MapPaletteObject.js';
+import MapPaletteDataObject from './MapPaletteDataObject.js';
 import MapSpriteObject from './MapSpriteObject.js';
 import PcGfxObject from './PcGfxObject.js';
 import PsiAbilityObject from './PsiAbilityObject.js';
@@ -63,6 +64,7 @@ export async function execute(romfile, specs, hooks) {
     MapEventObject,
     MapMusicObject,
     MapPaletteObject,
+    MapPaletteDataObject,
     MapSpriteObject,
     PcGfxObject,
     PsiAbilityObject,
