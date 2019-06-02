@@ -155,6 +155,16 @@ const ebutils = {
         });
     },
 
+    asmLoadAddress: function(address) {
+        if((address & 0xC00000) === 0x0) address = this.fileToEbPointer(address);
+        return [
+            0xa9, (address & 0xff), ((address & 0xff00) >> 0x8),    // LDA low bytes
+            0x85, 0x0E,                                             // STA $0e
+            0xa9, ((address & 0xff0000) >> 0x10), 0x00,             // LDA high bytes
+            0x85, 0x10,                                             // STA $10
+        ];
+    },
+
     SANCTUARY_BOSS_POINTERS: [
         0x68409,
         0x68410,

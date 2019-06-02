@@ -10,6 +10,7 @@ import EnemyPaletteObject from './EnemyPaletteObject.js';
 import EnemyPlaceObject from './EnemyPlaceObject.js';
 import EventObject from './EventObject.js';
 import ExperienceObject from './ExperienceObject.js';
+import FlavorObject from './FlavorObject.js';
 import InitialStatsObject from './InitialStatsObject.js';
 import ItemObject from './ItemObject.js';
 import MapEnemyObject from './MapEnemyObject.js';
@@ -58,6 +59,7 @@ export async function execute(romfile, specs, hooks) {
     EnemyPlaceObject,
     EventObject,
     ExperienceObject,
+    FlavorObject,
     InitialStatsObject,
     ItemObject,
     MapEnemyObject,
