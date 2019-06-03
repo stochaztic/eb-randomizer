@@ -290,7 +290,9 @@ class AncientCave extends ReadWriteObject {
         const assign = (s, chosen) => {
             if(s.caveLevel !== undefined) return;
             console.assert(s.unassignedExits.length === 1);
-            console.assert(totalUnassignedExits.length > 0);
+            if(totalUnassignedExits.length == 0) {
+                throw new Error("Seed could not complete cave. Please try a different seed.");
+            }
             let x = s.unassignedExits[0];
             if(!chosen) {
                 chosen = this.context.random.choice(totalUnassignedExits);
