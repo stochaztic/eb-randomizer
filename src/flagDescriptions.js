@@ -70,6 +70,7 @@ const flagDescriptions = {
         title: "Palettes",
         max: 3,
         default: 2,
+        unsafe: 3,
         desc: {
             1: "Enemy battle palettes will be randomized.",
             2: "Enemy battle palettes and window colors will be randomized.",

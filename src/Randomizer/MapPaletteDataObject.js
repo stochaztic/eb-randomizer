@@ -18,6 +18,7 @@ class MapPaletteDataObject extends TableObject {
         super.mutate();
         const hueAdjustment = this.constructor.hueAdjustmentForIndex(this.index);
         this.data.color = ebutils.rotateEbPalette(this.oldData.color, hueAdjustment);
+        this.data.color[0] = 0;
     }
 }
 
