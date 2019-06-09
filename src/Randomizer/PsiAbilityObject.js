@@ -90,7 +90,7 @@ class PsiAbilityObject extends TableObject {
     }
 
     cleanup() {
-        if(this.context.specs.flags.k && this.data.name_index === 0x11 && this.data.greek_letter === 0x01) {
+        if((this.context.specs.flags.k || this.context.specs.flags.o) && this.data.name_index === 0x11 && this.data.greek_letter === 0x01) {
             this.data.ness_level = 1;
         }
     }

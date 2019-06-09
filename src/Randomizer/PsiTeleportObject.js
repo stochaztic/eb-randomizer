@@ -10,7 +10,7 @@ import ItemObject from './ItemObject.js';
 
 class PsiTeleportObject extends TableObject {
     static shouldRandomize() {
-        return this.context.specs.flags.k; // Keysanity
+        return this.context.specs.flags.k || this.context.specs.flags.o; // Keysanity or Open
     }
 
     static serialize() {
@@ -65,7 +65,9 @@ class PsiTeleportObject extends TableObject {
     }
 
     static intershuffle() {
+        if(!this.context.specs.flags.k) return;
         this.classReseed("inter");
+
         const keyItemsIndex = [
             0x01,   // Franklin badge
             //0x69, // Jar of Fly Honey - Chest handled differently, at 0x7dacb.
@@ -121,20 +123,44 @@ class PsiTeleportObject extends TableObject {
             super.fullCleanup();
             return;
         }
+        // Following cleanups are valid for both Keysanity and Open mode
+
         // Patch Bubble Monkey rope interaction
         const bubbleMonkeyRope = Script.getByPointer(0x97f72);
         bubbleMonkeyRope.lines.splice(1, bubbleMonkeyRope.lines.length - 3);
         bubbleMonkeyRope.writeScript();
 
-        // Patch intro script to set all teleports available immediately
+        // Patch intro script to set all teleports available immediately, and 
+        // put all necessary items in Tracy's inventory if Open mode
         const intro = Script.getByPointer(0x5e70b);
         let patchLines = intro.lines.slice(0,2);
         patchLines.push(
             [0x04, 0xd9, 0x00], // Enable Pyramid entrance and all teleports
             [0x04, 0x8c, 0x00], // Enable Venus giving item
-            [0x02, ]);
+        );
+        if(this.context.specs.flags.o) {
+            const openItemsIndex = [
+                0x01,   // Franklin badge
+                0x69,   // Jar of Fly Honey
+                0x7d,   // Backstage pass
+                0xa4,   // Shyness book
+                0xa6,   // King banana
+                0xaa,   // Key to the shack
+                0xaf,   // Hawk eye
+                0xb4,   // Wad of bills
+                0xb6,   // Diamond
+                0xb7,   // Signed banana
+                0xb8,   // Pencil eraser
+                0xc0,   // Key to the tower
+                0xc1,   // Meteorite piece
+                0xd2,   // Eraser eraser
+                0xfd,   // Carrot key
+            ];
+            patchLines.push(...openItemsIndex.map(i => [0x1d, 0x18, i]));
+        }
+
+        patchLines.push([0x02, ]);
         let patch = Script.writeNewScript(patchLines);
-        console.assert(patch.length === 13);
         intro.lines = intro.lines.slice(2);
         intro.lines.unshift([0x00]);
         intro.lines.unshift(ebutils.ccodeCallAddress(patch.pointer));

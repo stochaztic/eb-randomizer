@@ -311,11 +311,11 @@ class App extends Component {
         <legend>Primary mode:</legend>
         <div className="modeButtons">
           <button className={specs.flags.a ? 'modeSelected' : ''} 
-          onClick={e => {this.setFlag('a', 1);this.setFlag('k', 0)}}>Ancient Cave</button>
-          <button className={specs.flags.k ? 'modeSelected' : ''} 
-          onClick={e => {this.setFlag('a', 0);this.setFlag('k', 1)}}>Keysanity</button>
-          <button className={!specs.flags.a && !specs.flags.k ? 'modeSelected' : ''} 
-          onClick={e => {this.setFlag('a', 0);this.setFlag('k', 0)}}>Normal</button>
+          onClick={e => {this.setFlag('a', 1);this.setFlag('o', 0)}}>Ancient Cave</button>
+          <button className={specs.flags.o ? 'modeSelected' : ''} 
+          onClick={e => {this.setFlag('a', 0);this.setFlag('o', 1)}}>Open</button>
+          <button className={!specs.flags.a && !specs.flags.o ? 'modeSelected' : ''} 
+          onClick={e => {this.setFlag('a', 0);this.setFlag('o', 0)}}>Normal</button>
         </div>
         { specs.flags.a ?
           <div>
@@ -340,33 +340,34 @@ class App extends Component {
           }
           </div>
         :
-        specs.flags.k ?
+        specs.flags.o ?
           <div>
-          <p><strong>Experts only!</strong> Keysanity mode also radically changes how the game is played. 15 different key items have been shuffled around throughout the world; Mayor Pirkle may give you the Bicycle, while the Bike Shop guy may give you the Carrot key. To help you on this more complicated quest, however, Ness already knows PSI Teleport, and all available teleport locations are unlocked at the start of the game (including bonus teleports to South Winters and North Onett). Your goal is to beat the game as normal, but getting to all 8 Your Sanctuary locations will be more of a challenge.</p>
+          <p><strong>Experts only!</strong> Open mode significantly changes how the game is played. From the beginning of the game, you know all teleport locations (including bonus locations of North Onett and South Winters), all phone numbers, and Escargo Express has one copy of every key item necessary for progress. Use these advantages to blaze through the game, but be careful not to softlock!</p>
           { !this.state.moreInfo ? <button onClick={this.showMoreInfo}>More info...</button> :
             <div>
-              <p>The list of items that have had their locations shuffled in this mode is as follows:</p>
+              <p>The list of items that are available in Escargo Express is as follows:</p>
               
               <ul>
-              <li>Franklin badge</li>
-              <li>Shyness book</li>
-              <li>King banana</li>
-              <li>Key to the shack</li>
-              <li>Hawk eye</li>
-              <li>Bicycle</li>
-              <li>Wad of bills</li>
-              <li>Diamond</li>
-              <li>Signed banana</li>
-              <li>Pencil eraser</li>
-              <li>Key to the tower</li>
-              <li>Town map</li>
-              <li>Carrot key</li>
-              <li>Tendakraut - but the Tendakraut has been transformed into a Jar of Fly Honey</li>
-              <li>Suporma - but the Suporma has been transformed into a Meteorite piece</li>
+                <li>Franklin badge</li>
+                <li>Jar of Fly Honey</li>
+                <li>Backstage pass</li>
+                <li>Shyness book</li>
+                <li>King banana</li>
+                <li>Key to the shack</li>
+                <li>Hawk eye</li>
+                <li>Bicycle</li>
+                <li>Wad of bills</li>
+                <li>Diamond</li>
+                <li>Signed banana</li>
+                <li>Pencil eraser</li>
+                <li>Key to the tower</li>
+                <li>Meteorite piece</li>
+                <li>Eraser eraser</li>
+                <li>Carrot key</li>
               </ul>
-              <p>Because you can get a Jar of Fly Honey through one of these 15 locations, it is not necessary to do the Jeff-alone-in-Winters part of the storyline. However, you can still do so if you wish, as the Boogey Tent will still contain a Jar of Fly Honey as well.</p>
+              <p>Because you can get a Jar of Fly Honey, it is not necessary to do the Jeff-alone-in-Winters part of the storyline. However, you can still do so if you wish, as the Boogey Tent will still contain a Jar of Fly Honey as well.</p>
               
-              <p>Be careful with how you proceed through storyline events! If you take a very unusual order, it is possible you may lock yourself out of having a character available until you complete Magicant. Since you can teleport anywhere instantly, you can get the game into very unusual states; this is expected and encouraged to take advantage of to get a lower time.</p>
+              <p>Be careful with how you proceed through storyline events! It is very possible to softlock the game, or lock yourself out of having a character available until you complete Magicant. You can get the game into very unusual states; this is expected and encouraged to take advantage of to get a lower time.</p>
               
               <p>A few events have been made more lenient with regards to in-game triggers; notably, Venus will always give you her item right away, you can access the Pyramid without fighting Kraken (but you still must see the hieroglyphs), and Montague should always appear. It is also possible to get the game into a "spawns-off" condition. This is expected, but note if you game over in a spawns-off condition, you may softlock and have to reset the game, so be sure to save if necessary!</p>
             </div>

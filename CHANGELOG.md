@@ -1,7 +1,9 @@
 # Changelog
-## v39.x / v40 (In progress)
+## v40 (2019-06-09)
 - Enemy stats: Battle palette randomization improved and moved to Palettes flag.
 - Game improvement patches: Ludicrous speed patch now displays new speed names.
+- Keysanity: Disabled due to softlocks. You can manually access this mode by adding `k` to your list of flags.
+- Open: New primary mode, featuring all teleports (including bonus locations) unlocked, all phone numbers learned, and all key items in Escargo Express's inventory.
 - Palettes: New feature with multiple levels.
 - PC sprites: Added Chu.
 

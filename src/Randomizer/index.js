@@ -20,6 +20,7 @@ import MapPaletteObject from './MapPaletteObject.js';
 import MapPaletteDataObject from './MapPaletteDataObject.js';
 import MapSpriteObject from './MapSpriteObject.js';
 import PcGfxObject from './PcGfxObject.js';
+import PhoneObject from './PhoneObject.js';
 import PsiAbilityObject from './PsiAbilityObject.js';
 import PsiTeleportObject from './PsiTeleportObject.js';
 import ShopObject from './ShopObject.js';
@@ -69,6 +70,7 @@ export async function execute(romfile, specs, hooks) {
     MapPaletteDataObject,
     MapSpriteObject,
     PcGfxObject,
+    PhoneObject,
     PsiAbilityObject,
     PsiTeleportObject,
     ShopObject,
@@ -113,6 +115,12 @@ export async function execute(romfile, specs, hooks) {
 
     if(context.specs.flags.a && context.specs.flags.k) {
       throw new Error("Ancient Cave and Keysanity modes are incompatible.");
+    }
+    if(context.specs.flags.a && context.specs.flags.o) {
+      throw new Error("Ancient Cave and Open modes are incompatible.");
+    }
+    if(context.specs.flags.k && context.specs.flags.o) {
+      throw new Error("Keysanity and Open modes are incompatible.");
     }
     if(context.specs.flags.t) {
       hooks.prePatch = c => {
