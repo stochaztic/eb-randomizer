@@ -185,8 +185,8 @@ class PsiTeleportObject extends TableObject {
             [0x02, ]);
         patch = Script.writeNewScript(patchLines);
         console.assert(patch.length === 9);
-        monkey.lines = monkey.lines.slice(2)
-        monkey.lines.unshift([ebutils.ccodeCallAddress(patch.pointer)]);
+        monkey.lines = monkey.lines.slice(2);
+        monkey.lines.unshift(ebutils.ccodeCallAddress(patch.pointer));
         monkey.writeScript();
 
         // Patch Dr Andonuts to recognize Ness isn't Jeff
