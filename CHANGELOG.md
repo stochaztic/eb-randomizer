@@ -1,6 +1,8 @@
 # Changelog
 ## v40.x / v41 (In progress)
 - Character stats: Added ability to shuffle special abilities (Pray, Spy, Mirror). Mirror will have an increased chance of success if this mode is activated.
+### Bugfixes
+- Music: Ancient Cave floor 9 will now have music.
 
 ## v40 (2019-06-09)
 - Enemy stats: Battle palette randomization improved and moved to Palettes flag.

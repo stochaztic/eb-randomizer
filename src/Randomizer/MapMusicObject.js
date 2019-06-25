@@ -43,7 +43,7 @@ class MapMusicObject extends GridTableObject {
                 if(meo.caveLevel === null || meo.caveLevel === undefined) return;
                 const mmo = meo.music;
                 if(mmo.mutated) return;
-                mmo.data.music_index = chosenMusics[meo.caveLevel];
+                mmo.data.music_index = chosenMusics[meo.caveLevel - 1];
                 mmo.mutated = true;
             });
             // Ignore sector changes for music
