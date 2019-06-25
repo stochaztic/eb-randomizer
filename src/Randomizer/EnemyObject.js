@@ -168,6 +168,10 @@ class EnemyObject extends TableObject {
             this.data.speed = 1;
             this.data.iq = 1;
         }
+
+        if(this.context.specs.flags.c >= 2) {
+            this.data.mirror_success_rate = 0x64;
+        }
     }
 }
 

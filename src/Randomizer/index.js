@@ -24,6 +24,7 @@ import PhoneObject from './PhoneObject.js';
 import PsiAbilityObject from './PsiAbilityObject.js';
 import PsiTeleportObject from './PsiTeleportObject.js';
 import ShopObject from './ShopObject.js';
+import SpecialAbilities from './SpecialAbilities.js';
 import SpriteGroupObject from './SpriteGroupObject.js';
 import StatGrowthObject from './StatGrowthObject.js';
 import TeleportObject from './TeleportObject.js';
@@ -74,6 +75,7 @@ export async function execute(romfile, specs, hooks) {
     PsiAbilityObject,
     PsiTeleportObject,
     ShopObject,
+    SpecialAbilities,
     SpriteGroupObject,
     StatGrowthObject,
     TeleportObject,

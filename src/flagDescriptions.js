@@ -9,10 +9,12 @@ const flagDescriptions = {
     },
     c: {
         title: "Character stats",
-        max: 1,
+        max: 2,
         default: 1,
+        unsafe: 2,
         desc: {
-            1: "Player character's stat increases on each level-up will be randomized.",
+            1: "Player characters' stat increases on each level-up will be randomized.",
+            2: "Player characters' special abilities (Pray, Spy, Mirror) will be shuffled, and stat increases on each level-up will be randomized.",
         }
     },
     d: {
