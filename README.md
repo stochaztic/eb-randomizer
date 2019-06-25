@@ -55,7 +55,7 @@ In non-Ancient Cave mode, gift boxes will be replaced with an item that is simil
 
 ## NPC and PC sprites – `n` and character selector
 
-A special note should be made when playing with these options in non-Ancient-Cave modes, either Keysanity or "normal" EarthBound: There are a few scripted events that are bugged when these options are used. It will appear that the game is softlocked, but usually it will proceed after waiting 5-10 minutes. (Usually an NPC is walking all the way across the entire world map after spawning at an incorrect location.)
+A special note should be made when playing with these options in non-Ancient-Cave modes, either Open, Keysanity, or "normal" EarthBound: There are a few scripted events that are bugged when these options are used. It will appear that the game is softlocked, but usually it will proceed after waiting 5-10 minutes. (Usually an NPC is walking all the way across the entire world map after spawning at an incorrect location.)
 
 At this time, we believe we have patched all scripted events to be safe for all modes not marked unsafe. If you do encounter one of these situations, let us know where it is, as we would like to eventually fix all of them.
 
