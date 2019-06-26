@@ -474,16 +474,17 @@ class Script {
         });
     }
 
-    writeScript(pointer) {
-        if(!pointer) {
-            pointer = this.pointer;
-            if(this.length > this.oldLength) {
+    writeScript(allowNew = false) {
+        if(this.length > this.oldLength) {
+            if(!allowNew || this.oldLength < 5) {
                 throw new Error("Attempt to write script too large for location.");
             }
-            const flat = this.lines.reduce((acc, val) => acc.concat(val), []);
-            this.context.rom.set(flat, pointer);
-            this.pleaseWrite = false;
+            const newScript = this.constructor.writeNewScript(this.lines);
+            this.lines = [ebutils.ccodeGotoAddress(newScript.snesAddress)];
         }
+        const flat = this.lines.reduce((acc, val) => acc.concat(val), []);
+        this.context.rom.set(flat, this.pointer);
+        this.pleaseWrite = false;
     }
 
     static writeNewScript(lines) {

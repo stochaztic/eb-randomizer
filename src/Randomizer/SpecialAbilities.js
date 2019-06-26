@@ -1,5 +1,6 @@
 import { ReadWriteObject } from 'randomtools-js';
 import ebutils from './ebutils.js';
+import Script from './Script.js';
 
 class SpecialAbilities extends ReadWriteObject {
     static shouldRandomize() {
@@ -8,10 +9,14 @@ class SpecialAbilities extends ReadWriteObject {
     
     static shuffleAll() {
         // Patch battle action parser
-        this.context.rom.set([0x4C, 0xFC, 0x39], 0x238FA); // C239FC
+        this.context.rom.set([0x4C, 0xFC, 0x39], 0x238FA);
         this.context.rom.set([0x4C, 0xC2, 0x39], 0x23915);
         this.context.rom.set([0xC9, 0x08, 0x00, 0xF0, 0x03, 0x4C, 0x4D, 0x3B, 
             0xA9, 0x06, 0x00, 0x85, 0x02, 0x85, 0x1E, 0xEA], 0x239C2);
+
+        // Patch Giygas prayer control codes to use 1C 02 xx format
+        this.context.rom.set([0x1C, 0x02, 0x02], 0x9f6e4);
+        this.context.rom.set([0x1C, 0x02, 0x02], 0x9f712);
 
         // Shuffle abilities and replace necessary values
         this.shuffledAbilities = this.context.random.shuffle(this.abilities);
@@ -24,6 +29,47 @@ class SpecialAbilities extends ReadWriteObject {
                 this.context.rom[byte] = character.pid;
             })
         });
+
+        // De-gender prayer messages
+        const normalPrayer = Script.getByPointer(0x2f89e0);
+        console.assert(normalPrayer.lines[6].length === 13);
+        normalPrayer.lines[6] = ebutils.encodeText("  with their whole heart!");
+        normalPrayer.writeScript(true);
+
+        const giygasPrayers = [
+            0x9f0b8,
+            0x9f134,
+            0x9f196,
+            0x9f1fd,
+            0x9f25e,
+            0x9f2bc,
+            0x9f325,
+            0x9f389,
+            0x9f3ec,
+        ];
+        const prayerHeader = Script.writeNewScript([
+            [1],
+            [31, 2, 28],
+            [112],
+            [28, 13],
+            [80, 160, 162, 145, 169, 149, 148],
+            [0],
+            ebutils.encodeText("  from the bottom of their heart!"),
+            [2],
+        ]);
+        giygasPrayers.map(a => Script.getByPointer(a)).forEach(giygasPrayer => {
+            const oldLines = giygasPrayer.lines;
+            giygasPrayer.lines = [
+                ebutils.ccodeCallAddress(prayerHeader.snesAddress),
+                ...giygasPrayer.lines.slice(7),
+            ];
+            giygasPrayer.writeScript();
+        });
+
+        const finalPrayer = Script.getByPointer(0x9f70c);
+        console.assert(finalPrayer.lines[4].length === 24);
+        finalPrayer.lines[4] = ebutils.encodeText(" and their friends' calls touched the heart of ");
+        finalPrayer.writeScript(true);
     }
 }
 
@@ -56,6 +102,8 @@ SpecialAbilities.abilities = [
         originalPid: 2,
         hardcodedBytes: [
             0x23A79,
+            0x9f6e6,
+            0x9f714,
         ],
     },
     {
