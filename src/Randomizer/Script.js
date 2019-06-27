@@ -500,6 +500,12 @@ class Script {
         return newScript;
     }
 
+    static replace(pointer, lines) {
+        const script = this.getByPointer(pointer);
+        script.lines = lines;
+        script.writeScript(true);
+    }
+
     static getPrettyLineDescription(line) {
         if(line.length === 0) return;
 

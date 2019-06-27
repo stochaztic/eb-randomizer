@@ -43,6 +43,7 @@ import FixPalettePatch from './FixPalettePatch.js';
 import RunButtonPatch from './RunButtonPatch.js';
 import ShortenPrayerPatch from './ShortenPrayerPatch.js';
 import ShowSpritesNoIntroPatch from './ShowSpritesNoIntroPatch.js';
+import SpyImprovePatch from './SpyImprovePatch.js';
 import TitleDisableGlowPatch from './TitleDisableGlowPatch.js';
 import TrackDoorsPatch from './TrackDoorsPatch.js';
 import TrackStatsPatch from './TrackStatsPatch.js';
@@ -100,6 +101,7 @@ export async function execute(romfile, specs, hooks) {
     if(specs.flags.a) patches.push(ShowSpritesNoIntroPatch);
     if(specs.flags.a) patches.push(TrackDoorsPatch);
     if(specs.flags.g >= 1 || specs.flags.s >= 1) patches.push(CaseyNoInstantPatch);
+    if(specs.flags.c >= 2) patches.push(SpyImprovePatch);
     if(specs.flags.u & 4) patches.push(DropMostRecentPatch);
     if(specs.flags.u & 1) patches.push(RunButtonPatch);
     if(specs.flags.u & 2) patches.push(LudicrousSpeedPatch);

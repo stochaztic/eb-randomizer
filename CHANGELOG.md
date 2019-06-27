@@ -1,6 +1,6 @@
 # Changelog
 ## v40.x / v41 (In progress)
-- Character stats: Added ability to shuffle special abilities (Pray, Spy, Mirror). Mirror will have an increased chance of success if this mode is activated.
+- Character stats: Added ability to shuffle special abilities (Pray, Spy, Mirror). Mirror will have an increased chance of success and Spy will give more detailed information if this mode is activated.
 ### Bugfixes
 - Music: Ancient Cave floor 9 will now have music.
 
