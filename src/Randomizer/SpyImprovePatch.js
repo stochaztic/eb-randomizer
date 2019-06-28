@@ -26,7 +26,7 @@ const SpyImprovePatch = {
                 [0x14, 0x02],
             ]);
         });
-        console.assert(context.rom[0x2880e] === 0x29);
+        
         console.assert(context.rom[0x2885F] === 0xEA);
         console.assert(context.rom[0x28860] === 0xAE);
     },
