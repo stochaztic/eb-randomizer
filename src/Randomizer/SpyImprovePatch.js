@@ -15,6 +15,7 @@ const SpyImprovePatch = {
             { address: 0x2f6a54, name: "Paralysis" },
             { address: 0x2f6a6c, name: "Hypnosis" },
             { address: 0x2f6a7f, name: "Brainshock" },
+            { address: 0x2f6b64, name: "Mirror" }, // Unused donor
         ];
 
         scriptEntries.forEach(scriptEntry => {
@@ -26,7 +27,15 @@ const SpyImprovePatch = {
                 [0x14, 0x02],
             ]);
         });
-        
+
+        Script.replace(0x2f6b43, [ // Unused donor
+            [0x00],
+            ebutils.encodeText("@Speed is "),
+            [0x1C, 0x0F],
+            ebutils.encodeText("!"),
+            [0x03, 0x02],
+        ]);
+
         console.assert(context.rom[0x2885F] === 0xEA);
         console.assert(context.rom[0x28860] === 0xAE);
     },

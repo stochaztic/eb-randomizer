@@ -3,7 +3,7 @@
 ; Function 2880e: 0-255 -> 0-99%
 29 FF 00    ; AND #$00FF
 DA          ; PHX
-AE 64 00    ; LDX #$0064
+A2 64 00    ; LDX #$0064
 20 F8 69    ; JSR $69F8 
 85 12       ; STA $12
 FA          ; PLX
@@ -31,6 +31,14 @@ A9 FF 69    ; LOADPTR TEXT_BLOCK_EF69FF, $0E
 85 0E       
 AE 72 A9    ; LDX .LOWORD(CURRENT_TARGET)  
 BD 28 00    ; LDA a:.LOWORD(RAM)+battler::defense,X
+85 12       ; STA $12
+22 66 DC C1 ; JSL DISPLAY_TEXT_WAIT
+
+; speed
+A9 43 6B    ; LOADPTR TEXT_BLOCK_EF6B43, $0E
+85 0E       
+AE 72 A9    ; LDX .LOWORD(CURRENT_TARGET)  
+BD 2A 00    ; LDA a:.LOWORD(RAM)+battler::speed,X
 85 12       ; STA $12
 22 66 DC C1 ; JSL DISPLAY_TEXT_WAIT
 
@@ -82,18 +90,26 @@ BD 3B 00    ; LDA a:.LOWORD(RAM)+battler::brainshock_resist,X
 20 72 87    ; JSR percentifier
 22 66 DC C1 ; JSL DISPLAY_TEXT_WAIT
 
+; mirror resist (not on battler, already out of 100)
+A9 64 6B    ; LOADPTR TEXT_BLOCK_EF6B64 $0E
+85 0E       
+AE 72 A9    ; LDX .LOWORD(CURRENT_TARGET)  
+BD 00 00    ; LDA a:.LOWORD(RAM),X  enemy ID
+A0 5E 00    ; LDY #$005E
+22 F7 8F C0 ; JSR $C08FF7
+18          ; CLC
+69 5D 00    ; ADC #$005D
+DA          ; PHX
+AA          ; TAX 
+BF 89 95 D5 ; LDA $D59589,X
+29 FF 00    ; AND #$00FF
+85 12       ; STA $12
+FA          ; PLX
+22 66 DC C1 ; JSL DISPLAY_TEXT_WAIT
+
 
 EA EA EA EA EA EA
 EA EA EA EA EA EA
-EA EA EA EA EA EA
-EA EA EA EA EA EA
-EA EA EA EA EA EA
-EA EA EA EA EA EA
-EA EA EA EA EA EA
-EA EA EA EA EA EA
-EA EA EA EA EA EA
-EA EA EA EA EA EA
-EA EA EA EA EA EA
-EA EA EA
+EA EA
 
 ; Vanilla resumes at C28860
