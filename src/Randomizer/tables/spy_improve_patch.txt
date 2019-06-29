@@ -1,6 +1,6 @@
-28770: 80 0e ; Beginning of BTLACT_SPY, skip new function
+28770: 80 1A ; Beginning of BTLACT_SPY, skip new functions
 
-; Function 2880e: 0-255 -> 0-99%
+; Function 28772: 0-255 -> 0-99%
 29 FF 00    ; AND #$00FF
 DA          ; PHX
 A2 64 00    ; LDX #$0064
@@ -8,6 +8,15 @@ A2 64 00    ; LDX #$0064
 85 12       ; STA $12
 FA          ; PLX
 60          ; RTS
+
+; Function 28780: 0-255 -> 0-99%
+20 72 87    ; JSR percentifier99
+C9 63 00    ; CMP #$0063 (99)
+D0 01       ; BNE +1
+1A          ; INC
+85 12       ; STA $12
+60          ; RTS
+
 
 ; Resume BTLACT_SPY
 0B          ; PHD 
@@ -47,7 +56,7 @@ A9 0D 6A    ; LOADPTR TEXT_BLOCK_EF6A0D, $0E
 85 0E       
 AE 72 A9    ; LDX .LOWORD(CURRENT_TARGET)  
 BD 3A 00    ; LDA a:.LOWORD(RAM)+battler::fire_resist,X
-20 72 87    ; JSR percentifier
+20 80 87    ; JSR percentifier100
 22 66 DC C1 ; JSL DISPLAY_TEXT_WAIT
 
 ; freeze_resist
@@ -55,7 +64,7 @@ A9 24 6A    ; LOADPTR TEXT_BLOCK_EF6A24, $0E
 85 0E       
 AE 72 A9    ; LDX .LOWORD(CURRENT_TARGET)  
 BD 38 00    ; LDA a:.LOWORD(RAM)+battler::freeze_resist,X
-20 72 87    ; JSR percentifier
+20 80 87    ; JSR percentifier100
 22 66 DC C1 ; JSL DISPLAY_TEXT_WAIT
 
 ; flash_resist
@@ -63,7 +72,7 @@ A9 3C 6A    ; LOADPTR TEXT_BLOCK_EF6A3C $0E
 85 0E       
 AE 72 A9    ; LDX .LOWORD(CURRENT_TARGET)  
 BD 39 00    ; LDA a:.LOWORD(RAM)+battler::flash_resist,X
-20 72 87    ; JSR percentifier
+20 72 87    ; JSR percentifier99
 22 66 DC C1 ; JSL DISPLAY_TEXT_WAIT
 
 ; paralysis_resist
@@ -71,7 +80,7 @@ A9 54 6A    ; LOADPTR TEXT_BLOCK_EF6A54 $0E
 85 0E       
 AE 72 A9    ; LDX .LOWORD(CURRENT_TARGET)  
 BD 37 00    ; LDA a:.LOWORD(RAM)+battler::paralysis_resist,X
-20 72 87    ; JSR percentifier
+20 72 87    ; JSR percentifier99
 22 66 DC C1 ; JSL DISPLAY_TEXT_WAIT
 
 ; hypnosis_resist
@@ -79,7 +88,7 @@ A9 6C 6A    ; LOADPTR TEXT_BLOCK_EF6A6C $0E
 85 0E       
 AE 72 A9    ; LDX .LOWORD(CURRENT_TARGET)  
 BD 3C 00    ; LDA a:.LOWORD(RAM)+battler::hypnosis_resist,X
-20 72 87    ; JSR percentifier
+20 72 87    ; JSR percentifier99
 22 66 DC C1 ; JSL DISPLAY_TEXT_WAIT
 
 ; brainshock_resist
@@ -87,7 +96,7 @@ A9 7F 6A    ; LOADPTR TEXT_BLOCK_EF6A7F $0E
 85 0E       
 AE 72 A9    ; LDX .LOWORD(CURRENT_TARGET)  
 BD 3B 00    ; LDA a:.LOWORD(RAM)+battler::brainshock_resist,X
-20 72 87    ; JSR percentifier
+20 72 87    ; JSR percentifier99
 22 66 DC C1 ; JSL DISPLAY_TEXT_WAIT
 
 ; mirror resist (not on battler, already out of 100)
@@ -107,9 +116,6 @@ BF 89 95 D5 ; LDA $D59589,X
 FA          ; PLX
 22 66 DC C1 ; JSL DISPLAY_TEXT_WAIT
 
-
-EA EA EA EA EA EA
-EA EA EA EA EA EA
 EA EA
 
 ; Vanilla resumes at C28860
