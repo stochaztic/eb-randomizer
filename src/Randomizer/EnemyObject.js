@@ -170,7 +170,12 @@ class EnemyObject extends TableObject {
         }
 
         if(this.context.specs.flags.c >= 2) {
-            this.data.mirror_success_rate = 0x64;
+            // Improve mirror success odds if special abilities are shuffled
+            let mirrorImprove = this.context.random.randint(5, 25);
+            if(!this.isBoss) {
+                mirrorImprove += 10;
+            }
+            this.data.mirror_success_rate = Math.min(100, this.data.mirror_success_rate + mirrorImprove);
         }
     }
 }
