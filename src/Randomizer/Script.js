@@ -490,14 +490,20 @@ class Script {
     static writeNewScript(lines) {
         const newScript = new this(null);
         newScript.lines = lines;
-        if(this._freespace.start + newScript.length > this._freespace.end) {
-            throw new Error("No free space for new script.");
-        }
-        newScript.pointer = this._freespace.start;
+        const newFreespace = this.requestFreeSpace(newScript.length);
+        newScript.pointer = newFreespace;
         newScript.oldLength = newScript.length;
-        this._freespace.start = this._freespace.start + newScript.length;
         newScript.writeScript();
         return newScript;
+    }
+
+    static requestFreeSpace(amount) {
+        if(this._freespace.start + amount > this._freespace.end) {
+            throw new Error("No free space for new script.");
+        }
+        const newSpaceIndex = this._freespace.start;
+        this._freespace.start = this._freespace.start + amount;
+        return newSpaceIndex;
     }
 
     static replace(pointer, lines) {

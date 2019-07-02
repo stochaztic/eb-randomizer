@@ -7,6 +7,8 @@ import Cluster from './Cluster.js';
 import MapSpriteObject from './MapSpriteObject.js';
 import MapEventObject from './MapEventObject.js';
 import TPTObject from './TPTObject.js';
+import EventObject from './EventObject.js';
+import MapMusicObject from './MapMusicObject.js';
 
 class AncientCave extends ReadWriteObject {
     static shouldRandomize() {
@@ -373,6 +375,41 @@ class AncientCave extends ReadWriteObject {
             }
         });
 
+        // Set custom events for every exit, setting floor flags and then calling original event
+        MapEventObject.every.forEach(me => {
+            if(me.isExit && me.connected) {
+                if(me.newEvent.isScriptModified) {
+                    return;
+                }
+
+                const flagChanges = [...Array(9).keys()].map(caveLevelZeroIndex => {
+                    if(caveLevelZeroIndex + 1 === me.caveLevel) {
+                        return [0x04, MapMusicObject.flagBase + caveLevelZeroIndex, 0x03];
+                    }
+                    return [0x05, MapMusicObject.flagBase + caveLevelZeroIndex, 0x03];
+                });
+
+                var newLines = undefined;
+                const script = me.newEvent.script;
+                if(script) {
+                    newLines = [
+                        ...flagChanges,
+                        ...script.lines,
+                    ];
+                }
+                else {
+                    newLines = [
+                        ...flagChanges,
+                        [0x02],
+                    ];
+                }
+                const newScript = Script.writeNewScript(newLines);
+                me.newEvent.data.event_call = newScript.snesAddress;
+                me.newEvent.isScriptModified = true;
+            }
+        });
+
+        // Connect every unconnected door to itself and disable
         MapEventObject.every.forEach(me => {
             if(me.isExit && !me.connected) {
                 me.connectExit(me);
@@ -424,8 +461,9 @@ class AncientCave extends ReadWriteObject {
         const exitMouseReturnLines = [
             ebutils.encodeText("@(The mouse found the way back and waved for you to follow.)"),
             [0x03],
+            ...MapMusicObject.clearFloorFlags,
             [0x05, 0x00, 0x02],         // set exit mouse currently not in possession
-            [0x04, 0x0B, 0x00],         // encounters on
+            [0x04, 0x0B, 0x00],         // encounters off
             [0x1f, 0x69],               // perform teleport
             [0x05, 0x0B, 0x00],         // encounters on
             [0x1d, 0x01, 0xff, 0xc5],   // one use only
