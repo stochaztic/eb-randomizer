@@ -481,6 +481,7 @@ class Script {
             }
             const newScript = this.constructor.writeNewScript(this.lines);
             this.lines = [ebutils.ccodeGotoAddress(newScript.snesAddress)];
+            this.subpointers.add(newScript.snesAddress);
         }
         const flat = this.lines.reduce((acc, val) => acc.concat(val), []);
         this.context.rom.set(flat, this.pointer);

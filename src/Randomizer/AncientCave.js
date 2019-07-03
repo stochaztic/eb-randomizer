@@ -526,6 +526,16 @@ class AncientCave extends ReadWriteObject {
             o.data['address'] = ebutils.fileToEbPointer(newScript.pointer);
         });
 
+        const deathScript = Script.getByPointer(0x7de7d);
+        const newDeathScript = Script.writeNewScript([
+            ...MapMusicObject.clearFloorFlags,
+            deathScript.lines[0],
+            [0x02]
+        ]);
+        deathScript.lines[0] = ebutils.ccodeCallAddress(newDeathScript.snesAddress);
+        deathScript.writeScript();
+        console.assert(deathScript.length === deathScript.oldLength);
+
         this.context.hooks.message("Sanitizing cave events...");
         // Special Events
 
