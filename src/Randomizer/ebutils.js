@@ -188,7 +188,7 @@ const ebutils = {
     ],
 
     SANCTUARY_ACTIVATION_POINTERS: [
-        0x9b08d,
+        //0x9b08d, // Lumine Hall, not in cave
         0x9afe1,
         0x9afb6,
         0x9af8b,

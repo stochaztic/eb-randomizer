@@ -406,6 +406,11 @@ class AncientCave extends ReadWriteObject {
                 const newScript = Script.writeNewScript(newLines);
                 me.newEvent.data.event_call = newScript.snesAddress;
                 me.newEvent.isScriptModified = true;
+                if(script) {
+                    me.newEvent.modifiedScript = newScript;
+                    script.modifiedScript = newScript;
+                    script.subpointers.add(newScript.snesAddress);
+                }
             }
         });
 

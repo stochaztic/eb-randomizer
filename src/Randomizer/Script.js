@@ -122,14 +122,18 @@ class Script {
     }
 
     makeSanctuaryDoorAlwaysActivate() {
+        if(this.modifiedScript) {
+            this.modifiedScript.makeSanctuaryDoorAlwaysActivate();
+            return;
+        }
         console.assert(this.isSanctuaryDoor);
-        console.assert(this.lines[0][0] === 0x07);
-        console.assert(this.lines[1][0] === 0x1b);
-        this.lines = this.lines.slice(2);
-        this.lines.unshift([0x05, 0x0B, 0x00]);   // encounters on
-        console.assert(this.lines[this.lines.length-1][0] === 0x02);
-        const keys = [[0x1F, 0x41, 0x05],];       // remove OSS-on
+        const keys = [
+            [0x07],             // Return event flag
+            [0x1b],             // Subptr boolean-false
+            [0x1F, 0x41, 0x05], // OSS-on
+        ];      
         this.removeInstructions(keys, []);
+        this.lines.unshift([0x05, 0x0B, 0x00]);   // encounters on
         this.scheduleForWriting();
     }
 
