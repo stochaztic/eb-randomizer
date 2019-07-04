@@ -738,6 +738,22 @@ class AncientCave extends ReadWriteObject {
             script.fixHotels();
         });
         Script._allScripts.forEach(s => s.fulfillScheduledWrite());
+
+        // Hotels - remove Paula prayer scenes, add "You won" sound and return normal sound
+        script = Script.getByPointer(0x90f7d);
+
+        console.assert(script.lines.length === 11);
+        script.lines = [
+            script.lines[0], // Close all windows
+            script.lines[1], // Delay parsing
+            script.lines[2], // Fade out music
+            script.lines[3], // Generate active sprite
+            script.lines[4], // Movement code trigger
+            script.lines[9], // Perform Jeff repair check
+            ebutils.ccodeCallAddress(0xc915d6), // You Won music break
+            [0x02]
+        ];
+        script.writeScript();
     }
 
     static replaceSanctuaryBosses() {

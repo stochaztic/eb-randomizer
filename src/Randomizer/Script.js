@@ -224,8 +224,7 @@ class Script {
         const keys = [
             [0x04, 0x7f, 0x01], // Flag that indicates you just slept.
             // Disabling the above flag stops the bug that prevents you from
-            // resleeping at a hotel until you luck into flipping it back off,
-            // but at some hotels it does cause the music to not return.
+            // resleeping at a hotel until you luck into flipping it back off
             [0x04, 0x02, 0x02], // Flag that indicates you just slept at home.
         ];
         this.removeInstructions(keys, []);
