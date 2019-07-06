@@ -28,4 +28,5 @@ firebase.json
 
 /working
 *.smc
+*.sfc
 *.srm

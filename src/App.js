@@ -24,6 +24,7 @@ class App extends Component {
       title: "EBRND",
       version: version,
       lorom: false,
+      isSNES: true,
       seed: Math.floor(Math.random() * Math.floor(99999999)),
       flags: {'a': 1},
       lastAccess: Cookies.get("lastAccess"),
