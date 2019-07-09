@@ -7,7 +7,6 @@ import Cluster from './Cluster.js';
 import MapSpriteObject from './MapSpriteObject.js';
 import MapEventObject from './MapEventObject.js';
 import TPTObject from './TPTObject.js';
-import EventObject from './EventObject.js';
 import MapMusicObject from './MapMusicObject.js';
 
 class AncientCave extends ReadWriteObject {
@@ -713,6 +712,7 @@ class AncientCave extends ReadWriteObject {
         mso.data.x = 80;
         tpt.data.flag = 0;
         tpt.data.flag_appear = 0;
+        tpt.data.address = tpt.oldData.address;
         tpt.script.lines = [
             ebutils.encodeText("@BAD HOLE"),
             [0x13, 0x02]
