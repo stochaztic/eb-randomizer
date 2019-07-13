@@ -2,7 +2,7 @@
 ## v41.x / v42 (In progress)
 - Music: Music selection has been updated, and Ancient Cave music randomization will be much more consistent.
 ### Bugfixes
-- Ancient Cave: Enemies should correctly appear in the upper-right area of Threed. Note that the upper-left cemetary area is intentionally scaled to the floor that is within the door by the zombies, not to the rest of Threed.
+- Ancient Cave: Enemies should correctly appear in the upper-right area of Threed. Note that the upper-left cemetery area is intentionally scaled to the floor that is within the door by the zombies, not to the rest of Threed.
 
 ## v41 (2019-06-29)
 - Character stats: Added shuffle of special abilities (Pray, Spy, Mirror). Mirror will have an increased chance of success and Spy will give more detailed information if this mode is activated.
