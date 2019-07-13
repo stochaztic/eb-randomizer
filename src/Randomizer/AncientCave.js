@@ -744,7 +744,7 @@ class AncientCave extends ReadWriteObject {
         });
         Script._allScripts.forEach(s => s.fulfillScheduledWrite());
 
-        // Hotels - remove Paula prayer scenes, add "You won" sound and return normal sound
+        // Sleeps (Hotels) - remove Paula prayer scenes, add "You Won" music and return normal sound
         script = Script.getByPointer(0x90f7d);
 
         console.assert(script.lines.length === 11);
@@ -759,6 +759,17 @@ class AncientCave extends ReadWriteObject {
             [0x02]
         ];
         script.writeScript();
+
+        // Remove now-redundant "You Won" music break from places it follows sleep logic
+        const removeYouWonPointers = [
+            0x91693, // Benches, stew guy, etc
+            0x6002c, // Desert shack
+        ];
+        removeYouWonPointers.forEach(pointer => {
+            script = Script.getByPointer(pointer);
+            script.removeInstructions([ebutils.ccodeCallAddress(0xc915d6)]);
+            script.writeScript();
+        });
     }
 
     static replaceSanctuaryBosses() {
