@@ -114,7 +114,7 @@ class Script {
     }
 
     get plainText() {
-        return this.getPrettyScript().map(x => x[1]).filter(x => x[0] === '"').join("\n");
+        return this.prettyScript.map(x => x[1]).filter(x => x[0] === '"').join("\n");
     }
 
     get snesAddress() {
@@ -537,10 +537,6 @@ class Script {
         return [prettyLine, description];
     }
 
-    get prettyScript() {
-        return this.getPrettyScriptFull();
-    }
-
     get properties() {
         if(this._properties === undefined) {
             this._properties = this.prettyScript;
@@ -548,7 +544,7 @@ class Script {
         return this._properties;
     }
 
-    getPrettyScript() {
+    get prettyScript() {
         return this.lines.map(line => this.constructor.getPrettyLineDescription(line));
     }
 
