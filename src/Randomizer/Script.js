@@ -31,6 +31,12 @@ class Script {
         return this._allScripts.slice();
     }
 
+    get changed() {
+        if(!this.oldLines) return true;
+        if(this.lines.length != this.oldLines.length) return true;
+        return this.lines.some((line, index) => !arrEq(line, this.oldLines[index]));
+    }
+
     replaceSanctuaryBoss(boss) {
         this.subscriptClosure.forEach(s => {
             if(!s.isBattleSource) return;
@@ -132,7 +138,7 @@ class Script {
             [0x1b],             // Subptr boolean-false
             [0x1F, 0x41, 0x05], // OSS-on
         ];      
-        this.removeInstructions(keys, []);
+        this.removeInstructions(keys, [], false);
         this.lines.unshift([0x05, 0x0B, 0x00]);   // encounters on
         this.scheduleForWriting();
     }
@@ -235,8 +241,8 @@ class Script {
         this._fixedHotels = true;
     }
 
-    removeInstructions(keys, exceptions = []) {
-        this.subscriptClosure.forEach(s => {
+    removeInstructions(keys, exceptions = [], subscripts = true) {
+        const removal = function(s, keys, exceptions) {
             const newlines = [];
             s.lines.forEach(line => {
                 if(keys.some(key => arrEq(key, line.slice(0,key.length))) &&
@@ -249,7 +255,13 @@ class Script {
                 s.lines = newlines;
                 s.scheduleForWriting();
             }
-        });
+        };
+        if(subscripts) {
+            this.subscriptClosure.forEach(s => removal(s, keys, exceptions));
+        }
+        else {
+            removal(this, keys, exceptions);
+        }
     }
 
     scheduleForWriting() {
@@ -469,7 +481,10 @@ class Script {
             }
         }
         this.oldLength = this.length;
-        // veryify
+        this.oldLines = [...this.lines];
+    }
+
+    verify() {
         const flat = this.lines.reduce((acc, val) => acc.concat(val), []);
         console.assert(flat.length === this.length);
         flat.forEach((byte, i) => {
@@ -546,6 +561,10 @@ class Script {
 
     get prettyScript() {
         return this.lines.map(line => this.constructor.getPrettyLineDescription(line));
+    }
+
+    get oldPrettyScript() {
+        return this.oldLines.map(line => this.constructor.getPrettyLineDescription(line));
     }
 
     getPrettyScriptFull(excludePointers) {

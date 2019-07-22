@@ -42,8 +42,8 @@ class AncientCave extends ReadWriteObject {
             banana.writeScript();
 
             // Change teleport destination in X menu
-            const teleportX = 209;
-            const teleportY = 1037;
+            const teleportX = 865;
+            const teleportY = 1079;
 
             const [fullX, fullY] = [teleportX * 8, teleportY * 8];
             this.context.rom.set([fullX % 256, Math.floor(fullX / 256)], 0x13049);
@@ -358,7 +358,6 @@ class AncientCave extends ReadWriteObject {
         this.classReseed("bosses");
         const bossList = this.replaceSanctuaryBosses();
 
-        this.context.hooks.message(`${Math.floor(Cluster.goal.rank)} doors to the finish`);
         Cluster.rankedClusters.forEach(clu => {
             clu.exits.forEach(a => {
                 const b = Cluster.assignDict[a.index];
@@ -373,6 +372,10 @@ class AncientCave extends ReadWriteObject {
                 });
             }
         });
+
+        // Sanitize cave events before custom events for doors are created
+        this.sanitizeCaveEvents();
+        this.context.hooks.message("Finalizing cave...");
 
         // Set custom events for every exit, setting floor flags and then calling original event
         MapEventObject.every.forEach(me => {
@@ -457,11 +460,6 @@ class AncientCave extends ReadWriteObject {
         ];
         intro.writeScript();
 
-        ebutils.SANCTUARY_ACTIVATION_POINTERS.forEach(sap => {
-            const script = Script.getByPointer(sap);
-            script.makeSanctuaryDoorAlwaysActivate();
-        });
-
         const exitMouseReturnLines = [
             ebutils.encodeText("@(The mouse found the way back and waved for you to follow.)"),
             [0x03],
@@ -501,7 +499,6 @@ class AncientCave extends ReadWriteObject {
         exitMouseMain.writeScript();
 
         // Hint guys
-
         const hintGuys = TPTObject.every.filter(o => o.oldData['sprite'] === 136 || o.oldData['sprite'] === 446);
         let hintMainScript = Script.getByPointer(0x70329);
         hintMainScript.lines = [
@@ -540,8 +537,16 @@ class AncientCave extends ReadWriteObject {
         deathScript.writeScript();
         console.assert(deathScript.length === deathScript.oldLength);
 
+        Script._allScripts.forEach(s => s.fulfillScheduledWrite());
+    };
+
+    static sanitizeCaveEvents() {
         this.context.hooks.message("Sanitizing cave events...");
-        // Special Events
+
+        ebutils.SANCTUARY_ACTIVATION_POINTERS.forEach(sap => {
+            const script = Script.getByPointer(sap);
+            script.makeSanctuaryDoorAlwaysActivate();
+        });
 
         const removeTPT = index => {
             const tpt = TPTObject.get(index);
@@ -581,11 +586,6 @@ class AncientCave extends ReadWriteObject {
         // Mom in Ness's house - manual changes to get to heal state
         script = Script.getByPointer(0x750e3);
         script.lines[0] = [0x0a, 0x24, 0x51, 0xc7, 0x00];
-        script.writeScript();
-
-        // Chaos Theater - remove show
-        script = Script.getByPointer(0x99fe0);
-        script.lines[0] = [0x0a, 0x2f, 0x99, 0xc9, 0x00];
         script.writeScript();
 
         // Strong - prevent softlock
@@ -742,7 +742,6 @@ class AncientCave extends ReadWriteObject {
             script.removePartyChanges();
             script.fixHotels();
         });
-        Script._allScripts.forEach(s => s.fulfillScheduledWrite());
 
         // Sleeps (Hotels) - remove Paula prayer scenes, add "You Won" music and return normal sound
         script = Script.getByPointer(0x90f7d);
@@ -770,6 +769,8 @@ class AncientCave extends ReadWriteObject {
             script.removeInstructions([ebutils.ccodeCallAddress(0xc915d6)]);
             script.writeScript();
         });
+
+        Script._allScripts.forEach(s => s.fulfillScheduledWrite());
     }
 
     static replaceSanctuaryBosses() {
