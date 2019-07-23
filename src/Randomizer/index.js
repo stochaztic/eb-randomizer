@@ -102,10 +102,10 @@ export async function execute(romfile, specs, hooks) {
     if(specs.flags.a) patches.push(TrackDoorsPatch);
     if(specs.flags.g >= 1 || specs.flags.s >= 1) patches.push(CaseyNoInstantPatch);
     if(specs.flags.c >= 2) patches.push(SpyImprovePatch);
-    if(specs.flags.u & 4) patches.push(DropMostRecentPatch);
-    if(specs.flags.u & 1) patches.push(RunButtonPatch);
-    if(specs.flags.u & 2) patches.push(LudicrousSpeedPatch);
-    if(specs.flags.u & 8) patches.push(ShortenPrayerPatch);
+    if(specs.flags.u.discardButton) patches.push(DropMostRecentPatch);
+    if(specs.flags.u.runButton) patches.push(RunButtonPatch);
+    if(specs.flags.u.ludicrousSpeed) patches.push(LudicrousSpeedPatch);
+    if(specs.flags.u.shortPrayers) patches.push(ShortenPrayerPatch);
     if(specs.flags.devmode) patches.push(DevmodePatch);
 
 

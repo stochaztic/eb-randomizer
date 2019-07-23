@@ -90,6 +90,13 @@ const flagDescriptions = {
         title: "Game improvement patches",
         bitfield: true,
         default: 21,
+        fields: {
+            1: "runButton",
+            2: "ludicrousSpeed",
+            4: "discardButton",
+            8: "shortPrayers",
+            16: "goodsMenuEquip",
+        },
         desc: {
             1: "Run Button - Hold the Y Button to run at Skip Sandwich speed.",
             2: "Ludicrous Speed Text - Text boxes, including in battle, finish instantaneously.",

@@ -153,6 +153,19 @@ class App extends Component {
     this.setState({generationStatus: 'Beginning randomization...' });
 
     const specs = this.state.specs;
+
+    // Convert bitfield flags from numbers to object with field properties
+    Object.keys(specs.flags).forEach(flag => {
+      const flagInfo = this.flagDescriptions[flag];
+      if(flagInfo && flagInfo.bitfield) {
+        const newObject = { rawValue: specs.flags[flag] };
+        Object.keys(flagInfo.fields).forEach(i => { 
+          newObject[flagInfo.fields[i]] = !!(specs.flags[flag] & i);
+        });
+        specs.flags[flag] = newObject;
+      }
+    });
+
     const nessData = await prepare(this.state.chosenSprites[0], 0);
     const paulaData = await prepare(this.state.chosenSprites[1], 1);
     const jeffData = await prepare(this.state.chosenSprites[2], 2);

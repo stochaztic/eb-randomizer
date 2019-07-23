@@ -53,7 +53,7 @@ class Dialog extends ReadWriteObject {
     static fullCleanup() {
         super.fullCleanup();
         // Prayer scenes
-        if(!(this.context.specs.flags.u & 8)) return;
+        if(!this.context.specs.flags.u.shortPrayers) return;
         const gameScripts = TPTObject.every.map(tpt => tpt.script).filter(script => script && script.isSwapSafe);
         const prayerScripts = ebutils.GIYGAS_PRAYER_SCRIPTS.map(p => Script.getByPointer(p));
         const chosen = this.context.random.sample(gameScripts, prayerScripts.length);

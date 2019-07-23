@@ -61,7 +61,7 @@ class AncientCave extends ReadWriteObject {
         ];
         sign.writeScript();
 
-        if(this.context.specs.flags.u & 16) { // Goods Menu Equip
+        if(this.context.specs.flags.u.goodsMenuEquip) {
             const failLines = [
                 ebutils.encodeText("@"),
                 [0x1C, 0x0D],
