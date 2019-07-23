@@ -251,9 +251,14 @@ class App extends Component {
 
     const bitfieldDesc = str => {
       const parts = str.split(" - ");
-      if(parts.length < 2) return parts;
+      if(parts.length < 2) return <span className="bitfieldTitle">{parts}</span>;
       return <span><span className="bitfieldTitle">{parts[0]}</span> - {parts[1]}</span>;
-    }
+    };
+
+    const bitfieldIsChecked = (flag, i) => {
+      if(specs.flags[flag].rawValue) return specs.flags[flag].rawValue & i;
+      return specs.flags[flag] & i;
+    };
 
     const flagBody = flag => {
       const flagInfo = this.flagDescriptions[flag];
@@ -263,7 +268,7 @@ class App extends Component {
           <span className="flagLabel">{flag}</span><span className="flagTitle">{flagInfo.title}</span>
         { Object.keys(flagInfo.desc).map(i => { 
           return <p key={i}><label>
-            <input type="checkbox" checked={specs.flags[flag] & i} onChange={e => this.setBitfield(flag, i, e.target.checked)} />
+            <input type="checkbox" checked={bitfieldIsChecked(flag, i)} onChange={e => this.setBitfield(flag, i, e.target.checked)} />
             {bitfieldDesc(flagInfo.desc[i])}
             </label>
           </p>

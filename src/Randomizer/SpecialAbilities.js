@@ -19,7 +19,21 @@ class SpecialAbilities extends ReadWriteObject {
         this.context.rom.set([0x1C, 0x02, 0x02], 0x9f712);
 
         // Shuffle abilities and replace necessary values
-        this.shuffledAbilities = this.context.random.shuffle(this.abilities);
+        let validShuffle = false;
+        let shuffleAttempts = 99999;
+        while(shuffleAttempts > 0 && !validShuffle) {
+            this.shuffledAbilities = this.context.random.shuffle(this.abilities);
+
+            const prayIndex = this.shuffledAbilities.findIndex(a => a.name === "Pray");
+            if(prayIndex === 0 && !this.context.specs.flags.z.noPaula) validShuffle = true;
+            if(prayIndex === 1 && !this.context.specs.flags.z.noJeff) validShuffle = true;
+            if(prayIndex === 2 && !this.context.specs.flags.z.noPoo) validShuffle = true;
+            shuffleAttempts -= 1;
+        }
+        if(!validShuffle) {
+            throw new Error("You must have a party member who can receive the Pray ability.");
+        }
+
         this.shuffledAbilities.forEach((ability, index) => {
             const character = this.characters[index];
             this.context.rom.set(ebutils.asmLoadAddress(ability.textAddress), character.textLocation);
@@ -70,6 +84,13 @@ class SpecialAbilities extends ReadWriteObject {
         console.assert(finalPrayer.lines[4].length === 24);
         finalPrayer.lines[4] = ebutils.encodeText(" and their friends' calls touched the heart of ");
         finalPrayer.writeScript(true);
+    }
+
+    static fullCleanup() {
+        super.fullCleanup();
+        if(!this.shouldRandomize() && this.context.specs.flags.a && this.context.specs.flags.z.noPaula) {
+            throw new Error(`You must randomize special abilities ("c" flag of 2 or higher) to disable Paula.`);
+        }
     }
 }
 

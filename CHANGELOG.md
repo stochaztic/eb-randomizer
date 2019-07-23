@@ -1,5 +1,6 @@
 # Changelog
 ## v41.x / v42 (In progress)
+- Challenges: New set of flags with options to make your playthrough more challenging!
 - Music: Music selection has been updated, and Ancient Cave music randomization will be much more consistent.
 ### Bugfixes
 - Ancient Cave: Enemies should correctly appear in the upper-right area of Threed. Note that the upper-left cemetery area is intentionally scaled to the floor that is within the door by the zombies, not to the rest of Threed.

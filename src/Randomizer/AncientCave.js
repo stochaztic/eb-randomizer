@@ -435,6 +435,12 @@ class AncientCave extends ReadWriteObject {
         utils.writeMulti(this.context.rom, startX, 0x1f80, 2);
         utils.writeMulti(this.context.rom, startY, 0x0450, 2);
 
+        const recruitLines = [];
+        if(!this.context.specs.flags.z.noPoo) recruitLines.push([0x1F, 0x11, 0x04]);
+        if(!this.context.specs.flags.z.noJeff) recruitLines.push([0x1F, 0x11, 0x03]);
+        if(!this.context.specs.flags.z.noPaula) recruitLines.push([0x1F, 0x11, 0x02]);
+        if(this.context.specs.flags.z.noNess) recruitLines.push([0x1F, 0x12, 0x01]);
+
         const intro = Script.getByPointer(0x5e70b);
         intro.lines = [
             [0x04, 0x58, 0x00],     // enable Winters phones
@@ -449,9 +455,7 @@ class AncientCave extends ReadWriteObject {
             [0x04, 0xAE, 0x00],     // hole dug in dusty dunes
             [0x04, 0x64, 0x02],     // everdred not on roof
             [0x05, 0x0B, 0x00],     // "enemies won't appear" flag (off)
-            [0x1F, 0x11, 0x02],     // recruit paula
-            [0x1F, 0x11, 0x03],     // recruit jeff
-            [0x1F, 0x11, 0x04],     // recruit poo
+            ...recruitLines,
             [0x1F, 0x68],           // store exit mouse coordinates
             [0x04, 0x00, 0x02],     // set exit mouse currently in possession
             [0x1F, 0x83, 0x01, 0x03], // auto-equip cracked bat     
@@ -812,12 +816,33 @@ class AncientCave extends ReadWriteObject {
             const numberedBoss = sBosses[i];
             const sBoss = sBosses.filter(s => s.nearestCluster === sc)[0];
             sBoss.setScript(numberedBoss);
+
+            let firstCharacterReplaced = false;
+            if(sBoss.script.lines[1][0] === 0x0e) {
+                sBoss.script.lines[1][1] = this.firstCharacter();
+                firstCharacterReplaced = true;
+            }
+            if(sBoss.script.lines[1][0] === 0x19 && sBoss.script.lines[1][1] === 0x10 ) {
+                sBoss.script.lines[1][2] = this.firstCharacter();
+                firstCharacterReplaced = true;
+            }
+            console.assert(firstCharacterReplaced);
+
             sBoss.script.replaceSanctuaryBoss(c);
             console.assert(!doneScripts.has(sBoss.script));
             doneScripts.add(sBoss.script);
         })
         console.assert(doneScripts.size === 8);
+        this.context.rom[0x690AD] = this.firstCharacter(); // Only X can absorb...
         return chosens;
+    }
+
+    static firstCharacter() {
+        if(!this.context.specs.flags.z.noNess) return 1;
+        if(!this.context.specs.flags.z.noPaula) return 2;
+        if(!this.context.specs.flags.z.noJeff) return 3;
+        if(!this.context.specs.flags.z.noPoo) return 4;
+        throw new Error("You must have at least one player character.");
     }
 }
 

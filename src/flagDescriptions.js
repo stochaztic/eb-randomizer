@@ -115,6 +115,27 @@ const flagDescriptions = {
             3: "Battle and map music may be intermixed. Battle music will be shuffled. In Ancient Cave, each floor will have its own music. In other modes, areas will have shuffled music."
         }
     },
+    z: {
+        title: "Challenges",
+        bitfield: true,
+        default: 0,
+        fields: {
+            1: "noNess",
+            2: "noPaula",
+            4: "noJeff",
+            8: "noPoo",
+            //16: "cashChests",
+            //32: "noHealSanctuaries",
+        },
+        desc: {
+            1: "Ancient Cave: No Ness in party",
+            2: "Ancient Cave: No Paula in party",
+            4: "Ancient Cave: No Jeff in party",
+            8: "Ancient Cave: No Poo in party",
+            //16: "Only cash in chests (except progress/skip items)",
+            //32: "Sanctuaries do not heal party members",
+        }
+    },
     devmode: {
         title: "Developer mode",
         max: 2,
