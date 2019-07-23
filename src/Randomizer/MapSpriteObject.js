@@ -22,9 +22,11 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
     serialize() {
         const result = {
             index: this.index,
-            caveRank: this.caveRank,
             x: this.globalX,
             y: this.globalY,
+        }
+        if(this.context.specs.flags.a) {
+            result.caveRank = this.caveRank;
         }
         if(this.isMoney) {
             result.money = this.moneyValue;
@@ -66,7 +68,7 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
     }
 
     get isChest() {
-        return this.tpt.isChest;
+        return this.tpt && this.tpt.isChest;
     }
 
     get isMoney() {
