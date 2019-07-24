@@ -115,12 +115,17 @@ input[type="file"] {
   margin: 0.3em 0;
   padding: 0 0 0.3em 0;
   border-radius: 20px;
+  overflow: hidden;
 }
 
 .flagTitle {
   margin-left: 10px;
   font-size: 1.4em;
   font-weight: 600;
+}
+
+.clickToExpand {
+  color: #666;
 }
 
 .bitfieldTitle {

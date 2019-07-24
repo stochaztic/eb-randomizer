@@ -89,6 +89,7 @@ const flagDescriptions = {
     u: {
         title: "Game improvement patches",
         bitfield: true,
+        opened: true,
         default: 21,
         fields: {
             1: "runButton",

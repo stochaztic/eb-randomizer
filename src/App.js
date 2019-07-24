@@ -63,6 +63,7 @@ class App extends Component {
       compatibleVersion: compatibleVersion,
       specs: initialSpecs,
       chosenSprites: [{},{},{},{}],
+      flagDescriptions: flagDescriptions,
     };
   }
 
@@ -261,12 +262,13 @@ class App extends Component {
     };
 
     const flagBody = flag => {
-      const flagInfo = this.flagDescriptions[flag];
+      const flagInfo = this.state.flagDescriptions[flag];
+      const isOpened = flagInfo.opened || specs.flags[flag] > 0
 
       if(flagInfo.bitfield) {
-        return <div className="flagContainer bitFlagContainer" key={flag}>
-          <span className="flagLabel">{flag}</span><span className="flagTitle">{flagInfo.title}</span>
-        { Object.keys(flagInfo.desc).map(i => { 
+        return <div className="flagContainer bitFlagContainer" key={flag} onClick={() => { this.setState(s => {s.flagDescriptions[flag].opened = true; return s}) }}>
+          <span className="flagLabel">{flag}</span><span className="flagTitle">{flagInfo.title}{ !isOpened && <span className="clickToExpand"> — Click to expand</span>}</span>
+        { isOpened && Object.keys(flagInfo.desc).map(i => { 
           return <p key={i}><label>
             <input type="checkbox" checked={bitfieldIsChecked(flag, i)} onChange={e => this.setBitfield(flag, i, e.target.checked)} />
             {bitfieldDesc(flagInfo.desc[i])}
