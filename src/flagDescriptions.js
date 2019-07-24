@@ -128,6 +128,7 @@ const flagDescriptions = {
             16: "cashChests",
             32: "noHealSanctuaries",
             64: "instantRolldown",
+            128: "allDiamonds",
         },
         desc: {
             1: "Ancient Cave: No Ness in party",
@@ -137,6 +138,7 @@ const flagDescriptions = {
             16: "Only cash in chests (except progress/skip items)",
             32: "Sanctuaries do not heal party members",
             64: "HP rolldown instant speed",
+            128: "All overworld enemy sprites are diamonds",
         }
     },
     devmode: {

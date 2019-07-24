@@ -38,6 +38,10 @@ class EnemyObject extends TableObject {
     }
 
     get intershuffleValid() {
+        return this.isNormalEnemy;
+    }
+
+    get isNormalEnemy() {
         return !this.isBoss && !this.isFinalBoss && !this.isNpc && !(this.index === 225); // Magic Butterfly
     }
 
@@ -149,6 +153,12 @@ class EnemyObject extends TableObject {
 
         if(this.oldData.battle_sprite === 0) {
             this.data.battle_sprite = 0;
+        }
+
+        if(this.isNormalEnemy && this.context.specs.flags.z.allDiamonds) {
+            const diamondEnemy = this.constructor.get(13);
+            this.data.movement = diamondEnemy.oldData.movement;
+            this.data.out_of_battle_sprite = diamondEnemy.oldData.out_of_battle_sprite;
         }
 
         if(this.context.specs.flags.a) {
