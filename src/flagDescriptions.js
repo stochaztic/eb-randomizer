@@ -124,7 +124,7 @@ const flagDescriptions = {
             2: "noPaula",
             4: "noJeff",
             8: "noPoo",
-            //16: "cashChests",
+            16: "cashChests",
             //32: "noHealSanctuaries",
         },
         desc: {
@@ -132,7 +132,7 @@ const flagDescriptions = {
             2: "Ancient Cave: No Paula in party",
             4: "Ancient Cave: No Jeff in party",
             8: "Ancient Cave: No Poo in party",
-            //16: "Only cash in chests (except progress/skip items)",
+            16: "Only cash in chests (except progress/skip items)",
             //32: "Sanctuaries do not heal party members",
         }
     },

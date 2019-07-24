@@ -141,6 +141,22 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
         this.tpt.data.argument = newItem.index;
     }
 
+    fillWithItem(newItem, cannotBeReplaced = false) {
+        if(cannotBeReplaced || !this.context.specs.flags.z.cashChests) {
+            this.tpt.data.argument = newItem.index ? newItem.index : newItem;
+            return;
+        }
+        if(this.caveRank) {
+            this.setMoneyValue(this.caveRank * this.context.random.randint(100, 3000));
+            return;
+        }
+        this.setMoneyValue(this.context.random.randint(3, 2000));
+    }
+    
+    setMoneyValue(amount) {
+        this.tpt.data.argument = Math.floor(amount) + 0x100;
+    }
+
     static mutateAll() {
         if(!this.context.specs.flags.a) {
             super.mutateAll();
@@ -153,7 +169,7 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
         let inaccessibleChests = this.every.filter(o => o.isChest && o.caveRank === null && !o.mutated);
         inaccessibleChests.push(this.get(182), this.get(135)); // Dungeon man
         inaccessibleChests.forEach(chest => {
-            chest.tpt.data.argument = 0x100;
+            chest.setMoneyValue(0);
             chest.mutated = true;
         })
 
@@ -171,7 +187,7 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
         earlyChests = earlyChests.slice(0, Math.floor(earlyChests.length / 3 * 2));
         let chosen = this.context.random.sample(earlyChests, earlyItemsIndex.length);
         chosen.forEach((chest, i) => {
-            chest.tpt.data.argument = earlyItemsIndex[i];
+            chest.fillWithItem(earlyItemsIndex[i], true);
             chest.mutated = true;
         });
 
@@ -213,7 +229,8 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
         equipment = this.context.random.shuffleNormal(equipment, this.randomDegree || this.context.specs.randomDegree);
         chosen.forEach((chest, i) => {
             const newItem = equipment[i];
-            chest.tpt.data.argument = newItem.index;
+            const cannotBeReplaced = (newItem === franklinBadge || newItem === autoStarMaster);
+            chest.fillWithItem(newItem.index, cannotBeReplaced);
             chest.mutated = true;
         })
         
@@ -233,7 +250,7 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
         chests.forEach((chest, i) => {
             const index = Math.round(i / chests.length * (candidates.length-1));
             const newItem = candidates[index];
-            chest.tpt.data.argument = newItem.index;
+            chest.fillWithItem(newItem.index);
             chest.mutated = true;
         });
         super.mutateAll();
@@ -254,7 +271,7 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
             i = i.getSimilar();
         }
         console.assert(this.tpt.data.argument === this.tpt.oldData.argument);
-        this.tpt.data.argument = i.index;
+        this.fillWithItem(i.index);
     }
 }
 
