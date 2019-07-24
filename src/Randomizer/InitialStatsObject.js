@@ -2,6 +2,7 @@
 import { TableObject } from 'randomtools-js';
 import tableText from '!array-loader!./tables/initial_stats_table.txt';
 import ItemObject from './ItemObject.js';
+import AncientCave from './AncientCave.js';
 
 class InitialStatsObject extends TableObject {
     toString() {
@@ -16,9 +17,21 @@ class InitialStatsObject extends TableObject {
         this.data.item_indexes = Array(this.data.item_indexes.length).fill(0);
     }
 
+    removeItem(item) {
+        if(item instanceof ItemObject) {
+            item = item.index;
+        }
+        let firstFound = this.data.item_indexes.findIndex(i => i === item);
+        if(firstFound === -1) {
+            throw new Error("Unable to removte item, not found.");
+        }
+        this.data.item_indexes.splice(firstFound, 1);
+        this.data.item_indexes.push(0);
+    }
+
     addItem(item) {
         if(item instanceof ItemObject) {
-            item = item.index
+            item = item.index;
         }
         let firstEmpty = this.data.item_indexes.findIndex(i => i === 0);
         if(firstEmpty === -1) {
@@ -33,8 +46,12 @@ class InitialStatsObject extends TableObject {
             this.data.xp = 0;
             if(this.index === 0) {
                 this.data.money = 100;
+                this.removeItem(0xB1); // atm card
                 this.addItem(0xC4); // sound stone
                 this.addItem(0x11); // cracked bat
+            }
+            if((this.index + 1) === AncientCave.firstCharacter()) {
+                this.addItem(0xB1); // atm card
                 this.addItem(0xC5); // exit mouse
             }
         }
