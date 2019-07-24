@@ -108,6 +108,10 @@ class AncientCave extends ReadWriteObject {
             hijackedCheck.writeScript();
         }
 
+        if(this.context.specs.flags.z.noHealSanctuaries) {
+            Script.replace(0x7c57d, [[0x02]]);
+        }
+
         super.fullCleanup();
     }
 
