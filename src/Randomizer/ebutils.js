@@ -124,12 +124,13 @@ const ebutils = {
         let str = "";
         Object.keys(flags).forEach( flag => {
             if(flags[flag]) {
-            str += (flag.length > 1 ? `(${flag})` : flag);
+                str += (flag.length > 1 ? `(${flag})` : flag);
             }
-            if(flags[flag] > 1) {
-            str += flags[flag];
+            const val = flags[flag].rawValue ? flags[flag].rawValue : flags[flag];
+            if(val > 1) {
+                str += val;
             }
-        })
+        });
         return str;
     },
 

@@ -42,8 +42,8 @@ class AncientCave extends ReadWriteObject {
             banana.writeScript();
 
             // Change teleport destination in X menu
-            const teleportX = 865;
-            const teleportY = 1079;
+            const teleportX = 592;
+            const teleportY = 740;
 
             const [fullX, fullY] = [teleportX * 8, teleportY * 8];
             this.context.rom.set([fullX % 256, Math.floor(fullX / 256)], 0x13049);
@@ -645,6 +645,13 @@ class AncientCave extends ReadWriteObject {
         tpt.data.flag = 0x5e;
         tpt = TPTObject.get(841);
         tpt.data.flag = 0x5e;
+
+        // Chaos Theater - remove show if Ness is not first character
+        if(this.firstCharacter() !== 1) {
+            script = Script.getByPointer(0x99fe0);
+            script.lines[0] = [0x0a, 0x2f, 0x99, 0xc9, 0x00];
+            script.writeScript();
+        }
 
         // Mr Saturn - never give waterfall password
         tpt = TPTObject.get(739);
