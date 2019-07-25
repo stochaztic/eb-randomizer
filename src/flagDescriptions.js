@@ -129,6 +129,7 @@ const flagDescriptions = {
             32: "noHealSanctuaries",
             64: "instantRolldown",
             128: "allDiamonds",
+            256: "ghostsAndShrooms",
         },
         desc: {
             1: "Ancient Cave: No Ness in party",
@@ -139,6 +140,7 @@ const flagDescriptions = {
             32: "Sanctuaries do not heal party members",
             64: "HP rolldown instant speed",
             128: "All overworld enemy sprites are diamonds",
+            256: "Constantly plagued by mini-ghosts and mushrooms",
         }
     },
     devmode: {
