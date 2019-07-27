@@ -117,14 +117,14 @@ class AncientCave extends ReadWriteObject {
             const end = Script.writeNewScript([[0x02]]);
             const possess = Script.writeNewScript([
                 [0x19, 0x10, 0x01],             // get lead character number
-                [0x19, 0x16, 0x00, 0x02],       // get mush/possess status
-                [0x0B, 0x01],                   // true if they have no status
-                [0x1B, 0x02, ...ebutils.ccodeAddress(end.pointer)], // if false, end
-                [0x19, 0x10, 0x01],             // get lead character number
                 [0x19, 0x05, 0x00, 0x02, 0x03], // inflict possession on character
                 [0x02]
             ]);
             Script.replace(0x7d33e, [
+                [0x19, 0x10, 0x01],             // get lead character number
+                [0x19, 0x16, 0x00, 0x02],       // get mush/possess status
+                [0x0B, 0x01],                   // true if they have no status
+                [0x1B, 0x02, ...ebutils.ccodeAddress(end.pointer)], // if false, end
                 [0x1D, 0x21, 0x01],             // random 0 or 1
                 [0x1B, 0x02, ...ebutils.ccodeAddress(possess.pointer)], // 50% goto,
                 [0x19, 0x10, 0x01],             // get lead character number
