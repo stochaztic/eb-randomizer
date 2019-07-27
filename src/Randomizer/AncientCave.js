@@ -855,18 +855,19 @@ class AncientCave extends ReadWriteObject {
             const sBoss = sBosses.filter(s => s.nearestCluster === sc)[0];
             sBoss.setScript(numberedBoss);
 
-            let firstCharacterReplaced = false;
-            if(sBoss.script.lines[1][0] === 0x0e) {
-                sBoss.script.lines[1][1] = this.firstCharacter();
-                firstCharacterReplaced = true;
+            let linesToRemove = 3;
+            if(sBoss.script.lines[1][0] === 0x19 && sBoss.script.lines[1][1] === 0x10) {
+                linesToRemove = 6;
             }
-            if(sBoss.script.lines[1][0] === 0x19 && sBoss.script.lines[1][1] === 0x10 ) {
-                sBoss.script.lines[1][2] = this.firstCharacter();
-                firstCharacterReplaced = true;
-            }
-            console.assert(firstCharacterReplaced);
+
+            sBoss.script.lines.splice(1, linesToRemove,
+                [0x19, 0x10, 0x01],             // get lead character number
+                [0x0B, this.firstCharacter()],  // true if they are our first character
+                [0x1B, 0x02, ...ebutils.ccodeAddress(0xc690a6)], // if false, go to "only x can absorb"
+            );
 
             sBoss.script.replaceSanctuaryBoss(c);
+            sBoss.script.writeScript();
             console.assert(!doneScripts.has(sBoss.script));
             doneScripts.add(sBoss.script);
         })
