@@ -139,7 +139,7 @@ const flagDescriptions = {
             16: "Only cash in chests (except progress/skip items)",
             32: "Sanctuaries do not heal party members",
             64: "HP rolldown instant speed",
-            128: "All overworld enemy sprites are diamonds",
+            128: "All overworld enemy non-boss sprites are diamonds",
             256: "Constantly plagued by mini-ghosts and mushrooms",
         }
     },

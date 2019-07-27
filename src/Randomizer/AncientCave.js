@@ -489,7 +489,7 @@ class AncientCave extends ReadWriteObject {
             ...recruitLines,
             [0x1F, 0x68],           // store exit mouse coordinates
             [0x04, 0x00, 0x02],     // set exit mouse currently in possession
-            [0x1F, 0x83, 0x01, 0x03], // auto-equip cracked bat     
+            [0x1F, 0x83, 0x01, 0x02], // auto-equip cracked bat     
             [0x1F, 0xB0],           // save the game
             [0x02,]
         ];
