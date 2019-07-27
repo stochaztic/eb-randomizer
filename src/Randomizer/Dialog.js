@@ -56,7 +56,19 @@ class Dialog extends ReadWriteObject {
         if(!this.context.specs.flags.u.shortPrayers) return;
         const gameScripts = TPTObject.every.map(tpt => tpt.script).filter(script => script && script.isSwapSafe);
         const prayerScripts = ebutils.GIYGAS_PRAYER_SCRIPTS.map(p => Script.getByPointer(p));
-        const chosen = this.context.random.sample(gameScripts, prayerScripts.length);
+
+        let chosen = undefined;
+        if(this.shouldRandomize()) {
+            chosen = this.context.random.sample(gameScripts, prayerScripts.length);
+        }
+        else {
+            chosen = prayerScripts.map((_prayerScript, i) => {
+                return Script.writeNewScript([
+                    ebutils.encodeText(`@Prayer ${ i + 1 }.`),
+                    [0x13, 0x02],
+                ]);
+            })
+        }
         prayerScripts.forEach((prayerScript, i) => {
             prayerScript.lines = [
                 [0x18, 0x01, 0x01],         // open window 1

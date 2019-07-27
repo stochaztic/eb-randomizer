@@ -5,6 +5,7 @@ import ebutils from './ebutils.js';
 class Credits extends ReadWriteObject {
     static fullCleanup() {
         super.fullCleanup();
+        if(this.context.specs.special) return;
 
         let addedSpace = 0;
         // Something about the added space accumulator is slightly off,

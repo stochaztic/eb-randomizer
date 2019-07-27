@@ -119,6 +119,7 @@ class EnemyObject extends TableObject {
     }
 
     cleanup() {
+        if(this.context.specs.special) return;
         if(this.isBoss && !this.isFinalBoss && this.context.random.random() < 0.8) {
             ["hp", "pp", "level", "offense", "defense", "speed", "guts",
             "iq", "weakness_fire", "weakness_freeze", "weakness_flash",

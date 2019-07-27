@@ -123,10 +123,10 @@ const ebutils = {
     flagString: function(flags) {
         let str = "";
         Object.keys(flags).forEach( flag => {
-            if(flags[flag]) {
-                str += (flag.length > 1 ? `(${flag})` : flag);
-            }
-            const val = flags[flag].rawValue ? flags[flag].rawValue : flags[flag];
+            if(!flags[flag]) return;
+            const val = (flags[flag].rawValue !== undefined) ? flags[flag].rawValue : flags[flag];
+            if(val === 0) return;
+            str += (flag.length > 1 ? `(${flag})` : flag);
             if(val > 1) {
                 str += val;
             }
@@ -216,13 +216,13 @@ const ebutils = {
     ],
 
     GIYGAS_PRAYER_SCRIPTS: [
-        0x7b9a1,
+        0x7bc96,
         0x7ba2c,
         0x7bac7,
         0x7bb38,
         0x7bbf3,
         0x7bc56,
-        0x7bc96,
+        0x7b9a1,
     ],
 }
 export default ebutils;

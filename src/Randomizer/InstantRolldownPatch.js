@@ -1,6 +1,4 @@
 import { utils } from 'randomtools-js';
-import ebutils from './ebutils.js';
-import Script from './Script.js';
 
 const InstantRolldownPatch = {
     name: "Instant Rolldown",

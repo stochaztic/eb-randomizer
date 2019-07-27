@@ -11,7 +11,10 @@ class TitleScreenCharacterObject extends TableObject {
     
     static mutateAll() {
         super.mutateAll();
-        const newWord = this.context.random.choice(firstWords) + this.context.random.choice(secondWords).substring(1);
+        let newWord = this.context.random.choice(firstWords) + this.context.random.choice(secondWords).substring(1);
+        if(this.context.specs.special === "speed") {
+            newWord = "rrrunound"
+        }
         this.every.forEach((o, i) => {
             const newLetter = newWord[i];
             const oldIndex = oldWord.indexOf(newLetter);
@@ -21,6 +24,7 @@ class TitleScreenCharacterObject extends TableObject {
 
     static fullCleanup() {
         super.fullCleanup();
+        if(this.context.specs.special) return;
 
         // Rare Seed Generation
         if(!this.context.specs.totalGenerated || this.context.specs.flags.t) {

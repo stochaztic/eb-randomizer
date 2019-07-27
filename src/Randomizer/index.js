@@ -97,7 +97,11 @@ export async function execute(romfile, specs, hooks) {
   MapSpriteObject.afterOrder = [PsiTeleportObject, AncientCave];
 
   try {
-    const patches = [ExpandSavePatch, CreditsPatch, TrackStatsPatch, TitleDisableGlowPatch, FixPalettePatch, DeadWithHpPatch];
+    const patches = [ExpandSavePatch, TitleDisableGlowPatch, FixPalettePatch, DeadWithHpPatch];
+    if(!specs.special) {
+      patches.push(CreditsPatch);
+      patches.push(TrackStatsPatch);
+    }
     
     if(specs.flags.a) patches.push(ShowSpritesNoIntroPatch);
     if(specs.flags.a) patches.push(TrackDoorsPatch);

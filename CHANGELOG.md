@@ -2,6 +2,7 @@
 ## v41.x / v42 (In progress)
 - Challenges: New set of flags with options to make your playthrough more challenging!
 - Music: Music selection has been updated, and Ancient Cave music randomization will be much more consistent.
+- Special: Added "speed" mode, accessible at the URL https://earthbound.app/?special=speed . This creates a ROM designed for a special speedrunning mode of the normal game, with only the five Game Improvement Patches turned on and no other changes. The title screen will be "RrrunBound".
 ### Bugfixes
 - Ancient Cave: Enemies should correctly appear in the upper-right area of Threed. Note that the upper-left cemetery area is intentionally scaled to the floor that is within the door by the zombies, not to the rest of Threed.
 - Ancient Cave: Chaos Theater show is no longer suppressed, and a few bugs with door transitions should no longer occur.

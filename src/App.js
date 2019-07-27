@@ -36,19 +36,32 @@ class App extends Component {
     let directLink = false;
     if(window.URLSearchParams !== undefined) {
       const params = new URLSearchParams(window.location.search);
-      if(params.has("version")) {
-        directLink = true;
+      if(params.has("special")) {
+        directLink = params.get("special");
+        if(directLink === "speed") {
+          initialSpecs.flags = {'u': 31, z: 0};
+          initialSpecs.special = directLink;
+        }
+        else {
+          console.error("Unknown special mode chosen.");
+          directLink = false;
+        }
+      }
+      else if(params.has("version")) {
+        directLink = "version";
         compatibleVersion = (params.get("version") === initialSpecs.version) || (params.get("version") === "current");
         initialSpecs.seed = parseInt(params.get("seed"), 10);
         initialSpecs.flags = ebutils.parseFlagString(params.get("flags"));
       }
     }
     
-    Object.keys(flagDescriptions).forEach( flag => {
-      if(initialSpecs.flags[flag] === undefined) {
-        initialSpecs.flags[flag] = directLink ? 0 : flagDescriptions[flag].default;
-      }
-    });
+    if(!initialSpecs.special) {
+      Object.keys(flagDescriptions).forEach( flag => {
+        if(initialSpecs.flags[flag] === undefined) {
+          initialSpecs.flags[flag] = directLink ? 0 : flagDescriptions[flag].default;
+        }
+      });
+    }
 
     this.state = {
       generationStatus: null,
@@ -186,7 +199,8 @@ class App extends Component {
     const blob = new Blob([this.state.newROM.rom], {type: "application/octet-stream"} );
     const link = document.createElement('a');
     link.href = window.URL.createObjectURL(blob);
-    link.download = "eb." + this.flagString() + "." + this.state.specs.seed + ".smc";
+    const fileNamePart = this.state.specs.special ? this.state.specs.special : this.flagString() + "." + this.state.specs.seed
+    link.download = `eb.${fileNamePart}.smc`;
     document.body.appendChild(link); 
     link.click();
     link.remove();
@@ -219,6 +233,7 @@ class App extends Component {
   }
 
   setQueryString = (data=false) => {
+    if(this.state.specs.special) return;
     if(!data) {
       if(window.location.href.split("?").length > 1) {
         window.history.replaceState(null, "", window.location.href.split("?")[0]);
@@ -414,6 +429,18 @@ class App extends Component {
     </div>
     );
 
+    const selectModeSpecialContent = (
+      <div className="sectionContent">
+        { selectCharacterSprites }
+        <p>
+          You have followed a direct link to a special mode: {this.state.specs.special} mode. The ROM will be generated according to these settings.
+        </p>
+        <p>
+          Alternatively, you may <a href="?">create a new ROM</a> instead.
+        </p>
+      </div>
+    );
+
     const selectModeDirectLinkContent = (
       <div className="sectionContent">
         { selectCharacterSprites }
@@ -443,7 +470,7 @@ class App extends Component {
         </section>
         <section className="step-modes">
           <h3>2) Select Modes</h3>
-          {this.state.showDirectLinkInfo ? selectModeDirectLinkContent : selectModeNormalContent}
+          {this.state.specs.special ? selectModeSpecialContent : (this.state.showDirectLinkInfo ? selectModeDirectLinkContent : selectModeNormalContent)}
         </section>
         <section className="step-generate">
           <h3>3) Generate ROM</h3>
@@ -466,7 +493,7 @@ class App extends Component {
                 <span className="buttonInfo">Done.</span>
               </p>
             }
-            { this.state.newROM && this.state.newROM.spoiler &&
+            { this.state.newROM && this.state.newROM.spoiler && !this.state.special &&
               <p><button onClick={this.downloadSpoiler}>Download Spoiler</button></p>
             }
           </div>
