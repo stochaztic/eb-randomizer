@@ -131,11 +131,11 @@ class AncientCave extends ReadWriteObject {
                 [0x19, 0x05, 0x00, 0x02, 0x02], // inflict mushroomization on character
                 [0x02]
             ]);
-            //C0/766C: A9 97 06     LDA #$0697
-            this.context.rom[0x766D] = 0x08;
+            //C0/766C: A9 97 06     LDA #$0697 - value after call - 10 minutes
+            this.context.rom[0x766D] = 0x8C;
             this.context.rom[0x766E] = 0x00;
-            //C0/B6C2: A9 97 06     LDA #$0697
-            this.context.rom[0xB6C3] = 0x08;
+            //C0/B6C2: A9 97 06     LDA #$0697 - value after spawn - 5 minutes
+            this.context.rom[0xB6C3] = 0x46;
             this.context.rom[0xB6C4] = 0x00;
         }
 
