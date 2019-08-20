@@ -806,7 +806,7 @@ class AncientCave extends ReadWriteObject {
         ];
         removeYouWonPointers.forEach(pointer => {
             script = Script.getByPointer(pointer);
-            script.removeInstructions([ebutils.ccodeCallAddress(0xc915d6)]);
+            script.removeInstructions([ebutils.ccodeCallAddress(0xc915d6)], [], false);
             script.writeScript();
         });
 

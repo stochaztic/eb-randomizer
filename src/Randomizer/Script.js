@@ -503,6 +503,11 @@ class Script {
         }
         const flat = this.lines.reduce((acc, val) => acc.concat(val), []);
         this.context.rom.set(flat, this.pointer);
+
+        // Hack for partially-interrupted hotel/inn script
+        if(this.pointer === 0x90f67) {
+            Script.getByPointer(0x90f7d).writeScript();
+        }
         this.pleaseWrite = false;
     }
 
