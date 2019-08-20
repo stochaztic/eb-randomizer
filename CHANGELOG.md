@@ -1,4 +1,8 @@
 # Changelog
+## v42.x / v43 (In progress)
+### Bugfixes
+- Ancient Cave: Chaos Theater show suppressed, again.
+
 ## v42 (2019-07-27)
 - Challenges: New set of flags with options to make your playthrough more challenging!
 - Music: Music selection has been updated, and Ancient Cave music randomization will be much more consistent.

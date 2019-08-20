@@ -673,12 +673,10 @@ class AncientCave extends ReadWriteObject {
         tpt = TPTObject.get(841);
         tpt.data.flag = 0x5e;
 
-        // Chaos Theater - remove show if Ness is not first character
-        if(this.firstCharacter() !== 1) {
-            script = Script.getByPointer(0x99fe0);
-            script.lines[0] = [0x0a, 0x2f, 0x99, 0xc9, 0x00];
-            script.writeScript();
-        }
+        // Chaos Theater - remove show
+        script = Script.getByPointer(0x99fe0);
+        script.lines[0] = [0x0a, 0x2f, 0x99, 0xc9, 0x00];
+        script.writeScript();
 
         // Mr Saturn - never give waterfall password
         tpt = TPTObject.get(739);
