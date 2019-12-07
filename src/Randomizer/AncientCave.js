@@ -416,7 +416,7 @@ class AncientCave extends ReadWriteObject {
                 }
 
                 const flagChanges = [...Array(9).keys()].map(caveLevelZeroIndex => {
-                    if(caveLevelZeroIndex + 1 === me.caveLevel) {
+                    if(caveLevelZeroIndex + 1 === me.connected.caveLevel) { // Change to floor on cluster of destination, not self
                         return [0x04, MapMusicObject.flagBase + caveLevelZeroIndex, 0x03];
                     }
                     return [0x05, MapMusicObject.flagBase + caveLevelZeroIndex, 0x03];

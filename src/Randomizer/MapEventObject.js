@@ -166,6 +166,10 @@ class MapEventObject extends ZonePositionMixin(TableObject) {
         return this.mutualExits;
     }
 
+    get cluster() {
+        return Cluster.getByExit(this);
+    }
+
     get caveRank() {
         if(this._caveRank !== undefined) return this._caveRank;
         const cluster = Cluster.getByExit(this);
