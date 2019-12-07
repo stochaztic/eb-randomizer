@@ -1,5 +1,6 @@
 # Changelog
 ## v42.x / v43 (In progress)
+- PC sprites: New version of Bart.
 ### Bugfixes
 - Ancient Cave: Chaos Theater show suppressed, again.
 - Ancient Cave: Music at hotels will properly play tune and resume.
