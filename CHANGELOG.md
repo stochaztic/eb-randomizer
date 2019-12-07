@@ -1,5 +1,6 @@
 # Changelog
 ## v42.x / v43 (In progress)
+- Enemy stats: More name parts added.
 - PC sprites: New version of Bart.
 ### Bugfixes
 - Ancient Cave: Chaos Theater show suppressed, again.
