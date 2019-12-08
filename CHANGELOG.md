@@ -1,5 +1,6 @@
 # Changelog
 ## v42.x / v43 (In progress)
+- Dialogue: Additional Pokey lines.
 - Enemy stats: More name parts added.
 - PC sprites: New version of Bart.
 ### Bugfixes
