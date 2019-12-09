@@ -2,6 +2,7 @@
 ## v42.x / v43 (In progress)
 - Dialogue: Additional Pokey lines.
 - Enemy stats: More name parts added.
+- Gift box contents, Shops: Item ranking improved, especially with Jeff-repair-associated items.
 - PC sprites: New version of Bart.
 ### Bugfixes
 - Ancient Cave: Chaos Theater show suppressed, again.

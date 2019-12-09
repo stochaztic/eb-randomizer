@@ -86,7 +86,7 @@ class ItemObject extends TableObject {
         }
 
         if(this.isFixedItem) {
-            return this.index * 20;
+            return 1200 - Math.min(1150, (Math.abs(this.index - 134) * 264));
         }
 
         if(!this.isBuyable && !this.isSellable) {
