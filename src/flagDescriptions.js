@@ -130,6 +130,8 @@ const flagDescriptions = {
             64: "instantRolldown",
             128: "allDiamonds",
             256: "ghostsAndShrooms",
+            512: "longParty",
+            1024: "yesBubble",
         },
         desc: {
             1: "Ancient Cave: No Ness in party",
@@ -141,6 +143,8 @@ const flagDescriptions = {
             64: "HP rolldown instant speed",
             128: "All overworld enemy non-boss sprites are diamonds",
             256: "Constantly plagued by mini-ghosts and mushrooms",
+            512: "Long party member follow distance",
+            1024: "Ancient Cave: Bubble Monkey in party",
         }
     },
     devmode: {

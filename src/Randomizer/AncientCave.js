@@ -471,6 +471,7 @@ class AncientCave extends ReadWriteObject {
         if(!this.context.specs.flags.z.noJeff) recruitLines.push([0x1F, 0x11, 0x03]);
         if(!this.context.specs.flags.z.noPaula) recruitLines.push([0x1F, 0x11, 0x02]);
         if(this.context.specs.flags.z.noNess) recruitLines.push([0x1F, 0x12, 0x01]);
+        if(this.context.specs.flags.z.yesBubble) recruitLines.push([0x1F, 0x11, 0x09]);
 
         const intro = Script.getByPointer(0x5e70b);
         intro.lines = [

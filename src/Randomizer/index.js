@@ -41,6 +41,7 @@ import DropMostRecentPatch from './DropMostRecentPatch.js';
 import ExpandSavePatch from './ExpandSavePatch.js';
 import FixPalettePatch from './FixPalettePatch.js';
 import InstantRolldownPatch from './InstantRolldownPatch.js';
+import LongPartyPatch from './LongPartyPatch.js';
 import RunButtonPatch from './RunButtonPatch.js';
 import ShortenPrayerPatch from './ShortenPrayerPatch.js';
 import ShowSpritesNoIntroPatch from './ShowSpritesNoIntroPatch.js';
@@ -112,6 +113,7 @@ export async function execute(romfile, specs, hooks) {
     if(specs.flags.u.ludicrousSpeed) patches.push(LudicrousSpeedPatch);
     if(specs.flags.u.shortPrayers) patches.push(ShortenPrayerPatch);
     if(specs.flags.z.instantRolldown) patches.push(InstantRolldownPatch);
+    if(specs.flags.z.longParty) patches.push(LongPartyPatch);
     if(specs.flags.devmode) patches.push(DevmodePatch);
 
 

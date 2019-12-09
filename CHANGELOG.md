@@ -1,5 +1,6 @@
 # Changelog
-## v42.x / v43 (In progress)
+## v43 (2019-12-08)
+- Challenges: New challenge modes "Long party member follow distance" and "Ancient Cave: Bubble Monkey in party".
 - Dialogue: Additional Pokey lines.
 - Enemy stats: More name parts added.
 - Gift box contents, Shops: Item ranking improved, especially with Jeff-repair-associated items.
