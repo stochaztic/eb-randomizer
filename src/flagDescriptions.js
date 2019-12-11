@@ -99,7 +99,7 @@ const flagDescriptions = {
             16: "goodsMenuEquip",
         },
         desc: {
-            1: "Run Button - Hold the Y Button to run at Skip Sandwich speed.",
+            1: "Run Mode - You are always at Skip Sandwich speed. Hold the Y Button to walk instead.",
             2: "Ludicrous Speed Text - Text boxes, including in battle, finish instantaneously.",
             4: "Discard Button - Press the R Button while on the overworld to discard the last item received from an item box, NPC, or battle.",
             8: "Short Giygas Prayers - The cutscenes during the Giygas battle are shortened.",

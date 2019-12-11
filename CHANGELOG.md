@@ -1,4 +1,6 @@
 # Changelog
+## v43.x / v44 (In progress)
+- Game improvement patches: "Run button" changed to "Run mode"; default run speed and hold Y to slow to a walk.
 ## v43 (2019-12-08)
 - Challenges: New challenge modes "Long party member follow distance" and "Ancient Cave: Bubble Monkey in party".
 - Dialogue: Additional Pokey lines.
