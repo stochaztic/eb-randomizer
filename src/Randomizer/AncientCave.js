@@ -804,6 +804,7 @@ class AncientCave extends ReadWriteObject {
         const removeYouWonPointers = [
             0x91693, // Benches, stew guy, etc
             0x6002c, // Desert shack
+            0x57b5c, 0x57b7c, 0x57b9c, 0x57bbc, // Benches
         ];
         removeYouWonPointers.forEach(pointer => {
             script = Script.getByPointer(pointer);
