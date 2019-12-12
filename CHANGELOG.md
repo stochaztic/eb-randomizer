@@ -1,5 +1,6 @@
 # Changelog
 ## v43.x / v44 (In progress)
+- Backgrounds: New flag level 2, color-shift backgrounds. Additionally, very eye-straining backgrounds should be less common at all flag levels.
 - Game improvement patches: "Run button" changed to "Run mode"; default run speed and hold Y to slow to a walk.
 ### Bugfixes
 - Ancient Cave: Benches no longer play restoration sound effect twice.

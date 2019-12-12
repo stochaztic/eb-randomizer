@@ -1,10 +1,11 @@
 const flagDescriptions = {
     b: {
         title: "Backgrounds",
-        max: 1,
-        default: 1,
+        max: 2,
+        default: 2,
         desc: {
             1: "In-battle backgrounds will be randomized. Warning: If you are sensitive to bright flashing lights causing epilepsy or seizures, you may not want to enable this mode.",
+            2: "In-battle backgrounds will be randomized and color-shifted. Warning: If you are sensitive to bright flashing lights causing epilepsy or seizures, you may not want to enable this mode.",
         }
     },
     c: {

@@ -15,6 +15,10 @@ class BgDataObject extends TableObject {
             this.data[attribute] = source.oldData[attribute];
         });
 
+        if(this.data.palette_changing_speed > 0) { // Slow down very fast palette changes
+            this.data.palette_changing_speed = Math.max(7, this.data.palette_changing_speed);
+        }
+
         source = this.context.random.choice(BgDataObject.every);
         ["scrolling_movement_1", "scrolling_movement_2", 
         "scrolling_movement_3", "scrolling_movement_4"].forEach(attribute => {

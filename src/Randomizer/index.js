@@ -3,6 +3,7 @@ import RandomTools from 'randomtools-js';
 import AncientCave from './AncientCave.js';
 import BattleEntryObject from './BattleEntryObject.js';
 import BgDataObect from './BgDataObject.js';
+import BgPaletteObect from './BgPaletteObject.js';
 import Credits from './Credits.js';
 import Dialog from './Dialog.js';
 import EnemyObject from './EnemyObject.js';
@@ -57,6 +58,7 @@ export async function execute(romfile, specs, hooks) {
     AncientCave,
     BattleEntryObject,
     BgDataObect,
+    BgPaletteObect,
     Credits,
     Dialog,
     EnemyObject,
