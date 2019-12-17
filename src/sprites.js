@@ -340,6 +340,46 @@ export const customCharacters = [
         },
     },
     {
+        label: "Nessa",
+        value: "Nessa",
+        creator: "Satsy",
+        sprites: {
+            main: {
+                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344],
+            },
+            dead: {
+                indexes: [0, 0, 193, 193, 384, 384, 192, 192, 0, 0, 576, 768, 768, 384, 0, 0],
+            },
+            fuzzy: {
+                indexes: [0, 192, 192, 192, 192, 192, 192, 192],
+            },
+            bedJeff: {
+                indexes: [0, 256, 0, 256, 512, 256, 512, 256],
+            },
+            down: {
+                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
+            },
+            ladder: {
+                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
+            },
+            rope: {
+                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
+            },
+            jump: {
+                indexes: [0, 0, 0, 0, 0, 192, 384, 192],
+            },
+            meditate: {
+                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
+            },
+            pj: {
+                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1536, 1728, 1920, 2112, 2304, 2496, 2688, 2880],
+            },
+            sitting: {
+                indexes: [0, 0, 1, 1, 0, 0, 0, 0],
+            },
+        },
+    },
+    {
         label: "Ninten",
         value: "Ninten",
         creator: "the salvation phoenix",
@@ -1079,6 +1119,14 @@ export async function prepare(sprite, index) {
 
     if(sprite.sprites.bedNess && index === 0) {
         newObj[378] = await prepareSprite(sprite.sprites.bedNess, 378);
+    }
+
+    if(sprite.sprites.sitting && index === 0) {
+        newObj[453] = await prepareSprite(sprite.sprites.sitting, 453);
+    }
+
+    if(sprite.sprites.sitting && index === 2) {
+        newObj[454] = await prepareSprite(sprite.sprites.sitting, 453);
     }
 
     if(sprite.sprites.deadRobot && index === 0) {
