@@ -5,6 +5,7 @@
 - PC sprites: Added Nessa.
 ### Bugfixes
 - Ancient Cave: Benches no longer play restoration sound effect twice.
+- Music: Remove "Teleport in" track from valid music options.
 
 ## v43 (2019-12-08)
 - Challenges: New challenge modes "Long party member follow distance" and "Ancient Cave: Bubble Monkey in party".
