@@ -1,6 +1,7 @@
 import { ReadWriteObject } from 'randomtools-js';
 import Cluster from './Cluster.js';
 import ebutils from './ebutils.js';
+import MusicObject from './MusicObject.js';
 
 class Credits extends ReadWriteObject {
     static fullCleanup() {
@@ -40,6 +41,24 @@ class Credits extends ReadWriteObject {
                 ...printAddr(0x7EB600, 2),
                 ...space(2),
             ];
+        }
+
+        let ancientCaveMusic = [];
+        if(this.context.specs.flags.a) {
+            ancientCaveMusic = [
+                ...space(6),
+                ...bigText("ANCIENT CAVE MUSIC"), // Condensed
+                ...bigText("__________________"),
+                ...space(2),
+            ];
+
+            const nums = ['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT', 'NINE'];
+            MusicObject.ancientCaveMusics.forEach((music, i) => {
+                ancientCaveMusic.push(...smallText(`FLOOR ${nums[i]}`));
+                ancientCaveMusic.push(...bigText(MusicObject.songInfo(music).title.toUpperCase()));
+                ancientCaveMusic.push(...bigText(MusicObject.songInfo(music).artist.toUpperCase()));
+                ancientCaveMusic.push(...space(2));
+            });
         }
 
         const newCredits = [
@@ -112,6 +131,7 @@ class Credits extends ReadWriteObject {
             ...smallText("SPECIAL THANKS"),
             ...bigText("EB SPEEDRUNNING COMMUNITY"),
             ...bigText("PK HACK COMMUNITY"),
+            ...ancientCaveMusic,
             ...space(6),
             ...bigText("ORIGINAL GAME"), // Condensed
             ...bigText("_____________"),

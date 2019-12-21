@@ -109,12 +109,13 @@ const flagDescriptions = {
     },
     w: {
         title: "Music",
-        max: 3,
+        max: 4,
         default: 0,
         desc: {
             1: "In Ancient Cave, each floor will have its own music. In other modes, areas will have shuffled music.",
             2: "Battle music will be shuffled. In Ancient Cave, each floor will have its own music. In other modes, areas will have shuffled music.",
-            3: "Battle and map music may be intermixed. Battle music will be shuffled. In Ancient Cave, each floor will have its own music. In other modes, areas will have shuffled music."
+            3: "Some custom music will be added. Battle music will be shuffled. In Ancient Cave, each floor will have its own music. In other modes, areas will have shuffled music.",
+            4: "Battle and map music may be intermixed. Some custom music will be added. Battle music will be shuffled. In Ancient Cave, each floor will have its own music. In other modes, areas will have shuffled music."
         }
     },
     z: {

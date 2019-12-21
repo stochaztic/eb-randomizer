@@ -1,6 +1,6 @@
 {
   "name": "eb-randomizer",
-  "version": "43.5.0",
+  "version": "43.6.0",
   "description": "Randomizer for SNES game EarthBound, featuring Ancient Cave and Open modes",
   "dependencies": {
     "color": "^3.1.1",

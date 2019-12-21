@@ -166,6 +166,37 @@ const ebutils = {
         ];
     },
 
+    writeToFreespace: function(data, context) {
+        while(this.currentExpandedIndex % 32 !== 0) {
+            this.currentExpandedIndex += 1;
+        }
+        if(data.length > (0xffff - this.currentExpandedIndex)) {
+            console.log("Bank increase");
+            this.expandedBank += 1;
+            this.currentExpandedIndex = 0;
+        }
+        if(this.expandedBank > 0x3f) {
+            throw new Error(`Out of freespace.`);
+        }
+        const addressToSet = (this.expandedBank << 16) + this.currentExpandedIndex;
+        context.rom.set(data, addressToSet);
+
+        const obj = {
+            romBank: this.expandedBank,
+            snesBank: 0xc0 | this.expandedBank,
+            bankAddress: this.currentExpandedIndex,
+            romAddress: addressToSet,
+            snesAddress: 0xc00000 | addressToSet,
+        }
+
+        console.log(`Wrote to ${obj.snesAddress.toString(0x10)}`);
+        this.currentExpandedIndex += data.length;
+        return obj;
+    },
+
+    expandedBank: 0x31,
+    currentExpandedIndex: 0x1234,
+
     SANCTUARY_BOSS_POINTERS: [
         0x68409,
         0x68410,

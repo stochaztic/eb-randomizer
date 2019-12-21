@@ -20,6 +20,7 @@ import MapMusicObject from './MapMusicObject.js';
 import MapPaletteObject from './MapPaletteObject.js';
 import MapPaletteDataObject from './MapPaletteDataObject.js';
 import MapSpriteObject from './MapSpriteObject.js';
+import MusicObject from './MusicObject.js';
 import PcGfxObject from './PcGfxObject.js';
 import PhoneObject from './PhoneObject.js';
 import PsiAbilityObject from './PsiAbilityObject.js';
@@ -75,6 +76,7 @@ export async function execute(romfile, specs, hooks) {
     MapPaletteObject,
     MapPaletteDataObject,
     MapSpriteObject,
+    MusicObject,
     PcGfxObject,
     PhoneObject,
     PsiAbilityObject,
@@ -146,13 +148,16 @@ export async function execute(romfile, specs, hooks) {
 
     MapSpriteObject.randomDegree = 0.8;
 
+    context.specs.preparedSongs = [];
+
+
     if(context.rom.length < 0x400000) {
       const expandedROM = new Uint8Array(context.rom.length + 0x100000);
       expandedROM.set(context.rom);
       context.rom = expandedROM;
     }
     
-    const newROM = RandomTools.execute(context);
+    const newROM = await RandomTools.execute(context);
 
     let spoiler = undefined;
     if(!specs.flags.t) {

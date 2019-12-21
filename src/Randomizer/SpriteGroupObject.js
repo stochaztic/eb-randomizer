@@ -1,6 +1,7 @@
 /* eslint import/no-webpack-loader-syntax: off */
 import { TableObject } from 'randomtools-js';
 import tableText from '!array-loader!./tables/sprite_group_table.txt';
+import ebutils from './ebutils.js';
 
 class SpriteGroupObject extends TableObject {
     static shouldRandomize() {
@@ -38,20 +39,13 @@ class SpriteGroupObject extends TableObject {
             this.vanillaMutate(Number.parseInt(sprite));
             return;
         }
+        
+        const writeData = ebutils.writeToFreespace(sprite.data, this.context);
 
-        if(sprite.data.length > (0xffff - this.constructor.currentExpandedIndex)) {
-            debugger;
-            this.constructor.expandedBank += 1;
-            this.constructor.currentExpandedIndex = 0;
-        }
-
-        const addressToSet = (this.constructor.expandedBank << 16) + this.constructor.currentExpandedIndex;
-        this.context.rom.set(sprite.data, addressToSet);
-        this.data.bank = this.constructor.expandedBank | 0xc0;
+        this.data.bank = writeData.snesBank;
         this.data.palette = sprite.palette || this.data.palette;
-        this.data.sprites_cardinal = sprite.indexes.slice(0, 8).map(i => i + this.constructor.currentExpandedIndex);
-        this.data.sprites_diagonal = sprite.indexes.slice(8).map(i => i + this.constructor.currentExpandedIndex);
-        this.constructor.currentExpandedIndex += sprite.data.length;
+        this.data.sprites_cardinal = sprite.indexes.slice(0, 8).map(i => i + writeData.bankAddress);
+        this.data.sprites_diagonal = sprite.indexes.slice(8).map(i => i + writeData.bankAddress);
     }
 
 
