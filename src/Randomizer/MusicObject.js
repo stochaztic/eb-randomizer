@@ -9,7 +9,7 @@ import EnemyObject from './EnemyObject.js';
 
 class MusicObject extends TableObject {
 
-    static ancientCaveCustomSongCount = 6;
+    static ancientCaveCustomSongCount = 8;
 
     static serialize() {
         // TODO

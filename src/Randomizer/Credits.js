@@ -44,7 +44,7 @@ class Credits extends ReadWriteObject {
         }
 
         let ancientCaveMusic = [];
-        if(this.context.specs.flags.a) {
+        if(this.context.specs.flags.a && this.context.specs.flags.w >= 2) {
             ancientCaveMusic = [
                 ...space(6),
                 ...bigText("ANCIENT CAVE MUSIC"), // Condensed
