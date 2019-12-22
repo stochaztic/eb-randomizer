@@ -5,26 +5,151 @@ export const customSongs = [
     {
         title: "Bonetrousle",
         artist: "Cover by D-Man",
-        instruments: [0x05, 0x54], 
+        instruments: [0x05, 0x54],
         isOverworld: true,
         isBattle: true,
         isBoss: true,
+    },
+    {
+        title: "Battle Against a Funky Foe",
+        artist: "D-Man",
+        instruments: [0x05, 0x4a],
+    },
+    {
+        title: "Song 51",
+        artist: "D-Man",
+        instruments: [0x05, 0x5c],
+    },
+    {
+        title: "Song 48",
+        artist: "D-Man",
+        instruments: [0x05, 0x59],
+    },
+    {
+        title: "Song 47",
+        artist: "D-Man",
+        instruments: [0x05, 0x18],
+    },
+    {
+        title: "Song 40",
+        artist: "D-Man",
+        instruments: [0x05, 0x21],
+    },
+    {
+        title: "Song 39",
+        artist: "D-Man",
+        instruments: [0x05, 0x21],
     },
     {
         title: "Song 38",
         artist: "D-Man",
-        instruments: [0x05, 0x7c], 
+        instruments: [0x05, 0x7c],
         isOverworld: true,
         isBattle: true,
         isBoss: true,
     },
     {
+        title: "Town6",
+        artist: "D-Man",
+        instruments: [0x05, 0x21],
+    },
+    {
+        title: "Song 36",
+        artist: "D-Man",
+        instruments: [0x05, 0x40],
+    },
+    {
+        title: "Song 35",
+        artist: "D-Man",
+        instruments: [0x05, 0x2f],
+    },
+    {
+        title: "Song 34",
+        artist: "D-Man",
+        instruments: [0x05, 0x18],
+    },
+    {
+        title: "Song 33",
+        artist: "D-Man",
+        instruments: [0x05, 0x18],
+    },
+    {
+        title: "Song 32",
+        artist: "D-Man",
+        instruments: [0x05, 0x18],
+    },
+    {
+        title: "Song 31",
+        artist: "D-Man",
+        instruments: [0x05, 0x08],
+    },
+    {
+        title: "Song 27",
+        artist: "D-Man",
+        instruments: [0x05, 0x40],
+    },
+    {
+        title: "Song 26",
+        artist: "D-Man",
+        instruments: [0x05, 0x34],
+    },
+    {
+        title: "Town6",
+        artist: "D-Man",
+        instruments: [0x05, 0x2F],
+    },
+    {
+        title: "Song 24",
+        artist: "D-Man",
+        instruments: [0x05, 0x54],
+    },
+    {
+        title: "Song 22",
+        artist: "D-Man",
+        instruments: [0x05, 0x40],
+    },
+    {
+        title: "Dark Bowser",
+        artist: "Cover by D-Man",
+        instruments: [0x05, 0x40],
+    },
+    {
+        title: "Song 21",
+        artist: "D-Man",
+        instruments: [0x05, 0x34],
+    },
+    {
         title: "Song 20",
         artist: "D-Man",
-        instruments: [0x05, 0x34], 
+        instruments: [0x05, 0x34],
         isOverworld: true,
         isBattle: false,
         isBoss: false,
+    },
+    {
+        title: "Song 19",
+        artist: "D-Man",
+        instruments: [0x05, 0x40],
+    },
+    {
+        title: "Home Guitar Version",
+        artist: "Cover by D-Man",
+        instruments: [0x05, 0x34],
+    },
+    {
+        title: "Home Music Box Version",
+        artist: "Cover by D-Man",
+        instruments: [0x05, 0x18],
+    },
+    {
+        title: "Town4",
+        artist: "D-Man",
+        instruments: [0x05, 0x18],
+    },
+    {
+        title: "Town4s Night",
+        artist: "D-Man",
+        instruments: [0x05, 0x18],
     },
 ];
 
