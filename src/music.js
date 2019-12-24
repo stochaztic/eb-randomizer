@@ -151,6 +151,134 @@ export const customSongs = [
         artist: "D-Man",
         instruments: [0x05, 0x18],
     },
+    {
+        title: "A House Theme",
+        artist: "vince94",
+        instruments: [0x05, 0xa7],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: false,
+    },
+    {
+        title: "Bacon Flavored",
+        artist: "Cover by vince94",
+        instruments: [0x05, 0x40],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: false,
+    },
+    {
+        title: "Battle with a Dangerous Foe",
+        artist: "vince94",
+        instruments: [0x05, 0x54],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: true,
+    },
+    {
+        title: "Battle with a Flippant Foe",
+        artist: "vince94",
+        instruments: [0x05, 0x76],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: true,
+    },
+    {
+        title: "Brinstar Red Soil",
+        artist: "Cover by vince94",
+        instruments: [0x05, 0x32],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: true,
+    },
+    {
+        title: "Beginning",
+        artist: "Cover by vince94",
+        instruments: [0x05, 0x32],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: false,
+    },
+    {
+        title: "Susie",
+        artist: "Cover by vince94",
+        instruments: [0x05, 0x32],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: true,
+    },
+    {
+        title: "Friendliness",
+        artist: "Cover by vince94",
+        instruments: [0x05, 0x08],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: false,
+    },
+    {
+        title: "Megalovania",
+        artist: "Cover by vince94",
+        instruments: [0x05, 0x7c],
+        isOverworld: false,
+        isBattle: true,
+        isBoss: true,
+    },
+    {
+        title: "Moonsong",
+        artist: "Cover by vince94",
+        instruments: [0x05, 0x23],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: false,
+    },
+    {
+        title: "Ruins",
+        artist: "Cover by vince94",
+        instruments: [0x05, 0x15],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: false,
+    },
+    {
+        title: "Summers Plaza",
+        artist: "Cover by vince94",
+        instruments: [0x05, 0x08],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: false,
+    },
+    {
+        title: "The Battle of Lil Slugger",
+        artist: "Cover by vince94",
+        instruments: [0x05, 0x7A],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: true,
+    },
+    {
+        title: "The High Sign",
+        artist: "vince94",
+        instruments: [0x05, 0x08],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: true,
+    },
+    {
+        title: "Time Trax Music 02",
+        artist: "Cover by vince94",
+        instruments: [0x05, 0x7C],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: true,
+    },
+    {
+        title: "Casino Night Zone",
+        artist: "Cover by vince94",
+        instruments: [0x05, 0x08],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: false,
+    },
 ];
 
 export async function prepareCustomSongIndex(index) {
@@ -163,6 +291,9 @@ export async function prepareCustomSongIndex(index) {
 
 export async function prepareCustomSong(song) {
     let url = urls[`./music/${song.filename || song.title.replace(/ /g, '_')}.ebm`];
+    if(!url) {
+        url = urls[`./music/${song.title}.ebm`];
+    }
     if(!url) {
         throw new Error(`Could not find music ebm file for ${song.title}.`);
     }

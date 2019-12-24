@@ -69,6 +69,8 @@ There is a discussion channel for this randomizer at the [EarthBound Speedrunnin
 
 Custom sprite contributions by: stochaztic, Artheau, Quatropus, the salvation phoenix, Zephram, Aurilliux, Mouser, TheKubliest, Bacon, Zephram, and EBrent.
 
+Custom music contributions by: D-Man and vince94.
+
 This randomizer thanks greatly the Starmen.Net, PK Hack, and EarthBound Speedrunning communities for their contributions to making it possible, as well as the two predecessor EarthBound randomizers that very much inspired this project.
 
 This version of the EarthBound Randomizer was originally based on and ported from [Bizarre Dimension](https://github.com/abyssonym/bizarre_dimension), created by Abyssonym; you can find him at [Twitter](https://www.twitter.com/abyssonym) or [his website](http://www.abyssonym.com/).
