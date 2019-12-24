@@ -1,5 +1,5 @@
 # Changelog
-## v43.x / v44 (In progress)
+## v44 (2019-12-24)
 - Backgrounds: New flag level 2, color-shift backgrounds. Additionally, very eye-straining backgrounds should be less common at all flag levels.
 - Game improvement patches: "Run button" changed to "Run mode"; default run speed and hold Y to slow to a walk.
 - PC sprites: Added Nessa.
