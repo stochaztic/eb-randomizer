@@ -171,7 +171,6 @@ const ebutils = {
             this.currentExpandedIndex += 1;
         }
         if(data.length > (0xffff - this.currentExpandedIndex)) {
-            console.log("Bank increase");
             this.expandedBank += 1;
             this.currentExpandedIndex = 0;
         }
@@ -189,7 +188,6 @@ const ebutils = {
             snesAddress: 0xc00000 | addressToSet,
         }
 
-        console.log(`Wrote to ${obj.snesAddress.toString(0x10)}`);
         this.currentExpandedIndex += data.length;
         return obj;
     },
