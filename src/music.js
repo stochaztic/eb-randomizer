@@ -56,11 +56,6 @@ export const customSongs = [
         instruments: [0x05, 0x40],
     },
     {
-        title: "Song 35",
-        artist: "D-Man",
-        instruments: [0x05, 0x2f],
-    },
-    {
         title: "Song 34",
         artist: "D-Man",
         instruments: [0x05, 0x18],

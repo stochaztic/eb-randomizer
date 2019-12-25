@@ -9,6 +9,7 @@ import EnemyObject from './EnemyObject.js';
 
 class MusicObject extends TableObject {
 
+	static testSong = undefined;
     static ancientCaveCustomSongCount = 8;
 
     static serialize() {
@@ -20,7 +21,10 @@ class MusicObject extends TableObject {
 
         const arr = this.context.random.sample(Array.from(MusicObject.overworldMusics), 9);
 
-        if(this.context.specs.flags.w >= 3) {
+		if(this.testSong !== undefined) {
+			arr[0] = this.insertSong(0);
+		}
+        else if(this.context.specs.flags.w >= 3) {
             const entriesToReplace = this.context.random.sample(utils.range(arr.length), this.ancientCaveCustomSongCount);
             entriesToReplace.forEach((entry, i) => {
                 arr[entry] = this.insertSong(i);
@@ -38,7 +42,11 @@ class MusicObject extends TableObject {
                 const newSong = await prepareCustomSong(song);
                 this.preparedSongs.push(newSong);
             }
-        }
+		}
+		if(this.testSong !== undefined) {
+			const newSong = await prepareCustomSong(customSongs.find(s => s.title === this.testSong));
+			this.preparedSongs.unshift(newSong);
+		}
     }
     
     static get overworldMusics() {
