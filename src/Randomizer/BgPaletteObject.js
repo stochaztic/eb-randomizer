@@ -19,6 +19,7 @@ class BgPaletteObject extends TableObject {
         if(this.context.specs.flags.b >= 2) { // Color-shift all palettes
             const hueAdjustment = this.context.random.randint(0, 359);
             this.data.color = ebutils.rotateEbPalette(this.data.color, hueAdjustment);
+            this.data.color[0] = this.oldData.color[0];
         }
     }
 }
