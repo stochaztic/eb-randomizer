@@ -547,9 +547,9 @@ export async function prepareCustomSongIndex(index) {
 }
 
 export async function prepareCustomSong(song) {
-    let url = urls[`./music/${song.filename || song.title.replace(/ /g, '_')}.ebm`];
+    let url = urls[`./music/${song.filename || song.title.replace(/ /g, '_')}.ebm.bin`];
     if(!url) {
-        url = urls[`./music/${song.title}.ebm`];
+        url = urls[`./music/${song.title}.ebm.bin`];
     }
     if(!url) {
         throw new Error(`Could not find music ebm file for ${song.title}.`);
