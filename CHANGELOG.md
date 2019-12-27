@@ -1,6 +1,6 @@
 # Changelog
 ## v44.x / v45 (In progress)
-- Music: Some tracks removed.
+- Music: Some tracks removed, some tracks added.
 ### Bugfixes
 - Backgrounds: Fix strange background effects.
 - Music: Fixed w3+ bug on Firefox.

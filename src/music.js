@@ -536,6 +536,14 @@ export const customSongs = [
         isBattle: true,
         isBoss: false,
     },
+    {
+        title: "Welcome Booster",
+        artist: "Cover by Aurilliux",
+        instruments: [0x05, 0x36],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: false,
+    },
 ];
 
 export async function prepareCustomSongIndex(index) {
