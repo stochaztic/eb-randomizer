@@ -544,6 +544,22 @@ export const customSongs = [
         isBattle: true,
         isBoss: false,
     },
+    {
+        title: "Human Music",
+        artist: "Cover by Aurilliux",
+        instruments: [0x05, 0x2A],
+        isOverworld: false,
+        isBattle: true,
+        isBoss: false,
+    },
+    {
+        title: "Pursuit Cornered",
+        artist: "Cover by Aurilliux",
+        instruments: [0x05, 0x54],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: true,
+    },
 ];
 
 export async function prepareCustomSongIndex(index) {
