@@ -2,8 +2,8 @@ import RandomTools from 'randomtools-js';
 
 import AncientCave from './AncientCave.js';
 import BattleEntryObject from './BattleEntryObject.js';
-import BgDataObect from './BgDataObject.js';
-import BgPaletteObect from './BgPaletteObject.js';
+import BgDataObject from './BgDataObject.js';
+import BgPaletteObject from './BgPaletteObject.js';
 import Credits from './Credits.js';
 import Dialog from './Dialog.js';
 import EnemyObject from './EnemyObject.js';
@@ -58,8 +58,8 @@ export async function execute(romfile, specs, hooks) {
   const readWriteObjects = [
     AncientCave,
     BattleEntryObject,
-    BgDataObect,
-    BgPaletteObect,
+    BgDataObject,
+    BgPaletteObject,
     Credits,
     Dialog,
     EnemyObject,
@@ -94,6 +94,7 @@ export async function execute(romfile, specs, hooks) {
 
   AncientCave.afterOrder = [PsiTeleportObject];
   BattleEntryObject.afterOrder = [EnemyObject];
+  BgPaletteObject.afterOrder = [BgDataObject];
   Credits.afterOrder = [AncientCave];
   Dialog.afterOrder = [PsiTeleportObject];
   EnemyPlaceObject.afterOrder = [BattleEntryObject];
