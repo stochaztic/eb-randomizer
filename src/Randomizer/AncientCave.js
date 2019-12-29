@@ -592,8 +592,13 @@ class AncientCave extends ReadWriteObject {
 
         // Giygas - flags necessary to be set upon entering for battle to function
         let script = Script.getByPointer(0x9af3a);
-        script.lines[0] = [0x04, 0x74, 0x01];
-        script.writeScript();
+        script.lines = [
+            [0x04, 0x74, 0x01],
+            ebutils.ccodeCallAddress(0xc9b12e), // Tony character naming
+            script.lines[1],
+            script.lines[2],
+        ];
+        script.writeScript(true);
 
         // Belch - confirm fight if no Fly Honey
         let tpt = TPTObject.get(697);
