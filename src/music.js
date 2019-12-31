@@ -139,14 +139,6 @@ export const customSongs = [
         instruments: [0x05, 0x18],
     },
     {
-        title: "A House Theme",
-        artist: "vince94",
-        instruments: [0x05, 0xa7],
-        isOverworld: true,
-        isBattle: true,
-        isBoss: false,
-    },
-    {
         title: "Bacon Flavored",
         artist: "Cover by vince94",
         instruments: [0x05, 0x40],
@@ -262,14 +254,6 @@ export const customSongs = [
         title: "Casino Night Zone",
         artist: "Cover by vince94",
         instruments: [0x05, 0x08],
-        isOverworld: true,
-        isBattle: true,
-        isBoss: false,
-    },
-    {
-        title: "Not Alike",
-        artist: "Cover by Ari3s",
-        instruments: [0x05, 0x15],
         isOverworld: true,
         isBattle: true,
         isBoss: false,
@@ -470,7 +454,7 @@ export const customSongs = [
     {
         title: "Johnny B Goode",
         artist: "Triple-Q",
-        instruments: [0x05, 0x6E],
+        instruments: [0x05, 0x74],
         isOverworld: false,
         isBattle: true,
         isBoss: true,
