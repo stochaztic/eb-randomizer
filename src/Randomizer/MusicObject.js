@@ -55,6 +55,7 @@ class MusicObject extends TableObject {
         if(this.context.specs.flags.w >= 4) {
             EnemyObject.every.forEach(e => this._overworldMusics.add(e.oldData.music));
         }
+        this._overworldMusics.delete(0);
         return this.overworldMusics;
     }
 
@@ -62,6 +63,7 @@ class MusicObject extends TableObject {
         if(this._battleMusics !== undefined) return this._battleMusics;
         if(this.context.specs.flags.w >= 4) return this.overworldMusics;
         this._battleMusics = new Set(EnemyObject.every.map(e => e.oldData.music));
+		this._overworldMusics.delete(0);
         return this.battleMusics;
     }
 
