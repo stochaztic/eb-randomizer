@@ -12,8 +12,14 @@ class MusicObject extends TableObject {
 	static testSong = undefined;
     static ancientCaveCustomSongCount = 8;
 
+
     static serialize() {
-        // TODO
+        if(this._ancientCaveMusics === undefined) {
+			return {};
+		}
+        return this.ancientCaveMusics.map((x, i) => {
+            return {floor: i+1, info: this.songInfo(x)};
+        });
     }
 
     static get ancientCaveMusics() {
@@ -63,7 +69,7 @@ class MusicObject extends TableObject {
         if(this._battleMusics !== undefined) return this._battleMusics;
         if(this.context.specs.flags.w >= 4) return this.overworldMusics;
         this._battleMusics = new Set(EnemyObject.every.map(e => e.oldData.music));
-		this._overworldMusics.delete(0);
+		this._battleMusics.delete(0);
         return this.battleMusics;
     }
 
