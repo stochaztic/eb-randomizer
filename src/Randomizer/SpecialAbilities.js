@@ -6,6 +6,17 @@ class SpecialAbilities extends ReadWriteObject {
     static shouldRandomize() {
         return this.context.specs.flags.c >= 2;
     }
+
+    static serialize() {
+        const returnValue = {};
+        if(!this.shuffledAbilities) {
+            return returnValue;
+        }
+        this.characters.forEach((character, i) => {
+            returnValue[character.name] = this.shuffledAbilities[i].name;
+        });
+        return returnValue;
+    }
     
     static shuffleAll() {
         // Patch battle action parser

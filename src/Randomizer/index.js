@@ -166,7 +166,9 @@ export async function execute(romfile, specs, hooks) {
       spoiler = {
         specs: specs,
         timestamp: Date.now(),
-        chests: MapSpriteObject.every.filter(m => m.isChest).map(o => o.serialize())
+        specialAbilities: SpecialAbilities.serialize(),
+        music: MusicObject.serialize(),
+        chests: MapSpriteObject.every.filter(m => m.isChest).map(o => o.serialize()),
       };
       if(specs.flags.k) {
         spoiler.keysanity = PsiTeleportObject.serialize();

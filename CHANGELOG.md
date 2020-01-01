@@ -2,6 +2,7 @@
 ## v44.x / v45 (In progress)
 - Ancient Cave: If you arrive at Giygas room without having named the player, the name the player dialogue will occur.
 - Music: Some tracks removed, some tracks added.
+- Spoiler: Special Abilities and Music per floor for Ancient Cave added.
 ### Bugfixes
 - Backgrounds: Fix strange background effects.
 - Music: Fixed w3+ bug on Firefox.
