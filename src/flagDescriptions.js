@@ -106,7 +106,7 @@ const flagDescriptions = {
             4: "Discard Button - Press the R Button while on the overworld to discard the last item received from an item box, NPC, or battle.",
             8: "Short Giygas Prayers - The cutscenes during the Giygas battle are shortened.",
             16: "Goods Menu Equip - If you 'Use' an item in the Goods menu, it will equip if possible.",
-            32: "Skip Naming - You will skip naming the characters, but will see the name overview screen and can change them if you wish.",
+            32: "Skip Naming - Characters will automatically get random Don't Care names, but can change them if you wish.",
         }
     },
     w: {

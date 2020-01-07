@@ -42,7 +42,8 @@ class DontCareNamesObject extends ReadWriteObject {
     static fullCleanup() {
         super.fullCleanup();
         if(this.context.specs.flags.u.skipNaming) {
-            const bytes = [0x48, 0x08, 0xe2, 0x20];
+            const bytes = [0xA9, 0x02, 0x00, 0x22, 0xBD, 0xFB, 0xC4]; // bytes we are overwriting and need to replace
+            bytes.push(0x48, 0x08, 0xe2, 0x20);
             this.types.forEach(type => {
                 const chosen = this.context.random.choice(this.every.filter(x => x.type === type));
                 bytes.push(...chosen.writeToMemory(type.memoryAddress));
@@ -50,7 +51,7 @@ class DontCareNamesObject extends ReadWriteObject {
             bytes.push(0x28, 0x68, 0x5c, 0xc0, 0xfa, 0xc1);
             const patch = ebutils.writeToFreespace(bytes, this.context);
 
-            this.context.rom.set([0x5c, ...ebutils.ccodeAddress(patch.snesAddress)], 0x1faae);
+            this.context.rom.set([0x20, 0x8E, 0x00, 0x5c, ...ebutils.ccodeAddress(patch.snesAddress).slice(0,3)], 0x1F8FB);
         }
     }
 }
