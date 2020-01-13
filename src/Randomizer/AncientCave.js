@@ -192,7 +192,10 @@ class AncientCave extends ReadWriteObject {
 
         const healthFn = c => c.unassignedExits.length - 2;
         const sum = (a,b) => a+b;
-        const safe = c => !c.hasBattleTrigger;
+        let safe = c => !c.hasBattleTrigger;
+        if(this.context.specs.flags.rlb) {
+            safe = c => !c.hasBattleTrigger && !c.isRootStem && !c.isRootLeaf;
+        }
 
         tempCheckpoints.forEach((tc, i) => {
             const num = numPerSegment[i];
@@ -329,6 +332,9 @@ class AncientCave extends ReadWriteObject {
             if(!chosen) {
                 chosen = this.context.random.choice(totalUnassignedExits);
             }
+            if(Array.isArray(chosen)) {
+                chosen = this.context.random.choice(chosen.filter(c => totalUnassignedExits.includes(c)));
+            }
             Cluster.assignExitPair(x, chosen);
             totalUnassignedExits.splice(totalUnassignedExits.indexOf(chosen), 1);
             x.caveLevel = chosen.caveLevel;
@@ -337,7 +343,11 @@ class AncientCave extends ReadWriteObject {
         const normalAssign = s => { assign(s, null) };
 
         // Assign any unassigned rootStems
-        toAssign.filter(c => c.isRootStem).forEach(normalAssign);
+        let rootStemAssignPool = null;
+        if(this.context.specs.flags.rlb) {
+            rootStemAssignPool = totalUnassignedExits.filter(c => c.caveLevel !== 1);
+        }
+        toAssign.filter(c => c.isRootStem).forEach(c => assign(c, rootStemAssignPool));
 
         // Assign rootLeaves to be somewhat, but not very, far away from their stems
         toAssign.filter(c => c.isRootLeaf).forEach(s => {
@@ -347,7 +357,11 @@ class AncientCave extends ReadWriteObject {
             const d4 = totalUnassignedExits.filter(x => x.caveLevel === (stemLevel + 4) || x.caveLevel === (stemLevel - 4));
             const d3 = totalUnassignedExits.filter(x => x.caveLevel === (stemLevel + 3) || x.caveLevel === (stemLevel - 3));
             const d2 = totalUnassignedExits.filter(x => x.caveLevel === (stemLevel + 2) || x.caveLevel === (stemLevel - 2));
-            const exitPool = [...d3, ...d3, ...d3, ...d2, ...d2, ...d4, ...d4, ...d5];
+            let exitPool = [...d3, ...d3, ...d3, ...d2, ...d2, ...d4, ...d4, ...d5];
+            
+            if(this.context.specs.flags.rlb) {
+                exitPool = exitPool.filter(x => x.caveLevel !== 1);
+            }
             const chosen = this.context.random.choice(exitPool);
             assign(s, chosen);
         });
@@ -407,6 +421,15 @@ class AncientCave extends ReadWriteObject {
         // Sanitize cave events before custom events for doors are created
         this.sanitizeCaveEvents();
         this.context.hooks.message("Finalizing cave...");
+
+        // If rlb flag set, confirm no rootStems or rootLeaves on floor 1
+        if(this.context.specs.flags.rlb) {
+            Cluster.rankedClusters.filter(clu => clu.caveLevel === 1).forEach(clu => {
+                if(clu.isRootLeaf || clu.isRootStem) {
+                    throw new Error(`Cluster ${clu.index} firstCell 0x${clu.firstCell.toString(0x10)} on floor 1 is elevator`);
+                }
+            });
+        }
 
         // Set custom events for every exit, setting floor flags and then calling original event
         MapEventObject.every.forEach(me => {

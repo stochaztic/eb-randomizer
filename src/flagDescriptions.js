@@ -179,6 +179,15 @@ const flagDescriptions = {
             1: "Ness's room connected to Giygas.",
         }
     },
+    rlb: {
+        title: "RPG Limit Break mode",
+        max: 1,
+        default: 0,
+        desc: {
+            0: "Disabled.",
+            1: "Special setting for RPG Limit Break: No skips on first floor.",
+        }
+    },
 }
 
 export default flagDescriptions;

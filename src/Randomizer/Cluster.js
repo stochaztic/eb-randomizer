@@ -353,7 +353,7 @@ class Cluster {
     }
 
     get isRootStem() {
-        return this.rootLeaves && this.rootLeaves.length > 0;
+        return this.rootLeaves !== undefined && this.rootLeaves.length > 0;
     }
 
     get isRootLeaf() {
