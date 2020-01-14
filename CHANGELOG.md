@@ -8,7 +8,7 @@
 ### Bugfixes
 - Backgrounds: Fix strange background effects.
 - Music: Fixed w3+ bug on Firefox.
-- Music: Removed empty track.
+- Music: Removed empty track and non-music track.
 
 ## v44 (2019-12-24)
 - Backgrounds: New flag level 2, color-shift backgrounds. Additionally, very eye-straining backgrounds should be less common at all flag levels.
