@@ -448,6 +448,7 @@ class AncientCave extends ReadWriteObject {
                 var newLines = undefined;
                 const script = me.newEvent.script;
                 if(script) {
+                    script.removeVolumeChanges();
                     newLines = [
                         ...flagChanges,
                         ...script.lines,
@@ -809,6 +810,7 @@ class AncientCave extends ReadWriteObject {
             script.removeStatusEffectsOff();
             script.removeTeleports();
             script.removePartyChanges();
+            script.removeVolumeChanges();
             script.fixHotels();
         });
 

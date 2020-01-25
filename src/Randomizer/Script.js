@@ -228,6 +228,19 @@ class Script {
         this.removeInstructions(keys, []);
         this._removedParty = true;
     }
+
+    removeVolumeChanges() {
+        if(this._removedVolume) return;
+        const keys = [
+            [0x1f, 0x07],
+        ];
+        const exceptions = [
+            [0x1f, 0x07, 0x02], // Dead cutoff
+            [0x1f, 0x07, 0x03], // Fadeout
+        ];
+        this.removeInstructions(keys, exceptions);
+        this._removedVolume = true;
+    }
     
     fixHotels() {
         if(this._fixedHotels) return;
@@ -241,12 +254,15 @@ class Script {
         this._fixedHotels = true;
     }
 
-    removeInstructions(keys, exceptions = [], subscripts = true) {
+    removeInstructions(keys, exceptions = [], subscripts = true, debug = false) {
         const removal = function(s, keys, exceptions) {
             const newlines = [];
             s.lines.forEach(line => {
                 if(keys.some(key => arrEq(key, line.slice(0,key.length))) &&
                 !exceptions.some(key => arrEq(key, line.slice(0,key.length)))) {
+                    if(debug) {
+                        console.log(`Removed from ${s.pointer.toString(0x10)}: ${line.map(i => ("00" + i.toString(16)).slice(-2)).join(" ")}`)
+                    }
                     return;
                 }
                 newlines.push(line);

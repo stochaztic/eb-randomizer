@@ -6,6 +6,7 @@
 - Music: Some tracks removed, some tracks added.
 - Spoiler: Special Abilities and Music per floor for Ancient Cave added.
 ### Bugfixes
+- Ancient Cave: Music won't change volume between doors.
 - Backgrounds: Fix strange background effects.
 - Music: Fixed w3+ bug on Firefox.
 - Music: Removed empty track and non-music track.
