@@ -534,6 +534,14 @@ export const customSongs = [
         isBattle: true,
         isBoss: true,
     },
+    {
+        title: "Tetrinet",
+        artist: "Cover by Aurilliux",
+        instruments: [0x05, 0x40],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: true,
+    },
 ];
 
 export async function prepareCustomSongIndex(index) {
