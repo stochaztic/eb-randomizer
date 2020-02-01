@@ -5,10 +5,12 @@ Not all of this information is vital, but the most important information is at t
 ## Cave Layout
 
 * The **most important** thing to understand is the layout of the cave. Every “cluster” in the game (clusters explained soon) has been connected into a giant maze, divided into 9 different floors. There is a Shiny Spot at the end of each of the first 8 floors, and Giygas is at the end of the 9th floor. The goal of the game is to walk to Giygas and beat him, powering up along the way.
-  * A “cluster” is a group of doors that can be accessed from each other **normally**, without taking any special action. If an NPC or an obstacle is blocking your path, **getting around them is a “skip”. No skips are ever required to beat the game. Skips will likely take you to a different floor.** For instance, a skip could take you from the 4th floor to the 9th floor, or back to the 1st floor. **Also, game events that move you between rooms are skips.**
+  * A “cluster” is a group of doors that can be accessed from each other **normally**, without taking any special action. If an NPC or an obstacle is blocking your path, **getting around them is an “elevator” or a “skip”. No skips are ever required to beat the game. Skips will take you to a different floor.** For instance, a skip could take you from the 4th floor to the 9th floor, or back to the 1st floor. **Also, game events that move you between rooms are skips.**
   * If you do not take a skip, the **only** connection between floors is at the Shiny Spot. So, once you pass the 1st Shiny Spot, every cluster you enter will be a 2nd-floor cluster until you take a skip or find the 2nd Shiny Spot. If you don’t need to backtrack, you can forget all unexplored doors behind you when you pass a Shiny Spot.
   * Examples of skips: giving Monkey Cave items, moving the theater attendants, beating Master Belch, buying the Onett cliffside house. Check the list on the website for more. Scripted enemies in the middles of rooms, like the Sentry Robots, are *not* skips. Some skips are one-way so you will not be able to return without dying or reloading save.
+  * Skips will take you a minimum of two floors away, and a maximum of five (i.e. Floor 1 to Floor 6).
   * For a first-time run at the Ancient Cave, I *highly recommend* avoiding all skips, to get a feel for the game. However, to get the best possible times, taking skips smartly is one of the best strategies.
+  * With default settings, each floor has its own overworld music that is consistent throughout the floor.
 
 * As an example of how Clusters work: Onett is divided into a large number of different clusters, especially because the police barricades are up.
   * Onett Cluster list:
@@ -24,7 +26,7 @@ Not all of this information is vital, but the most important information is at t
   * There are three ways to determine what floor you are on:
     * The Shiny Spot text says “This is the Xth Your Sanctuary location,” where X is the floor that that shiny spot is the last cluster of. The Shiny Spot rooms always go the “correct way”, so through the door being guarded by the shiny spot is forward, and the other way is backward.
     * The 6 Hint Men will tell you what floor you are on, as well as the vanilla names of the 8 chosen Shiny Spot bosses.
-    * You can guess what floor you are on by the difficulty of the enemies and the value of the gift boxes.
+    * You can guess what floor you are on by the music you hear, the difficulty of the enemies, and the value of the gift boxes.
   * Most notably, all three of the doors in each of the Monkey Cave trading rooms are their own cluster; since there are many of these rooms, this is where the largest number of skips are found.
   * Enemy scripted battles in the middle of the room, like Mini Barf or Sentry Robots, **do not** break the room up into different clusters, so beating them may be required. Again, **these are not skips.**
 
@@ -32,9 +34,8 @@ Not all of this information is vital, but the most important information is at t
   * There are other full heals beyond these. One notable one is at the exit of the Pyramid in Southern Scaraba--this one is repeatable in AC because Poo does not leave your party. Also, Ness’s mom in Onett has her free hotel functionality, and Ness's mom in Magicant is a full heal.
   * Staying in hotels will keep you in the hotel lobby, not move you to another room.
 
-* All one-way doors, like holes, are disabled.
-  * The exception is holes in the Electro Specter room and the Thunder & Storm room, because these rooms are required to progress through the maze. These holes have been manually reworked to turn them into doors. They may be a bit confusing at first, but they are basically normal 2-door clusters where one of the doors is slightly separated.
-  * The “front door” to Dungeon Man is technically a one-way door, so it is disabled. Entering Dungeon Man is a special event that is a skip.
+* All doors that appear to be one-way, such as holes, are actually two-way.
+  * The “front door” to Dungeon Man from the inside works like a normal door, but “Entering Dungeon Man” using the key from South Scaraba is a one-way skip. You will not be able to get back to South Scaraba if you enter him.
 
 * The Exit Mouse lets you mark a spot you are standing on, then return to the most recently marked spot automatically. You can mark any number of times, but only the most recent will be saved; and actually returning uses up the Exit Mouse. This is useful to easily get back to Full Heals, Shops you can't afford, or to get out of one-way skips. If you don't mark anywhere, it will return you to Ness's Room.
 
@@ -54,22 +55,22 @@ Not all of this information is vital, but the most important information is at t
   * **Third,** the remaining empty chests are filled with non-equipment items of gradually increasing value.
   * As a result, you are highly likely to find a decent array of very good pendants, as up to 3 of each of Sea and Star Pendants may appear in chests.
   * Also as a result, either 0, 1, or 2 Franklin Badges may appear in chests. Paula’s Shack may or may not appear in the maze as well, which means in any seed you may have as many as 3 or as few as 0 Franklin Badges available.
-  * An Auto-Starmaster is a one-use device that teaches Poo Starstorm Alpha. If you use a second Auto-Starmaster, he learns Starstorm Omega.
+  * An Auto-Starmaster is a one-use device that teaches Poo Starstorm Alpha. If you use a second Auto-Starmaster, he learns Starstorm Omega. You have to "Use" the Auto-Starmaster for it to work; it does nothing sitting in your inventory.
 
 * Enemy stats are (potentially) both randomized and intershuffled.
   * This means that the Runaway Dog may have, for example, the Spiteful Crow’s speed + 4%.
   * Because of this, the Caterpillars may or may not have a big XP prize compared to their power; the XP prize may have been given to someone else instead.
   * One thing I have noticed often is that Foppies and Fobbies seem to regularly get much better stats due to the intershuffling than people expect at first. Don’t take them lightly.
-  * Enemy shields and weaknesses can be changed, but will *usually* be the same as normal. Just be aware it is always a possibility. Pokey has gotten a reflective psychic shield before.
+  * Enemy shields, weaknesses, and explode-on-death status can be changed, but will *usually* be the same as normal. Just be aware it is always a possibility. Pokey has gotten a reflective psychic shield before.
 
 ## Miscellaneous things you might not expect
 
   * A large number of special storyline events that break the game (entering Sky Runner, Onett cop fights) have been disabled. However, some may still exist. You go trying to trigger storyline events at your own peril.
-  * Don’t forget the run button!
+  * If you have trouble getting into tight spaces, hold the Y Button to move at normal walking speed.
   * The Pyramid doors are open, and that door is part of the North Scaraba cluster.	
   * If you are in Happy Happy Village, check the free shop as there may be very good items in it. You have to have free space in Ness’s inventory for the shop to work; otherwise it will appear to work but nothing will happen.
   * Due to shop randomization, almost every shop is worth checking.
-  * MBRs may be much better or worse than you are expecting, due to randomization of both Jeff’s and enemies’ speed.
+  * Multi Bottle Rockets may be much better or worse than you are expecting, due to randomization of both Jeff’s and enemies’ speed.
   * Spawn plates are intentionally difficult to despawn, so don’t spend forever trying it if it’s giving you trouble.
   * No one can enter or leave your party, so trying to get Bubble Monkey or Flying Men won’t work.
   * The Starmaster full heal at the exit of the Pyramid will repeat itself every time you enter its trigger zone, because Poo does not leave.
