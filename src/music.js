@@ -386,14 +386,6 @@ export const customSongs = [
         isBoss: false,
     },
     {
-        title: "buy somethin tem shop",
-        artist: "Blazephlozard",
-        instruments: [0x05, 0x08],
-        isOverworld: true,
-        isBattle: false,
-        isBoss: false,
-    },
-    {
         title: "Our House",
         artist: "Blazephlozard",
         instruments: [0x05, 0x08],
@@ -531,6 +523,14 @@ export const customSongs = [
     },
     {
         title: "Tetrinet",
+        artist: "Cover by Aurilliux",
+        instruments: [0x05, 0x40],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: true,
+    },
+    {
+        title: "Kraid Lair",
         artist: "Cover by Aurilliux",
         instruments: [0x05, 0x40],
         isOverworld: true,

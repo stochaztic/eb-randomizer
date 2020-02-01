@@ -9,7 +9,7 @@ import EnemyObject from './EnemyObject.js';
 
 class MusicObject extends TableObject {
 
-	static testSong = undefined;
+	static testSong = "Kraid Lair";
     static ancientCaveCustomSongCount = 8;
 
 
