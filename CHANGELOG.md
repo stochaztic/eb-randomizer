@@ -1,6 +1,7 @@
 # Changelog
 ## v45 (2020-02-01)
 - Ancient Cave: If you arrive at Giygas room without having named the player, the name the player dialogue will occur.
+- Character stats: Add Don't Care name changes (flag c3).
 - Game improvement patches: "Skip Naming" added.
 - Music: Flag default is now w1.
 - Music: Some tracks removed, some tracks added.

@@ -20,7 +20,7 @@ class AncientCave extends ReadWriteObject {
     }
 
     static fullRandomize() {
-        this.classReseed("ancient");;
+        this.classReseed("ancient");
         this.generateCave();
         super.fullRandomize();
     }

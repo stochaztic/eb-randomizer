@@ -1,7 +1,11 @@
 import { ReadWriteObject, utils } from 'randomtools-js';
 import ebutils from './ebutils.js';
+import { battleSpriteNames, enemyAdjectives, characterNames } from './RandomNames.js';
 
 class DontCareNamesObject extends ReadWriteObject {
+    static shouldRandomize() {
+        return this.context.specs.flags.c >= 3; // Character stats
+    }
 
     static initialize(context) {
         super.initialize(context);
@@ -37,6 +41,28 @@ class DontCareNamesObject extends ReadWriteObject {
             const letterAddress = address + i;
             return [0xa9, letter, 0x8d, letterAddress % 256, Math.floor(letterAddress / 256)];
         });
+    }
+    
+    static fullRandomize() {
+        super.fullRandomize();
+
+        // Create pool of possible names from various sources. Reduce to 20% of non-character-names.
+        let pool = this.every.map(o => o.oldData.name);
+        pool = pool.concat(enemyAdjectives.filter(t => t.length <= 6));
+        pool = pool.concat(battleSpriteNames.flatMap(o => o.split(",")).filter(t => t.length <= 6));
+        pool = this.context.random.sample(pool, pool.length / 5);
+        pool = pool.concat(characterNames.filter(t => t.length <= 6));
+
+        // Get 6-sized names
+        const chosenSix = this.context.random.sample(pool, this.number * this.types.filter(x => x.maxSize === 6).length);
+        
+        // Get 5-sized names from reduced pool
+        pool = pool.filter(o => o.length <= 5 && !chosenSix.includes(o));
+        const chosenFive = this.context.random.sample(pool, this.number * this.types.filter(x => x.maxSize === 5).length);
+        
+        // Assign
+        const chosens = chosenFive.concat(chosenSix);
+        this.every.forEach((o, i) => o.data.name = chosens[i]);
     }
 
     static fullCleanup() {

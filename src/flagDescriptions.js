@@ -10,11 +10,12 @@ const flagDescriptions = {
     },
     c: {
         title: "Character stats",
-        max: 2,
+        max: 3,
         default: 2,
         desc: {
             1: "Player characters' stat increases on each level-up will be randomized.",
             2: "Player characters' special abilities (Pray, Spy, Mirror) will be shuffled, and stat increases on each level-up will be randomized. Spy and Mirror will be improved.",
+            3: "Player characters' special abilities (Pray, Spy, Mirror) will be shuffled, and stat increases on each level-up will be randomized. Spy and Mirror will be improved. Don't Care names will be changed.",
         }
     },
     d: {
