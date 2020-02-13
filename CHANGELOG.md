@@ -1,4 +1,8 @@
 # Changelog
+## v45.x / v46 (In progress)
+### Bugfixes
+- Music: Removed breaking track.
+
 ## v45 (2020-02-01)
 - Ancient Cave: If you arrive at Giygas room without having named the player, the name the player dialogue will occur.
 - Character stats: Add Don't Care name changes (flag c3).

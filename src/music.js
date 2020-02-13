@@ -410,14 +410,6 @@ export const customSongs = [
         isBoss: false,
     },
     {
-        title: "Potato Knishes",
-        artist: "Cover by vince94",
-        instruments: [0x05, 0x1B],
-        isOverworld: true,
-        isBattle: true,
-        isBoss: false,
-    },
-    {
         title: "Summers Girls",
         artist: "Blazephlozard",
         instruments: [0x05, 0x32],
