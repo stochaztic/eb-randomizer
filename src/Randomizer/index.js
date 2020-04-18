@@ -180,6 +180,7 @@ export async function execute(romfile, specs, hooks) {
       }
       if(specs.flags.a || specs.flags.devmode) {
         spoiler.clusters = Cluster.every.map(o => o.serialize(context));
+        spoiler.skips = Cluster.every.filter(o => o.isRootStem).map(o => {return { area: o.area.label, skips: `${o.caveLevel}-${o.rootLeaves.map(p => p.caveLevel).join(",")}`}});
         spoiler.bosses = MapSpriteObject.every.filter(o => ebutils.SANCTUARY_BOSS_INDEXES.includes(o.index)).map(o => o.serialize());
       }
       if(specs.flags.devmode) {
