@@ -1,5 +1,6 @@
 # Changelog
 ## v45.x / v46 (In progress)
+- Music: Adjusted default floor track list.
 ### Bugfixes
 - Music: Removed breaking track.
 
