@@ -1,5 +1,5 @@
 # Changelog
-## v45.x / v46 (In progress)
+## v46 (2020-04-19)
 - Ancient Cave: Mr. Spoon in Fourside Museum is now a skip location, requiring a Signed banana. Signed banana added to pool of skip items.
 - Ancient Cave: Pokey's Office and Pirkle's Office added.
 - Enemy stats: Weaknesses and item drop rates much more likely to be changed.
