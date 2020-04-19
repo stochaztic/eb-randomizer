@@ -1,5 +1,6 @@
 # Changelog
 ## v45.x / v46 (In progress)
+- Enemy stats: Weaknesses and item drop rates much more likely to be changed.
 - Music: Adjusted default floor track list.
 ### Bugfixes
 - Music: Removed breaking track.

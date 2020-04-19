@@ -137,6 +137,7 @@ class EnemyObject extends TableObject {
         if(this.name === "Giygas") {
             const renamedGiegue = this.constructor.every.find(o => o.oldName === this.name && o.name !== this.name);
             if(renamedGiegue) this.name = renamedGiegue.name;
+            this.data.weakness_flash = this.oldData.weakness_flash;
         }
 
         // Sanitize any duplicate-logic entries to match values that used to match across dupes.
@@ -198,6 +199,10 @@ const battlePaletteMutator = (o) => {
     return o.data.battle_palette;
 };
 
+const rangeMutator = (attr, max) => (o) => {
+    o.context.random.mutateNormal(o.data[attr], 0, max, 1); 
+}
+
 EnemyObject.mutateAttributes = {
     "hp": null,
     "pp": null,
@@ -210,15 +215,15 @@ EnemyObject.mutateAttributes = {
     "guts": null,
     "iq": null,
     "miss_rate": null,
-    "drop_frequency": null,
+    "drop_frequency": rangeMutator("drop_frequency", 7),
     "drop_item_index": ItemObject,
     "mirror_success_rate": null,
     //"max_call": null,
-    "weakness_fire": null,
-    "weakness_freeze": null,
-    "weakness_flash": null,
-    "weakness_paralysis": null,
-    "weakness_hypnosis": null,
+    "weakness_fire": rangeMutator("weakness_fire", 3),
+    "weakness_freeze": rangeMutator("weakness_freeze", 3),
+    "weakness_flash": rangeMutator("weakness_flash", 3),
+    "weakness_paralysis": rangeMutator("weakness_paralysis", 3),
+    "weakness_hypnosis": rangeMutator("weakness_hypnosis", 3),
     "battle_palette": battlePaletteMutator,
 };
 
