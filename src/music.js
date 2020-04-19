@@ -300,7 +300,7 @@ export const customSongs = [
         title: "I'll Face Myself",
         filename: "I_ll_Face_Myself",
         artist: "Cover by Ari3s",
-        instruments: [0x05, 0x6e],
+        instruments: [0x05, 0x7c],
         isOverworld: false,
         isBattle: false,
         isBoss: true,
