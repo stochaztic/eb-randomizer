@@ -417,6 +417,7 @@ Cluster.rootData = {
     "4af4": [0x4a75],                   // Tiny Ruby
     "2a4b": [0x2b4f],                   // Topolla Theater
     "39f4": [0x3976],                   // Chaos Theater
+    "294f": [0x29c4],                   // Fourside Museum
 }
 
 Cluster._displayName = "cluster";

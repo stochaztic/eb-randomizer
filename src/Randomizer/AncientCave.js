@@ -42,8 +42,8 @@ class AncientCave extends ReadWriteObject {
             banana.writeScript();
 
             // Change teleport destination in X menu
-            const teleportX = 592;
-            const teleportY = 740;
+            const teleportX = 606;
+            const teleportY = 666;
 
             const [fullX, fullY] = [teleportX * 8, teleportY * 8];
             this.context.rom.set([fullX % 256, Math.floor(fullX / 256)], 0x13049);

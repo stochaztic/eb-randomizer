@@ -178,6 +178,7 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
             0x69,   // Jar of Fly Honey
             0x7d,   // Backstage pass
             0xa6,   // King banana
+            0xb7,   // Signed banana
             0xb8,   // Pencil eraser
             0xd2,   // Eraser eraser
             0xfd,   // Carrot key
