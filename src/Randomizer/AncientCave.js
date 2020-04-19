@@ -591,6 +591,27 @@ class AncientCave extends ReadWriteObject {
             o.data['address'] = ebutils.fileToEbPointer(newScript.pointer);
         });
 
+        // Fourside museum left door - only work when new flag 0x3f3 is set;
+        // set flag upon entering from left or completing normal Fourside task.
+        // 1) New event for leading into left door
+        const eventOutOfLeftMuseum = MapEventObject.every.find(me => 
+            me.isExit && me.globalX === 0x1128 && me.globalY === 0x14c8);
+        const eventIntoLeftMuseum = eventOutOfLeftMuseum.connected;
+        const eventIntoLeftNewScript = Script.writeNewScript([
+            [0x04, 0xf3, 0x03],
+            ebutils.ccodeGotoAddress(eventIntoLeftMuseum.newEvent.data.event_call),
+        ]);
+        eventIntoLeftMuseum.newEvent.data.event_call = eventIntoLeftNewScript.snesAddress;
+        // 2) Add to event for correct signed banana use
+        const bananaUseScript = Script.getByPointer(0x8259f);
+        bananaUseScript.lines = [
+            [0x04, 0xf3, 0x03],
+            ...bananaUseScript.lines,
+        ]
+        bananaUseScript.writeScript(true);
+        // 3) Set door to only work if flag is set
+        eventOutOfLeftMuseum.newEvent.data.event_flag = 0x83f3;
+
         const deathScript = Script.getByPointer(0x7de7d);
         const newDeathScript = Script.writeNewScript([
             ...MapMusicObject.clearFloorFlags,
