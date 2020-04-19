@@ -1,5 +1,6 @@
 # Changelog
 ## v45.x / v46 (In progress)
+- Ancient Cave: Pokey's Office and Pirkle's Office added.
 - Enemy stats: Weaknesses and item drop rates much more likely to be changed.
 - Music: Adjusted default floor track list.
 ### Bugfixes

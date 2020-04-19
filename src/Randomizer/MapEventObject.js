@@ -43,17 +43,23 @@ class MapEventObject extends ZonePositionMixin(TableObject) {
         }
 
         if(other === this) {
-            if(this.event.data.event_flag !== 0x8154) {
+            // Connecting the door to itself. We do this when the door goes unused in the maze.
+            // Unless the door is a dialogue door, disable it by changing it to a non-door type.
+            if(!this.dialogueDoor) {
                 this.neighbors.forEach(x => { x.data.event_type = 5; });
             }
         }
         else {
             if(other.hasMutualFriend) {
+                // The door that we want to connect to, in the vanilla game, has a door that normally
+                // leads to it (a 'friend'). We will steal that door's event for this door.
                 const friend = other.friend;
                 friend.event.data.event_flag = 0;
                 this.neighbors.forEach(x => { x.data.event_index = friend.oldData.event_index });
             }
             else {
+                // The door that we want to connect to, in the vanilla game, has no door that normally
+                // leads to it. We will steal a door-event from the pool of donor exits and reconfigure it.
                 console.assert(Cluster.donorExits.length > 0);
                 let donor = Cluster.donorExits.pop();
                 donor = donor.friend;

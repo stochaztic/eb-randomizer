@@ -432,6 +432,7 @@ class AncientCave extends ReadWriteObject {
         }
 
         // Set custom events for every exit, setting floor flags and then calling original event
+        const badDoorScripts = [0xc9ae01];
         MapEventObject.every.forEach(me => {
             if(me.isExit && me.connected) {
                 if(me.newEvent.isScriptModified) {
@@ -446,6 +447,9 @@ class AncientCave extends ReadWriteObject {
                 });
 
                 var newLines = undefined;
+                if(badDoorScripts.includes(me.newEvent.data.event_call)) {
+                    me.newEvent.data.event_call = 0;
+                }
                 const script = me.newEvent.script;
                 if(script) {
                     script.removeVolumeChanges();
@@ -743,6 +747,9 @@ class AncientCave extends ReadWriteObject {
             ebutils.ccodeGotoAddress(0x870a4),
         ];
         heiroScript.writeScript();
+
+        // Pokey in office - never appear
+        removeTPT(865);
 
         // Pokey and pals in PRV - never appear
         removeTPT(439);
