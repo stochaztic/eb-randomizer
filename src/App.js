@@ -368,9 +368,9 @@ class App extends Component {
               <li>Any of the Monkey Cave monkeys who want items</li>
               <li>Having a theater ticket attendant move out of the way, in either direction</li>
               <li>Removing pencil, eraser, or rabbit statues</li>
-              <li>Giving the Tiny Ruby to the museum guard, or buying the Onett house</li>
+              <li>Giving the Tiny Ruby to the museum guard, giving the Signed banana to Mr. Spoon, or buying the Onett house</li>
               <li>Beating Belch in his base (which requires Fly Honey)</li>
-              <li>Entering Dungeon Man</li>
+              <li>Entering Dungeon Man - a one-way skip!</li>
               </ul>
             </div>
           }
