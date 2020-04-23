@@ -200,7 +200,7 @@ const battlePaletteMutator = (o) => {
 };
 
 const rangeMutator = (attr, max) => (o) => {
-    o.context.random.mutateNormal(o.data[attr], 0, max, 1); 
+    return o.context.random.mutateNormal(o.data[attr], 0, max, 1); 
 }
 
 EnemyObject.mutateAttributes = {
