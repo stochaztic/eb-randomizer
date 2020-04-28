@@ -174,15 +174,7 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
         })
 
         // 1) Place skip-granting items early in the cave
-        const earlyItemsIndex = [
-            0x69,   // Jar of Fly Honey
-            0x7d,   // Backstage pass
-            0xa6,   // King banana
-            0xb7,   // Signed banana
-            0xb8,   // Pencil eraser
-            0xd2,   // Eraser eraser
-            0xfd,   // Carrot key
-        ];
+        const earlyItemsIndex = ItemObject.skipItemsIndex;
 
         let earlyChests = this.unassignedChests.sort((a, b) => a.caveRank - b.caveRank);
         earlyChests = earlyChests.slice(0, Math.floor(earlyChests.length / 3 * 2));
@@ -273,6 +265,17 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
         }
         console.assert(this.tpt.data.argument === this.tpt.oldData.argument);
         this.fillWithItem(i.index);
+    }
+    
+    cleanup() {
+        if(this.context.specs.flags.z.randomDrops) {
+            if(this.isChest) {
+                // Only leave key items in non-AC mode
+                if(this.context.specs.flags.a || !this.chestContents) {
+                    this.setMoneyValue(0);
+                }
+            }
+        }
     }
 }
 

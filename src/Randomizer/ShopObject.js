@@ -55,6 +55,12 @@ class ShopObject extends TableObject {
         this.data.item_ids = chosen;
         console.assert(!this.data.item_ids.includes(0))
     }
+
+    cleanup() {
+        if(this.context.specs.flags.z.randomDrops) {
+            this.data.item_ids =[206,0,0,0,0,0,0];
+        }
+    }
 }
 
 ShopObject.tableSpecs = {

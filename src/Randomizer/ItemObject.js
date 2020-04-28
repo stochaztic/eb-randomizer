@@ -1,5 +1,5 @@
 /* eslint import/no-webpack-loader-syntax: off */
-import { TableObject } from 'randomtools-js';
+import { TableObject, utils } from 'randomtools-js';
 import tableText from '!array-loader!./tables/item_table.txt';
 import ebutils from './ebutils.js';
 import Script from './Script.js';
@@ -7,6 +7,15 @@ import MapSpriteObject from './MapSpriteObject.js';
 import ShopObject from './ShopObject.js';
 
 class ItemObject extends TableObject {
+
+    static serialize() {
+        const val = {};
+
+        if(this.itemPool) {
+            val.itemPool = this.itemPool.map(i => this.get(i).name);
+        }
+        return val;
+    }
     get name() {
         return ebutils.listToText(this.data.name_text);
     }
@@ -123,6 +132,61 @@ class ItemObject extends TableObject {
     get allSources() {
         return this.scriptSources.concat(this.chestSources);
     }
+    
+    static fullCleanup() {
+        super.fullCleanup();
+
+        if(this.context.specs.flags.z.randomDrops) {
+            // Start enemy drop item pool
+            let itemPool = this.every.filter(i => 
+                i.rank >= 0
+                && (this.context.specs.flags.a ? 
+                        (!i.isKeyItem || this.skipItemsIndex.includes(i.index)) : 
+                        !i.isKeyItem
+                    ) // Only key items that are skip items in AC; no key item in non-AC
+                && !i.isCondiment
+                && !i.isBroken
+                && i.name !== "Ruler"       // Remove non-consumable items by default carried by Jeff
+                && i.name !== "Protractor"
+                && i.name !== "Show ticket" // Can be bought in the same room it is used
+                && i.name !== "Lucky sandwich" // Too many of these fill up the pool
+            ).map(o => o.index);
+            console.log(itemPool);
+            // Add 2 extra of critical items
+            [
+                1,   // Franklin badge
+                194, // Earth pendant
+                61,  // Sea pendant
+                62,  // Star pendant
+                133, // Bazooka
+                134, // Heavy bazooka
+                148, // Super bomb
+                129, // Secret herb
+                130, // Horn of life
+                0xb3,// Auto-StarMaster
+            ].forEach(i => {
+                if(!this.context.specs.flags.a && i == 0xb3) return;
+                itemPool.push(i);
+                itemPool.push(i);
+            });
+            
+            // Shuffle good pool, append to end until 255.
+            this.context.random.shuffle(itemPool);
+            while(itemPool.length < 255) {
+                itemPool.push(this.context.random.choice(this.every.filter(o => o.isBuyable)).index);
+            }
+
+            // Write pool into ROM, make note of address for asm patch
+            const poolLocation = Script.writeNewScript([itemPool]);
+            const addressesToWrite = [0x24e4a, 0x26492];
+            // Confirm placeholder value, then write item pool location into patch
+            addressesToWrite.forEach(addressToWrite => {
+                console.assert(0xccbbaa == utils.readMulti(this.context.rom, addressToWrite, 3));
+                utils.writeMulti(this.context.rom, addressToWrite, poolLocation.snesAddress, 3);
+            });
+            this.itemPool = itemPool;
+        }
+    }
 
     cleanup() {
         const ignoreCleanup = [177, 197]; // ATM Card, Exit mouse
@@ -195,6 +259,16 @@ class ItemObject extends TableObject {
         }
     }
 }
+
+ItemObject.skipItemsIndex = [
+    0x69,   // Jar of Fly Honey
+    0x7d,   // Backstage pass
+    0xa6,   // King banana
+    0xb7,   // Signed banana
+    0xb8,   // Pencil eraser
+    0xd2,   // Eraser eraser
+    0xfd,   // Carrot key
+];
 
 ItemObject.tableSpecs = {
     text: tableText,

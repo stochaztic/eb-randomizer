@@ -44,6 +44,7 @@ import DropMostRecentPatch from './DropMostRecentPatch.js';
 import ExpandSavePatch from './ExpandSavePatch.js';
 import FixPalettePatch from './FixPalettePatch.js';
 import InstantRolldownPatch from './InstantRolldownPatch.js';
+import ItemDropPoolPatch from './ItemDropPoolPatch.js';
 import LongPartyPatch from './LongPartyPatch.js';
 import RunButtonPatch from './RunButtonPatch.js';
 import ShortenPrayerPatch from './ShortenPrayerPatch.js';
@@ -121,6 +122,7 @@ export async function execute(romfile, specs, hooks) {
     if(specs.flags.u.shortPrayers) patches.push(ShortenPrayerPatch);
     if(specs.flags.z.instantRolldown) patches.push(InstantRolldownPatch);
     if(specs.flags.z.longParty) patches.push(LongPartyPatch);
+    if(specs.flags.z.randomDrops) patches.push(ItemDropPoolPatch);
     if(specs.flags.devmode) patches.push(DevmodePatch);
 
 
@@ -170,6 +172,7 @@ export async function execute(romfile, specs, hooks) {
         timestamp: Date.now(),
         specialAbilities: SpecialAbilities.serialize(),
         music: MusicObject.serialize(),
+        items: ItemObject.serialize(),
         chests: MapSpriteObject.every.filter(m => m.isChest).map(o => o.serialize()),
       };
       if(specs.flags.k) {

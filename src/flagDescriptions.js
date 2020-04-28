@@ -136,7 +136,7 @@ const flagDescriptions = {
             128: "allDiamonds",
             256: "ghostsAndShrooms",
             512: "longParty",
-            1024: "yesBubble",
+            2048: "randomDrops",
         },
         desc: {
             1: "Ancient Cave: No Ness in party",
@@ -150,6 +150,7 @@ const flagDescriptions = {
             256: "Constantly plagued by mini-ghosts and mushrooms",
             512: "Long party member follow distance",
             1024: "Ancient Cave: Bubble Monkey in party",
+            2048: "No gifts/store items, all enemy item drops from random pool",
         }
     },
     devmode: {

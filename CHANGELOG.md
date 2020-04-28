@@ -1,5 +1,6 @@
 # Changelog
 ## v46.x / v47 (In progress)
+- Challenges: New challenge mode "No gifts/store items, all enemy item drops from random pool".
 ### Bugfixes
 - Enemy stats: Weaknesses and drop rates fixed.
 

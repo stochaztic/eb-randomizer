@@ -189,6 +189,10 @@ class EnemyObject extends TableObject {
             }
             this.data.mirror_success_rate = Math.min(100, this.data.mirror_success_rate + mirrorImprove);
         }
+        
+        if(this.context.specs.flags.z.randomDrops) {
+            this.data.drop_frequency = 0;
+        }
     }
 }
 
