@@ -152,14 +152,9 @@ class ItemObject extends TableObject {
                 && i.name !== "Lucky sandwich" // Too many of these fill up the pool
             ).map(o => o.index);
             console.log(itemPool);
-            // Add 2 extra of critical items
+            // Add 1 or 2 extra of critical items
             [
-                1,   // Franklin badge
-                194, // Earth pendant
-                61,  // Sea pendant
-                62,  // Star pendant
-                133, // Bazooka
-                134, // Heavy bazooka
+                90,  // Hamburger
                 148, // Super bomb
                 129, // Secret herb
                 130, // Horn of life
@@ -167,6 +162,16 @@ class ItemObject extends TableObject {
             ].forEach(i => {
                 if(!this.context.specs.flags.a && i == 0xb3) return;
                 itemPool.push(i);
+                itemPool.push(i);
+            });
+            [
+                1,   // Franklin badge
+                194, // Earth pendant
+                61,  // Sea pendant
+                62,  // Star pendant
+                133, // Bazooka
+                134, // Heavy bazooka
+            ].forEach(i => {
                 itemPool.push(i);
             });
             
@@ -178,7 +183,7 @@ class ItemObject extends TableObject {
 
             // Write pool into ROM, make note of address for asm patch
             const poolLocation = Script.writeNewScript([itemPool]);
-            const addressesToWrite = [0x24e4a, 0x26492];
+            const addressesToWrite = [0x24e5b];
             // Confirm placeholder value, then write item pool location into patch
             addressesToWrite.forEach(addressToWrite => {
                 console.assert(0xccbbaa == utils.readMulti(this.context.rom, addressToWrite, 3));

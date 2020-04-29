@@ -1,19 +1,14 @@
 ; Overwrite beginning of ufo item section, labeled NO_ITEM_DROPPED in decomp
-24e44: e2 30 ;SEP #$30    # BEGIN 8-BIT MODE
+24e44: AD BC 4D ;LDA $4DBC - BATTLE_INITIATIVE
+C9 02 00     ;CMP #$0002 INITIATIVE::ENEMIES_FIRST
+D0 09        ;BNE +9
+A9 00 00     ;LDA #$0000
+8D 10 AA     ;STA $aa10 ITEM_DROPPED
+4C CD 4E     ;JMP $4ECD @END_ITEM_DROP
+e2 30        ;SEP #$30    # BEGIN 8-BIT MODE
 AE 13 B6     ;LDX $B613
 BF AA BB CC  ;LDA $CCBBAA,X - placeholder
 8D 10 AA     ;STA $aa10 ITEM_DROPPED
 EE 13 B6     ;INC $B4A6
 c2 30        ;REP #$30    # END 8-BIT MODE
 4C CD 4E     ;JMP $4ECD @END_ITEM_DROP
-
-; Instant win handler
-2648C: e2 30 ;SEP #$30    # BEGIN 8-BIT MODE
-AE 13 B6     ;LDX $B613
-BF AA BB CC  ;LDA $CCBBAA,X - placeholder
-8D 10 AA     ;STA $aa10 ITEM_DROPPED
-EE 13 B6     ;INC $B4A6
-c2 30        ;REP #$30    # END 8-BIT MODE
-EA EA EA EA EA EA
-EA EA EA EA EA EA
-EA EA EA EA EA EA
