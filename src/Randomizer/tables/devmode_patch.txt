@@ -1,2 +1,9 @@
 ; "Y-button Debug Menu" on X button (instead of town map)
+; Also fix broken menu options. These labels aren't totally accurate...
 B90C: 22 63 2E C1  ; JSR $C12E63
+3E8CE: 84 95 9c 95 a0 9f a2 a4 00   ;"Teleport[00]"  // テレポ
+3E8D8: 83 a4 91 a2 50 8b 00         ;"Star [8B][00]" // スターα
+3E8E2: 83 a4 91 a2 50 8c 00         ;"Star [8C][00]" // スターβ
+3E8EC: 80 9c 91 a9 95 a2 50 60 00   ;"Player 0[00]"  // プレーヤー０
+3E8F6: 80 9c 91 a9 95 a2 50 61 00   ;"Player 1[00]"  // プレーヤー１
+3E932: 7d 95 a4 95 a2 00            ;"Meter[00]"     // メーター
