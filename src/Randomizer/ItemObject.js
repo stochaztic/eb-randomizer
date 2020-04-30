@@ -169,6 +169,7 @@ class ItemObject extends TableObject {
                 148, // Super bomb
                 129, // Secret herb
                 130, // Horn of life
+                194, // Earth pendant
                 0xb3,// Auto-StarMaster
             ].forEach(i => {
                 if(!this.context.specs.flags.a && i == 0xb3) return;
@@ -177,7 +178,6 @@ class ItemObject extends TableObject {
             });
             [
                 1,   // Franklin badge
-                194, // Earth pendant
                 61,  // Sea pendant
                 62,  // Star pendant
                 133, // Bazooka

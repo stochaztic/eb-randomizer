@@ -114,7 +114,7 @@ export async function execute(romfile, specs, hooks) {
     
     if(specs.flags.a) patches.push(ShowSpritesNoIntroPatch);
     if(specs.flags.a) patches.push(TrackDoorsPatch);
-    if(specs.flags.g >= 1 || specs.flags.s >= 1) patches.push(CaseyNoInstantPatch);
+    if(!specs.flags.z.randomDrops && (specs.flags.g >= 1 || specs.flags.s >= 1)) patches.push(CaseyNoInstantPatch);
     if(specs.flags.c >= 2) patches.push(SpyImprovePatch);
     if(specs.flags.u.discardButton) patches.push(DropMostRecentPatch);
     if(specs.flags.u.runButton) patches.push(RunButtonPatch);
