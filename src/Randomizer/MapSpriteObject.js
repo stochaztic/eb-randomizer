@@ -234,9 +234,7 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
             && !i.isKeyItem 
             && !i.isCondiment
             && !i.isBroken
-            && i.name !== "Ruler"       // Remove non-consumable items by default carried by Jeff
-            && i.name !== "Protractor"
-            && i.name !== "Show ticket" // Can be bought in the same room it is used
+            && !i.isUnpooledItem
         );
         candidates = this.context.random.shuffleNormal(candidates, this.randomDegree || this.context.specs.randomDegree);
         chests = this.unassignedChests.sort((a, b) => a.caveRank - b.caveRank);

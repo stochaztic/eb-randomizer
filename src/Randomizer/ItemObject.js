@@ -64,6 +64,16 @@ class ItemObject extends TableObject {
         return [20, 24, 28].includes(this.data.item_type);
     }
 
+    get isUnpooledItem() {
+        // Specific that we do not want to include in any pool of items to be distributed
+        return [
+            140,    // Ruler - included in Jeff start items
+            143,    // Protractor - included in Jeff start items
+            162,    // Piggy nose - Useless in most modes and high rank
+            178,    // Show ticket - can be bought in same room it is used
+        ].includes(this.index);
+    }
+
     get rank() {
         if(this._rank !== undefined) return this._rank;
         this._rank = this.computeRank();
@@ -86,8 +96,12 @@ class ItemObject extends TableObject {
             return Math.ceil(this.constructor.get(this.oldData.extra_power).rank * 3 / 4);
         }
 
-        if(!this.isBuyable && !this.isSellable && this.isWeapon) {
-            return (this.oldData.strength + (this.oldData.extra_power_increase * 3)) * 40;
+        if(this.isWeapon) {
+            if(this.isSellable) {
+                return this.oldData.price;
+            }
+            // Equation that fits approximate goals for 7 non-sellable weapons
+            return Math.max(50, -1600 + (this.oldData.strength + (this.oldData.extra_power_increase * 3)) * 55);
         }
 
         if(!this.isBuyable && !this.isSellable && this.isArmor) {
@@ -146,12 +160,9 @@ class ItemObject extends TableObject {
                     ) // Only key items that are skip items in AC; no key item in non-AC
                 && !i.isCondiment
                 && !i.isBroken
-                && i.name !== "Ruler"       // Remove non-consumable items by default carried by Jeff
-                && i.name !== "Protractor"
-                && i.name !== "Show ticket" // Can be bought in the same room it is used
+                && !i.isUnpooledItem
                 && i.name !== "Lucky sandwich" // Too many of these fill up the pool
             ).map(o => o.index);
-            console.log(itemPool);
             // Add 1 or 2 extra of critical items
             [
                 90,  // Hamburger
