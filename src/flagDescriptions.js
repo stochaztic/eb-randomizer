@@ -136,6 +136,7 @@ const flagDescriptions = {
             128: "allDiamonds",
             256: "ghostsAndShrooms",
             512: "longParty",
+            1024: "yesBubble",
             2048: "randomDrops",
         },
         desc: {
