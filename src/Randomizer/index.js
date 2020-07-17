@@ -165,7 +165,7 @@ export async function execute(romfile, specs, hooks) {
     const newROM = await RandomTools.execute(context);
 
     let spoiler = undefined;
-    if(!specs.flags.t) {
+    if(!specs.flags.t && specs.seed !== 1) {
       hooks.message("Preparing spoiler file...");
       spoiler = {
         specs: specs,

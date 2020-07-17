@@ -969,6 +969,7 @@ export const vanillaSprites = [
     },
     { label: "Mummy", value: 307, },
     { label: "Ness", value: 1, },
+    { label: "Ness Pajamas", value: 437, },
     { label: "Nurse", value: 140, },
     { label: "Orange Kid", value: 175, },
     { label: "Paula", value: 2, },
@@ -983,6 +984,24 @@ export const vanillaSprites = [
     { label: "Pokey Fancy", value: 48, },
     { label: "Poo", value: 4, },
     { label: "Poo's Master", value: 166, },
+    {
+        label: "Prototype Cheese Man",
+        value: "PrototypeCheeseMan",
+        sprites: {
+            main: {
+                indexes: [0,1,193,385,576,577,192,384, 0,1,576,577,576,577,0,1],
+            },
+        },
+    },
+    {
+        label: "Prototype Ness",
+        value: "PrototypeNess",
+        sprites: {
+            main: {
+                indexes: [0,1,193,385,576,768,192,384,961,1153,1345,1537,1344,1536,960,1152],
+            },
+        },
+    },
     { label: "Pumpkin Head", value: 444, },
     { label: "Ranboob", value: 292, },
     { label: "Robot", value: 25, },
