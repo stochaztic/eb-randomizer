@@ -2,6 +2,7 @@
 ## v46.x / v47 (In progress)
 - Challenges: New challenge mode "No gifts/store items, all enemy item drops from random pool".
 - Gift box contents: Item ranking slightly adjusted.
+- Music: Many custom tracks added.
 - PC sprites: Added Ness Pajamas, Prototype Ness, and Prototype Cheese Man.
 ### Bugfixes
 - Enemy stats: Weaknesses and drop rates fixed.
