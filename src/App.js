@@ -6,12 +6,18 @@ import flagDescriptions from './flagDescriptions.js';
 import EarthBoundRandomizer from './randomizer.worker.js';
 import ebutils from './Randomizer/ebutils.js';
 import { prepare } from './sprites.js';
+import { customSongs } from './music.js';
 import SpriteSelector from './SpriteSelector.js';
 import SpritePreviewer from './SpritePreviewer.js';
 import Cookies from 'js-cookie';
 import localforage from 'localforage';
 import preval from 'preval.macro';
 const buildDate = preval`module.exports = (new Date()).toLocaleDateString('en',{day: "numeric", month: "short", year: "numeric"})`;
+
+const sortedSongs = customSongs.map((s, i) => {
+  s.index = i;
+  return s;
+}).sort((a, b) => (a.title > b.title) ? 1 : -1);
 
 class App extends Component {
   constructor(props) {
@@ -30,6 +36,7 @@ class App extends Component {
       lastAccess: Cookies.get("lastAccess"),
       lastGenerated: Cookies.get("lastGenerated"),
       totalGenerated: Cookies.get("totalGenerated") || 0,
+      chosenSongs: [-1, -1, -1, -1, -1, -1, -1, -1, -1],
     };
     Cookies.set("lastAccess", Date.now(), { expires: 6000 });
     let compatibleVersion = true;
@@ -139,6 +146,14 @@ class App extends Component {
       return s;
     });
   }
+
+  setCustomMusic = (event, arrIndex) => {
+    const newValue = parseInt(event.target.value);
+    this.setState(s => {
+      s.specs.chosenSongs[arrIndex] = isNaN(newValue) ? -1 : newValue;
+      return s;
+    })
+  };
 
   flagString = () => {
     return ebutils.flagString(this.state.specs.flags);
@@ -327,6 +342,23 @@ class App extends Component {
       </fieldset>
     );
 
+    const showSelectCustomMusic = this.state.specs && this.state.specs.flags && this.state.specs.flags.w >= 5
+    const selectCustomMusic = (
+      <fieldset className="musicSelectors">
+        <legend>Custom music selection:</legend>
+        { this.state.specs.chosenSongs.map((chosenIndex, arrIndex) =>
+          <div key={arrIndex}>
+            Floor {arrIndex + 1}: <select value={chosenIndex} onChange={e => this.setCustomMusic(e, arrIndex)}>
+              <option value='-1'>Random</option>
+              { sortedSongs.map(song => 
+                <option value={song.index}>{song.title}</option>
+              )}
+            </select>
+          </div>
+        )}
+      </fieldset>
+    )
+
     const selectModeNormalContent = (
       <div className="sectionContent">
       { selectCharacterSprites }
@@ -426,6 +458,7 @@ class App extends Component {
           .filter(f => this.state.debug || f.length === 1)
           .map( flag => flagBody(flag) )}
       </fieldset>
+      { showSelectCustomMusic && selectCustomMusic }
     </div>
     );
 
@@ -450,6 +483,7 @@ class App extends Component {
         <p>
           Alternatively, you may <a href="?" onClick={(e) => {e.preventDefault(); this.setState({showDirectLinkInfo: false})}}>change these settings</a> or <a href="?">create a new ROM</a> instead.
         </p>
+        { showSelectCustomMusic && selectCustomMusic }
       </div>
     );
 

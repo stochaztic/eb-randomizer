@@ -625,6 +625,14 @@ export const customSongs = [
         isBattle: false,
         isBoss: true,
     },
+    {
+        title: "Finishing War",
+        artist: "Cover by Aurilliux",
+        instruments: [0x05, 0x7A],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: true,
+    },
 ];
 
 export async function prepareCustomSongIndex(index) {

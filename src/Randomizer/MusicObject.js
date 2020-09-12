@@ -10,7 +10,8 @@ import EnemyObject from './EnemyObject.js';
 class MusicObject extends TableObject {
 
 	static testSong = undefined;
-    static ancientCaveCustomSongCount = 8;
+	static ancientCaveCustomSongCount = 9;
+	static insertSongCount = 9;
 
 
     static serialize() {
@@ -23,36 +24,54 @@ class MusicObject extends TableObject {
     }
 
     static get ancientCaveMusics() {
-        if(this._ancientCaveMusics !== undefined) return this._ancientCaveMusics;
-
-        const arr = this.context.random.sample(Array.from(MusicObject.overworldMusics), 9);
-
-		if(this.testSong !== undefined) {
-			arr[0] = this.insertSong(0);
+		if(this._ancientCaveMusics !== undefined) return this._ancientCaveMusics;
+		
+		let arr;
+		if(this.context.specs.flags.w >= 3) {
+			arr = [...Array(this.ancientCaveCustomSongCount).keys()].map(i => {
+				return this.insertSong(i);
+			});
 		}
-        else if(this.context.specs.flags.w >= 3) {
-            const entriesToReplace = this.context.random.sample(utils.range(arr.length), this.ancientCaveCustomSongCount);
-            entriesToReplace.forEach((entry, i) => {
-                arr[entry] = this.insertSong(i);
-            });
-        }
+		else {
+			arr = this.context.random.sample(Array.from(MusicObject.overworldMusics), this.ancientCaveCustomSongCount);
+		}
 
         this._ancientCaveMusics = arr;
         return this.ancientCaveMusics;
     }
 
     static async prepare() {
-        if(this.context.specs.flags.w >= 3) {
-            const songs = this.context.random.sample(customSongs, this.ancientCaveCustomSongCount);
-            for(const song of songs) {
-                const newSong = await prepareCustomSong(song);
-                this.preparedSongs.push(newSong);
-            }
+		if(this.context.specs.flags.w < 3) {
+			// No custom music, no preparation needed
+			return;
 		}
-		if(this.testSong !== undefined) {
-			const newSong = await prepareCustomSong(customSongs.find(s => s.title === this.testSong));
-			this.preparedSongs.unshift(newSong);
+		if(this.context.specs.flags.w < 5) {
+			// No chosing songs allowed
+			this.context.specs.chosenSongs = null;
 		}
+
+		const chosenSongIndexes = this.context.specs.chosenSongs || Array(this.insertSongCount).fill(-1); // -1: random
+		let unchosenSongPool = customSongs.filter((_, index) => !chosenSongIndexes.includes(index));
+
+		for(let i = 0; i < chosenSongIndexes.length; i++) {
+			const chosenIndex = chosenSongIndexes[i];
+			let chosenSong;
+			if(chosenIndex === -1) {
+				// Pick from the pool of unchosen songs, to prevent duplicates, and remove
+				chosenSong = this.context.random.choice(unchosenSongPool);
+				unchosenSongPool = unchosenSongPool.filter(s => s !== chosenSong);
+			}
+			else {
+				// Pick from the unchanged list, not the modified pool, to get correct song by index
+				if(customSongs.length <= chosenIndex) {
+					throw new Error(`Invalid chosen song index.`);
+				}
+				chosenSong = customSongs[chosenIndex];
+			}
+
+			const newSong = await prepareCustomSong(chosenSong);
+			this.preparedSongs.push(newSong);
+		};
     }
     
     static get overworldMusics() {
@@ -319,7 +338,7 @@ MusicObject.originalNames = [
 ]
 
 // 1-indexed
-MusicObject.donorSongs = [0x3c, 0x4f, 0x55, 0x6f, 0x7c, 0xb3, 0x8e, 0x8f];
+MusicObject.donorSongs = [0x3c, 0x4f, 0x55, 0x6f, 0x7c, 0xb3, 0x8e, 0x8f, 0x91];
 
 MusicObject.spcPacks = {
     pointerTable: 0x4F947,
