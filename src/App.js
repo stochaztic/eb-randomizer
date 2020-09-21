@@ -351,7 +351,7 @@ class App extends Component {
             Floor {arrIndex + 1}: <select value={chosenIndex} onChange={e => this.setCustomMusic(e, arrIndex)}>
               <option value='-1'>Random</option>
               { sortedSongs.map(song => 
-                <option value={song.index}>{song.title}</option>
+                <option value={song.index} key={song.index}>{song.title}</option>
               )}
             </select>
           </div>

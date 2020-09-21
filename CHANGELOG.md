@@ -1,4 +1,7 @@
 # Changelog
+## v47.x / v48 (In progress)
+- PC sprites: Added SimEarth Lizard.
+
 ## v47 (2020-09-12)
 - Challenges: New challenge mode "No gifts/store items, all enemy item drops from random pool".
 - Gift box contents: Item ranking slightly adjusted.
