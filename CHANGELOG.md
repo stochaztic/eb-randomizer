@@ -1,5 +1,6 @@
 # Changelog
 ## v47.x / v48 (In progress)
+- Music: Some custom tracks added.
 - PC sprites: Added SimEarth Lizard.
 
 ## v47 (2020-09-12)

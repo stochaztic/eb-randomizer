@@ -633,6 +633,30 @@ export const customSongs = [
         isBattle: true,
         isBoss: true,
     },
+    {
+        title: "Grandmaster Theme",
+        artist: "Cover by Aurilliux",
+        instruments: [0x05, 0x54],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: true,
+    },
+    {
+        title: "North America",
+        artist: "Cover by Aurilliux",
+        instruments: [0x05, 0x08],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: false,
+    },
+    {
+        title: "Lower Maridia",
+        artist: "Cover by Aurilliux",
+        instruments: [0x05, 0x25],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: true,
+    },
 ];
 
 export async function prepareCustomSongIndex(index) {
