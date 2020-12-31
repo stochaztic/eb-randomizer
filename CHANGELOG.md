@@ -1,6 +1,6 @@
 # Changelog
 ## v47.x / v48 (In progress)
-- Music: Some custom tracks added.
+- Music: Some custom tracks added and removed.
 - PC sprites: Added SimEarth Lizard, Swellman, and Jenn.
 
 ## v47 (2020-09-12)
