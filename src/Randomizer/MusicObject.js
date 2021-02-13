@@ -109,7 +109,7 @@ class MusicObject extends TableObject {
         const songAddressLoc = this.songAddresses.pointerTable + (donor.index * 2);
         this.context.rom.set(newSong.songAddress, songAddressLoc);
 
-        const writeData = ebutils.writeToFreespace(newSong.data, this.context);
+        const writeData = ebutils.writeToFreespace(newSong.data, this.context, `song ${this.preparedSongs[preparedSongIndex].title}`);
         
         const spcPointerLoc = this.spcPacks.pointerTable + (donor.data.spc_pack * 3);
         this.context.rom[spcPointerLoc] = writeData.snesBank;

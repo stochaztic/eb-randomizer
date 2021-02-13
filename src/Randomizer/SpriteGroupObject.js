@@ -40,7 +40,7 @@ class SpriteGroupObject extends TableObject {
             return;
         }
         
-        const writeData = ebutils.writeToFreespace(sprite.data, this.context);
+        const writeData = ebutils.writeToFreespace(sprite.data, this.context, `sprite data`);
 
         this.data.bank = writeData.snesBank;
         this.data.palette = sprite.palette || this.data.palette;

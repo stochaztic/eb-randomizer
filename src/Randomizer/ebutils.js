@@ -166,7 +166,8 @@ const ebutils = {
         ];
     },
 
-    writeToFreespace: function(data, context) {
+    writeToFreespace: function(data, context, description = "unknown data") {
+        data = [...data, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; // Hack to deal with music data needing buffer
         while(this.currentExpandedIndex % 32 !== 0) {
             this.currentExpandedIndex += 1;
         }
@@ -188,7 +189,11 @@ const ebutils = {
             snesAddress: 0xc00000 | addressToSet,
         }
 
+        console.log(`Writing ${description} (${data.length} bytes) to ${obj.snesAddress.toString(0x10)}`);
+
         this.currentExpandedIndex += data.length;
+
+        console.log(`Write head at ${((this.expandedBank << 16) + this.currentExpandedIndex).toString(0x10)}`)
         return obj;
     },
 

@@ -75,7 +75,7 @@ class DontCareNamesObject extends ReadWriteObject {
                 bytes.push(...chosen.writeToMemory(type.memoryAddress));
             });
             bytes.push(0x28, 0x68, 0x5c, 0xc0, 0xfa, 0xc1);
-            const patch = ebutils.writeToFreespace(bytes, this.context);
+            const patch = ebutils.writeToFreespace(bytes, this.context, "skip naming stuff");
 
             this.context.rom.set([0x20, 0x8E, 0x00, 0x5c, ...ebutils.ccodeAddress(patch.snesAddress).slice(0,3)], 0x1F8FB);
         }
