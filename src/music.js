@@ -652,6 +652,46 @@ export const customSongs = [
         isBattle: false,
         isBoss: true,
     },
+    {
+        title: "Stab the Sword",
+        artist: "Cover by Aurilliux",
+        instruments: [0x05, 0x21],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: true,
+    },
+    {
+        title: "Sound of Silence",
+        artist: "Cover by Aurilliux",
+        instruments: [0x05, 0x08],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: false,
+    },
+    {
+        title: "Sandopolis Act 2",
+        artist: "Cover by frogmary",
+        instruments: [0x05, 0x3c],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: false,
+    },
+    {
+        title: "Battle 3 FFMQ",
+        artist: "Cover by UltraBolt",
+        instruments: [0x05, 0x3c],
+        isOverworld: false,
+        isBattle: true,
+        isBoss: true,
+    },
+    {
+        title: "Pictionary",
+        artist: "Cover by UltraBolt",
+        instruments: [0x05, 0x3c],
+        isOverworld: false,
+        isBattle: true,
+        isBoss: true,
+    },
 ];
 
 export async function prepareCustomSongIndex(index) {
