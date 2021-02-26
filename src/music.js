@@ -679,18 +679,18 @@ export const customSongs = [
     {
         title: "Battle 3 FFMQ",
         artist: "Cover by UltraBolt",
-        instruments: [0x05, 0x3c],
+        instruments: [0x05, 0x7c],
         isOverworld: false,
-        isBattle: true,
+        isBattle: false,
         isBoss: true,
     },
     {
         title: "Pictionary",
         artist: "Cover by UltraBolt",
-        instruments: [0x05, 0x3c],
-        isOverworld: false,
+        instruments: [0x05, 0x7c],
+        isOverworld: true,
         isBattle: true,
-        isBoss: true,
+        isBoss: false,
     },
 ];
 
