@@ -1,991 +1,182 @@
 import importAll from 'import-all.macro';
-const urls = importAll.sync('./sprites/**/*.bin');
+import PNGReader from 'png.js';
+const urls = importAll.sync('./sprites/**/*.png');
 
 export const customCharacters = [
     {
         label: "Mega Man",
         value: "MegaMan",
         creator: "Artheau",
-        sprites: {
-            main: {
-                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1536, 1728, 1920, 2112, 2304, 2496, 2688, 2880],
-            },
-            robot: {
-                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 769, 961, 1152, 1344, 1536, 1728, 768, 1920],
-            },
-            bike: {
-                indexes: [0, 768, 1536, 2304, 3072, 3840, 4608, 5376, 0, 768, 3072, 3840, 3072, 3840, 0, 768],
-            },
-            dead: {
-                indexes: [0, 192, 385, 577, 768, 768, 384, 576, 960, 192, 1152, 768, 1152, 768, 960, 192],
-            },
-            fuzzy: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            bedJeff: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            down: {
-                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
-            },
-            ladder: {
-                indexes: [0, 1, 0, 1, 0, 1, 0, 1],
-            },
-            rope: {
-                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-            },
-            mini: {
-                indexes: [0, 1, 129, 257, 384, 385, 128, 256, 0, 1, 384, 385, 384, 385, 0, 1],
-            },
-            jump: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            meditate: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            bedNess: {
-                indexes: [0, 128, 0, 128, 0, 128, 0, 128],
-            },
-            pj: {
-                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1537, 1729, 1921, 2113, 1920, 2112, 1536, 1728],
-            },
-            deadRobot: {
-                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
-            },
-        },
     },
     {
         label: "Proto Man",
         value: "ProtoMan",
         creator: "Artheau",
-        sprites: {
-            main: {
-                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1536, 1728, 1920, 2112, 2304, 2496, 2688, 2880],
-            },
-            robot: {
-                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344],
-            },
-            nude: {
-                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1153, 1345, 1536, 1728, 1920, 2112, 1152, 1344],
-            },
-            bike: {
-                indexes: [0,768,1537,2305,3072,3840,2304,4608,0,768,3072,3840,3072,3840,0,768],
-            },
-            dead: {
-                indexes: [0, 192, 385, 577, 768, 768, 384, 576, 960, 192, 1152, 768, 1152, 768, 960, 192],
-            },
-            fuzzy: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            bedJeff: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            down: {
-                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
-            },
-            ladder: {
-                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-            },
-            rope: {
-                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-            },
-            mini: {
-                indexes: [0,128,257,385,512,640,256,384,0,128,512,640,512,640,0,128],
-            },
-            jump: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            meditate: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            bedNess: {
-                indexes: [0, 128, 0, 256, 0, 128, 0, 256],
-            },
-            pj: {
-                indexes: [0,1,193,385,576,577,192,384,769,1,961,577,961,577,769,1],
-            },
-            deadRobot: {
-                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
-            },
-        },
     },
     {
         label: "Tessie",
         value: "Tessie",
         creator: "TheKubliest",
-        sprites: {
-            main: {
-                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 1153, 1345, 1152, 1344, 0, 192],
-                palette: 20,
-            },
-            robot: {
-                indexes: [0, 192, 385, 577, 768, 769, 384, 576, 961, 1153, 1345, 1537, 1344, 1536, 960, 1152],
-            },
-            bike: {
-                indexes: [0, 768, 1537, 2305, 3072, 3840, 1536, 2304, 0, 768, 4608, 5376, 6144, 6912, 0, 768],
-                palette: 20,
-            },
-            dead: {
-                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 1153, 1345, 1152, 1152, 0, 192],
-            },
-            fuzzy: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                palette: 20,
-            },
-            bedJeff: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                palette: 20,
-            },
-            down: {
-                indexes: [0, 192, 0, 192, 0, 192, 193, 1],
-                palette: 20,
-            },
-            ladder: {
-                indexes: [0, 1, 0, 1, 0, 1, 0, 1],
-                palette: 20,
-            },
-            rope: {
-                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-                palette: 20,
-            },
-            mini: {
-                indexes: [0, 128, 257, 385, 512, 640, 256, 384, 0, 128, 512, 640, 512, 640, 0, 128],
-                palette: 20,
-            },
-            jump: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                palette: 20,
-            },
-            meditate: {
-                indexes: [0, 0, 0, 0, 192, 192, 192, 192],
-                palette: 20,
-            },
-            bedNess: {
-                indexes: [0, 128, 0, 128, 0, 128, 0, 128],
-                palette: 20,
-            },
-            pj: {
-                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 1153, 1345, 1152, 1344, 0, 192],
-                palette: 20,
-            },
-            deadRobot: {
-                indexes: [0, 0, 0, 0, 0, 0, 1, 193],
-            },
-        },
     },
     {
         label: "Dog (Laika)",
         value: "Laika",
         creator: "TheKubliest",
-        sprites: {
-            main: {
-                indexes: [0,192,384,576,768,960,1152,1344,0,192,384,576,1536,1344,0,192],
-                palette: 18,
-            },
-            robot: {
-                indexes: [0,192,384,576,768,960,1152,1344,0,192,384,576,1152,1344,0,192],
-            },
-            bike: {
-                indexes: [0,768,1536,2304,3072,3840,4608,5376,0,768,6144,6912,3072,3840,0,768],
-                palette: 18,
-            },
-            dead: {
-                indexes: [0,192,384,576,768,960,1152,1344,0,192,768,960,768,960,0,192],
-            },
-            fuzzy: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                palette: 18,
-            },
-            bedJeff: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                palette: 18,
-            },
-            down: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                palette: 18,
-            },
-            ladder: {
-                indexes: [0,192,0,192,0,192,0,192],
-                palette: 18,
-            },
-            rope: {
-                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-                palette: 18,
-            },
-            mini: {
-                indexes: [0,128,256,384,512,640,768,896,0,128,512,640,512,640,0,128],
-                palette: 18,
-            },
-            jump: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                palette: 18,
-            },
-            meditate: {
-                indexes: [0, 0, 0, 0, 192, 192, 192, 192],
-                palette: 18,
-            },
-            bedNess: {
-                indexes: [0, 128, 0, 128, 0, 128, 0, 128],
-                palette: 18,
-            },
-            pj: {
-                indexes: [0,192,384,576,768,960,1152,1344,0,192,576,384,1152,1344,0,192],
-                palette: 18,
-            },
-            deadRobot: {
-                indexes: [0, 0, 0, 0, 0, 0, 192, 192],
-            },
-        },
     },
     {
         label: "The Batter",
         value: "TheBatter",
         creator: "Bacon",
-        sprites: {
-            main: {
-                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 577, 576, 576, 577, 1, 0],
-            },
-            robot: {
-                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344],
-            },
-            nude: {
-                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 576, 577, 577, 576, 1, 0],
-            },
-            bike: {
-                indexes: [0, 768, 1536, 2304, 3072, 3840, 4608, 5376, 0, 768, 3072, 3840, 3072, 3840, 0, 768],
-            },
-            dead: {
-                indexes: [0, 0, 193, 193, 384, 384, 192, 192, 0, 0, 384, 384, 384, 384, 0, 0],
-            },
-            fuzzy: {
-                indexes: [1, 1, 1, 1, 0, 0, 1, 1],
-            },
-            bedJeff: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            down: {
-                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
-            },
-            ladder: {
-                indexes: [0, 1, 0, 1, 0, 1, 0, 1],
-            },
-            rope: {
-                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-            },
-            mini: {
-                indexes: [0, 1, 129, 257, 0, 1, 128, 256, 0, 1, 0, 1, 0, 1, 0, 1],
-            },
-            jump: {
-                indexes: [1, 1, 1, 1, 0, 0, 1, 1],
-            },
-            meditate: {
-                indexes: [0, 0, 1, 1, 192, 192, 193, 193],
-            },
-            bedNess: {
-                indexes: [0, 128, 0, 128, 0, 128, 0, 128],
-            },
-            pj: {
-                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 577, 576, 576, 577, 1, 0],
-            },
-            deadRobot: {
-                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
-            },
-        },
     },
     {
         label: "SimEarth Lizard",
         value: "SimEarthLizard",
         creator: "Peebs",
-        sprites: {
-            main: {
-                indexes: [0,192,384,576,768,960,1152,1344,1536,1728,1920,2112,2304,2496,2688,2880],
-            },
-            nude: {
-                indexes: [0,192,384,576,768,960,1152,1344,1536,1728,1920,2112,2304,2496,2688,2880],
-            },
-            dead: {
-                indexes: [0,192,384,576,768,960,1152,1344,1536,1728,1920,2112,2304,2496,2688,2880],
-            },
-            fuzzy: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            bedJeff: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            down: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            ladder: {
-                indexes: [0,192,0,192,0,192,0,192],
-            },
-            rope: {
-                indexes: [0,1,0,1,0,1,0,1],
-            },
-            mini: {
-                indexes: [0,1,129,257,0,1,128,256,0,1,0,1,0,1,0,1],
-            },
-            jump: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            meditate: {
-                indexes: [0,0,0,0,192,384,192,384],
-            },
-            pj: {
-                indexes: [0,192,384,576,768,960,1152,1344,1536,1728,1920,2112,2304,2496,2688,2880],
-            },
-        },
     },
     {
         label: "Chu",
         value: "Chu",
         creator: "Satsy",
-        sprites: {
-            main: {
-                indexes: [0,192,384,576,768,960,1152,1344,1536,1728,1920,2112,2304,2496,2688,2880],
-            },
-            robot: {
-                indexes: [0,192,385,577,768,960,384,576,1153,1345,1536,1728,1920,2112,2304,1344],
-            },
-            dead: {
-                indexes: [0,0,192,192,384,384,576,576,0,0,384,384,384,384,0,0],
-            },
-            fuzzy: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            ladder: {
-                indexes: [0,192,384,192,0,192,0,192],
-            },
-            rope: {
-                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-            },
-            mini: {
-                indexes: [0,1,129,257,384,385,128,512,0,1,0,1,384,385,384,385],
-            },
-            jump: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            pj: {
-                indexes: [0,192,384,576,384,576,384,576,0,192,384,576,384,576,0,192],
-            },
-        },
     },
     {
         label: "Pride Ness",
         value: "PrideNess",
         creator: "stochaztic",
-        sprites: {
-            main: {
-                indexes: [0, 1, 193, 385, 576, 768, 192, 960, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344],
-            },
-            pj: {
-                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1536, 1728, 1920, 2112, 2304, 2496, 2688, 2880],
-            },
-        },
     },
     {
         label: "Nessa",
         value: "Nessa",
         creator: "Satsy",
-        sprites: {
-            main: {
-                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1153, 1345, 1537, 1729, 1536, 1728, 1152, 1344],
-            },
-            dead: {
-                indexes: [0, 0, 193, 193, 384, 384, 192, 192, 0, 0, 576, 768, 768, 384, 0, 0],
-            },
-            fuzzy: {
-                indexes: [0, 192, 192, 192, 192, 192, 192, 192],
-            },
-            bedJeff: {
-                indexes: [0, 256, 0, 256, 512, 256, 512, 256],
-            },
-            down: {
-                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
-            },
-            ladder: {
-                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-            },
-            rope: {
-                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-            },
-            jump: {
-                indexes: [0, 0, 0, 0, 0, 192, 384, 192],
-            },
-            meditate: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            pj: {
-                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1536, 1728, 1920, 2112, 2304, 2496, 2688, 2880],
-            },
-            sitting: {
-                indexes: [0, 0, 1, 1, 0, 0, 0, 0],
-            },
-        },
     },
     {
         label: "Ninten",
         value: "Ninten",
         creator: "the salvation phoenix",
-        sprites: {
-            main: {
-                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1537, 1729, 1921, 2113, 1920, 2112, 1536, 1728],
-            },
-            dead: {
-                indexes: [0, 0, 193, 193, 384, 384, 192, 192, 1, 1, 384, 384, 384, 384, 1, 1],
-            },
-            fuzzy: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-        },
     },
     {
         label: "Teddy",
         value: "Teddy",
         creator: "EBrent",
-        sprites: {
-            main: {
-                indexes: [0, 1, 193, 385, 576, 768, 192, 384, 961, 1153, 1345, 1537, 1344, 1536, 960, 1152],
-            },
-        },
     },
     {
         label: "Ness's Hat",
         value: "NessHat",
         creator: "stochaztic",
-        sprites: {
-            main: {
-                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1152, 1344, 1537, 1729, 1536, 1728, 1920, 2112],
-            },
-            dead: {
-                indexes: [0, 0, 1, 1, 192, 192, 384, 384, 1, 1, 192, 192, 192, 192, 1, 1],
-            },
-            ladder: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            rope: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-        },
     },
     {
         label: "Kris (Deltarune)",
         value: "KrisDeltarune",
         creator: "Quatropus",
-        sprites: {
-            main: {
-                indexes: [0,192,384,576,768,960,1152,1344,0,192,768,960,768,960,0,192],
-                palette: 16,
-            },
-            dead: {
-                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
-            },
-            fuzzy: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                palette: 16,
-            },
-            ladder: {
-                indexes: [0,192,0,192,0,192,0,192],
-                palette: 16,
-            },
-            rope: {
-                indexes: [0,192,0,192,384,576,0,192],
-                palette: 16,
-            },
-            jump: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                palette: 16,
-            },
-            pj: {
-                indexes: [0,192,385,577,768,960,384,576,0,192,768,960,768,960,0,192],
-            },
-        },
     },
     {
         label: "Lancer",
         value: "Lancer",
         creator: "Quatropus",
-        sprites: {
-            main: {
-                indexes: [0,192,385,577,768,769,384,576,960,961,768,769,768,769,960,961],
-                palette: 16,
-            },
-            dead: {
-                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
-            },
-            fuzzy: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                palette: 16,
-            },
-            ladder: {
-                indexes: [0, 1, 0, 1, 0, 1, 0, 1],
-                palette: 16,
-            },
-            rope: {
-                indexes: [0,192,0,192,0,192,0,192],
-                palette: 16,
-            },
-            meditate: {
-                indexes: [0, 0, 0, 0, 192, 192, 192, 192],
-                palette: 16,
-            },
-        },
     },
     {
         label: "Ralsei",
         value: "Ralsei",
         creator: "Quatropus",
-        sprites: {
-            main: {
-                indexes: [0,192,385,577,768,960,384,576,0,1152,768,1344,768,960,0,1152],
-                palette: 16,
-            },
-            dead: {
-                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
-            },
-            fuzzy: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                palette: 16,
-            },
-            ladder: {
-                indexes: [0,192,0,192,0,192,0,192],
-                palette: 16,
-            },
-            rope: {
-                indexes: [0,192,0,192,0,192,0,192],
-                palette: 16,
-            },
-        },
     },
     {
         label: "Susie",
         value: "Susie",
         creator: "Quatropus",
-        sprites: {
-            main: {
-                indexes: [0,1,193,385,576,577,192,384,0,1,576,577,769,577,0,1],
-                palette: 16,
-            },
-            dead: {
-                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
-            },
-            fuzzy: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                palette: 16,
-            },
-            ladder: {
-                indexes: [0,192,0,192,0,192,0,192],
-                palette: 16,
-            },
-            rope: {
-                indexes: [0,192,0,192,0,192,0,192],
-                palette: 16,
-            },
-            jump: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-                palette: 16,
-            },
-        },
     },
     {
         label: "Dragon Ness",
         value: "DragonNess",
         creator: "Quatropus / Aurilliux",
-        sprites: {
-            main: {
-                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1537, 1729, 1921, 2113, 2304, 2112, 2496, 1728],
-            },
-            dead: {
-                indexes: [0, 0, 193, 193, 384, 384, 192, 192, 0, 0, 384, 384, 384, 384, 0, 0],
-            },
-            fuzzy: {
-                indexes: [0, 192, 0, 0, 0, 0, 0, 0],
-            },
-            bedJeff: {
-                indexes: [0, 256, 0, 0, 0, 0, 0, 0],
-            },
-            down: {
-                indexes: [0, 0, 0, 0, 0, 0, 576, 576],
-            },
-            ladder: {
-                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-            },
-            rope: {
-                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-            },
-            mini: {
-                indexes: [0, 1, 128, 256, 384, 385, 512, 640, 768, 769, 384, 385, 897, 385, 0, 1],
-            },
-            jump: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            meditate: {
-                indexes: [0, 0, 0, 0, 192, 192, 192, 192],
-            },
-            bedNess: {
-                indexes: [0, 128, 0, 128, 0, 128, 0, 128],
-            },
-            pj: {
-                indexes: [0, 192, 384, 576, 768, 960, 1152, 1344, 1536, 1728, 1920, 2112, 2304, 2496, 2688, 2880],
-            },
-        },
     },
     {
         label: "Dragon Paula",
         value: "DragonPaula",
         creator: "Quatropus",
-        sprites: {
-            main: {
-                indexes: [0,192,385,577,768,769,384,576,0,192,768,769,768,769,0,192],
-            },
-            dead: {
-                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
-            },
-            ladder: {
-                indexes: [0,1,0,1,0,1,0,1],
-            },
-            rope: {
-                indexes: [0,192,0,192,0,192,0,192],
-            },
-        },
     },
     {
         label: "Dragon Jeff",
         value: "DragonJeff",
         creator: "Quatropus",
-        sprites: {
-            main: {
-                indexes: [0,192,385,577,768,769,384,576,0,192,768,769,768,769,0,192],
-            },
-            dead: {
-                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
-            },
-            ladder: {
-                indexes: [0,1,0,1,0,1,0,1],
-            },
-            rope: {
-                indexes: [0,192,0,192,0,192,0,192],
-            },
-            jump: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-        },
     },
     {
         label: "Dragon Poo",
         value: "DragonPoo",
         creator: "Quatropus",
-        sprites: {
-            main: {
-                indexes: [0,1,193,385,576,577,192,384,768,769,576,577,576,577,768,769],
-                palette: 20,
-            },
-            dead: {
-                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
-            },
-            ladder: {
-                indexes: [0,1,0,1,0,1,0,1],
-                palette: 20,
-            },
-            rope: {
-                indexes: [0,192,0,192,0,192,0,192],
-                palette: 20,
-            },
-            meditate: {
-                indexes: [0,0,0,0,192,192,192,192],
-                palette: 20,
-            },
-        },
     },
     {
         label: "Sonic",
         value: "Sonic",
         creator: "Quatropus",
-        sprites: {
-            main: {
-                indexes: [0,192,385,577,768,960,1152,576,0,192,768,960,768,960,0,192],
-            },
-            dead: {
-                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
-            },
-            ladder: {
-                indexes: [0,1,0,1,0,1,0,1],
-            },
-            rope: {
-                indexes: [0,192,0,192,0,192,0,192],
-            },
-        },
     },
     {
         label: "Amy",
         value: "Amy",
         creator: "Quatropus",
-        sprites: {
-            main: {
-                indexes: [0,1,193,385,576,768,192,384,0,1,576,768,576,768,0,1],
-            },
-            dead: {
-                indexes: [0,0,193,193,384,384,192,192,0,0,384,576,384,768,0,0],
-            },
-            ladder: {
-                indexes: [0,1,0,1,0,1,0,1],
-            },
-            rope: {
-                indexes: [0,192,0,192,0,192,0,192],
-            },
-        },
     },
     {
         label: "Tails",
         value: "Tails",
         creator: "Quatropus",
-        sprites: {
-            main: {
-                indexes: [0,1,193,385,576,768,192,384,0,1,576,768,576,768,0,1],
-            },
-            dead: {
-                indexes: [0,0,193,385,576,576,384,192,0,0,576,576,576,576,0,0],
-            },
-            ladder: {
-                indexes: [0,1,0,1,0,1,0,1],
-            },
-            rope: {
-                indexes: [0,192,0,192,0,192,0,192],
-            },
-        },
     },
     {
         label: "Knuckles",
         value: "Knuckles",
         creator: "Quatropus",
-        sprites: {
-            main: {
-                indexes: [0,1,192,384,576,768,960,1152,0,1,576,768,576,768,0,1],
-            },
-            dead: {
-                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
-            },
-            ladder: {
-                indexes: [0,1,0,1,0,1,0,1],
-            },
-            rope: {
-                indexes: [0,192,0,192,0,192,0,192],
-            },
-        },
     },
     {
         label: "Aya",
         value: "Aya",
         creator: "Quatropus",
-        sprites: {
-            main: {
-                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 768, 960, 768, 960, 0, 192],
-            },
-            dead: {
-                indexes: [0, 0, 193, 193, 384, 384, 192, 192, 0, 0, 384, 384, 384, 384, 0, 0],
-            },
-            fuzzy: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            ladder: {
-                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-            },
-            rope: {
-                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-            },
-            jump: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            meditate: {
-                indexes:  [0, 0, 0, 0, 192, 192, 192, 192],
-            },
-        },
     },
     {
         label: "Kris (Pokemon)",
         value: "Kris",
         creator: "TheKubliest",
-        sprites: {
-            main: {
-                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 768, 960, 193, 385, 192, 384, 768, 0],
-            },
-            bike: {
-                indexes: [0, 768, 1537, 2305, 3072, 3840, 1536, 2304, 4608, 5376, 1537, 2305, 6144, 6912, 7680, 8448],
-            },
-            dead: {
-                indexes: [0, 192, 385, 577, 768, 960, 576, 384, 0, 192, 768, 960, 768, 960, 0, 192],
-            },
-            fuzzy: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            bedJeff: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            down: {
-                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
-            },
-            ladder: {
-                indexes: [0, 1, 0, 1, 0, 1, 0, 1],
-            },
-            rope: {
-                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-            },
-            mini: {
-                indexes:  [0, 1, 129, 257, 0, 1, 128, 256, 0, 1, 0, 1, 0, 1, 0, 1],
-            },
-            bedNess: {
-                indexes: [0, 128, 0, 128, 0, 128, 0, 128],
-            },
-            pj: {
-                indexes: [0, 192, 384, 576, 768, 769, 960, 1152, 1344, 192, 384, 576, 960, 1152, 1344, 0],
-            },
-        },
     },
     {
         label: "Blue",
         value: "Blue",
         creator: "Zephram",
-        sprites: {
-            main: {
-                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 768, 960, 768, 960, 1152, 1344],
-            },
-        },
     },
     {
         label: "Red",
         value: "Red",
         creator: "Zephram",
-        sprites: {
-            main: {
-                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 0, 192, 768, 960, 768, 960, 1152, 1344],
-            },
-        },
     },
     {
         label: "Generic Pokemon",
         value: "GenericPokemon",
         creator: "EBrent",
-        sprites: {
-            main: {
-                indexes: [0, 192, 385, 577, 768, 960, 384, 576, 1153, 1345, 768, 960, 768, 960, 1152, 192],
-            },
-        },
     },
     {
         label: "Dragonair",
         value: "Dragonair",
         creator: "EBrent",
-        sprites: {
-            main: {
-                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 193, 385, 576, 577, 192, 384],
-            },
-        },
     },
     {
         label: "Bart Simpson",
         value: "Bart",
         creator: "Doug",
-        sprites: {
-            main: {
-                indexes: [0,1,193,385,576,577,192,384,769,961,1153,961,192,960,192,960],
-            },
-            robot: {
-                indexes: [0,1,193,385,576,577,192,384,769,961,1153,961,192,960,192,960],
-            },
-            dead: {
-                indexes: [0,0,193,193,384,384,192,192,0,0,384,384,384,384,0,0],
-            },
-            fuzzy: {
-                indexes: [0, 0, 0, 0, 0, 0, 0, 0],
-            },
-            down: {
-                indexes: [0, 0, 0, 0, 0, 0, 1, 1],
-            },
-            bedNess: {
-                indexes: [0, 128, 0, 128, 0, 128, 0, 128],
-            },
-            pj: {
-                indexes: [0,1,192,384,576,577,768,960,192,384,192,384,768,960,768,960],
-            },
-            deadRobot: {
-                indexes: [0, 0, 0, 0, 0, 0, 193, 1],
-            },
-            ladder: {
-                indexes: [0, 1, 0, 192, 0, 1, 0, 1],
-            },
-            rope: {
-                indexes: [0, 192, 0, 384, 0, 192, 0, 192],
-            },
-        },
     },
     {
         label: "Gordon Freeman",
         value: "Gordon",
         creator: "EBrent",
-        sprites: {
-            main: {
-                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 193, 385, 576, 577, 192, 384],
-            },
-        },
     },
     {
         label: "Weird Al Yankovic",
         value: "WeirdAl",
         creator: "EBrent",
-        sprites: {
-            main: {
-                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 193, 385, 576, 577, 192, 384],
-            },
-        },
     },
     {
         label: "Swellman",
         value: "Swellman",
         creator: "Quatropus",
-        sprites: {
-            main: {
-                indexes: [0,1,193,385,576,577,192,384,0,1,576,577,576,577,0,1],
-            },
-            dead: {
-                indexes: [0,0,192,384,576,576,768,960,0,0,576,576,576,576,0,0],
-            },
-            ladder: {
-                indexes: [0, 1, 0, 1, 0, 1, 0, 1],
-            },
-            rope: {
-                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-            },
-            mini: {
-                indexes: [0,1,129,257,0,1,128,256,0,1,0,1,0,1,0,1],
-            },
-            pj: {
-                indexes: [0,1,193,385,576,768,192,384,0,1,576,768,576,768,0,1],
-            },
-        },
     },
     {
         label: "Jenn",
         value: "Jenn",
         creator: "Quatropus",
-        sprites: {
-            main: {
-                indexes: [0,1,193,385,576,577,192,384,0,1,576,577,576,577,0,1],
-            },
-            dead: {
-                indexes: [0,0,193,193,384,576,192,192,0,0,384,576,384,576,0,0],
-            },
-            ladder: {
-                indexes: [0, 1, 0, 1, 0, 1, 0, 1],
-            },
-            rope: {
-                indexes: [0, 192, 0, 192, 0, 192, 0, 192],
-            },
-            mini: {
-                indexes: [0,1,129,257,0,1,128,256,0,1,0,1,0,1,0,1],
-            },
-            pj: {
-                indexes: [0,1,193,385,576,577,192,384,0,1,576,577,576,577,0,1],
-            },
-        },
     },
 ];
 
@@ -1041,24 +232,12 @@ export const vanillaSprites = [
     {
         label: "Mole",
         value: "Mole",
-        sprites: {
-            main: {
-                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 0, 1, 769, 577, 576, 577, 961, 1],
-                palette: 22,
-            },
-        },
     },
     { label: "Mom", value: 145, },
     { label: "Monotoli", value: 164, },
     {
         label: "Mouse",
         value: "Mouse",
-        sprites: {
-            main: {
-                indexes: [0, 1, 193, 385, 576, 577, 192, 384, 768, 960, 576, 577, 576, 577, 0, 1],
-                palette: 20,
-            },
-        },
     },
     { label: "Mummy", value: 307, },
     { label: "Ness", value: 1, },
@@ -1080,20 +259,10 @@ export const vanillaSprites = [
     {
         label: "Prototype Cheese Man",
         value: "PrototypeCheeseMan",
-        sprites: {
-            main: {
-                indexes: [0,1,193,385,576,577,192,384, 0,1,576,577,576,577,0,1],
-            },
-        },
     },
     {
         label: "Prototype Ness",
         value: "PrototypeNess",
-        sprites: {
-            main: {
-                indexes: [0,1,193,385,576,768,192,384,961,1153,1345,1537,1344,1536,960,1152],
-            },
-        },
     },
     { label: "Pumpkin Head", value: 444, },
     { label: "Ranboob", value: 292, },
@@ -1142,6 +311,21 @@ export const selectData = [
     },
 ];
 
+export async function testAllSprites() {
+    for (const [name, url] of Object.entries(urls)) {
+        console.log(`Testing image ${name}`);
+        try {
+            let response = await fetch(url);
+            let buffer = await response.arrayBuffer();
+            const png = await bufferToPng(buffer);
+            processSpriteGroup(png);
+        }
+        catch(err) {
+            console.warn(err);
+        }
+      }
+}
+
 export async function prepare(sprite, index) {
     const newObj = {};
     if(sprite.value === "NoChange") {
@@ -1155,95 +339,256 @@ export async function prepare(sprite, index) {
         sprite = customCharacters[Math.floor(Math.random()*customCharacters.length)];
     }
 
-    const prepareSprite = async function(individualSprite, index) {
-        let url = urls[`./sprites/${sprite.value}/${index.toString().padStart(3, '0')}.bin`];
+    const prepareSprite = async function(index) {
+        let url = urls[`./sprites/${sprite.value}/${index.toString().padStart(3, '0')}.png`];
         if(!url && index === 1) {
-            url = urls[`./sprites/${sprite.value}.bin`];
+            url = urls[`./sprites/${sprite.value}.png`];
         }
         if(!url) {
-            url = urls[`./sprites/${sprite.value}-${index.toString().padStart(3, '0')}.bin`];
+            url = urls[`./sprites/${sprite.value}-${index.toString().padStart(3, '0')}.png`];
         }
         if(!url) {
-            throw new Error(`Could not find sprite bin file for ${sprite.value} ${index.toString().padStart(3, '0')}`);
+            if(index === 1) {
+                throw new Error(`Could not find main sprite for ${sprite.value}`);
+            }
+            return undefined;
         }
         let response = await fetch(url);
         let buffer = await response.arrayBuffer();
-        let data = new Uint8Array(buffer);
-        return Object.assign({palette: 26}, individualSprite, { data: data });
+        const png = await bufferToPng(buffer);
+        const processedGroup = processSpriteGroup(png);
+        return processedGroup;
     };
 
-    newObj[index + 1] = await prepareSprite(sprite.sprites.main, 1);
+    newObj[index + 1] = await prepareSprite(1); // main
+    newObj[index + 8] = await prepareSprite(8); // dead
+    const downIdx = (index === 0) ? 16 : (392 + index);
+    newObj[downIdx] = await prepareSprite(16); // down
+    newObj[index + 17] = await prepareSprite(17); // ladder
+    newObj[index + 21] = await prepareSprite(21); // rope
+    newObj[index + 27] = await prepareSprite(27); // mini
+    newObj[index + 335] = await prepareSprite(335); // jump
 
-    if(sprite.sprites.robot && index === 0) {
-        newObj[5] = await prepareSprite(sprite.sprites.robot, 5);
-    }
-
-    if(sprite.sprites.pj && index === 0) {
-        newObj[437] = await prepareSprite(sprite.sprites.pj, 437);
-        if(sprite.sprites.nude) {
-            newObj[6] = await prepareSprite(sprite.sprites.nude, 6);
-        }
-        else {
+    if(index === 0) { // Ness
+        newObj[5] = await prepareSprite(5); // robot
+        newObj[437] = await prepareSprite(437); // pj
+        newObj[6] = await prepareSprite(6); // nude
+        if(!newObj[6]) { // special case: if there is no nude, re-use pj
             newObj[6] = newObj[437];
         }
+        newObj[7] = await prepareSprite(7); // bike
+        newObj[14] = await prepareSprite(14); // fuzzy
+        newObj[378] = await prepareSprite(378); // bedNess
+        newObj[453] = await prepareSprite(453); // sitting
+        newObj[457] = await prepareSprite(457); // deadRobot
     }
 
-    if(sprite.sprites.bike && index === 0) {
-        newObj[7] = await prepareSprite(sprite.sprites.bike, 7);
+    if(index === 1) { // Paula
+        newObj[454] = await prepareSprite(453); // sitting
     }
 
-    if(sprite.sprites.dead) {
-        newObj[index + 8] = await prepareSprite(sprite.sprites.dead, 8);
+    if(index === 2) { // Jeff
+        newObj[15] = await prepareSprite(15); // bedJeff
     }
 
-    if(sprite.sprites.fuzzy && index === 0) {
-        newObj[14] = await prepareSprite(sprite.sprites.fuzzy, 14);
-    }
-
-    if(sprite.sprites.bedJeff && index === 2) {
-        newObj[15] = await prepareSprite(sprite.sprites.bedJeff, 15);
-    }
-
-    if(sprite.sprites.down) {
-        const newIdx = (index === 0) ? 16 : (392 + index);
-        newObj[newIdx] = await prepareSprite(sprite.sprites.down, 16);
-    }
-
-    if(sprite.sprites.ladder) {
-        newObj[index + 17] = await prepareSprite(sprite.sprites.ladder, 17);
-    }
-
-    if(sprite.sprites.rope) {
-        newObj[index + 21] = await prepareSprite(sprite.sprites.rope, 21);
-    }
-
-    if(sprite.sprites.mini) {
-        newObj[index + 27] = await prepareSprite(sprite.sprites.mini, 27);
-    }
-
-    if(sprite.sprites.jump) {
-        newObj[index + 335] = await prepareSprite(sprite.sprites.jump, 335);
-    }
-
-    if(sprite.sprites.meditate && index === 3) {
-        newObj[362] = await prepareSprite(sprite.sprites.meditate, 362);
-    }
-
-    if(sprite.sprites.bedNess && index === 0) {
-        newObj[378] = await prepareSprite(sprite.sprites.bedNess, 378);
-    }
-
-    if(sprite.sprites.sitting && index === 0) {
-        newObj[453] = await prepareSprite(sprite.sprites.sitting, 453);
-    }
-
-    if(sprite.sprites.sitting && index === 2) {
-        newObj[454] = await prepareSprite(sprite.sprites.sitting, 453);
-    }
-
-    if(sprite.sprites.deadRobot && index === 0) {
-        newObj[457] = await prepareSprite(sprite.sprites.deadRobot, 457);
+    if(index === 3) { // Poo
+        newObj[362] = await prepareSprite(362); // meditate
     }
 
     return newObj;
+}
+
+const bufferToPng = function(buffer) {
+    const reader = new PNGReader(buffer);
+    return new Promise(resolve => {
+	    reader.parse((err, png) => {
+            if (err) throw err;
+            resolve(png);
+        });
+    });
+}
+
+
+const arrEq = function(a, b) {
+    if(a.constructor !== Array && a.constructor !== Uint8Array) {
+        return false;
+    }
+    if(a.constructor !== b.constructor) {
+        return false;
+    }
+    if(a.length !== b.length) {
+        return false;
+    }
+    return a.every((x, i) => x === b[i]);
+}
+
+const SPRITE_GROUP_PALETTES = [
+    { index: 16, values: [
+        112, 112, 112, 248, 240, 240, 184, 200, 200,
+        152, 136, 152,   0, 176, 128,   0, 144, 112,
+         80, 112,  96, 168, 208, 240,  72, 152, 160,
+         88, 208, 216, 200,   0, 160, 120,  48,  80,
+        208, 176,  88, 184, 136,   0, 136, 112, 160,
+         48,  32,  32 ]},
+    { index: 20, values: [
+         96, 152, 112, 240, 240, 240, 192, 192, 192,
+        152, 152, 152, 128, 128, 128,  80,  80,  80,
+        160, 192, 192, 104, 136, 136,  88, 112, 120,
+         56,  80,  80, 240,   0,  96, 144,   0,  48,
+        160, 136, 240, 112,  88, 224,  72,  40, 152,
+         48,  32,  32 ]},
+    { index: 18, values: [
+        168, 200, 128, 240, 240, 240, 208, 208, 208,
+        144, 160, 128,   0, 176, 128,   0, 144, 112,
+         96, 128, 104, 192, 176, 128, 192, 160, 104,
+        152, 120,  88, 240,   0,  96, 144,   0,  48,
+        224, 208,  32, 224, 152,  24,  80,  80, 200,
+         48,  32,  32 ]},
+    { index: 22, values: [
+        216, 200,  80, 240, 240, 176, 192, 176, 128,
+        192, 160, 104, 152, 120,  88, 128,  96,  64,
+         80,  64,  40,   0, 176, 128,   0, 144, 112,
+         80, 112,  88, 240, 176, 144, 240, 144, 144,
+        240, 240, 240, 200, 200, 200, 240,   0,  96,
+         48,  32,  32 ]},
+    { index: 24, values: [
+          0,   0,   0, 192, 144, 120, 224, 176, 168,
+        144, 120, 104, 232, 200, 152, 208, 152,  72,
+        192, 136,  88, 168, 120,  32, 248, 200, 128,
+        248, 176, 128, 200, 136, 104, 168,  96,  64,
+        248, 232, 128, 168, 144,  88, 128, 128,  48,
+         64,  64,  64 ]},
+    { index: 26, values: [
+          0, 176, 128, 240, 240, 240, 200, 200, 200,
+        144, 160, 128,   0, 176, 128,   0, 144, 112,
+         80, 112,  96, 240, 176, 144, 200, 152, 120,
+        240, 144, 144, 240,   0,  96, 144,   0,  48,
+        224, 208,  32, 240, 144,   0, 112, 112, 240,
+         48,  32,  32 ]},
+    { index: 30, values: [
+         96, 104, 248, 240, 248, 248, 168, 168, 168,
+        136, 136, 136, 152, 120,  88, 240,  48,  64,
+        224, 208,  32, 240, 144,   0, 192, 128,  96,
+          0, 232, 128,  40, 160, 112,  80, 120,  96,
+        240, 240, 208, 192, 208, 152, 144, 152,  96,
+         48,  32,  32 ]},
+    { index: 28, values: [
+        144, 224, 128, 240, 240, 240, 200, 200, 200,
+        144, 160, 128,   0, 176, 128,   0, 144, 112,
+         80, 112,  96, 240, 176, 144, 200, 152, 120,
+        240, 144, 144, 240,   0,  96, 144,   0,  48,
+        224, 208,  32, 240, 144,   0, 112, 112, 240,
+         48,  32,  32 ]},
+];
+
+function getBit(num, bit) {
+    return (num & (1 << bit)) === 0 ? 0 : 1;
+}
+
+function indexedToSnes4bpp(src, srcWidth, srcHeight) {
+    if(src.constructor !== Uint8Array) {
+        throw new Error(`src is not Uint8Array`);
+    }
+    if(!srcHeight || !srcWidth || srcHeight % 8 !== 0 || srcWidth % 8 !== 0 || src.length !== srcHeight * srcWidth) {
+        throw new Error(`Invalid indexed source dimensions: ${src.length} length, ${srcWidth} width, ${srcHeight} height`);
+    }
+    let result4bpp = new Uint8Array();
+    for(let i = 0; i * 8 < srcHeight; i++) {
+        for(let j = 0; j * 8 < srcWidth; j++) {
+            let tile = new Uint8Array();
+            for(let x = 0; x < 8; x++) {
+                const start = (i * srcWidth * 8) + (j * 8) + (srcWidth * x);
+                const accum = src.slice(start, start + 8);
+                tile = new Uint8Array([...tile, ...accum]);
+            }
+            
+            console.assert(tile.length === 64);
+            const accum = new Uint8Array(tile.length / 2);
+            for(let x = 0; x < tile.length; x++) {
+                const row = Math.floor(x / 8);
+                const col = x % 8;
+                
+                accum[row*2] |= (getBit(tile[x], 0) << (7 - col));
+                accum[row*2 + 1] |= (getBit(tile[x], 1) << (7 - col));
+                accum[row*2 + 16] |= (getBit(tile[x], 2) << (7 - col));
+                accum[row*2 + 17] |= (getBit(tile[x], 3) << (7 - col));
+            }
+            result4bpp = new Uint8Array([...result4bpp, ...accum]);
+        }
+    }
+    return result4bpp;
+}
+
+function processSpriteGroup(png) {
+    const pxArray = png.pixels;
+    const width = png.width;
+    const height = png.height;
+
+    const spritesWide = 4;
+    const spritesTall = 4;
+    const spriteWidth = width / spritesWide;
+    const spriteHeight = height / spritesTall;
+
+    if(spriteWidth % 8 !== 0 || spriteHeight % 8 !== 0) {
+        throw new Error("Sprite dimensions not tilable.")
+    }
+
+    const paletteMatch = SPRITE_GROUP_PALETTES.find(p => arrEq(p.values, png.palette));
+    if(!paletteMatch) {
+        throw new Error("Matching sprite group palette not found.");
+    }
+    const palette = paletteMatch.index;
+
+    let byteData = new Uint8Array();
+    const byteIndexes = [];
+    const spriteCaches = [];
+
+    const spriteDatas = [];
+    for(var i = 0; i < spritesWide; i++) {
+        for(var j = 0; j < spritesTall; j++) {
+            let normal = new Uint8Array();
+            let mirrored = new Uint8Array();
+            for(var x = 0; x < spriteHeight; x++) {
+                const start = (i * width * spriteHeight) + (j * spriteWidth) + (width * x);
+                const add = pxArray.slice(start, start + spriteWidth);
+                normal = new Uint8Array([...normal, ...add]);
+                mirrored = new Uint8Array([...mirrored, ...add.reverse()]);
+            }
+            console.assert(normal.length === spriteWidth * spriteHeight);
+            spriteDatas.push({normal, mirrored});
+        }
+    }
+    console.assert(spriteDatas.length === spritesWide * spritesTall);
+
+    spriteDatas.forEach((spriteData, i) => {
+        if(spriteData.normal.every(n => n === 0)) {
+            return;
+        }
+
+        let cacheHit = spriteCaches.find(cacheItem => arrEq(cacheItem.spriteData.normal, spriteData.normal));
+        if(cacheHit) {
+            byteIndexes.push(cacheHit.byteIndex);
+            return;
+        }
+        cacheHit = spriteCaches.find(cacheItem => arrEq(cacheItem.spriteData.mirrored, spriteData.normal));
+        if(cacheHit) {
+            byteIndexes.push(cacheHit.byteIndex + 1);
+            return;
+        }
+
+        const accum = indexedToSnes4bpp(spriteData.normal, spriteWidth, spriteHeight);
+        const byteIndex = byteData.length;
+
+        const cacheItem = {spriteData, byteIndex};
+        spriteCaches.push(cacheItem);
+
+        byteIndexes.push(byteData.length);
+        byteData = new Uint8Array([...byteData, ...accum]);
+    });
+
+    if(byteIndexes.length !== 8 && byteIndexes.length !== 16) {
+        throw new Error(`Incorrect number of non-blank sprites found: ${byteIndexes.length}`);
+    }
+
+    return {data: byteData, indexes: byteIndexes, palette};
 }
