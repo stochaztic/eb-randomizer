@@ -326,6 +326,23 @@ export async function testAllSprites() {
       }
 }
 
+export function getPercent(sprite) {
+    const match = `/${sprite.value}/`;
+    const matchCount = Object.keys(urls).filter(url => url.includes(match) && !url.endsWith(`006.png`)).length;
+    return Math.floor(100 * Math.max(1, matchCount) / 15);
+}
+
+export function getUrl(sprite, index) {
+    let url = urls[`./sprites/${sprite.value}/${index.toString().padStart(3, '0')}.png`];
+    if(!url && index === 1) {
+        url = urls[`./sprites/${sprite.value}.png`];
+    }
+    if(!url) {
+        url = urls[`./sprites/${sprite.value}-${index.toString().padStart(3, '0')}.png`];
+    }
+    return url?.default || url;
+}
+
 export async function prepare(sprite, index) {
     const newObj = {};
     if(sprite.value === "NoChange") {
@@ -340,20 +357,14 @@ export async function prepare(sprite, index) {
     }
 
     const prepareSprite = async function(index) {
-        let url = urls[`./sprites/${sprite.value}/${index.toString().padStart(3, '0')}.png`];
-        if(!url && index === 1) {
-            url = urls[`./sprites/${sprite.value}.png`];
-        }
-        if(!url) {
-            url = urls[`./sprites/${sprite.value}-${index.toString().padStart(3, '0')}.png`];
-        }
+        const url = getUrl(sprite, index);
         if(!url) {
             if(index === 1) {
                 throw new Error(`Could not find main sprite for ${sprite.value}`);
             }
             return undefined;
         }
-        let response = await fetch(url.default || url);
+        let response = await fetch(url);
         let buffer = await response.arrayBuffer();
         const png = await bufferToPng(buffer);
         const processedGroup = processSpriteGroup(png);

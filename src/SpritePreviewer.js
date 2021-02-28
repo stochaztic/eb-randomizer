@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './SpritePreviewer.css';
-import { customCharacters } from './sprites.js';
+import { customCharacters, getPercent, getUrl } from './sprites.js';
 
 const containerStyle = {
   display: "flex",
@@ -20,7 +20,7 @@ const boxStyle = {
 }
 
 const spriteDisplayStyle = (character) => { return {
-    backgroundImage: `url('/displaySprites/${character.value}.png')`,
+    backgroundImage: `url('${getUrl(character, 1)}')`,
     margin: "6px",
     marginRight: "12px",
     alignSelf: "center",
@@ -57,7 +57,7 @@ const SpritePreviewer = () => {
                 <span style={labelStyle}>{character.label}</span>
                 <span style={creatorStyle}>Creator: {character.creator}</span>
                 <span style={conversionStyle}>
-                    {Math.floor(Object.getOwnPropertyNames(character.sprites).filter(n => n !== "nude").length * 100 / 15)}% conversion
+                    {getPercent(character)}% conversion
                 </span>
             </div>
         </div>
