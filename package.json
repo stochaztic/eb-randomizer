@@ -8,14 +8,14 @@
     "localforage": "^1.7.4",
     "png.js": "^0.2.1",
     "randomtools-js": "file:../randomtools-js",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.3",
     "react-select": "^2.4.4"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "postbuild": "react-snap",
     "push": "firebase deploy --only hosting:main",
     "pushbeta": "firebase deploy --only hosting:beta"
@@ -29,12 +29,11 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "array-loader": "file:../array-loader",
-    "import-all.macro": "^2.0.3",
+    "import-all.macro": "^3.1.0",
     "preval.macro": "^3.0.0",
     "raw-loader": "^2.0.0",
-    "react-app-rewired": "^2.1.6",
     "react-snap": "^1.23.0",
-    "worker-loader": "^2.0.0"
+    "worker-loader": "^3.0.8"
   },
   "browserslist": {
     "production": [

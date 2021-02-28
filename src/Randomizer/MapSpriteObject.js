@@ -6,11 +6,11 @@ import ebutils from './ebutils.js';
 import TPTObject from './TPTObject.js';
 import ItemObject from './ItemObject.js';
 import MapEventObject from './MapEventObject.js';
+import MapEnemyObject from './MapEnemyObject.js';
+import ZoneSpriteObject from './ZoneSpriteObject.js';
 import { TableObject } from 'randomtools-js';
 
-import ZonePositionMixin from './ZonePositionMixin.js';
-
-class MapSpriteObject extends ZonePositionMixin(TableObject) {
+class MapSpriteObject extends TableObject {
     toString() {
         return [this.data.x, this.data.y, this.pointer, this.data.tpt_number].map(i => i.toString(16)).join(" ");
     }
@@ -44,6 +44,33 @@ class MapSpriteObject extends ZonePositionMixin(TableObject) {
             result.enemyEncounters = this.script.enemyEncounters.map(ee => ee.serialize());
         }
         return result;
+    }
+    
+    get zone() {
+        if(this._zone !== undefined) return this._zone;
+        const candidates = ZoneSpriteObject.every.filter(z => z.objPointers(this.constructor).includes(this.pointer));
+        console.assert(candidates.length === 1);
+        this._zone = candidates[0];
+        return this.zone;
+    }
+
+    get xBounds() {
+        return {x1: this.globalX, x2: this.globalX};
+    }
+
+    get yBounds() {
+        return {y1: this.globalY, y2: this.globalY};
+    }
+
+    get bounds() {
+        return Object.assign({}, this.xBounds, this.yBounds);
+    }
+    
+    get enemyCell() {
+        if(this._enemyCell !== undefined) return this._enemyCell;
+        this._enemyCell = MapEnemyObject.getByPixel(this.globalX, this.globalY);
+        console.assert(this.zone.contains(this._enemyCell));
+        return this.enemyCell;
     }
 
     static get unassignedChests() {

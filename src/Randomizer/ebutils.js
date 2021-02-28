@@ -1,4 +1,3 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import textMapRaw0 from '!array-loader!./tables/text_mapping.txt';
 import textMapRaw1 from '!array-loader!./tables/text_mapping_1.txt';
 import textMapRaw2 from '!array-loader!./tables/text_mapping_2.txt';

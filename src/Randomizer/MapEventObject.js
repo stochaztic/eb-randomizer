@@ -3,12 +3,12 @@ import { TableObject } from 'randomtools-js';
 import tableText from '!array-loader!./tables/map_event_table.txt';
 import pointerText from '!array-loader!./tables/map_event_pointers.txt';
 import friendsText from '!array-loader!./tables/meo_friends.txt';
-import ZonePositionMixin from './ZonePositionMixin.js';
 import ZoneEventObject from './ZoneEventObject.js';
+import MapEnemyObject from './MapEnemyObject.js';
 import EventObject from './EventObject.js';
 import Cluster from './Cluster.js';
 
-class MapEventObject extends ZonePositionMixin(TableObject) {
+class MapEventObject extends TableObject {
     toString() {
         return [this.enemyCell.index, this.globalX, this.globalY, this.data.event_type, 
                 this.data.event_index].map(i => i.toString(16)).join(" ");
@@ -34,6 +34,36 @@ class MapEventObject extends ZonePositionMixin(TableObject) {
             result.yDestination = this.newEvent.y * 8;
         }
         return result;
+    }
+
+    get zone() {
+        if(this._zone !== undefined) return this._zone;
+        let candidates;
+        const e = ZoneEventObject.every;
+        candidates = e.filter(z => z.objPointers(this.constructor).includes(this.pointer));
+
+        console.assert(candidates.length === 1);
+        this._zone = candidates[0];
+        return this.zone;
+    }
+
+    get xBounds() {
+        return {x1: this.globalX, x2: this.globalX};
+    }
+
+    get yBounds() {
+        return {y1: this.globalY, y2: this.globalY};
+    }
+
+    get bounds() {
+        return Object.assign({}, this.xBounds, this.yBounds);
+    }
+    
+    get enemyCell() {
+        if(this._enemyCell !== undefined) return this._enemyCell;
+        this._enemyCell = MapEnemyObject.getByPixel(this.globalX, this.globalY);
+        console.assert(this.zone.contains(this._enemyCell));
+        return this.enemyCell;
     }
 
     connectExit(other, override = false) {

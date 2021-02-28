@@ -353,7 +353,7 @@ export async function prepare(sprite, index) {
             }
             return undefined;
         }
-        let response = await fetch(url);
+        let response = await fetch(url.default || url);
         let buffer = await response.arrayBuffer();
         const png = await bufferToPng(buffer);
         const processedGroup = processSpriteGroup(png);
@@ -399,8 +399,8 @@ export async function prepare(sprite, index) {
 }
 
 const bufferToPng = function(buffer) {
-    const reader = new PNGReader(buffer);
     return new Promise(resolve => {
+        const reader = new PNGReader(buffer);
 	    reader.parse((err, png) => {
             if (err) throw err;
             resolve(png);
