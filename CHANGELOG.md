@@ -1,7 +1,7 @@
 # Changelog
 ## v47.x / v48 (In progress)
 - Music: Some custom tracks added and removed.
-- PC sprites: Added SimEarth Lizard, Swellman, and Jenn.
+- PC sprites: Added SimEarth Lizard, Swellman, Jenn, and Ristar.
 
 ## v47 (2020-09-12)
 - Challenges: New challenge mode "No gifts/store items, all enemy item drops from random pool".

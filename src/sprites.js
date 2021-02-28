@@ -169,6 +169,11 @@ export const customCharacters = [
         creator: "EBrent",
     },
     {
+        label: "Ristar",
+        value: "Ristar",
+        creator: "Gabbi",
+    },
+    {
         label: "Swellman",
         value: "Swellman",
         creator: "Quatropus",
