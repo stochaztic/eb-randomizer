@@ -16,7 +16,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "react-snap",
     "push": "firebase deploy --only hosting:main",
     "pushbeta": "firebase deploy --only hosting:beta"
   },
@@ -32,7 +31,6 @@
     "import-all.macro": "^3.1.0",
     "preval.macro": "^3.0.0",
     "raw-loader": "^2.0.0",
-    "react-snap": "^1.23.0",
     "worker-loader": "^3.0.8"
   },
   "browserslist": {
