@@ -549,7 +549,8 @@ function processSpriteGroup(png) {
         throw new Error("Sprite dimensions not tilable.")
     }
 
-    const paletteMatch = SPRITE_GROUP_PALETTES.find(p => arrEq(p.values, png.palette));
+    const paletteValues = png.palette.slice(0, SPRITE_GROUP_PALETTES[0].values.length);
+    const paletteMatch = SPRITE_GROUP_PALETTES.find(p => arrEq(p.values, paletteValues));
     if(!paletteMatch) {
         throw new Error("Matching sprite group palette not found.");
     }
@@ -586,11 +587,13 @@ function processSpriteGroup(png) {
             byteIndexes.push(cacheHit.byteIndex);
             return;
         }
+        /* //TODO: Determine cause of flipped-image frame bug, then re-enable this. 
         cacheHit = spriteCaches.find(cacheItem => arrEq(cacheItem.spriteData.mirrored, spriteData.normal));
         if(cacheHit) {
             byteIndexes.push(cacheHit.byteIndex + 1);
             return;
         }
+        */
 
         const accum = indexedToSnes4bpp(spriteData.normal, spriteWidth, spriteHeight);
         const byteIndex = byteData.length;
