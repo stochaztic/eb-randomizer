@@ -14,6 +14,11 @@ export const customCharacters = [
         creator: "Artheau",
     },
     {
+        label: "Saturn Ness",
+        value: "SaturnNess",
+        creator: "BossCrafty",
+    },
+    {
         label: "Tessie",
         value: "Tessie",
         creator: "TheKubliest",
