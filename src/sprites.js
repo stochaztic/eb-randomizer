@@ -592,7 +592,7 @@ function processSpriteGroup(png) {
             byteIndexes.push(cacheHit.byteIndex);
             return;
         }
-        /* //TODO: Determine cause of flipped-image frame bug, then re-enable this. 
+        /* // Complicated due to: https://github.com/pk-hack/CoilSnake/issues/88 
         cacheHit = spriteCaches.find(cacheItem => arrEq(cacheItem.spriteData.mirrored, spriteData.normal));
         if(cacheHit) {
             byteIndexes.push(cacheHit.byteIndex + 1);

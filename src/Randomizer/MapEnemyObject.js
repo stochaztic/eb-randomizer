@@ -209,6 +209,7 @@ MapEnemyObject.problematicPlates = [
     0x49e5, // Threed tunnel 2 exit
     0x2b26, // Thunder & Storm drop spot
     0x138,  // Fake Electro Specter door
+    0xd31,  // 1 off of Mondo Mole cave entrance
 ];
 
 MapEnemyObject.rows = 160;
