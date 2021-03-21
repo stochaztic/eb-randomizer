@@ -1,6 +1,6 @@
 # Changelog
 ## v47.x / v48 (In progress)
-- Ancient Cave: Spawn plates around doors adjusted.
+- Ancient Cave: Spawn plates around doors adjusted and hardlock glitch fixed.
 - Music: Some custom tracks added and removed.
 - PC sprites: Added SimEarth Lizard, Swellman, Jenn, Ristar, and Saturn Ness.
 

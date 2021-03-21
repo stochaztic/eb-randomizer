@@ -54,3 +54,10 @@ c2 30               ; REP #$30    # END 8-BIT MODE
 
 ; Fix HHV store
 64FA5: FF
+
+; Fix reload pointer death softlock
+; Overwrite C4/C669: 22 5F DD C1  JSR $L1DD5F
+4C66A: 74 ff c9
+9FF74: 22 5f dd c1  ; JSL $L1DD5F
+9c 9a 5D            ; STZ $5D9A
+6b                  ; RTL
