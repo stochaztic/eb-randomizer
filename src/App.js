@@ -386,7 +386,7 @@ class App extends Component {
         </div>
         { specs.flags.a ?
           <div>
-          <p><strong>Recommended.</strong> Ancient Cave mode completely changes how the game is played. Instead of proceeding through the normal storyline of EarthBound, all rooms and doors have been shuffled around into a multi-level maze. You start with all four party members, and your goal is to proceed through all 8 levels of the maze, each level guarded by a Shiny Spot, and reach and defeat Giygas. </p>
+          <p><strong>Recommended.</strong> Ancient Cave mode completely changes how the game is played. Instead of proceeding through the normal storyline of EarthBound, all rooms and doors have been shuffled around into a multi-floor maze. You start with all four party members, and your goal is to proceed through all 9 floors of the maze, with the ends of floors 1 through 8 guarded by a Shiny Spot, and reach and defeat Giygas at the end of floor 9. </p>
           
           { !this.state.moreInfo ? <button onClick={this.showMoreInfo}>More info...</button> :
             <div>
