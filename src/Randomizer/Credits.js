@@ -136,6 +136,7 @@ class Credits extends ReadWriteObject {
             ...bigText("COBALTCUSTARD"),
             ...bigText("DOCTORSWELLMAN"),
             ...bigText("JRBRANDON15"),
+            ...bigText("MICROWAVEDANIKA"),
             ...bigText("MRNOOBLORD"),
             ...bigText("PROJPATSUMMITT"),
             ...bigText("QUINN"),
