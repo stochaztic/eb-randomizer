@@ -128,6 +128,7 @@ class Credits extends ReadWriteObject {
             ...smallText("SUPERSERIES ANCIENT CAVE WINNERS"),
             ...bigText("AURILLIUX"),
             ...bigText("ANDYPERFECT"),
+            ...bigText("DOCTORSWELLMAN"),
             ...space(2),
             ...smallText("PATREON SUPPORTERS"),
             ...bigText("ANDYPERFECT"),

@@ -1,6 +1,7 @@
 # Changelog
-## v47.x / v48 (In progress)
+## v48 (2021-04-28)
 - Ancient Cave: Spawn plates around doors adjusted and hardlock glitch fixed.
+- Credits: EBSS AC 2021 winner DoctorSwellman added.
 - Music: Some custom tracks added and removed.
 - PC sprites: Added SimEarth Lizard, Swellman, Jenn, Ristar, and Saturn Ness.
 
