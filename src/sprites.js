@@ -34,6 +34,16 @@ export const customCharacters = [
         creator: "Bacon",
     },
     {
+        label: "Erdrick",
+        value: "Erdrick",
+        creator: "Defqon1",
+    },
+    {
+        label: "Link",
+        value: "Link",
+        creator: "Defqon1",
+    },
+    {
         label: "SimEarth Lizard",
         value: "SimEarthLizard",
         creator: "Peebs",
