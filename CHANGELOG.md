@@ -1,6 +1,6 @@
 # Changelog
 ## v48.x / v49 (In progress)
-- PC sprites: Added Erdick and Link.
+- PC sprites: Added Lucas, Erdrick, Link, and Zelda.
 
 ## v48 (2021-04-28)
 - Ancient Cave: Spawn plates around doors adjusted and hardlock glitch fixed.

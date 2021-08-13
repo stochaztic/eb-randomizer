@@ -34,6 +34,11 @@ export const customCharacters = [
         creator: "Bacon",
     },
     {
+        label: "Lucas",
+        value: "Lucas",
+        creator: "Defqon1",
+    },
+    {
         label: "Erdrick",
         value: "Erdrick",
         creator: "Defqon1",
@@ -41,6 +46,11 @@ export const customCharacters = [
     {
         label: "Link",
         value: "Link",
+        creator: "Defqon1",
+    },
+    {
+        label: "Zelda",
+        value: "Zelda",
         creator: "Defqon1",
     },
     {
