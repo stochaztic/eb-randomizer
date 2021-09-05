@@ -4,6 +4,21 @@ const urls = importAll.sync('./sprites/**/*.png');
 
 export const customCharacters = [
     {
+        label: "Lucas",
+        value: "Lucas",
+        creator: "Defqon1",
+    },
+    {
+        label: "Claus",
+        value: "Claus",
+        creator: "Defqon1",
+    },
+    {
+        label: "Kumatora",
+        value: "Kumatora",
+        creator: "Defqon1",
+    },
+    {
         label: "Mega Man",
         value: "MegaMan",
         creator: "Artheau",
@@ -34,11 +49,6 @@ export const customCharacters = [
         creator: "Bacon",
     },
     {
-        label: "Lucas",
-        value: "Lucas",
-        creator: "Defqon1",
-    },
-    {
         label: "Erdrick",
         value: "Erdrick",
         creator: "Defqon1",
@@ -51,6 +61,36 @@ export const customCharacters = [
     {
         label: "Zelda",
         value: "Zelda",
+        creator: "Defqon1",
+    },
+    {
+        label: "Mog",
+        value: "Mog",
+        creator: "Defqon1",
+    },
+    {
+        label: "Shadow",
+        value: "Shadow",
+        creator: "Defqon1",
+    },
+    {
+        label: "Interceptor",
+        value: "Interceptor",
+        creator: "Defqon1",
+    },
+    {
+        label: "Mario",
+        value: "Mario",
+        creator: "Defqon1",
+    },
+    {
+        label: "Luigi",
+        value: "Luigi",
+        creator: "Defqon1",
+    },
+    {
+        label: "Bomberman",
+        value: "Bomberman",
         creator: "Defqon1",
     },
     {
@@ -359,7 +399,7 @@ export async function testAllSprites() {
 export function getPercent(sprite) {
     const match = `/${sprite.value}/`;
     const matchCount = Object.keys(urls).filter(url => url.includes(match) && !url.endsWith(`006.png`)).length;
-    return Math.floor(100 * Math.max(1, matchCount) / 15);
+    return Math.min(100, Math.floor(100 * Math.max(1, matchCount) / 15));
 }
 
 export function getUrl(sprite, index) {
