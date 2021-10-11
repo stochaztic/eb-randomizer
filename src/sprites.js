@@ -19,6 +19,11 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Salsa",
+        value: "Salsa",
+        creator: "Defqon1",
+    },
+    {
         label: "Mega Man",
         value: "MegaMan",
         creator: "Artheau",
@@ -59,13 +64,28 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Dark Link",
+        value: "DarkLink",
+        creator: "Defqon1",
+    },
+    {
         label: "Zelda",
         value: "Zelda",
         creator: "Defqon1",
     },
     {
-        label: "Mog",
-        value: "Mog",
+        label: "Terra",
+        value: "Terra",
+        creator: "Defqon1",
+    },
+    {
+        label: "Sabin",
+        value: "Sabin",
+        creator: "Defqon1",
+    },
+    {
+        label: "Celes",
+        value: "Celes",
         creator: "Defqon1",
     },
     {
@@ -79,6 +99,21 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Mog",
+        value: "Mog",
+        creator: "Defqon1",
+    },
+    {
+        label: "Kefka",
+        value: "Kefka",
+        creator: "Defqon1",
+    },
+    {
+        label: "Ultros",
+        value: "Ultros",
+        creator: "Defqon1",
+    },
+    {
         label: "Mario",
         value: "Mario",
         creator: "Defqon1",
@@ -89,9 +124,29 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Toad",
+        value: "Toad",
+        creator: "Defqon1",
+    },
+    {
+        label: "Toadette",
+        value: "Toadette",
+        creator: "Defqon1",
+    },
+    {
         label: "Bomberman",
         value: "Bomberman",
         creator: "Defqon1",
+    },
+    {
+        label: "Captain Falcon",
+        value: "CaptainFalcon",
+        creator: "Defqon1",
+    },
+    {
+        label: "Kirby",
+        value: "Kirby",
+        creator: "Peebs",
     },
     {
         label: "SimEarth Lizard",

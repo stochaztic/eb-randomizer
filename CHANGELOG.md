@@ -1,6 +1,6 @@
 # Changelog
-## v48.x / v49 (In progress)
-- PC sprites: Added Claus, Lucas, Kumatora, Erdrick, Link, Zelda, Mog, Shadow, Interceptor, Mario, Luigi, and Bomberman.
+## v49 (2021-10-11)
+- PC sprites: Added Claus, Lucas, Kumatora, Salsa, Erdrick, Link, Dark Link, Zelda, Sabin, Terra, Celes, Kefka, Ultros, Mog, Shadow, Interceptor, Mario, Luigi, Toad, Toadette, Bomberman, Captain Falcon, and Kirby.
 
 ## v48 (2021-04-28)
 - Ancient Cave: Spawn plates around doors adjusted and hardlock glitch fixed.
