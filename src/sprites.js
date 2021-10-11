@@ -146,7 +146,7 @@ export const customCharacters = [
     {
         label: "Kirby",
         value: "Kirby",
-        creator: "Peebs",
+        creator: "Defqon1",
     },
     {
         label: "SimEarth Lizard",
