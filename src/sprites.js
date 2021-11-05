@@ -109,6 +109,11 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Edgar",
+        value: "Edgar",
+        creator: "Defqon1",
+    },
+    {
         label: "Shadow",
         value: "Shadow",
         creator: "Defqon1",
