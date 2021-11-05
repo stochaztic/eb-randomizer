@@ -24,6 +24,21 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Duster",
+        value: "Duster",
+        creator: "Defqon1",
+    },
+    {
+        label: "Save Frog",
+        value: "SaveFrog",
+        creator: "Defqon1",
+    },
+    {
+        label: "Exit Mouse",
+        value: "ExitMouse",
+        creator: "Defqon1",
+    },
+    {
         label: "Mega Man",
         value: "MegaMan",
         creator: "Artheau",
@@ -56,6 +71,11 @@ export const customCharacters = [
     {
         label: "Erdrick",
         value: "Erdrick",
+        creator: "Defqon1",
+    },
+    {
+        label: "Rek",
+        value: "Rek",
         creator: "Defqon1",
     },
     {
@@ -222,6 +242,16 @@ export const customCharacters = [
         label: "Dragon Poo",
         value: "DragonPoo",
         creator: "Quatropus",
+    },
+    {
+        label: "Dorothy",
+        value: "Dorothy",
+        creator: "Defqon1",
+    },
+    {
+        label: "Sophia",
+        value: "Sophia",
+        creator: "Defqon1",
     },
     {
         label: "Sonic",
