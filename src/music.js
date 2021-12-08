@@ -692,6 +692,23 @@ export const customSongs = [
         isBattle: true,
         isBoss: false,
     },
+    {
+        title: "Lucifer's Theme",
+        filename: "Lucifers_Theme",
+        artist: "Cover by Aurilliux",
+        instruments: [0x05, 0x54],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: false,
+    },
+    {
+        title: "DBZ Legend Super Saiyan",
+        artist: "Cover by Aurilliux",
+        instruments: [0x05, 0x54],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: true,
+    },
 ];
 
 export async function prepareCustomSongIndex(index) {
