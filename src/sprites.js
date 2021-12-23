@@ -29,8 +29,18 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Flint",
+        value: "Flint",
+        creator: "Defqon1",
+    },
+    {
         label: "Save Frog",
         value: "SaveFrog",
+        creator: "Defqon1",
+    },
+    {
+        label: "Rope Snake",
+        value: "RopeSnake",
         creator: "Defqon1",
     },
     {
@@ -114,6 +124,11 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "General Leo",
+        value: "GeneralLeo",
+        creator: "Defqon1",
+    },
+    {
         label: "Shadow",
         value: "Shadow",
         creator: "Defqon1",
@@ -171,6 +186,21 @@ export const customCharacters = [
     {
         label: "Kirby",
         value: "Kirby",
+        creator: "Defqon1",
+    },
+    {
+        label: "Prince of Cannock",
+        value: "Cannock",
+        creator: "Defqon1",
+    },
+    {
+        label: "Prince of Midenhall",
+        value: "Midenhall",
+        creator: "Defqon1",
+    },
+    {
+        label: "Princess of Moonbrooke",
+        value: "Moonbrooke",
         creator: "Defqon1",
     },
     {
