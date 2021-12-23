@@ -155,6 +155,15 @@ const flagDescriptions = {
             2048: "No gifts/store items, all enemy item drops from random pool",
         }
     },
+    x: {
+        title: "Christmas mode",
+        max: 1,
+        default: 0,
+        desc: {
+            0: "Disabled.",
+            1: "Only Christmas songs if w >= 4.",
+        }
+    },
     devmode: {
         title: "Developer mode",
         max: 2,

@@ -1,7 +1,7 @@
 # Changelog
 ## v49.x / v50 (In progress)
 - PC sprites: Added Exit Mouse, Rope Snake, Duster, Flint, Save Frog, Edgar, Rek, General Leo, Prince of Cannock, Prince of Midenhall, Princess of Moonbrooke, Dorothy, and Sophia.
-- Music: Some custom tracks added.
+- Music: Some custom tracks added, and a flag to force Christmas tracks to appear added.
 
 ## v49 (2021-10-11)
 - PC sprites: Added Claus, Lucas, Kumatora, Salsa, Erdrick, Link, Dark Link, Zelda, Sabin, Terra, Celes, Kefka, Ultros, Mog, Shadow, Interceptor, Mario, Luigi, Toad, Toadette, Bomberman, Captain Falcon, and Kirby.
