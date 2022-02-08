@@ -9,6 +9,6 @@ e2 30        ;SEP #$30    # BEGIN 8-BIT MODE
 AE 13 B6     ;LDX $B613
 BF AA BB CC  ;LDA $CCBBAA,X - placeholder
 8D 10 AA     ;STA $aa10 ITEM_DROPPED
-EE 13 B6     ;INC $B4A6
+EE 13 B6     ;INC $B613
 c2 30        ;REP #$30    # END 8-BIT MODE
 4C CD 4E     ;JMP $4ECD @END_ITEM_DROP

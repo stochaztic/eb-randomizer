@@ -209,6 +209,9 @@ class ItemObject extends TableObject {
         if(ignoreCleanup.includes(this.index)) {
             return;
         }
+        if(this.context.specs.flags.a && this.isBroken) {
+            this.data.extra_power_increase = 1;
+        }
         if(this.context.specs.flags.a && !(this.isSellable || this.getBit("nogive"))) {
             this.data.price = Math.max(this.data.price, 2);
         }
