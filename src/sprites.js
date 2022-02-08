@@ -49,6 +49,11 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Coil Snake",
+        value: "CoilSnake",
+        creator: "Defqon1",
+    },
+    {
         label: "Mega Man",
         value: "MegaMan",
         creator: "Artheau",
@@ -144,6 +149,16 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Relm",
+        value: "Relm",
+        creator: "Defqon1",
+    },
+    {
+        label: "Strago",
+        value: "Strago",
+        creator: "Defqon1",
+    },
+    {
         label: "Kefka",
         value: "Kefka",
         creator: "Defqon1",
@@ -189,6 +204,16 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Pit",
+        value: "Pit",
+        creator: "Defqon1",
+    },
+    {
+        label: "Dark Pit",
+        value: "DarkPit",
+        creator: "Defqon1",
+    },
+    {
         label: "Prince of Cannock",
         value: "Cannock",
         creator: "Defqon1",
@@ -212,6 +237,11 @@ export const customCharacters = [
         label: "Chu",
         value: "Chu",
         creator: "Satsy",
+    },
+    {
+        label: "Mike",
+        value: "Mike",
+        creator: "Defqon1",
     },
     {
         label: "Pride Ness",
@@ -286,6 +316,16 @@ export const customCharacters = [
     {
         label: "Sophia",
         value: "Sophia",
+        creator: "Defqon1",
+    },
+    {
+        label: "Blanche",
+        value: "Blanche",
+        creator: "Defqon1",
+    },
+    {
+        label: "Rose",
+        value: "Rose",
         creator: "Defqon1",
     },
     {
@@ -386,7 +426,6 @@ export const vanillaSprites = [
     { label: "Carpainter", value: 159, },
     { label: "Captain Strong", value: 75, },
     { label: "Clock", value: 326, },
-    { label: "Coil Snake", value: 283, },
     { label: "Cop", value: 111, },
     { label: "Crawling Dog", value: 42, },
     { label: "Crow", value: 282, },

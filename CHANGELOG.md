@@ -2,7 +2,7 @@
 ## v49.x / v50 (In progress)
 - Ancient Cave: Jeff can fix any item at IQ 1.
 - Holiday: Christmas and Valentine's Day options added.
-- PC sprites: Added Exit Mouse, Rope Snake, Duster, Flint, Save Frog, Edgar, Rek, General Leo, Prince of Cannock, Prince of Midenhall, Princess of Moonbrooke, Dorothy, and Sophia.
+- PC sprites: Added Exit Mouse, Rope Snake, Coil Snake, Duster, Flint, Save Frog, Edgar, Rek, General Leo, Relm, Strago, Prince of Cannock, Prince of Midenhall, Princess of Moonbrooke, Pit, Dark Pit, Mike, Dorothy, Sophia, Blanche, and Rose.
 - Music: Some custom tracks added.
 
 ## v49 (2021-10-11)
