@@ -53,7 +53,7 @@ class MusicObject extends TableObject {
 		const chosenSongIndexes = this.context.specs.chosenSongs || Array(this.insertSongCount).fill(-1); // -1: random
 		let unchosenSongPool = customSongs.filter((_, index) => !chosenSongIndexes.includes(index));
 
-		if(this.context.specs.flags.x >= 1) {
+		if(this.context.specs.flags.x === 1) {
 			unchosenSongPool = unchosenSongPool.filter(s => s.isChristmas);
 		}
 

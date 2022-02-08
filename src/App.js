@@ -4,7 +4,7 @@ import logo from './logo.png';
 import flagDescriptions from './flagDescriptions.js';
 import EarthBoundRandomizer from 'worker-loader!./randomizer.worker.js';
 import ebutils from './Randomizer/ebutils.js';
-import { prepare } from './sprites.js';
+import { prepare, prepareTheme } from './sprites.js';
 import { customSongs } from './music.js';
 import SpriteSelector from './SpriteSelector.js';
 import SpritePreviewer from './SpritePreviewer.js';
@@ -194,12 +194,17 @@ class App extends Component {
       }
     });
 
+    let themeBase = {};
+    if(specs.flags.x === 2) { // Valentine's Day 
+      themeBase = await prepareTheme("vday");
+    }
+
     const nessData = await prepare(this.state.chosenSprites[0], 0);
     const paulaData = await prepare(this.state.chosenSprites[1], 1);
     const jeffData = await prepare(this.state.chosenSprites[2], 2);
     const pooData = await prepare(this.state.chosenSprites[3], 3);
     
-    specs.sprites = Object.assign({}, nessData, paulaData, jeffData, pooData);
+    specs.sprites = Object.assign(themeBase, nessData, paulaData, jeffData, pooData);
 
     this.setState({generationStatus: 'Sending data to randomization engine...' });
     this.earthBoundRandomizer.postMessage({type: "execute", content: {

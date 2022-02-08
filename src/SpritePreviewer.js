@@ -20,7 +20,7 @@ const boxStyle = {
 }
 
 const spriteDisplayStyle = (character) => { return {
-    backgroundImage: `url('${getUrl(character, 1)}')`,
+    backgroundImage: `url('${getUrl(character?.value, 1)}')`,
     margin: "6px",
     marginRight: "12px",
     alignSelf: "center",

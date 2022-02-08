@@ -522,15 +522,34 @@ export function getPercent(sprite) {
     return Math.min(100, Math.floor(100 * Math.max(1, matchCount) / 15));
 }
 
-export function getUrl(sprite, index) {
-    let url = urls[`./sprites/${sprite.value}/${index.toString().padStart(3, '0')}.png`];
+export function getUrl(spriteDirectory, index) {
+    let url = urls[`./sprites/${spriteDirectory}/${index.toString().padStart(3, '0')}.png`];
     if(!url && index === 1) {
-        url = urls[`./sprites/${sprite.value}.png`];
+        url = urls[`./sprites/${spriteDirectory}.png`];
     }
     if(!url) {
-        url = urls[`./sprites/${sprite.value}-${index.toString().padStart(3, '0')}.png`];
+        url = urls[`./sprites/${spriteDirectory}-${index.toString().padStart(3, '0')}.png`];
     }
     return url?.default || url;
+}
+
+export async function prepareTheme(name) {
+    const newObj = {};
+    const prepareSprite = async function(index) {
+        const url = getUrl(`themes/${name}`, index);
+        if(!url) {
+            return undefined;
+        }
+        let response = await fetch(url);
+        let buffer = await response.arrayBuffer();
+        const png = await bufferToPng(buffer);
+        const processedGroup = processSpriteGroup(png);
+        return processedGroup;
+    };
+    for(const i of [...Array(464).keys()]) {
+        newObj[i] = await prepareSprite(i);
+    };
+    return newObj;
 }
 
 export async function prepare(sprite, index) {
@@ -547,7 +566,7 @@ export async function prepare(sprite, index) {
     }
 
     const prepareSprite = async function(index) {
-        const url = getUrl(sprite, index);
+        const url = getUrl(sprite.value, index);
         if(!url) {
             if(index === 1) {
                 throw new Error(`Could not find main sprite for ${sprite.value}`);
@@ -790,7 +809,7 @@ function processSpriteGroup(png) {
         byteData = new Uint8Array([...byteData, ...accum]);
     });
 
-    if(byteIndexes.length !== 8 && byteIndexes.length !== 16) {
+    if(byteIndexes.length < 4 || byteIndexes.length > 16) {
         throw new Error(`Incorrect number of non-blank sprites found: ${byteIndexes.length}`);
     }
 

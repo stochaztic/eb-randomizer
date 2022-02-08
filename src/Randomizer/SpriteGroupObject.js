@@ -36,7 +36,7 @@ class SpriteGroupObject extends TableObject {
         if(!this.context.specs.sprites || !this.context.specs.sprites[this.index]) return;
         const sprite = this.context.specs.sprites[this.index];
         if(!isNaN(sprite)) {
-            this.vanillaMutate(Number.parseInt(sprite));
+            this.vanillaReplaceSprite = Number.parseInt(sprite);
             return;
         }
         
@@ -45,11 +45,19 @@ class SpriteGroupObject extends TableObject {
         this.data.bank = writeData.snesBank;
         this.data.palette = sprite.palette || this.data.palette;
         this.data.sprites_cardinal = sprite.indexes.slice(0, 8).map(i => i + writeData.bankAddress);
+        while(this.data.sprites_cardinal.length < 8) {
+            this.data.sprites_cardinal.push(this.data.sprites_cardinal[0]);
+        }
         this.data.sprites_diagonal = sprite.indexes.slice(8).map(i => i + writeData.bankAddress);
     }
 
+    cleanup() {
+        if(this.vanillaReplaceSprite) {
+            this.vanillaReplace(this.vanillaReplaceSprite);
+        }
+    }
 
-    vanillaMutate(spriteNumber) {
+    vanillaReplace(spriteNumber) {
         let chosen = spriteNumber;
         if(chosen >= SpriteGroupObject.every.length) {
             let candidates = SpriteGroupObject.every.filter(sg => sg.data.size === this.data.size);
@@ -60,10 +68,10 @@ class SpriteGroupObject extends TableObject {
         else {
             chosen = SpriteGroupObject.get(chosen);
         }
-        this.data.sprites_cardinal = chosen.oldData.sprites_cardinal;
-        this.data.sprites_diagonal = chosen.oldData.sprites_diagonal;
-        this.data.palette = chosen.oldData.palette;
-        this.data.bank = chosen.oldData.bank;
+        this.data.sprites_cardinal = chosen.data.sprites_cardinal;
+        this.data.sprites_diagonal = chosen.data.sprites_diagonal;
+        this.data.palette = chosen.data.palette;
+        this.data.bank = chosen.data.bank;
         if(chosen.spriteCount < 16) {
             this.data.sprites_diagonal = chosen.data.sprites_cardinal;
         }
@@ -74,6 +82,11 @@ class SpriteGroupObject extends TableObject {
         if(this.spriteCount < 16) {
             attrs = attrs.slice();
             attrs.splice(10, 1);
+            if(this.spriteCount === 9) {
+                attrs.push({name: 'sprites_diagonal', size: '1x2', other: 'list'});
+                this.data.sprites_diagonal = [this.data.sprites_diagonal[0]];
+                this.oldData.sprites_diagonal = [this.oldData.sprites_diagonal[0]];
+            }
         }
         return attrs;
     }
