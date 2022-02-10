@@ -2,6 +2,8 @@ import importAll from 'import-all.macro';
 import PNGReader from 'png.js';
 const urls = importAll.sync('./sprites/**/*.png');
 
+export const unusedSprites = [31, 32, 38, 42, 43, 250, 251, 275, 321, 338, 339, 340, 341, 342, 345, 351, 354, 355, 358, 379, 380, 383, 400, 445, 452, 453, 454];
+
 export const customCharacters = [
     {
         label: "Lucas",
@@ -589,6 +591,32 @@ export async function prepareTheme(name) {
     for(const i of [...Array(464).keys()]) {
         newObj[i] = await prepareSprite(i);
     };
+    return newObj;
+}
+
+export async function prepareNPCs(exclusions = []) {
+    const newObj = {};
+    for(const index of unusedSprites) {
+        const choices = customCharacters.map(c => c.value).filter(v => !exclusions.includes(v));
+        const chosen = choices[Math.floor(Math.random()*choices.length)];
+        exclusions.push(chosen);
+
+        // 50% normal sprite, 25% PJ sprite, 25% Magicant sprite
+        let chosenIndex = Math.random() > 0.5 ? 1 : (Math.random() > 0.5 ? 6 : 437);
+        let url = getUrl(chosen, chosenIndex);
+        if(!url) {
+            url = getUrl(chosen, 1);
+        }
+        if(!url) {
+            throw new Error(`Could not find main sprite for ${sprite}`);
+        }
+        let response = await fetch(url);
+        let buffer = await response.arrayBuffer();
+        const png = await bufferToPng(buffer);
+        const processedGroup = processSpriteGroup(png);
+        processedGroup.standardize = true;
+        newObj[index] = processedGroup;
+    }
     return newObj;
 }
 

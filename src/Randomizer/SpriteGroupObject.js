@@ -39,6 +39,12 @@ class SpriteGroupObject extends TableObject {
             this.vanillaReplaceSprite = Number.parseInt(sprite);
             return;
         }
+
+        if(sprite.standardize) {
+            const standardSprite = this.constructor.get(this.constructor.standardSpriteIndex);
+            console.assert(standardSprite.spriteCount === this.spriteCount);
+            this.data = Object.assign({}, standardSprite.data);
+        }
         
         const writeData = ebutils.writeToFreespace(sprite.data, this.context, `sprite data`);
 
@@ -60,6 +66,7 @@ class SpriteGroupObject extends TableObject {
     vanillaReplace(spriteNumber) {
         let chosen = spriteNumber;
         if(chosen >= SpriteGroupObject.every.length) {
+            // Currently unused since change to RandomVanilla in frontend.
             let candidates = SpriteGroupObject.every.filter(sg => sg.data.size === this.data.size);
             const invalidIndexes = [8, 9, 10, 11, 12, 343]; // Normal ghosts, diamond
             candidates = candidates.filter(c => !invalidIndexes.includes(c.index) && !this.constructor.badSprites.includes(c.index));
@@ -94,6 +101,7 @@ class SpriteGroupObject extends TableObject {
 
 SpriteGroupObject.expandedBank = 0x31;
 SpriteGroupObject.currentExpandedIndex = 0;
+SpriteGroupObject.standardSpriteIndex = 14;
 
 SpriteGroupObject.badSprites = [
     0, 106, 200, 247, 295, 314, 316, 368,

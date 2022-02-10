@@ -4,7 +4,7 @@ import logo from './logo.png';
 import flagDescriptions from './flagDescriptions.js';
 import EarthBoundRandomizer from 'worker-loader!./randomizer.worker.js';
 import ebutils from './Randomizer/ebutils.js';
-import { prepare, prepareTheme } from './sprites.js';
+import { prepare, prepareTheme, prepareNPCs } from './sprites.js';
 import { customSongs } from './music.js';
 import SpriteSelector from './SpriteSelector.js';
 import SpritePreviewer from './SpritePreviewer.js';
@@ -197,6 +197,12 @@ class App extends Component {
     let themeBase = {};
     if(specs.flags.x === 2) { // Valentine's Day 
       themeBase = await prepareTheme("vday");
+    }
+
+    const spriteChosens = [0, 1, 2, 3].map(i => this.state.chosenSprites[i].value);
+    if(specs.flags.n >= 2) {
+      const npcData = await prepareNPCs(spriteChosens);
+      Object.assign(themeBase, npcData);
     }
 
     const nessData = await prepare(this.state.chosenSprites[0].value, 0);

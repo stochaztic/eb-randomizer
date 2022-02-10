@@ -40,7 +40,7 @@ class TPTObject extends TableObject {
             167, 215, 412, 385, 216,
             // Also exclude all chest sprites
             33, 195, 214, 233, 262, 322, 408];
-        if(this.context.specs.flags.n >= 3) {
+        if(this.context.specs.flags.n >= 4) {
             spriteExclusions = [];
         }
         if(tptExclusions.includes(this.index)) return;
@@ -56,10 +56,10 @@ class TPTObject extends TableObject {
 
         const currentSprite = SpriteGroupObject.get(this.data.sprite);
         let candidates;
-        if(this.context.specs.flags.n >= 3) {
+        if(this.context.specs.flags.n >= 4) {
             candidates = SpriteGroupObject.every;
         }
-        else if(this.context.specs.flags.n >= 2) {
+        else if(this.context.specs.flags.n >= 3) {
             candidates = SpriteGroupObject.every.filter(sg => currentSprite.lenientSwap(sg, spriteExclusions));
         }
         else {

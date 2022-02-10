@@ -60,13 +60,14 @@ const flagDescriptions = {
     },
     n: {
         title: "NPC sprites",
-        max: 3,
-        default: 1,
-        unsafe: 2,
+        max: 4,
+        default: 2,
+        unsafe: 3,
         desc: {
             1: "Overworld NPC sprites will be randomized.",
-            2: "Overworld NPC sprites will be randomized, without taking into consideration appropriate size.",
-            3: "Overworld NPC sprites will be utterly randomized with no exceptions.",
+            2: "Overworld NPC sprites will be randomized, including some custom sprites.",
+            3: "Overworld NPC sprites will be randomized, without taking into consideration appropriate size.",
+            4: "Overworld NPC sprites will be utterly randomized with no exceptions.",
         }
     },
     p: {
