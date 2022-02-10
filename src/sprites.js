@@ -526,8 +526,9 @@ export const selectData = [
         label: "Random",
         options: [
             { label: "No change", value: "NoChange"},
-            { label: "Random vanilla", value: 999},
+            { label: "Random vanilla", value: "RandomVanilla"},
             { label: "Random custom", value: "RandomCustom"},
+            { label: "Random any", value: "RandomAny"},
         ],
     },
     {
@@ -593,22 +594,28 @@ export async function prepareTheme(name) {
 
 export async function prepare(sprite, index) {
     const newObj = {};
-    if(sprite.value === "NoChange") {
+    if(sprite === "NoChange") {
         return newObj;
     }
-    if(!isNaN(sprite.value)) {
-        newObj[index + 1] = sprite.value;
+    if(sprite === "RandomAny") {
+        sprite = Math.random() > 0.5 ? "RandomCustom" : "RandomVanilla";
+    }
+    if(sprite === "RandomVanilla") {
+        sprite = vanillaSprites[Math.floor(Math.random()*vanillaSprites.length)].value;
+    }
+    if(!isNaN(sprite)) {
+        newObj[index + 1] = sprite;
         return newObj;
     }
-    if(sprite.value === "RandomCustom") {
-        sprite = customCharacters[Math.floor(Math.random()*customCharacters.length)];
+    if(sprite === "RandomCustom") {
+        sprite = customCharacters[Math.floor(Math.random()*customCharacters.length)].value;
     }
 
     const prepareSprite = async function(index) {
-        const url = getUrl(sprite.value, index);
+        const url = getUrl(sprite, index);
         if(!url) {
             if(index === 1) {
-                throw new Error(`Could not find main sprite for ${sprite.value}`);
+                throw new Error(`Could not find main sprite for ${sprite}`);
             }
             return undefined;
         }

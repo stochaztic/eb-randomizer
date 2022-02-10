@@ -199,10 +199,10 @@ class App extends Component {
       themeBase = await prepareTheme("vday");
     }
 
-    const nessData = await prepare(this.state.chosenSprites[0], 0);
-    const paulaData = await prepare(this.state.chosenSprites[1], 1);
-    const jeffData = await prepare(this.state.chosenSprites[2], 2);
-    const pooData = await prepare(this.state.chosenSprites[3], 3);
+    const nessData = await prepare(this.state.chosenSprites[0].value, 0);
+    const paulaData = await prepare(this.state.chosenSprites[1].value, 1);
+    const jeffData = await prepare(this.state.chosenSprites[2].value, 2);
+    const pooData = await prepare(this.state.chosenSprites[3].value, 3);
     
     specs.sprites = Object.assign(themeBase, nessData, paulaData, jeffData, pooData);
 
