@@ -36,6 +36,8 @@ class TPTObject extends TableObject {
             440, 441, 456, 462, 463,
             457, // Defeated Ness Robot
             427, // Tiny bird phone
+            // Exclude common PC sprites: walk, dead, climb x2
+            1, 2, 3, 4, 8, 9, 10, 11, 17, 18, 19, 20, 21, 22, 23, 24,
             // Also exclude all phone sprites
             167, 215, 412, 385, 216,
             // Also exclude all chest sprites
