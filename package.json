@@ -8,10 +8,10 @@
     "localforage": "^1.7.4",
     "png.js": "^0.2.1",
     "randomtools-js": "file:../randomtools-js",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-scripts": "^4.0.3",
-    "react-select": "^2.4.4"
+    "react-select": "^5.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
