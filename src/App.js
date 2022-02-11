@@ -194,6 +194,7 @@ class App extends Component {
       }
     });
 
+    this.setState({generationStatus: 'Loading custom sprites...' });
     let themeBase = {};
     if(specs.flags.x === 2) { // Valentine's Day 
       themeBase = await prepareTheme("vday");
