@@ -789,7 +789,15 @@ export const customSongs = [
         isBattle: false,
         isBoss: false,
         isChristmas: true,
-	}
+	},
+    {
+        title: "Saltarello",
+        artist: "Cover by frogmary",
+        instruments: [0x05, 0x3c],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: false,
+    },
 ];
 
 export async function prepareCustomSongIndex(index) {
