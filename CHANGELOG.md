@@ -1,10 +1,15 @@
 # Changelog
+## v50.x / v51 (In progress)
+- Holiday: St. Patrick's Day added.
+- PC sprites: Added Arrow Lizard, Koopa Troopa, Lolo, Lala, Imp, Magitek Officer, Locke, Gogo, Arus, and Crono.
+- PC sprites: Improved vanilla Ness, Paula, Jeff, Poo, Mom, Dr Andonuts, and Shark.
+
 ## v50 (2022-02-11)
 - Ancient Cave: Jeff can fix any item at IQ 1.
 - Holiday: Christmas and Valentine's Day options added.
 - NPC sprites: Added new flag level 2, random characters includes custom sprites.
 - PC sprites: Added "Random any" as new default, improved Random vanilla.
-- PC sprites: Added Exit Mouse, Rope Snake, Coil Snake, Duster, Flint, Save Frog, Edgar, Rek, General Leo, Relm, Strago, Prince of Cannock, Prince of Midenhall, Princess of Moonbrooke, Pit, Dark Pit, Mike, Dorothy, Sophia, Blanche, and Rose.
+- PC sprites: Added Exit Mouse, Rope Snake, Coil S`nake, Duster, Flint, Save Frog, Edgar, Rek, General Leo, Relm, Strago, Prince of Cannock, Prince of Midenhall, Princess of Moonbrooke, Pit, Dark Pit, Mike, Dorothy, Sophia, Blanche, and Rose.
 - Music: Some custom tracks added.
 
 ## v49 (2021-10-11)

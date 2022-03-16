@@ -25,6 +25,7 @@ class App extends Component {
 
     const versionParts = process.env.REACT_APP_VERSION.split(".",2);
     const version = (versionParts.length === 1 || versionParts[1] === "0") ? versionParts[0] : versionParts.join(".");
+    let chosenSprites = ["RandomAny", "RandomAny", "RandomAny", "RandomAny"];
     const initialSpecs = {
       title: "EBRND",
       version: version,
@@ -42,6 +43,9 @@ class App extends Component {
     let directLink = false;
     if(window.URLSearchParams !== undefined) {
       const params = new URLSearchParams(window.location.search);
+      if(params.has("sprites")) {
+        chosenSprites = params.get("sprites").split(",");
+      }
       if(params.has("special")) {
         directLink = params.get("special");
         if(directLink === "speed") {
@@ -81,7 +85,7 @@ class App extends Component {
       showDirectLinkInfo: directLink,
       compatibleVersion: compatibleVersion,
       specs: initialSpecs,
-      chosenSprites: [{},{},{},{}],
+      chosenSprites,
       flagDescriptions: flagDescriptions,
     };
   }
@@ -173,7 +177,7 @@ class App extends Component {
   }
 
   setSprite = (sprite, index) => {
-    this.setState(s => { s.chosenSprites[index] = sprite; return s; });
+    this.setState(s => { s.chosenSprites[index] = sprite.value; return s; });
   }
 
   generate = async (event) => {
@@ -195,21 +199,29 @@ class App extends Component {
     });
 
     this.setState({generationStatus: 'Loading custom sprites...' });
-    let themeBase = {};
+    let theme = null;
     if(specs.flags.x === 2) { // Valentine's Day 
-      themeBase = await prepareTheme("vday");
+      theme = "vday";
+    }
+    if(specs.flags.x === 3) { // St. Patrick's Day
+      theme = "stpatricks";
     }
 
-    const spriteChosens = [0, 1, 2, 3].map(i => this.state.chosenSprites[i].value);
+    let themeBase = {};
+    if(theme) {
+      themeBase = await prepareTheme(theme);
+    }
+
+    const spriteChosens = [0, 1, 2, 3].map(i => this.state.chosenSprites[i]);
     if(specs.flags.n >= 2) {
       const npcData = await prepareNPCs(spriteChosens);
       Object.assign(themeBase, npcData);
     }
 
-    const nessData = await prepare(this.state.chosenSprites[0].value, 0);
-    const paulaData = await prepare(this.state.chosenSprites[1].value, 1);
-    const jeffData = await prepare(this.state.chosenSprites[2].value, 2);
-    const pooData = await prepare(this.state.chosenSprites[3].value, 3);
+    const nessData = await prepare(this.state.chosenSprites[0], 0, theme);
+    const paulaData = await prepare(this.state.chosenSprites[1], 1, theme);
+    const jeffData = await prepare(this.state.chosenSprites[2], 2, theme);
+    const pooData = await prepare(this.state.chosenSprites[3], 3, theme);
     
     specs.sprites = Object.assign(themeBase, nessData, paulaData, jeffData, pooData);
 
@@ -346,10 +358,10 @@ class App extends Component {
         <legend>Character sprites: 
           <a className="previewToggle" href="?" onClick={(e) => {e.preventDefault(); this.setState({showPreview: !this.state.showPreview})}}>({this.state.showPreview ? 'hide' : 'show'})</a></legend>
         { this.state.showPreview ? <SpritePreviewer /> : '' }
-        <SpriteSelector character="NESS" backgroundColor="#ccd9ff" active={!(this.state.generationStatus)} onChange={val => this.setSprite(val, 0)} />
-        <SpriteSelector character="PAULA" backgroundColor="#ffccd4" active={!(this.state.generationStatus)} onChange={val => this.setSprite(val, 1)} />
-        <SpriteSelector character="JEFF" backgroundColor="#ccffcc" active={!(this.state.generationStatus)} onChange={val => this.setSprite(val, 2)} />
-        <SpriteSelector character="POO" backgroundColor="#ffffcc" active={!(this.state.generationStatus)} onChange={val => this.setSprite(val, 3)} />
+        <SpriteSelector character="NESS" backgroundColor="#ccd9ff" active={!(this.state.generationStatus)} onChange={val => this.setSprite(val, 0)} initial={this.state.chosenSprites[0]} />
+        <SpriteSelector character="PAULA" backgroundColor="#ffccd4" active={!(this.state.generationStatus)} onChange={val => this.setSprite(val, 1)} initial={this.state.chosenSprites[1]} />
+        <SpriteSelector character="JEFF" backgroundColor="#ccffcc" active={!(this.state.generationStatus)} onChange={val => this.setSprite(val, 2)} initial={this.state.chosenSprites[2]} />
+        <SpriteSelector character="POO" backgroundColor="#ffffcc" active={!(this.state.generationStatus)} onChange={val => this.setSprite(val, 3)} initial={this.state.chosenSprites[3]} />
       </fieldset>
     );
 

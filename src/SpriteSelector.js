@@ -9,7 +9,7 @@ const selectStyles = {
 };
 
 export default class SpriteSelector extends Component {
-  state = { isOpen: false, value: selectData[0].options[3] };
+  state = { isOpen: false, value: selectData[0].options[0] };
   toggleOpen = () => {
     if(!this.props.active) return;
     this.setState(state => ({ isOpen: !state.isOpen }));
@@ -20,7 +20,12 @@ export default class SpriteSelector extends Component {
     this.props.onChange && this.props.onChange(value);
   };
   componentDidMount() {
-    this.props.onChange && this.props.onChange(this.state.value);
+    let initialValue = this.state.value;
+    if(this.props.initial) {
+      initialValue = selectData.map(d => d.options).flat().find(o => o.value === this.props.initial) || initialValue;
+      this.setState({ value: initialValue });
+    }
+    this.props.onChange && this.props.onChange(initialValue);
   };
   render() {
     const { isOpen, value } = this.state;

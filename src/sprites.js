@@ -36,6 +36,11 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Arrow Lizard",
+        value: "ArrowLizard",
+        creator: "Defqon1",
+    },
+    {
         label: "Save Frog",
         value: "SaveFrog",
         creator: "Defqon1",
@@ -86,13 +91,8 @@ export const customCharacters = [
         creator: "Bacon",
     },
     {
-        label: "Erdrick",
-        value: "Erdrick",
-        creator: "Defqon1",
-    },
-    {
-        label: "Rek",
-        value: "Rek",
+        label: "Crono",
+        value: "Crono",
         creator: "Defqon1",
     },
     {
@@ -136,6 +136,16 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Locke",
+        value: "Locke",
+        creator: "Defqon1",
+    },
+    {
+        label: "Gogo",
+        value: "Gogo",
+        creator: "Defqon1",
+    },
+    {
         label: "Shadow",
         value: "Shadow",
         creator: "Defqon1",
@@ -171,6 +181,16 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Magitek Officer",
+        value: "MagitekOfficer",
+        creator: "Defqon1",
+    },
+    {
+        label: "Imp",
+        value: "Imp",
+        creator: "Defqon1",
+    },
+    {
         label: "Mario",
         value: "Mario",
         creator: "Defqon1",
@@ -191,6 +211,11 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Koopa Troopa",
+        value: "KoopaTroopa",
+        creator: "Defqon1",
+    },
+    {
         label: "Bomberman",
         value: "Bomberman",
         creator: "Defqon1",
@@ -201,18 +226,43 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
-        label: "Kirby",
-        value: "Kirby",
-        creator: "Defqon1",
-    },
-    {
         label: "Pit",
         value: "Pit",
         creator: "Defqon1",
     },
     {
+        label: "Kirby",
+        value: "Kirby",
+        creator: "Defqon1",
+    },
+    {
         label: "Dark Pit",
         value: "DarkPit",
+        creator: "Defqon1",
+    },
+    {
+        label: "Lolo",
+        value: "Lolo",
+        creator: "Defqon1",
+    },
+    {
+        label: "Lala",
+        value: "Lala",
+        creator: "Defqon1",
+    },
+    {
+        label: "Erdrick",
+        value: "Erdrick",
+        creator: "Defqon1",
+    },
+    {
+        label: "Rek",
+        value: "Rek",
+        creator: "Defqon1",
+    },
+    {
+        label: "Arus",
+        value: "Arus",
         creator: "Defqon1",
     },
     {
@@ -412,6 +462,37 @@ export const customCharacters = [
     },
 ];
 
+export const customVanillas = [
+    {
+        label: "Ness",
+        value: "Ness",
+    },
+    {
+        label: "Paula",
+        value: "Paula",
+    },
+    {
+        label: "Jeff",
+        value: "Jeff",
+    },
+    {
+        label: "Poo",
+        value: "Poo",
+    },
+    {
+        label: "Dr Andonuts",
+        value: "DrAndonuts",
+    },
+    {
+        label: "Mom",
+        value: "Mom",
+    },
+    {
+        label: "Shark",
+        value: "Shark",
+    },
+];
+
 export const vanillaSprites = [
     { label: "Aloysius Minch", value: 147, },
     { label: "Apple Kid", value: 176, },
@@ -428,13 +509,11 @@ export const vanillaSprites = [
     { label: "Carpainter", value: 159, },
     { label: "Captain Strong", value: 75, },
     { label: "Clock", value: 326, },
-    { label: "Cop", value: 111, },
-    { label: "Crawling Dog", value: 42, },
+    { label: "Cop", value: 74, },
     { label: "Crow", value: 282, },
     { label: "Detective", value: 63, },
     { label: "Diamond", value: 306, },
     { label: "Doctor", value: 139, },
-    { label: "Dr Andonuts", value: 162, },
     { label: "Drunk", value: 60, },
     { label: "Duck", value: 287, },
     { label: "Electra", value: 396, },
@@ -450,7 +529,6 @@ export const vanillaSprites = [
     { label: "Grandma", value: 53, },
     { label: "Healer", value: 189, },
     { label: "Hippie", value: 361, },
-    { label: "Jeff", value: 3, },
     { label: "Lardna Minch", value: 148, },
     { label: "Liar X Agerate", value: 152, },
     { label: "Lucky", value: 149, },
@@ -464,18 +542,14 @@ export const vanillaSprites = [
         label: "Mole",
         value: "Mole",
     },
-    { label: "Mom", value: 145, },
     { label: "Monotoli", value: 164, },
     {
         label: "Mouse",
         value: "Mouse",
     },
-    { label: "Mummy", value: 307, },
-    { label: "Ness", value: 1, },
     { label: "Ness Pajamas", value: 437, },
     { label: "Nurse", value: 140, },
     { label: "Orange Kid", value: 175, },
-    { label: "Paula", value: 2, },
     { label: "Paula's Dad", value: 155, },
     { label: "Paula's Mom", value: 156, },
     { label: "Phone Man", value: 167, },
@@ -485,7 +559,6 @@ export const vanillaSprites = [
     { label: "Pizza Guy", value: 151, },
     { label: "Pokey", value: 44, },
     { label: "Pokey Fancy", value: 48, },
-    { label: "Poo", value: 4, },
     { label: "Poo's Master", value: 166, },
     {
         label: "Prototype Cheese Man",
@@ -503,7 +576,6 @@ export const vanillaSprites = [
     { label: "Sentry Robot", value: 310, },
     { label: "Slots Brother", value: 110, },
     { label: "Shades Moonsidian", value: 71, },
-    { label: "Shark", value: 284, },
     { label: "Shy Guy", value: 119, },
     { label: "Smilin Sphere", value: 302, },
     { label: "Starman", value: 303, },
@@ -516,7 +588,7 @@ export const vanillaSprites = [
     { label: "Tracy", value: 146, },
     { label: "Traffic Sign", value: 309, },
     { label: "Trash Can", value: 285, },
-    { label: "Trisha", value: 97, },
+    { label: "Trisha", value: 120, },
     { label: "UFO", value: 304, },
     { label: "Venus", value: 165, },
     { label: "Zombie", value: 308, },
@@ -536,6 +608,10 @@ export const selectData = [
     {
         label: "Custom Sprites",
         options: customCharacters,
+    },
+    {
+        label: "Expanded Vanilla Sprites",
+        options: customVanillas,
     },
     {
         label: "Vanilla Sprites",
@@ -620,7 +696,7 @@ export async function prepareNPCs(exclusions = []) {
     return newObj;
 }
 
-export async function prepare(sprite, index) {
+export async function prepare(sprite, index, theme) {
     const newObj = {};
     if(sprite === "NoChange") {
         return newObj;
@@ -629,7 +705,8 @@ export async function prepare(sprite, index) {
         sprite = Math.random() > 0.5 ? "RandomCustom" : "RandomVanilla";
     }
     if(sprite === "RandomVanilla") {
-        sprite = vanillaSprites[Math.floor(Math.random()*vanillaSprites.length)].value;
+        const allVanillas = vanillaSprites.concat(customVanillas);
+        sprite = allVanillas[Math.floor(Math.random()*allVanillas.length)].value;
     }
     if(!isNaN(sprite)) {
         newObj[index + 1] = sprite;
@@ -640,7 +717,14 @@ export async function prepare(sprite, index) {
     }
 
     const prepareSprite = async function(index) {
-        const url = getUrl(sprite, index);
+        let url = null;
+        debugger;
+        if(theme) {
+            url = getUrl(`themes/${theme}/${sprite}`, index);
+        }
+        if(!url) {
+            url = getUrl(sprite, index);
+        }
         if(!url) {
             if(index === 1) {
                 throw new Error(`Could not find main sprite for ${sprite}`);
