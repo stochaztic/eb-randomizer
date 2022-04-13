@@ -798,6 +798,14 @@ export const customSongs = [
         isBattle: false,
         isBoss: false,
     },
+    {
+        title: "AnimorphsBGM05",
+        artist: "Cover by frogmary",
+        instruments: [0x05, 0x59],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: false,
+    },
 ];
 
 export async function prepareCustomSongIndex(index) {
