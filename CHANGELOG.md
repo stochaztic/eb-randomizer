@@ -1,7 +1,7 @@
 # Changelog
 ## v50.x / v51 (In progress)
 - Holiday: St. Patrick's Day added.
-- PC sprites: Added Arrow Lizard, Koopa Troopa, Lolo, Lala, Imp, Magitek Officer, Locke, Gogo, Arus, and Crono.
+- PC sprites: Added Arrow Lizard, Koopa Troopa, Lolo, Lala, Imp, Magitek Officer, Locke, Gogo, Arus, Crono, Saul Goodman, and Madotsuki.
 - PC sprites: Improved vanilla Ness, Paula, Jeff, Poo, Mom, Dr Andonuts, and Shark.
 
 ## v50 (2022-02-11)

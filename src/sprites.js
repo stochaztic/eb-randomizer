@@ -381,6 +381,16 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Saul Goodman",
+        value: "SaulGoodman",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Madotsuki",
+        value: "Madotsuki",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "Sonic",
         value: "Sonic",
         creator: "Quatropus",
@@ -718,7 +728,6 @@ export async function prepare(sprite, index, theme) {
 
     const prepareSprite = async function(index) {
         let url = null;
-        debugger;
         if(theme) {
             url = getUrl(`themes/${theme}/${sprite}`, index);
         }
