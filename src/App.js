@@ -206,6 +206,9 @@ class App extends Component {
     if(specs.flags.x === 3) { // St. Patrick's Day
       theme = "stpatricks";
     }
+    if(specs.flags.x === 4) { // Easter
+      theme = "easter";
+    }
 
     let themeBase = {};
     if(theme) {

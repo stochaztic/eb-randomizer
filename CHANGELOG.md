@@ -1,10 +1,10 @@
 # Changelog
 ## v50.x / v51 (In progress)
 - Credits: EBSS AC 2022 winner temple added.
-- Holiday: St. Patrick's Day added.
+- Holiday: St. Patrick's Day and Easter options added.
 - Music: Custom track added.
-- PC sprites: Added Arrow Lizard, Koopa Troopa, Lolo, Lala, Imp, Magitek Officer, Locke, Gogo, Arus, Crono, Saul Goodman, and Madotsuki.
-- PC sprites: Improved vanilla Ness, Paula, Jeff, Poo, Mom, Dr Andonuts, and Shark.
+- PC sprites: Added Arrow Lizard, Koopa Troopa, Lolo, Lala, Imp, Magitek Officer, Locke, Gogo, Arus, Crono, Saul Goodman, Madotsuki, Cyan, Gau, Setzer, Umaro, Guy, and Happy Easter Bunny.
+- PC sprites: Improved vanilla Ness, Paula, Jeff, Poo, Mom, Dr Andonuts, Shark, Jackie, Tracy, Magic Cake Lady, and Tenda.
 
 ## v50 (2022-02-11)
 - Ancient Cave: Jeff can fix any item at IQ 1.

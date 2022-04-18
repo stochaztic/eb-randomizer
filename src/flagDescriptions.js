@@ -158,13 +158,14 @@ const flagDescriptions = {
     },
     x: {
         title: "Holiday mode",
-        max: 3,
+        max: 4,
         default: 0,
         desc: {
             0: "Disabled.",
             1: "Christmas: Only Christmas songs if w >= 4.",
             2: "Valentine's Day: Special sprites.",
             3: "St Patrick's Day: Special sprites.",
+            4: "Easter: Special sprites.",
         }
     },
     devmode: {

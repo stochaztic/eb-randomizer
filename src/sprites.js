@@ -146,6 +146,21 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Cyan",
+        value: "Cyan",
+        creator: "Defqon1",
+    },
+    {
+        label: "Setzer",
+        value: "Setzer",
+        creator: "Defqon1",
+    },
+    {
+        label: "Gau",
+        value: "Gau",
+        creator: "Defqon1",
+    },
+    {
         label: "Shadow",
         value: "Shadow",
         creator: "Defqon1",
@@ -158,6 +173,11 @@ export const customCharacters = [
     {
         label: "Mog",
         value: "Mog",
+        creator: "Defqon1",
+    },
+    {
+        label: "Umaro",
+        value: "Umaro",
         creator: "Defqon1",
     },
     {
@@ -296,6 +316,11 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Guy",
+        value: "Guy",
+        creator: "Defqon1",
+    },
+    {
         label: "Pride Ness",
         value: "PrideNess",
         creator: "stochaztic",
@@ -389,6 +414,11 @@ export const customCharacters = [
         label: "Madotsuki",
         value: "Madotsuki",
         creator: "plastics enjoyer",
+    },
+    {
+        label: "Happy Easter Bunny",
+        value: "HappyEasterBunny",
+        creator: "Defqon1",
     },
     {
         label: "Sonic",
@@ -494,12 +524,28 @@ export const customVanillas = [
         value: "DrAndonuts",
     },
     {
+        label: "Jackie",
+        value: "Jackie",
+    },
+    {
+        label: "Magic Cake Lady",
+        value: "MagicCakeLady",
+    },
+    {
         label: "Mom",
         value: "Mom",
     },
     {
         label: "Shark",
         value: "Shark",
+    },
+    {
+        label: "Tenda",
+        value: "Tenda",
+    },
+    {
+        label: "Tracy",
+        value: "Tracy",
     },
 ];
 
@@ -542,7 +588,6 @@ export const vanillaSprites = [
     { label: "Lardna Minch", value: 148, },
     { label: "Liar X Agerate", value: 152, },
     { label: "Lucky", value: 149, },
-    { label: "Magic Cake Lady", value: 181, },
     { label: "Manly Fish", value: 288, },
     { label: "Maxwell", value: 69, },
     { label: "Mayor Pirkle", value: 154, },
@@ -591,11 +636,9 @@ export const vanillaSprites = [
     { label: "Starman", value: 303, },
     { label: "Starmaster", value: 98, },
     { label: "Teddy Bear", value: 51, },
-    { label: "Tenda", value: 97, },
     { label: "Tenda Chieftain", value: 170, },
     { label: "Tessie Watcher", value: 83, },
     { label: "Tony", value: 182, },
-    { label: "Tracy", value: 146, },
     { label: "Traffic Sign", value: 309, },
     { label: "Trash Can", value: 285, },
     { label: "Trisha", value: 120, },
