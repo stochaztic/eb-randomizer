@@ -86,11 +86,6 @@ export const customCharacters = [
         creator: "TheKubliest",
     },
     {
-        label: "The Batter",
-        value: "TheBatter",
-        creator: "Bacon",
-    },
-    {
         label: "Crono",
         value: "Crono",
         creator: "Defqon1",
@@ -321,6 +316,31 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Yu Narukami",
+        value: "YuNarukami",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Yosuke Hanamura",
+        value: "YosukeHanamura",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Chie Satonaka",
+        value: "ChieSatonaka",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Yukiko Amagi",
+        value: "YukikoAmagi",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "American Ness",
+        value: "AmericanNess",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "Pride Ness",
         value: "PrideNess",
         creator: "stochaztic",
@@ -344,6 +364,21 @@ export const customCharacters = [
         label: "Ness's Hat",
         value: "NessHat",
         creator: "stochaztic",
+    },
+    {
+        label: "Alinivar",
+        value: "Alinivar",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Niko",
+        value: "Niko",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "The Batter",
+        value: "TheBatter",
+        creator: "Bacon",
     },
     {
         label: "Kris (Deltarune)",
@@ -411,8 +446,48 @@ export const customCharacters = [
         creator: "plastics enjoyer",
     },
     {
+        label: "Walter White",
+        value: "WalterWhite",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Mike Ehrmantraut",
+        value: "MikeEhrmantraut",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Gustavo Fring",
+        value: "GustavoFring",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "Madotsuki",
         value: "Madotsuki",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Urotsuki",
+        value: "Urotsuki",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Wayne",
+        value: "Wayne",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Somsnosa",
+        value: "Somsnosa",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Dedusmuln",
+        value: "Dedusmuln",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Pongorma",
+        value: "Pongorma",
         creator: "plastics enjoyer",
     },
     {
@@ -676,7 +751,7 @@ export async function testAllSprites() {
     for (const [name, url] of Object.entries(urls)) {
         console.log(`Testing image ${name}`);
         try {
-            let response = await fetch(url);
+            let response = await fetch(url?.default || url);
             let buffer = await response.arrayBuffer();
             const png = await bufferToPng(buffer);
             processSpriteGroup(png);
