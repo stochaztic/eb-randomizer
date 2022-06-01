@@ -4,7 +4,7 @@
 - Holiday: St. Patrick's Day and Easter options added.
 - Music: Custom track added.
 - PC sprites: Added Arrow Lizard, Koopa Troopa, Lolo, Lala, Imp, Magitek Officer, Locke, Gogo, Arus, Crono, Saul Goodman, Walter White, Mike Ehrmantraut, Gustavo Fring, Madotsuki, Urotsuki, Cyan, Gau, Setzer, Umaro, Guy, Niko, Alinivar, Yu Narukami, Yosuke Hanamura, Chie Satonaka, Yukiko Amagi, Wayne, Somsnosa, Dedusmuln, Pongorma, American Ness, and Happy Easter Bunny.
-- PC sprites: Improved vanilla Ness, Paula, Jeff, Poo, Mom, Dr Andonuts, Shark, Jackie, Tracy, Magic Cake Lady, and Tenda.
+- PC sprites: Improved vanilla Ness, Paula, Jeff, Poo, Gorgeous, Lucky, Nice, Okay, Groovy, Aloysius Minch, Apple Kid, Arms Dealer, Bag Lady, Baseball Cap, Bellboy, Black Rabbit, Bowler Hat, Brick Road, Bubble Monkey, Bubble Monkey's Gal, Carpainter, Captain Strong, Clock, Cop, Crow, Desert Monkey, Detective, Diamond, Doctor, Dr Andonuts, Electra, Entertainer, Everdred, Flying Man, Foppy, Frank, George Montague, Gerardo Montague, Ghost, Insane Cultist, Jackie, Magic Cake Lady, Mom, Shark, Tenda, and Tracy.
 
 ## v50 (2022-02-11)
 - Ancient Cave: Jeff can fix any item at IQ 1.

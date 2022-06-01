@@ -577,92 +577,73 @@ export const customCharacters = [
     },
 ];
 
-export const customVanillas = [
-    {
-        label: "Ness",
-        value: "Ness",
-    },
-    {
-        label: "Paula",
-        value: "Paula",
-    },
-    {
-        label: "Jeff",
-        value: "Jeff",
-    },
-    {
-        label: "Poo",
-        value: "Poo",
-    },
-    {
-        label: "Dr Andonuts",
-        value: "DrAndonuts",
-    },
-    {
-        label: "Jackie",
-        value: "Jackie",
-    },
-    {
-        label: "Magic Cake Lady",
-        value: "MagicCakeLady",
-    },
-    {
-        label: "Mom",
-        value: "Mom",
-    },
-    {
-        label: "Shark",
-        value: "Shark",
-    },
-    {
-        label: "Tenda",
-        value: "Tenda",
-    },
-    {
-        label: "Tracy",
-        value: "Tracy",
-    },
+const customVanillaNames = [
+    "Ness",
+    "Paula",
+    "Jeff",
+    "Poo",
+    "Gorgeous", // Red Singer - determined from script source files
+    "Lucky", // Green Singer
+    "Nice", // Drums
+    "Okay", // Bass
+    "Groovy", // Saxaphone
+    //"Thank You", // Keyboard
+    "Aloysius Minch",
+    "Apple Kid",
+    "Arms Dealer",
+    "Bag Lady",
+    "Baseball Cap",
+    "Bellboy",
+    "Black Rabbit",
+    "Bowler Hat",
+    "Brick Road",
+    "Bubble Monkey",
+    "Bubble Monkey's Gal",
+    "Carpainter",
+    "Captain Strong",
+    "Clock",
+    "Cop",
+    "Crow",
+    "Desert Monkey",
+    "Detective",
+    "Diamond",
+    "Doctor",
+    "Dr Andonuts",
+    "Electra",
+    "Entertainer",
+    "Everdred",
+    "Flying Man",
+    "Foppy",
+    "Frank",
+    "George Montague",
+    "Gerardo Montague",
+    "Ghost",
+    "Insane Cultist",
+    "Jackie",
+    "Magic Cake Lady",
+    "Mom",
+    "Shark",
+    "Tenda",
+    "Tracy",
 ];
 
+export const customVanillas = customVanillaNames.map(x => {
+    return {
+        label: x,
+        value: x.replace(/[^0-9a-z]/gi, ''),
+    }
+});
+
 export const vanillaSprites = [
-    { label: "Aloysius Minch", value: 147, },
-    { label: "Apple Kid", value: 176, },
-    { label: "Arms Dealer", value: 144, },
-    { label: "Bag Lady", value: 57, },
-    { label: "Baseball Cap", value: 124, },
-    { label: "Bellboy", value: 73, },
-    { label: "Black Rabbit", value: 107, },
-    { label: "Bowler Hat", value: 125, },
-    { label: "Brick Road", value: 161, },
-    { label: "Bubble Monkey", value: 46, },
-    { label: "Bubble Monkey's Gal", value: 160, },
     { label: "Bus Driver", value: 111, },
-    { label: "Carpainter", value: 159, },
-    { label: "Captain Strong", value: 75, },
-    { label: "Clock", value: 326, },
-    { label: "Cop", value: 74, },
-    { label: "Crow", value: 282, },
-    { label: "Detective", value: 63, },
-    { label: "Diamond", value: 306, },
-    { label: "Doctor", value: 139, },
     { label: "Drunk", value: 60, },
     { label: "Duck", value: 287, },
-    { label: "Electra", value: 396, },
-    { label: "Entertainer", value: 76, },
-    { label: "Everdred", value: 157, },
-    { label: "Flying Man", value: 39, },
-    { label: "Frank", value: 153, },
-    { label: "George Montague", value: 173, },
-    { label: "Gerardo Montague", value: 172, },
-    { label: "Ghost", value: 305, },
-    { label: "Gorgeous", value: 150, },
     { label: "Grandpa", value: 52, },
     { label: "Grandma", value: 53, },
     { label: "Healer", value: 189, },
     { label: "Hippie", value: 361, },
     { label: "Lardna Minch", value: 148, },
     { label: "Liar X Agerate", value: 152, },
-    { label: "Lucky", value: 149, },
     { label: "Manly Fish", value: 288, },
     { label: "Maxwell", value: 69, },
     { label: "Mayor Pirkle", value: 154, },
@@ -701,7 +682,6 @@ export const vanillaSprites = [
     { label: "Pumpkin Head", value: 444, },
     { label: "Ranboob", value: 292, },
     { label: "Robot", value: 25, },
-    { label: "Saxaphonist", value: 77, },
     { label: "Sea Captain", value: 90, },
     { label: "Sentry Robot", value: 310, },
     { label: "Slots Brother", value: 110, },
