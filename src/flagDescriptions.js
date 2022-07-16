@@ -158,7 +158,7 @@ const flagDescriptions = {
     },
     x: {
         title: "Holiday mode",
-        max: 4,
+        max: 5,
         default: 0,
         desc: {
             0: "Disabled.",
@@ -166,6 +166,7 @@ const flagDescriptions = {
             2: "Valentine's Day: Special sprites.",
             3: "St Patrick's Day: Special sprites.",
             4: "Easter: Special sprites.",
+            5: "Fourth of July: Special sprites.",
         }
     },
     devmode: {
