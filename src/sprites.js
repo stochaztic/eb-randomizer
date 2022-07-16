@@ -296,6 +296,66 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Blanka",
+        value: "Blanka",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Chun-Li",
+        value: "ChunLi",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Dhalsim",
+        value: "Dhalsim",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "E. Honda",
+        value: "EHonda",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Guile",
+        value: "Guile",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Ken",
+        value: "Ken",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Ryu",
+        value: "Ryu",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Zangief",
+        value: "Zangief",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Balrog",
+        value: "Balrog",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "M. Bison",
+        value: "MBison",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Sagat",
+        value: "Sagat",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Vega",
+        value: "Vega",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "SimEarth Lizard",
         value: "SimEarthLizard",
         creator: "Peebs",
@@ -336,6 +396,11 @@ export const customCharacters = [
         creator: "plastics enjoyer",
     },
     {
+        label: "Kanji Tatsumi",
+        value: "KanjiTatsumi",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "American Ness",
         value: "AmericanNess",
         creator: "plastics enjoyer",
@@ -368,6 +433,26 @@ export const customCharacters = [
     {
         label: "Alinivar",
         value: "Alinivar",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Col. Saturn",
+        value: "ColSaturn",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Larice",
+        value: "Larice",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Zarbol",
+        value: "Zarbol",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Niiue",
+        value: "Niiue",
         creator: "plastics enjoyer",
     },
     {
@@ -468,6 +553,11 @@ export const customCharacters = [
     {
         label: "Urotsuki",
         value: "Urotsuki",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Sabitsuki",
+        value: "Sabitsuki",
         creator: "plastics enjoyer",
     },
     {

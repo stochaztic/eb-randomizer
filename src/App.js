@@ -4,7 +4,7 @@ import logo from './logo.png';
 import flagDescriptions from './flagDescriptions.js';
 import EarthBoundRandomizer from 'worker-loader!./randomizer.worker.js';
 import ebutils from './Randomizer/ebutils.js';
-import { prepare, prepareTheme, prepareNPCs } from './sprites.js';
+import { prepare, prepareTheme, prepareNPCs, testAllSprites } from './sprites.js';
 import { customSongs } from './music.js';
 import SpriteSelector from './SpriteSelector.js';
 import SpritePreviewer from './SpritePreviewer.js';
