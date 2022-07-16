@@ -705,7 +705,7 @@ const customVanillaNames = [
     "Electra",
     "Enrich Flavor",
     "Entertainer",
-    "Excargo Express",
+    "Escargo Express",
     "Exit Mouse Parent",
     "Everdred",
     "Flying Man",
