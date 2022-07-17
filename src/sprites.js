@@ -296,23 +296,18 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
-        label: "Blanka",
-        value: "Blanka",
-        creator: "plastics enjoyer",
-    },
-    {
-        label: "Chun-Li",
-        value: "ChunLi",
-        creator: "plastics enjoyer",
-    },
-    {
-        label: "Dhalsim",
-        value: "Dhalsim",
+        label: "Ryu",
+        value: "Ryu",
         creator: "plastics enjoyer",
     },
     {
         label: "E. Honda",
         value: "EHonda",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Blanka",
+        value: "Blanka",
         creator: "plastics enjoyer",
     },
     {
@@ -326,8 +321,8 @@ export const customCharacters = [
         creator: "plastics enjoyer",
     },
     {
-        label: "Ryu",
-        value: "Ryu",
+        label: "Chun-Li",
+        value: "ChunLi",
         creator: "plastics enjoyer",
     },
     {
@@ -336,13 +331,18 @@ export const customCharacters = [
         creator: "plastics enjoyer",
     },
     {
+        label: "Dhalsim",
+        value: "Dhalsim",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "Balrog",
         value: "Balrog",
         creator: "plastics enjoyer",
     },
     {
-        label: "M. Bison",
-        value: "MBison",
+        label: "Vega",
+        value: "Vega",
         creator: "plastics enjoyer",
     },
     {
@@ -351,8 +351,8 @@ export const customCharacters = [
         creator: "plastics enjoyer",
     },
     {
-        label: "Vega",
-        value: "Vega",
+        label: "M. Bison",
+        value: "MBison",
         creator: "plastics enjoyer",
     },
     {
