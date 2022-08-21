@@ -356,6 +356,31 @@ export const customCharacters = [
         creator: "plastics enjoyer",
     },
     {
+        label: "T. Hawk",
+        value: "THawk",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Fei Long",
+        value: "FeiLong",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Dee Jay",
+        value: "DeeJay",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Cammy",
+        value: "Cammy",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Akuma",
+        value: "Akuma",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "SimEarth Lizard",
         value: "SimEarthLizard",
         creator: "Peebs",
@@ -403,6 +428,21 @@ export const customCharacters = [
     {
         label: "Kanji Tatsumi",
         value: "KanjiTatsumi",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Kanji Tatsumi",
+        value: "KanjiTatsumi",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Rise Kujikawa",
+        value: "RiseKujikawa",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Naoto Shirogane",
+        value: "NaotoShirogane",
         creator: "plastics enjoyer",
     },
     {
@@ -473,6 +513,11 @@ export const customCharacters = [
     {
         label: "Niko",
         value: "Niko",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Mira",
+        value: "Mira",
         creator: "plastics enjoyer",
     },
     {
@@ -576,6 +621,16 @@ export const customCharacters = [
         creator: "plastics enjoyer",
     },
     {
+        label: "Jesse Pinkman",
+        value: "JessePinkman",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Kim Wexler",
+        value: "KimWexler",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "Madotsuki",
         value: "Madotsuki",
         creator: "plastics enjoyer",
@@ -588,6 +643,11 @@ export const customCharacters = [
     {
         label: "Sabitsuki",
         value: "Sabitsuki",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Usotsuki",
+        value: "Usotsuki",
         creator: "plastics enjoyer",
     },
     {
@@ -608,6 +668,31 @@ export const customCharacters = [
     {
         label: "Pongorma",
         value: "Pongorma",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Gibby",
+        value: "Gibby",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Murdoc",
+        value: "Murdoc",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "2-D",
+        value: "2D",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Noodle",
+        value: "Noodle",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Russel",
+        value: "Russel",
         creator: "plastics enjoyer",
     },
     {
