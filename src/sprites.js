@@ -376,6 +376,11 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Scout",
+        value: "Scout",
+        creator: "Flubby",
+    },
+    {
         label: "Yu Narukami",
         value: "YuNarukami",
         creator: "plastics enjoyer",
@@ -398,6 +403,16 @@ export const customCharacters = [
     {
         label: "Kanji Tatsumi",
         value: "KanjiTatsumi",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Alex",
+        value: "Alex",
+        creator: "Flubby",
+    },
+    {
+        label: "Zombie Alex",
+        value: "ZombieAlex",
         creator: "plastics enjoyer",
     },
     {
@@ -486,6 +501,11 @@ export const customCharacters = [
         creator: "Quatropus",
     },
     {
+        label: "Noelle",
+        value: "Noelle",
+        creator: "Flubby",
+    },
+    {
         label: "Dragon Ness",
         value: "DragonNess",
         creator: "Quatropus / Aurilliux",
@@ -504,6 +524,16 @@ export const customCharacters = [
         label: "Dragon Poo",
         value: "DragonPoo",
         creator: "Quatropus",
+    },
+    {
+        label: "Finn",
+        value: "Finn",
+        creator: "Flubby",
+    },
+    {
+        label: "Jake",
+        value: "Jake",
+        creator: "Flubby",
     },
     {
         label: "Dorothy",
