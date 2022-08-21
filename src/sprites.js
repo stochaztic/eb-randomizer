@@ -431,11 +431,6 @@ export const customCharacters = [
         creator: "plastics enjoyer",
     },
     {
-        label: "Kanji Tatsumi",
-        value: "KanjiTatsumi",
-        creator: "plastics enjoyer",
-    },
-    {
         label: "Rise Kujikawa",
         value: "RiseKujikawa",
         creator: "plastics enjoyer",
@@ -872,7 +867,7 @@ const customVanillaNames = [
     "Prototype Ness",
     "Pumpkin Head",
     "Ranboob",
-    "Rishosha Richmonde",
+    "Risosha Richmonde",
     "Robot",
     "Rowdy Mouse",
     "Saxaphonist",

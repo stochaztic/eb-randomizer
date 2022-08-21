@@ -2,7 +2,7 @@
 ## v51.x / v52 (In progress)
 - Holiday: Fourth of July option added.
 - PC sprites: Added Blanka, Chun-Li, Dhalsim, E. Honda, Guile, Ken, Ryu, Zangief, Balrog, M. Bison, Sagat, Vega, Col. Saturn, Larice, Zarbol, Niiue, Sabitsuki, Kanji Tatsumi, Alex, Zombie Alex, Finn, Jake, Noelle, Scout, Rise Kujikawa, Naoto Shirogane, Jesse Pinkman, Kim Wexler, Gibby, Murdoc, 2-D, Noodle, Russel, Usotsuki, T. Hawk, Fei Long, Dee Jay, Cammy, Akuma, and Mira.
-- PC sprites: Improved vanilla of 72 sprites.
+- PC sprites: Improved vanilla of 72 sprites and added expanded vanilla previewer.
 
 ## v51 (2022-05-31)
 - Credits: EBSS AC 2022 winner temple added.

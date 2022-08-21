@@ -80,7 +80,7 @@ class App extends Component {
       newROM: null,
       debug: false,
       moreInfo: false,
-      showPreview: false,
+      showPreview: 0,
       flagDetail: directLink,
       showDirectLinkInfo: directLink,
       compatibleVersion: compatibleVersion,
@@ -362,8 +362,11 @@ class App extends Component {
     const selectCharacterSprites = (
       <fieldset className="characterSelectors">
         <legend>Character sprites: 
-          <a className="previewToggle" href="?" onClick={(e) => {e.preventDefault(); this.setState({showPreview: !this.state.showPreview})}}>({this.state.showPreview ? 'hide' : 'show'})</a></legend>
-        { this.state.showPreview ? <SpritePreviewer /> : '' }
+          { this.state.showPreview !== 0 && <a className="previewToggle" href="?" onClick={(e) => {e.preventDefault(); this.setState({showPreview: 0})}}>(hide)</a> }
+          { this.state.showPreview !== 1 && <a className="previewToggle" href="?" onClick={(e) => {e.preventDefault(); this.setState({showPreview: 1})}}>(show custom)</a> }
+          { this.state.showPreview !== 2 && <a className="previewToggle" href="?" onClick={(e) => {e.preventDefault(); this.setState({showPreview: 2})}}>(show expanded vanilla)</a> }
+        </legend>
+        { this.state.showPreview ? <SpritePreviewer mode={this.state.showPreview} /> : '' }
         <SpriteSelector character="NESS" backgroundColor="#ccd9ff" active={!(this.state.generationStatus)} onChange={val => this.setSprite(val, 0)} initial={this.state.chosenSprites[0]} />
         <SpriteSelector character="PAULA" backgroundColor="#ffccd4" active={!(this.state.generationStatus)} onChange={val => this.setSprite(val, 1)} initial={this.state.chosenSprites[1]} />
         <SpriteSelector character="JEFF" backgroundColor="#ccffcc" active={!(this.state.generationStatus)} onChange={val => this.setSprite(val, 2)} initial={this.state.chosenSprites[2]} />

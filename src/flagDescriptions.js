@@ -163,10 +163,10 @@ const flagDescriptions = {
         desc: {
             0: "Disabled.",
             1: "Christmas: Only Christmas songs if w >= 4.",
-            2: "Valentine's Day: Special sprites.",
-            3: "St Patrick's Day: Special sprites.",
-            4: "Easter: Special sprites.",
-            5: "Fourth of July: Special sprites.",
+            2: "Valentine's Day: Special sprites by Defqon1.",
+            3: "St Patrick's Day: Special sprites by Defqon1.",
+            4: "Easter: Special sprites by Defqon1.",
+            5: "Fourth of July: Special sprites by Defqon1.",
         }
     },
     devmode: {
