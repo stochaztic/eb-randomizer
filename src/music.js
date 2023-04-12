@@ -878,6 +878,15 @@ export const customSongs = [
         isBattle: false,
         isBoss: false,
     },
+    {
+	title: "Instant Crush - Daft Punk",
+	filename: "instant_crush",
+	artist: "Cover by Aurilliux",
+	instruments: [0x05, 0x08],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: false,
+    },
 ];
 
 export async function prepareCustomSongIndex(index) {
