@@ -854,7 +854,7 @@ export const customSongs = [
     {
 	title: "yes.ebm",
 	filename: "yes",
-	artist: "Composition by Neerrm and Aurilliux",
+	artist: "Comp by Neerrm and Aurilliux",
 	instruments: [0x05, 0x21],
         isOverworld: true,
         isBattle: false,
