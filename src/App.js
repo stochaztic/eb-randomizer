@@ -217,6 +217,7 @@ class App extends Component {
     if(theme) {
       themeBase = await prepareTheme(theme);
     }
+    await testAllSprites();
 
     const spriteChosens = [0, 1, 2, 3].map(i => this.state.chosenSprites[i]);
     if(specs.flags.n >= 2) {

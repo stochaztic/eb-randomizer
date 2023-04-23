@@ -381,6 +381,26 @@ export const customCharacters = [
         creator: "plastics enjoyer",
     },
     {
+        label: "Marth",
+        value: "Marth",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Alm",
+        value: "Alm",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Celica",
+        value: "Celica",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Shulk",
+        value: "Shulk",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "SimEarth Lizard",
         value: "SimEarthLizard",
         creator: "Peebs",
@@ -438,6 +458,16 @@ export const customCharacters = [
     {
         label: "Naoto Shirogane",
         value: "NaotoShirogane",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Teddie",
+        value: "Teddie",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Tohru Adachi",
+        value: "TohruAdachi",
         creator: "plastics enjoyer",
     },
     {
@@ -566,6 +596,26 @@ export const customCharacters = [
         creator: "Quatropus",
     },
     {
+        label: "Zombie Ness",
+        value: "ZombieNess",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Zombie Paula",
+        value: "ZombiePaula",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Zombie Jeff",
+        value: "ZombieJeff",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Zombie Poo",
+        value: "ZombiePoo",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "Finn",
         value: "Finn",
         creator: "Flubby",
@@ -623,6 +673,31 @@ export const customCharacters = [
     {
         label: "Kim Wexler",
         value: "KimWexler",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Hank Schrader",
+        value: "HankSchrader",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "First Doctor",
+        value: "FirstDoctor",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Second Doctor",
+        value: "SecondDoctor",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Third Doctor",
+        value: "ThirdDoctor",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Fourth Doctor",
+        value: "FourthDoctor",
         creator: "plastics enjoyer",
     },
     {
