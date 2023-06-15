@@ -37,6 +37,7 @@ const infoStyle = {
 const labelStyle = {
     fontWeight: "bold",
     marginBottom: "4px",
+    textAlign: "center",
 }
 
 const creatorStyle = {
