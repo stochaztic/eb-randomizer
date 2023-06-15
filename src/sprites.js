@@ -91,6 +91,21 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Lucca",
+        value: "Lucca",
+        creator: "Defqon1",
+    },
+    {
+        label: "Frog",
+        value: "Frog",
+        creator: "Defqon1",
+    },
+    {
+        label: "Ayla",
+        value: "Ayla",
+        creator: "Defqon1",
+    },
+    {
         label: "Link",
         value: "Link",
         creator: "Defqon1",
@@ -296,6 +311,21 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Veronica",
+        value: "Veronica",
+        creator: "Defqon1",
+    },
+    {
+        label: "Serena",
+        value: "Serena",
+        creator: "Defqon1",
+    },
+    {
+        label: "Slime",
+        value: "Slime",
+        creator: "Defqon1",
+    },
+    {
         label: "Ryu",
         value: "Ryu",
         creator: "plastics enjoyer",
@@ -396,8 +426,43 @@ export const customCharacters = [
         creator: "plastics enjoyer",
     },
     {
+        label: "Sigurd",
+        value: "Sigurd",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Seliph",
+        value: "Seliph",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "Shulk",
         value: "Shulk",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Reyn",
+        value: "Reyn",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Sharla",
+        value: "Sharla",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Dunban",
+        value: "Dunban",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Melia",
+        value: "Melia",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Riki",
+        value: "Riki",
         creator: "plastics enjoyer",
     },
     {
@@ -553,7 +618,7 @@ export const customCharacters = [
     {
         label: "Kris (Deltarune)",
         value: "KrisDeltarune",
-        creator: "Quatropus",
+        creator: "kriz / Quatropus",
     },
     {
         label: "Lancer",
@@ -646,6 +711,16 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Thomas",
+        value: "Thomas",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Guy-Manuel",
+        value: "GuyManuel",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "Saul Goodman",
         value: "SaulGoodman",
         creator: "plastics enjoyer",
@@ -698,6 +773,26 @@ export const customCharacters = [
     {
         label: "Fourth Doctor",
         value: "FourthDoctor",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Fifth Doctor",
+        value: "FifthDoctor",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Sixth Doctor",
+        value: "SixthDoctor",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Seventh Doctor",
+        value: "SeventhDoctor",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Eighth Doctor",
+        value: "EighthDoctor",
         creator: "plastics enjoyer",
     },
     {
