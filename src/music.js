@@ -887,6 +887,42 @@ export const customSongs = [
         isBattle: false,
         isBoss: false,
     },
+    {
+	title: "Reverse Dance",
+	filename: "reverse_dance",
+	artist: "Cover by Aurilliux",
+	instruments: [0x05, 0x36],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: false,
+    },
+    {
+	title: "Boss Battle - CBSUaJG",
+	filename: "boss_battle_CBSUaJG",
+	artist: "Cover by Aurilliux",
+	instruments: [0x05, 0x18],
+        isOverworld: true,
+        isBattle: true,
+        isBoss: true,
+    },
+    {
+	title: "Castle Room - Shadowgate",
+	filename: "castle_room",
+	artist: "Cover by Aurilliux",
+	instruments: [0x05, 0xFF],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: false,
+    },
+    {
+	title: "Heard It Thru The Receiver Phone",
+	filename: "heard_it_through_the_receiver_phone",
+	artist: "Cover by Aurilliux",
+	instruments: [0x05, 0x54],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: false,
+    },
 ];
 
 export async function prepareCustomSongIndex(index) {
