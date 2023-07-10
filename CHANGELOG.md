@@ -1,4 +1,8 @@
 # Changelog
+## v52.x-v53 (In Progress)
+- Music: Multiple tracks by Aurilliux added.
+- Music: Christmas trackes removed from non-Christmas seeds; unsafe tracks removed from "t" seeds.
+
 ## v52 (2023-06-15)
 - Holiday: Fourth of July option added.
 - Music: Multiple tracks by Aurilliux added.

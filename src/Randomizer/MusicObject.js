@@ -56,6 +56,13 @@ class MusicObject extends TableObject {
 		if(this.context.specs.flags.x === 1) {
 			unchosenSongPool = unchosenSongPool.filter(s => s.isChristmas);
 		}
+		else {
+			unchosenSongPool = unchosenSongPool.filter(s => !s.isChristmas);
+		}
+
+		if(this.context.specs.flags.t) {
+			unchosenSongPool = unchosenSongPool.filter(s => !s.isUnsafe);
+		}
 
 		for(let i = 0; i < chosenSongIndexes.length; i++) {
 			const chosenIndex = chosenSongIndexes[i];

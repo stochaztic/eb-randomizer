@@ -186,6 +186,7 @@ export const customSongs = [
         isOverworld: false,
         isBattle: true,
         isBoss: true,
+        isUnsafe: true,
     },
     {
         title: "Moonsong",
@@ -411,6 +412,7 @@ export const customSongs = [
         isOverworld: true,
         isBattle: true,
         isBoss: false,
+        isUnsafe: true,
     },
     {
         title: "Mobile Flinstones",
@@ -427,6 +429,7 @@ export const customSongs = [
         isOverworld: false,
         isBattle: true,
         isBoss: true,
+        isUnsafe: true,
     },
     {
         title: "Megalokrakia",
@@ -475,6 +478,7 @@ export const customSongs = [
         isOverworld: false,
         isBattle: false,
         isBoss: true,
+        isUnsafe: true,
     },
     {
         title: "What is Love",
@@ -668,6 +672,7 @@ export const customSongs = [
         isBattle: false,
         isBoss: false,
         isChristmas: true,
+        isUnsafe: true,
     },
     {
         title: "Sandopolis Act 2",
@@ -814,6 +819,7 @@ export const customSongs = [
         isOverworld: true,
         isBattle: false,
         isBoss: false,
+        isUnsafe: true,
     },
     {
 	title: "Home Sweet Home",
@@ -922,6 +928,7 @@ export const customSongs = [
         isOverworld: true,
         isBattle: false,
         isBoss: false,
+        isUnsafe: true,
     },
 ];
 
