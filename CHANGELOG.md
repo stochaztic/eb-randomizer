@@ -1,5 +1,6 @@
 # Changelog
 ## v52.x-v53 (In Progress)
+- Credits: EBSS AC 2023 winner temple added.
 - Music: Multiple tracks by Aurilliux added.
 - Music: Christmas trackes removed from non-Christmas seeds; unsafe tracks removed from "t" seeds.
 - PC sprites: Added Andro, Maz, Nero, and Dirk.
