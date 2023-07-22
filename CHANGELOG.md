@@ -1,6 +1,8 @@
 # Changelog
 ## v52.x-v53 (In Progress)
+- Challenges: New challenge mode "Ancient Cave: Short Skips" added.
 - Credits: EBSS AC 2023 winner temple added.
+- Game improvement patches: Ludicrous speed patch now on by default.
 - Music: Multiple tracks by Aurilliux added.
 - Music: Christmas trackes removed from non-Christmas seeds; unsafe tracks removed from "t" seeds.
 - PC sprites: Added Andro, Maz, Nero, and Dirk.

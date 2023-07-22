@@ -359,6 +359,10 @@ class AncientCave extends ReadWriteObject {
             const d2 = totalUnassignedExits.filter(x => x.caveLevel === (stemLevel + 2) || x.caveLevel === (stemLevel - 2));
             let exitPool = [...d3, ...d3, ...d3, ...d2, ...d2, ...d4, ...d4, ...d5];
             
+            if(this.context.specs.flags.z.shortSkips) {
+                exitPool = d2;
+            }
+            
             if(this.context.specs.flags.rlb) {
                 exitPool = exitPool.filter(x => x.caveLevel !== 1);
             }

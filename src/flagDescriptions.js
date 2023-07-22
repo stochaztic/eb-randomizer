@@ -93,7 +93,7 @@ const flagDescriptions = {
         title: "Game improvement patches",
         bitfield: true,
         opened: true,
-        default: 21,
+        default: 23,
         fields: {
             1: "runButton",
             2: "ludicrousSpeed",
@@ -140,6 +140,7 @@ const flagDescriptions = {
             512: "longParty",
             1024: "yesBubble",
             2048: "randomDrops",
+            4096: "shortSkips",
         },
         desc: {
             1: "Ancient Cave: No Ness in party",
@@ -154,6 +155,7 @@ const flagDescriptions = {
             512: "Long party member follow distance",
             1024: "Ancient Cave: Bubble Monkey in party",
             2048: "No gifts/store items, all enemy item drops from random pool",
+            4096: "Ancient Cave: Normal skips only go 2 floors",
         }
     },
     x: {

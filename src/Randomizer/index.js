@@ -175,7 +175,7 @@ export async function execute(romfile, specs, hooks) {
         items: ItemObject.serialize(),
         chests: MapSpriteObject.every.filter(m => m.isChest).map(o => o.serialize()),
       };
-      specs.sprites = undefined;
+      spoiler.specs.sprites = undefined;
       if(specs.flags.k) {
         spoiler.keysanity = PsiTeleportObject.serialize();
       }
