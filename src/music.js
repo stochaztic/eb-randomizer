@@ -930,6 +930,26 @@ export const customSongs = [
         isBoss: false,
         isUnsafe: true,
     },
+    {
+	title: "Fresco Theme - Sweet Home",
+	filename: "fresco",
+	artist: "Cover by Aurilliux",
+	instruments: [0x05, 0xFF],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: false,
+        isUnsafe: false,
+    },
+    {
+	title: "Kass's Theme - LoZ BotW",
+	filename: "kass_theme",
+	artist: "Cover by Aurilliux",
+	instruments: [0x05, 0x36],
+        isOverworld: true,
+        isBattle: false,
+        isBoss: false,
+        isUnsafe: false,
+    },
 ];
 
 export async function prepareCustomSongIndex(index) {
