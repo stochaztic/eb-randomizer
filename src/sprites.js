@@ -936,6 +936,26 @@ export const customCharacters = [
         creator: "Gabbi",
     },
     {
+        label: "Andro",
+        value: "Andro",
+        creator: "Levthelion",
+    },
+    {
+        label: "Maz",
+        value: "Maz",
+        creator: "Levthelion",
+    },
+    {
+        label: "Nero",
+        value: "Nero",
+        creator: "Levthelion",
+    },
+    {
+        label: "Dirk",
+        value: "Dirk",
+        creator: "Levthelion",
+    },
+    {
         label: "Swellman",
         value: "Swellman",
         creator: "Quatropus",
