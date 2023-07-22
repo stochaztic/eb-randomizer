@@ -2,7 +2,7 @@
 ## v52.x-v53 (In Progress)
 - Ancient Cave: Zoo room NPCs removed to prevent hardlocks.
 - Challenges: New challenge mode "Ancient Cave: Short Skips" added.
-- Credits: EBSS AC 2023 winner temple added.
+- Credits: EBSS AC 2023 winner Aurillux added.
 - Game improvement patches: Ludicrous speed patch now on by default.
 - Music: Multiple tracks by Aurilliux added.
 - Music: Christmas trackes removed from non-Christmas seeds; unsafe tracks removed from "t" seeds.
