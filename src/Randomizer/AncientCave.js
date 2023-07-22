@@ -795,6 +795,16 @@ class AncientCave extends ReadWriteObject {
         removeTPT(1299);
         removeTPT(1300);
 
+        // NPCs in Dungeon Man Zoo - never appear
+        removeTPT(1211);
+        removeTPT(1212);
+        removeTPT(1213);
+        removeTPT(1214);
+        removeTPT(1215);
+        removeTPT(1216);
+        removeTPT(1217);
+        removeTPT(1218);
+
         // Bus stops - always disabled
         const buses = TPTObject.every.filter(o => o.oldData.sprite === 202);
         buses.forEach(bus => { 
