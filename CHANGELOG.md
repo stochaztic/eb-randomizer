@@ -6,7 +6,7 @@
 - Game improvement patches: Ludicrous speed patch now on by default.
 - Music: Multiple tracks by Aurilliux added.
 - Music: Christmas trackes removed from non-Christmas seeds; unsafe tracks removed from "t" seeds.
-- PC sprites: Added Andro, Maz, Nero, and Dirk.
+- PC sprites: Added Andro, Maz, Nero, Dirk, Sonic the Hedgehog, Miles 'Tails' Prower, Knuckles the Echnidna, Amy Rose, Shadow the Hedgehog, Rogue the Bat, Metal Sonic, Doctor Eggman, Ninth Doctor, Tenth Doctor, Eleventh Doctor, Twelfth Doctor, Thirteenth Doctor.
 
 ## v52 (2023-06-15)
 - Holiday: Fourth of July option added.

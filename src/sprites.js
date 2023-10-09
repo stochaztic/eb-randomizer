@@ -221,6 +221,46 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Sonic the Hedgehog",
+        value: "SonicHedgehog",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Miles 'Tails' Prower",
+        value: "MilesPrower",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Knuckles the Echidna",
+        value: "KnucklesEchidna",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Amy Rose",
+        value: "AmyRose",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Shadow the Hedgehog",
+        value: "ShadowHedgehog",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Rouue the Bat",
+        value: "RougeBat",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Metal Sonic",
+        value: "MetalSonic",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Doctor Eggman",
+        value: "DoctorEggman",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "Mario",
         value: "Mario",
         creator: "Defqon1",
@@ -796,6 +836,31 @@ export const customCharacters = [
         creator: "plastics enjoyer",
     },
     {
+        label: "Ninth Doctor",
+        value: "NinthDoctor",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Tenth Doctor",
+        value: "TenthDoctor",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Eleventh Doctor",
+        value: "EleventhDoctor",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Twelfth Doctor",
+        value: "TwelfthDoctor",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Thirteenth Doctor",
+        value: "ThirteenthDoctor",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "Madotsuki",
         value: "Madotsuki",
         creator: "plastics enjoyer",
@@ -864,26 +929,6 @@ export const customCharacters = [
         label: "Happy Easter Bunny",
         value: "HappyEasterBunny",
         creator: "Defqon1",
-    },
-    {
-        label: "Sonic",
-        value: "Sonic",
-        creator: "Quatropus",
-    },
-    {
-        label: "Amy",
-        value: "Amy",
-        creator: "Quatropus",
-    },
-    {
-        label: "Tails",
-        value: "Tails",
-        creator: "Quatropus",
-    },
-    {
-        label: "Knuckles",
-        value: "Knuckles",
-        creator: "Quatropus",
     },
     {
         label: "Aya",
