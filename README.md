@@ -69,7 +69,7 @@ There is a discussion channel for this randomizer at the [EarthBound Speedrunnin
 
 Custom sprite contributions by: Defqon1, plastics enjoyer, stochaztic, Artheau, Quatropus, the salvation phoenix, Zephram, Aurilliux, Mouser, TheKubliest, Bacon, Zephram, Peebs, EBrent, Gabbi, BossCrafty, Flubby, kriz, and Levthelion.
 
-Custom music contributions by: Ari3s, Aurilliux, avolience, Blazephlozard, D-Man, EBisumaru, frogmary, Triple-Q, UltrBolt, vince94, and Xarlable.
+Custom music contributions by: Ari3s, Aurilliux, avolience, Blazephlozard, D-Man, EBisumaru, frogmary, Triple-Q, UltrBolt, livvy94, and Xarlable.
 
 This randomizer thanks greatly the Starmen.Net, PK Hack, and EarthBound Speedrunning communities for their contributions to making it possible, as well as the two predecessor EarthBound randomizers that very much inspired this project.
 

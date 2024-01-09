@@ -246,7 +246,7 @@ export const customCharacters = [
         creator: "plastics enjoyer",
     },
     {
-        label: "Rouue the Bat",
+        label: "Rouge the Bat",
         value: "RougeBat",
         creator: "plastics enjoyer",
     },
