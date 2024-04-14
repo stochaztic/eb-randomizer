@@ -1081,7 +1081,7 @@ export const customCharacters = [
         creator: "Kayne",
     },
     {
-        label: "Protogen",
+        label: "Protogen Jas",
         value: "Protogen",
         creator: "Purple Peak",
     },
