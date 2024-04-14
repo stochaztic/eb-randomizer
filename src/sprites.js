@@ -1010,6 +1010,26 @@ export const customCharacters = [
         value: "Jenn",
         creator: "Quatropus",
     },
+    {
+        label: "Flying Ness",
+        value: "FlyingNess",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Flying Paula",
+        value: "FlyingPaula",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Flying Jeff",
+        value: "FlyingJeff",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Flying Poo",
+        value: "FlyingPoo",
+        creator: "plastics enjoyer",
+    },
 ];
 
 const customVanillaNames = [
