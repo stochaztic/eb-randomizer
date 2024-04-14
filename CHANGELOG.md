@@ -1,18 +1,18 @@
 # Changelog
-## v52.x-v53 (In Progress)
+## v53 (2024-04-14)
 - Ancient Cave: Zoo room NPCs removed to prevent hardlocks.
 - Challenges: New challenge mode "Ancient Cave: Short Skips" added.
 - Credits: EBSS AC 2023 winner Aurillux added.
 - Game improvement patches: Ludicrous speed patch now on by default.
 - Music: Multiple tracks by Aurilliux added.
 - Music: Christmas trackes removed from non-Christmas seeds; unsafe tracks removed from "t" seeds.
-- PC sprites: Added Andro, Maz, Nero, Dirk, Sonic the Hedgehog, Miles 'Tails' Prower, Knuckles the Echidna, Amy Rose, Shadow the Hedgehog, Rouge the Bat, Metal Sonic, Doctor Eggman, Ninth Doctor, Tenth Doctor, Eleventh Doctor, Twelfth Doctor, Thirteenth Doctor.
+- PC sprites: Added or revamped Andro, Maz, Nero, Dirk, Sonic the Hedgehog, Miles 'Tails' Prower, Knuckles the Echidna, Amy Rose, Shadow the Hedgehog, Rouge the Bat, Metal Sonic, Doctor Eggman, Ninth Doctor, Tenth Doctor, Eleventh Doctor, Twelfth Doctor, Thirteenth Doctor, Ninten, Ana, Lloyd, Teddy, Pippi, Giygas, Gordon Freeman, Alyx Vance, Barney Calhoun, Isaac Kleiner, Fleet, Slade, Hamir, Artemis, Kris (Deltarune), Susie, Ralsei, Lancer, Flying Ness, Flying Paula, Flying Jeff, Flying Poo, Zane, and Protogen.
 
 ## v52 (2023-06-15)
 - Holiday: Fourth of July option added.
 - Music: Multiple tracks by Aurilliux added.
 - PC sprites: Added Blanka, Chun-Li, Dhalsim, E. Honda, Guile, Ken, Ryu, Zangief, Balrog, M. Bison, Sagat, Vega, Col. Saturn, Larice, Zarbol, Niiue, Sabitsuki, Kanji Tatsumi, Alex, Zombie Alex, Finn, Jake, Noelle, Scout, Rise Kujikawa, Naoto Shirogane, Jesse Pinkman, Kim Wexler, Gibby, Murdoc, 2-D, Noodle, Russel, Usotsuki, T. Hawk, Fei Long, Dee Jay, Cammy, Akuma, Mira, Zombie Ness, Zombie Paula, Zombie Jeff, Zombie Poo, Hank Schrader, Teddie, Tohru Adachi, Marth, Alm, Celica, Shulk, First Doctor, Second Doctor, Third Doctor, Fourth Doctor, Fifth Doctor, Sixth Doctor, Seventh Doctor, Eighth Doctor, Lucca, Frog, Ayla, Veronica, Serena, Slime, Melia, Reyn, Riki, Sharla, Dunban, Wayne, Sigurd, Seliph, Thomas, and Guy-Manuel.
-- PC sprites: Improved Kris (Undertale); Improved vanilla of 196 total sprites and added expanded vanilla previewer.
+- PC sprites: Improved Kris (Deltarune); Improved vanilla of 196 total sprites and added expanded vanilla previewer.
 
 ## v51 (2022-05-31)
 - Credits: EBSS AC 2022 winner temple added.

@@ -51,6 +51,31 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Ninten",
+        value: "Ninten",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Ana",
+        value: "Ana",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Lloyd",
+        value: "Lloyd",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Teddy",
+        value: "Teddy",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Pippi",
+        value: "Pippi",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "Exit Mouse",
         value: "ExitMouse",
         creator: "Defqon1",
@@ -59,6 +84,11 @@ export const customCharacters = [
         label: "Coil Snake",
         value: "CoilSnake",
         creator: "Defqon1",
+    },
+    {
+        label: "Giygas",
+        value: "Giygas",
+        creator: "plastics enjoyer",
     },
     {
         label: "Mega Man",
@@ -531,6 +561,26 @@ export const customCharacters = [
         creator: "Flubby",
     },
     {
+        label: "Gordon Freeman",
+        value: "Gordon",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Alyx Vance",
+        value: "AlyxVance",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Barney Calhoun",
+        value: "BarneyCalhoun",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Isaac Kleiner",
+        value: "IsaacKleiner",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "Yu Narukami",
         value: "YuNarukami",
         creator: "plastics enjoyer",
@@ -576,6 +626,26 @@ export const customCharacters = [
         creator: "plastics enjoyer",
     },
     {
+        label: "Fleet",
+        value: "Fleet",
+        creator: "Levthelion",
+    },
+    {
+        label: "Slade",
+        value: "Slade",
+        creator: "Levthelion",
+    },
+    {
+        label: "Hamir",
+        value: "Hamir",
+        creator: "Levthelion",
+    },
+    {
+        label: "Artemis",
+        value: "Artemis",
+        creator: "Levthelion",
+    },
+    {
         label: "Alex",
         value: "Alex",
         creator: "Flubby",
@@ -599,16 +669,6 @@ export const customCharacters = [
         label: "Nessa",
         value: "Nessa",
         creator: "Satsy",
-    },
-    {
-        label: "Ninten",
-        value: "Ninten",
-        creator: "the salvation phoenix",
-    },
-    {
-        label: "Teddy",
-        value: "Teddy",
-        creator: "EBrent",
     },
     {
         label: "Ness's Hat",
@@ -658,22 +718,22 @@ export const customCharacters = [
     {
         label: "Kris (Deltarune)",
         value: "KrisDeltarune",
-        creator: "kriz / Quatropus",
-    },
-    {
-        label: "Lancer",
-        value: "Lancer",
-        creator: "Quatropus",
-    },
-    {
-        label: "Ralsei",
-        value: "Ralsei",
-        creator: "Quatropus",
+        creator: "plastics enjoyer",
     },
     {
         label: "Susie",
         value: "Susie",
-        creator: "Quatropus",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Ralsei",
+        value: "Ralsei",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Lancer",
+        value: "Lancer",
+        creator: "plastics enjoyer",
     },
     {
         label: "Noelle",
@@ -718,6 +778,26 @@ export const customCharacters = [
     {
         label: "Zombie Poo",
         value: "ZombiePoo",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Flying Ness",
+        value: "FlyingNess",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Flying Paula",
+        value: "FlyingPaula",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Flying Jeff",
+        value: "FlyingJeff",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Flying Poo",
+        value: "FlyingPoo",
         creator: "plastics enjoyer",
     },
     {
@@ -966,11 +1046,6 @@ export const customCharacters = [
         creator: "Doug",
     },
     {
-        label: "Gordon Freeman",
-        value: "Gordon",
-        creator: "EBrent",
-    },
-    {
         label: "Weird Al Yankovic",
         value: "WeirdAl",
         creator: "EBrent",
@@ -1001,6 +1076,16 @@ export const customCharacters = [
         creator: "Levthelion",
     },
     {
+        label: "Zane",
+        value: "Zane",
+        creator: "Kayne",
+    },
+    {
+        label: "Protogen",
+        value: "Protogen",
+        creator: "Purple Peak",
+    },
+    {
         label: "Swellman",
         value: "Swellman",
         creator: "Quatropus",
@@ -1009,26 +1094,6 @@ export const customCharacters = [
         label: "Jenn",
         value: "Jenn",
         creator: "Quatropus",
-    },
-    {
-        label: "Flying Ness",
-        value: "FlyingNess",
-        creator: "plastics enjoyer",
-    },
-    {
-        label: "Flying Paula",
-        value: "FlyingPaula",
-        creator: "plastics enjoyer",
-    },
-    {
-        label: "Flying Jeff",
-        value: "FlyingJeff",
-        creator: "plastics enjoyer",
-    },
-    {
-        label: "Flying Poo",
-        value: "FlyingPoo",
-        creator: "plastics enjoyer",
     },
 ];
 
