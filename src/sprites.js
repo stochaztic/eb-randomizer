@@ -831,6 +831,26 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Jean-Luc Picard",
+        value: "JeanLucPicard",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Deanna Troi",
+        value: "DeannaTroi",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "William Riker",
+        value: "WilliamRiker",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Worf",
+        value: "Worf",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "Thomas",
         value: "Thomas",
         creator: "plastics enjoyer",
