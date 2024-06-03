@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import { TableObject } from 'randomtools-js';
-import tableText from '!array-loader!./tables/psi_teleport_table.txt';
+import tableText from './tables/psi_teleport_table.txt';
 import ebutils from './ebutils.js';
 import MapEventObject from './MapEventObject.js';
 import MapSpriteObject from './MapSpriteObject.js';

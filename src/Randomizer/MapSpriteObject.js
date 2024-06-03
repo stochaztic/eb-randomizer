@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import tableText from '!array-loader!./tables/map_sprite_table.txt';
-import pointerText from '!array-loader!./tables/map_sprite_pointers.txt';
+import tableText from './tables/map_sprite_table.txt';
+import pointerText from './tables/map_sprite_pointers.txt';
 import Cluster from './Cluster.js';
 import ebutils from './ebutils.js';
 import TPTObject from './TPTObject.js';

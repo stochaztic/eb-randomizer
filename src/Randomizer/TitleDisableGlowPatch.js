@@ -1,5 +1,4 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import patchText from '!array-loader!./tables/title_disable_glow_patch.txt';
+import patchText from './tables/title_disable_glow_patch.txt';
 import { utils } from 'randomtools-js';
 
 const TitleDisableGlowPatch = {

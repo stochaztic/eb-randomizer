@@ -1,5 +1,4 @@
-import importAll from 'import-all.macro';
-const urls = importAll.sync('./music/**');
+const urls = import.meta.glob('./music/**', { query: '?url', import: 'default' });
 
 export const customSongs = [
     {

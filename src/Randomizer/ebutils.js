@@ -1,6 +1,6 @@
-import textMapRaw0 from '!array-loader!./tables/text_mapping.txt';
-import textMapRaw1 from '!array-loader!./tables/text_mapping_1.txt';
-import textMapRaw2 from '!array-loader!./tables/text_mapping_2.txt';
+import textMapRaw0 from './tables/text_mapping.txt';
+import textMapRaw1 from './tables/text_mapping_1.txt';
+import textMapRaw2 from './tables/text_mapping_2.txt';
 import { utils } from 'randomtools-js';
 import Color from 'color';
 

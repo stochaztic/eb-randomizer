@@ -1,8 +1,7 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import ZoneTableObject from './ZoneTableObject.js';
 import MapEnemyObject from './MapEnemyObject.js';
-import tableText from '!array-loader!./tables/zone_event_table.txt';
-import pointerText from '!array-loader!./tables/zone_event_pointers.txt';
+import tableText from './tables/zone_event_table.txt';
+import pointerText from './tables/zone_event_pointers.txt';
 import MapEventObject from './MapEventObject.js';
 
 

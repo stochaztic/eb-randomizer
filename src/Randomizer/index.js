@@ -1,5 +1,4 @@
 import RandomTools from 'randomtools-js';
-
 import AncientCave from './AncientCave.js';
 import BattleEntryObject from './BattleEntryObject.js';
 import BgDataObject from './BgDataObject.js';

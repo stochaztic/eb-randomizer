@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import { TableObject } from 'randomtools-js';
-import tableText from '!array-loader!./tables/experience_table.txt';
+import tableText from './tables/experience_table.txt';
 
 class ExperienceObject extends TableObject {
     cleanup() {

@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import tableText from '!array-loader!./tables/map_enemy_table.txt';
-import canonicalExitsText from '!array-loader!./tables/meo_canonical_exits.txt';
+import tableText from './tables/map_enemy_table.txt';
+import canonicalExitsText from './tables/meo_canonical_exits.txt';
 import GridTableObject from './GridTableObject.js';
 import MapEventObject from './MapEventObject.js';
 import MapSpriteObject from './MapSpriteObject.js';

@@ -1,5 +1,4 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import patchText from '!array-loader!./tables/run_button_patch.txt';
+import patchText from './tables/run_button_patch.txt';
 import { utils } from 'randomtools-js';
 
 const RunButtonPatch = {

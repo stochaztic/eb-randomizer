@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import { TableObject, utils } from 'randomtools-js';
-import tableText from '!array-loader!./tables/music_table.txt';
+import tableText from './tables/music_table.txt';
 import ebutils from './ebutils.js';
 
 import { customSongs, prepareCustomSong } from '../music.js';

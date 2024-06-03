@@ -1,5 +1,4 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import patchText from '!array-loader!./tables/dead_with_hp_patch.txt';
+import patchText from './tables/dead_with_hp_patch.txt';
 import { utils } from 'randomtools-js';
 
 const DeadWithHpPatch = {

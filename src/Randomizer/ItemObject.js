@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import { TableObject, utils } from 'randomtools-js';
-import tableText from '!array-loader!./tables/item_table.txt';
+import tableText from './tables/item_table.txt';
 import ebutils from './ebutils.js';
 import Script from './Script.js';
 import MapSpriteObject from './MapSpriteObject.js';
