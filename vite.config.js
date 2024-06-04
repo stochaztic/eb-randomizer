@@ -13,5 +13,9 @@ export default defineConfig(() => {
       outDir: 'build',
     },
     plugins: [react(), nodePolyfills(), arrayPlugin()],
+    worker: {
+      format: "es",
+      plugins: () => [arrayPlugin()],
+    },
   };
 });
