@@ -20,7 +20,5 @@ ZoneEventObject.tableSpecs = {
     pointers: pointerText,
 };
 
-ZoneEventObject.zoneObject = MapEventObject;
-
 ZoneEventObject._displayName = "zone event";
 export default ZoneEventObject;

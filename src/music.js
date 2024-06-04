@@ -967,7 +967,8 @@ export async function prepareCustomSong(song) {
     if(!url) {
         throw new Error(`Could not find music ebm file for ${song.title}.`);
     }
-    let response = await fetch(url.default || url);
+    url = await(url());
+    let response = await fetch(url);
     let buffer = await response.arrayBuffer();
     let data = new Uint8Array(buffer);
 

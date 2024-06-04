@@ -12,7 +12,5 @@ ZoneSpriteObject.tableSpecs = {
     pointers: pointerText,
 };
 
-ZoneSpriteObject.zoneObject = MapSpriteObject;
-
 ZoneSpriteObject._displayName = "zone sprite";
 export default ZoneSpriteObject;
