@@ -11,7 +11,7 @@ const flagDescriptions = {
     c: {
         title: "Character stats",
         max: 3,
-        default: 2,
+        default: 3,
         desc: {
             1: "Player characters' stat increases on each level-up will be randomized.",
             2: "Player characters' special abilities (Pray, Spy, Mirror) will be shuffled, and stat increases on each level-up will be randomized. Spy and Mirror will be improved.",
@@ -93,7 +93,7 @@ const flagDescriptions = {
         title: "Game improvement patches",
         bitfield: true,
         opened: true,
-        default: 23,
+        default: 31,
         fields: {
             1: "runButton",
             2: "ludicrousSpeed",
@@ -114,7 +114,7 @@ const flagDescriptions = {
     w: {
         title: "Music",
         max: 5,
-        default: 1,
+        default: 3,
         desc: {
             1: "In Ancient Cave, each floor will have its own music. In other modes, areas will have shuffled music.",
             2: "Battle music will be shuffled. In Ancient Cave, each floor will have its own music. In other modes, areas will have shuffled music.",
