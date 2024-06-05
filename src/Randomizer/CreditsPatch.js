@@ -1,5 +1,4 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import patchText from '!array-loader!./tables/credits_patch.txt';
+import patchText from './tables/credits_patch.txt';
 import { utils } from 'randomtools-js';
 
 const CreditsPatch = {

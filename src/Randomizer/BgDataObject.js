@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import { TableObject } from 'randomtools-js';
-import tableText from '!array-loader!./tables/bg_data_table.txt';
+import tableText from './tables/bg_data_table.txt';
 
 class BgDataObject extends TableObject {
     static shouldRandomize() {

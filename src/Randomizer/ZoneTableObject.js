@@ -10,6 +10,7 @@ class ZoneTableObject extends GridTableObject {
     }
 
     objPointers(zoneObject) {
+        // constructors no longer reference zoneObject to prevent circular dependencies
         zoneObject = zoneObject || this.constructor.zoneObject;
         if(!zoneObject) {
             throw new Error("zoneObject undefined.");

@@ -1,5 +1,4 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import problematicScriptsText from '!array-loader!./tables/problematic_scripts.txt';
+import problematicScriptsText from './tables/problematic_scripts.txt';
 import { ReadWriteObject, utils } from 'randomtools-js';
 import ebutils from './ebutils.js';
 import Script from './Script.js';

@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import { TableObject } from 'randomtools-js';
-import tableText from '!array-loader!./tables/pc_gfx_table.txt';
+import tableText from './tables/pc_gfx_table.txt';
 
 class PcGfxObject extends TableObject {
     // It is preferred to not change this table as it can cause bugs

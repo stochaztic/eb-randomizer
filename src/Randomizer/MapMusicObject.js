@@ -1,5 +1,4 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import tableText from '!array-loader!./tables/map_music_table.txt';
+import tableText from './tables/map_music_table.txt';
 import GridTableObject from './GridTableObject.js';
 import MapEnemyObject from './MapEnemyObject.js';
 import EnemyObject from './EnemyObject.js';

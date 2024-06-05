@@ -1,6 +1,5 @@
-import importAll from 'import-all.macro';
 import PNGReader from 'png.js';
-const urls = importAll.sync('./sprites/**/*.png');
+const urls = import.meta.glob('./sprites/**/*.png', { eager: true, query: '?url', import: 'default' });
 
 export const unusedSprites = [31, 32, 38, 42, 43, 250, 251, 275, 321, 338, 339, 340, 341, 342, 345, 351, 354, 355, 358, 379, 380, 383, 400, 445, 452, 453, 454];
 
@@ -831,6 +830,26 @@ export const customCharacters = [
         creator: "Defqon1",
     },
     {
+        label: "Jean-Luc Picard",
+        value: "JeanLucPicard",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Deanna Troi",
+        value: "DeannaTroi",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "William Riker",
+        value: "WilliamRiker",
+        creator: "plastics enjoyer",
+    },
+    {
+        label: "Worf",
+        value: "Worf",
+        creator: "plastics enjoyer",
+    },
+    {
         label: "Thomas",
         value: "Thomas",
         creator: "plastics enjoyer",
@@ -1355,7 +1374,7 @@ export function getUrl(spriteDirectory, index) {
     if(!url) {
         url = urls[`./sprites/${spriteDirectory}-${index.toString().padStart(3, '0')}.png`];
     }
-    return url?.default || url;
+    return (url instanceof Function) ? url() : url;
 }
 
 export async function prepareTheme(name) {

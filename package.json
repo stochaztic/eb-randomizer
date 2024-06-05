@@ -1,6 +1,6 @@
 {
   "name": "eb-randomizer",
-  "version": "53.0.0",
+  "version": "53.1.0",
   "description": "Randomizer for SNES game EarthBound, featuring Ancient Cave and Open modes",
   "dependencies": {
     "color": "^3.1.2",
@@ -8,14 +8,14 @@
     "localforage": "^1.7.4",
     "png.js": "^0.2.1",
     "randomtools-js": "file:../randomtools-js",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "^4.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-select": "^5.2.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
     "push": "firebase deploy --only hosting:main",
     "pushbeta": "firebase deploy --only hosting:beta"
   },
@@ -26,22 +26,10 @@
   "author": "@stochaztic",
   "private": true,
   "license": "GPL-3.0",
+  "type": "module",
   "devDependencies": {
-    "array-loader": "file:../array-loader",
-    "import-all.macro": "^3.1.0",
-    "preval.macro": "^3.0.0",
-    "raw-loader": "^2.0.0",
-    "worker-loader": "^3.0.8"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not ie <= 11",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version"
-    ]
+    "@vitejs/plugin-react": "^4.3.0",
+    "vite": "^5.2.12",
+    "vite-plugin-node-polyfills": "^0.22.0"
   }
 }

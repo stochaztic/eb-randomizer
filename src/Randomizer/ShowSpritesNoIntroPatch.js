@@ -1,5 +1,4 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import patchText from '!array-loader!./tables/show_sprites_no_intro.txt';
+import patchText from './tables/show_sprites_no_intro.txt';
 import { utils } from 'randomtools-js';
 
 const ShowSpritesNoIntroPatch = {

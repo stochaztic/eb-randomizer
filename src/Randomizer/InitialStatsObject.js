@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import { TableObject } from 'randomtools-js';
-import tableText from '!array-loader!./tables/initial_stats_table.txt';
+import tableText from './tables/initial_stats_table.txt';
 import ItemObject from './ItemObject.js';
 import AncientCave from './AncientCave.js';
 

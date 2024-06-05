@@ -1,5 +1,4 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import areasText from '!array-loader!./tables/areas.txt';
+import areasText from './tables/areas.txt';
 import MapEnemyObject from './MapEnemyObject.js';
 import MapEventObject from './MapEventObject.js';
 import MapSpriteObject from './MapSpriteObject.js';

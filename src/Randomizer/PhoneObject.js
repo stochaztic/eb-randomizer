@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import { TableObject } from 'randomtools-js';
-import tableText from '!array-loader!./tables/phone_table.txt';
+import tableText from './tables/phone_table.txt';
 import ebutils from './ebutils.js';
 
 class PhoneObject extends TableObject {

@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import { TableObject } from 'randomtools-js';
-import tableText from '!array-loader!./tables/enemy_table.txt';
+import tableText from './tables/enemy_table.txt';
 import ebutils from './ebutils.js';
 import ItemObject from './ItemObject.js';
 import SpriteGroupObject from './SpriteGroupObject.js';
