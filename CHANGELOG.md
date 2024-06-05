@@ -1,6 +1,9 @@
 # Changelog
 ## v53.x / v54 (In progress)
+- Credits: EBSS AC 2024 winner Sitake added.
+- Music: Improve credits music selection, small music fixes.
 - PC sprites: Added Jean-Luc Picard, Dianna Troi, William Riker, and Worf.
+- Structural: Website build process updated.
 
 ## v53 (2024-04-14)
 - Ancient Cave: Zoo room NPCs removed to prevent hardlocks.
