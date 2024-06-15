@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import { TableObject, utils } from 'randomtools-js';
-import tableText from '!array-loader!./tables/music_table.txt';
+import tableText from './tables/music_table.txt';
 import ebutils from './ebutils.js';
 
 import { customSongs, prepareCustomSong } from '../music.js';
@@ -87,7 +86,7 @@ class MusicObject extends TableObject {
     
     static get overworldMusics() {
         if(this._overworldMusics !== undefined) return this._overworldMusics;
-        this._overworldMusics = new Set([2, 3, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 76, 77, 78, 80, 81, 82, 83, 86, 87, 90, 92, 93, 106, 107, 108, 112, 114, 116, 117, 118, 119, 120, 121, 122, 125, 128, 129, 130, 131, 132, 133, 136, 140, 144, 146, 149, 150, 151, 152, 153, 159, 169, 170, 171, 173, 178, 187, 188]);
+        this._overworldMusics = new Set([2, 3, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 76, 77, 78, 80, 81, 82, 83, 86, 87, 90, 92, 93, 106, 107, 108, 112, 114, 117, 118, 119, 120, 121, 122, 125, 128, 129, 130, 131, 132, 133, 136, 140, 144, 146, 149, 150, 151, 152, 153, 159, 169, 170, 171, 173, 178, 187, 188]);
         if(this.context.specs.flags.w >= 4) {
             EnemyObject.every.forEach(e => this._overworldMusics.add(e.oldData.music));
         }

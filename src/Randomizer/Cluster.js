@@ -1,5 +1,4 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import exitsText from '!array-loader!./tables/exits.txt';
+import exitsText from './tables/exits.txt';
 import MapEnemyObject from "./MapEnemyObject.js";
 import MapEventObject from "./MapEventObject.js";
 

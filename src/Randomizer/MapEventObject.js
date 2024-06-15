@@ -1,8 +1,7 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import { TableObject } from 'randomtools-js';
-import tableText from '!array-loader!./tables/map_event_table.txt';
-import pointerText from '!array-loader!./tables/map_event_pointers.txt';
-import friendsText from '!array-loader!./tables/meo_friends.txt';
+import tableText from './tables/map_event_table.txt';
+import pointerText from './tables/map_event_pointers.txt';
+import friendsText from './tables/meo_friends.txt';
 import ZoneEventObject from './ZoneEventObject.js';
 import MapEnemyObject from './MapEnemyObject.js';
 import EventObject from './EventObject.js';

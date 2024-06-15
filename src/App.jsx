@@ -2,16 +2,14 @@ import React, { Component } from 'react';
 import './App.css';
 import logo from './logo.png';
 import flagDescriptions from './flagDescriptions.js';
-import EarthBoundRandomizer from 'worker-loader!./randomizer.worker.js';
 import ebutils from './Randomizer/ebutils.js';
 import { prepare, prepareTheme, prepareNPCs, testAllSprites } from './sprites.js';
 import { customSongs } from './music.js';
-import SpriteSelector from './SpriteSelector.js';
-import SpritePreviewer from './SpritePreviewer.js';
+import SpriteSelector from './SpriteSelector.jsx';
+import SpritePreviewer from './SpritePreviewer.jsx';
 import Cookies from 'js-cookie';
 import localforage from 'localforage';
-import preval from 'preval.macro';
-const buildDate = preval`module.exports = (new Date()).toLocaleDateString('en',{day: "numeric", month: "short", year: "numeric"})`;
+const buildDate = BUILD_DATE;
 
 const sortedSongs = customSongs.map((s, i) => {
   s.index = i;
@@ -23,7 +21,7 @@ class App extends Component {
     super(props);
     this.flagDescriptions = flagDescriptions;
 
-    const versionParts = process.env.REACT_APP_VERSION.split(".",2);
+    const versionParts = APP_VERSION.split(".",2);
     const version = (versionParts.length === 1 || versionParts[1] === "0") ? versionParts[0] : versionParts.join(".");
     let chosenSprites = ["RandomAny", "RandomAny", "RandomAny", "RandomAny"];
     const initialSpecs = {
@@ -91,7 +89,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.earthBoundRandomizer = new EarthBoundRandomizer();
+    this.earthBoundRandomizer = new Worker(new URL('./randomizer.worker.js', import.meta.url), {
+      type: 'module'
+    });
     this.earthBoundRandomizer.addEventListener("message", e => {
       const d = e.data;
       if(d.type === "info") {

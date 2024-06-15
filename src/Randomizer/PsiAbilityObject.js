@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import { TableObject } from 'randomtools-js';
-import tableText from '!array-loader!./tables/psi_ability_table.txt';
+import tableText from './tables/psi_ability_table.txt';
 
 class PsiAbilityObject extends TableObject {
     toString() {

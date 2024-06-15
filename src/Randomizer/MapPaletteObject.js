@@ -1,5 +1,4 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import tableText from '!array-loader!./tables/map_palette_table.txt';
+import tableText from './tables/map_palette_table.txt';
 import GridTableObject from './GridTableObject.js';
 
 class MapPaletteObject extends GridTableObject {

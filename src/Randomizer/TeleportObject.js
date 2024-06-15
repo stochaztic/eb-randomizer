@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import { TableObject } from 'randomtools-js';
-import tableText from '!array-loader!./tables/teleport_table.txt';
+import tableText from './tables/teleport_table.txt';
 
 class TeleportObject extends TableObject {
     cleanup() {

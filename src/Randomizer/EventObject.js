@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import tableText from '!array-loader!./tables/event_table.txt';
-import pointerText from '!array-loader!./tables/event_pointers.txt';
+import tableText from './tables/event_table.txt';
+import pointerText from './tables/event_pointers.txt';
 import { TableObject } from 'randomtools-js';
 import Script from './Script.js';
 import ebutils from './ebutils.js';

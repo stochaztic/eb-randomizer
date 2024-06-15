@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import { TableObject } from 'randomtools-js';
-import tableText from '!array-loader!./tables/stat_growth_table.txt';
+import tableText from './tables/stat_growth_table.txt';
 
 class StatGrowthObject extends TableObject {
     static shouldRandomize() {

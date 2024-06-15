@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import instructionsText from '!array-loader!./tables/instructions.txt';
-import newlinesText from '!array-loader!./tables/newlines.txt';
+import instructionsText from './tables/instructions.txt';
+import newlinesText from './tables/newlines.txt';
 import BattleEntryObject from './BattleEntryObject.js';
 import ItemObject from './ItemObject.js';
 import ebutils from './ebutils.js';

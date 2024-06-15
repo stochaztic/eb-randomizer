@@ -1,6 +1,5 @@
-/* eslint import/no-webpack-loader-syntax: off */
 import { TableObject, utils } from 'randomtools-js';
-import tableText from '!array-loader!./tables/battle_entry_table.txt';
+import tableText from './tables/battle_entry_table.txt';
 import ebutils from './ebutils.js';
 
 import EnemyObject from './EnemyObject.js';

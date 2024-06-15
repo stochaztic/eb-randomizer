@@ -1,5 +1,4 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import problematicScriptsText from '!array-loader!./tables/problematic_scripts.txt';
+import problematicScriptsText from './tables/problematic_scripts.txt';
 import { ReadWriteObject, utils } from 'randomtools-js';
 import ebutils from './ebutils.js';
 import Script from './Script.js';
@@ -8,6 +7,7 @@ import MapSpriteObject from './MapSpriteObject.js';
 import MapEventObject from './MapEventObject.js';
 import TPTObject from './TPTObject.js';
 import MapMusicObject from './MapMusicObject.js';
+import MusicObject from './MusicObject.js';
 
 class AncientCave extends ReadWriteObject {
     static shouldRandomize() {
@@ -838,7 +838,8 @@ class AncientCave extends ReadWriteObject {
         if(this.context.random.random() < 0.1) {
             script.lines[61]= [21, 20, 167, 145, 162, 21, 91, 163, 164, 80, 119, 153, 151, 151, 145, 151, 145, 163];
         }
-        script.lines.push([0x1f, 0x00, 0x00, this.context.random.randint(1, 191)]); // Music
+        const creditsMusic = Array.from(MusicObject.battleMusics).concat(Array.from(MusicObject.overworldMusics)).concat(Array.from(MusicObject.ancientCaveMusics));
+        script.lines.push([0x1f, 0x00, 0x00, this.context.random.choice(creditsMusic)]); // Music
         script.lines.push([0x1f, 0x41, 0x0c]); // Credits
         script.lines.push(ebutils.ccodeGotoAddress(0x9c96e)); // The End
         script.writeScript();

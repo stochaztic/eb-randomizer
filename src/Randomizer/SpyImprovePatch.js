@@ -1,5 +1,4 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import patchText from '!array-loader!./tables/spy_improve_patch.txt';
+import patchText from './tables/spy_improve_patch.txt';
 import { utils } from 'randomtools-js';
 import ebutils from './ebutils.js';
 import Script from './Script.js';
