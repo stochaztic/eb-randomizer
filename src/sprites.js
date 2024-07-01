@@ -1114,6 +1114,51 @@ export const customCharacters = [
         value: "Jenn",
         creator: "Quatropus",
     },
+    {
+        label: "Drakh",
+        value: "Drakh",
+        creator: "WhirlingWinds",
+    },
+    {
+        label: "Chainsaw Consultant",
+        value: "Chainsaw",
+        creator: "WhirlingWinds",
+    },
+    {
+        label: "Electro Pea",
+        value: "Electro Pea",
+        creator: "WhirlingWinds",
+    },
+    {
+        label: "Harold",
+        value: "Harold",
+        creator: "WhirlingWinds",
+    },
+    {
+        label: "Kyle the Werecleaner",
+        value: "Kyle the Werecleaner",
+        creator: "WhirlingWinds",
+    },
+    {
+        label: "Kabbu",
+        value: "Kabbu",
+        creator: "WhirlingWinds",
+    },
+    {
+        label: "Frankly",
+        value: "Frankly",
+        creator: "WhirlingWinds",
+    },
+    {
+        label: "Oersted",
+        value: "Oersted",
+        creator: "WhirlingWinds",
+    },
+    {
+        label: "Toadsworth",
+        value: "Toadsworth",
+        creator: "WhirlingWinds",
+    },
 ];
 
 const customVanillaNames = [
