@@ -3,7 +3,7 @@
 - Credits: EBSS AC 2024 winner Sitake added.
 - Flags: Updated defaults to match most common use case.
 - Music: Improve credits music selection, small music fixes.
-- PC sprites: Added Jean-Luc Picard, Dianna Troi, William Riker, and Worf.
+- PC sprites: Added Jean-Luc Picard, Dianna Troi, William Riker, Worf, Drakh, Toadsworth, Oersted, Kyle the Werecleaner, Kabbu, Harold, Frankly, Electro Pea, and Chainsaw Consultant.
 - Structural: Website build process updated.
 
 ## v53 (2024-04-14)
