@@ -1095,6 +1095,31 @@ export const customCharacters = [
         creator: "Levthelion",
     },
     {
+        label: "Adachi Rei",
+        value: "AdachiRei",
+        creator: "czikubi",
+    },
+    {
+        label: "Brendan",
+        value: "Brendan",
+        creator: "czikubi",
+    },
+    {
+        label: "Hatsune Miku",
+        value: "HatsuneMiku",
+        creator: "czikubi",
+    },
+    {
+        label: "May",
+        value: "May",
+        creator: "czikubi",
+    },
+    {
+        label: "Russell Seager",
+        value: "RussellSeager",
+        creator: "Amirel",
+    },
+    {
         label: "Zane",
         value: "Zane",
         creator: "Kayne",
@@ -1103,16 +1128,6 @@ export const customCharacters = [
         label: "Protogen Jas",
         value: "Protogen",
         creator: "Purple Peak",
-    },
-    {
-        label: "Swellman",
-        value: "Swellman",
-        creator: "Quatropus",
-    },
-    {
-        label: "Jenn",
-        value: "Jenn",
-        creator: "Quatropus",
     },
     {
         label: "Drakh",
@@ -1158,6 +1173,16 @@ export const customCharacters = [
         label: "Toadsworth",
         value: "Toadsworth",
         creator: "WhirlingWinds",
+    },
+    {
+        label: "Swellman",
+        value: "Swellman",
+        creator: "Quatropus",
+    },
+    {
+        label: "Jenn",
+        value: "Jenn",
+        creator: "Quatropus",
     },
 ];
 
