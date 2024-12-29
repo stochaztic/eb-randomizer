@@ -67,7 +67,7 @@ Our method of randomizing the battle backgrounds often leads to extremely good-l
 
 There is a discussion channel for this randomizer at the [EarthBound Speedrunning Discord](https://discord.gg/WWVYwkE).
 
-Custom sprite contributions by: Defqon1, plastics enjoyer, stochaztic, Artheau, Quatropus, the salvation phoenix, Zephram, Aurilliux, Mouser, TheKubliest, Bacon, Zephram, Peebs, EBrent, Gabbi, BossCrafty, Flubby, Levthelion, Kayne, Purple Peak, WhirlingWinds, czikubi, and Amirel.
+Custom sprite contributions by: Defqon1, plastics enjoyer, stochaztic, Artheau, Quatropus, the salvation phoenix, Zephram, Aurilliux, Mouser, TheKubliest, Bacon, Zephram, Peebs, EBrent, Gabbi, BossCrafty, Flubby, Levthelion, Kayne, Purple Peak, WhirlingWinds, czikubi, Amirel, CuriousFellow, Strawflowers, and AnotherFran.
 
 Custom music contributions by: Ari3s, Aurilliux, avolience, Blazephlozard, D-Man, EBisumaru, frogmary, Triple-Q, UltrBolt, livvy94, and Xarlable.
 
