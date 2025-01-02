@@ -1360,6 +1360,46 @@ export const customCharacters = [
         creator: "WhirlingWinds",
     },
     {
+        label: "Watt",
+        value: "Watt",
+        creator: "WhirlingWinds",
+    },
+    {
+        label: "Oboromaru",
+        value: "Oboromaru",
+        creator: "WhirlingWinds",
+    },
+    {
+        label: "Parakarry",
+        value: "Parakarry",
+        creator: "WhirlingWinds",
+    },
+    {
+        label: "Bosch",
+        value: "Bosch",
+        creator: "WhirlingWinds",
+    },
+    {
+        label: "Salem Skunk",
+        value: "Salem_Skunk",
+        creator: "WhirlingWinds",
+    },
+    {
+        label: "Mollie Macaw",
+        value: "Mollie_Macaw",
+        creator: "WhirlingWinds",
+    },
+    {
+        label: "Chompy",
+        value: "ChompyBugFables",
+        creator: "WhirlingWinds",
+    },
+    {
+        label: "Pennington",
+        value: "Pennington",
+        creator: "WhirlingWinds",
+    },
+    {
         label: "Swellman",
         value: "Swellman",
         creator: "Quatropus",
