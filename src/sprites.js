@@ -138,6 +138,54 @@ export const customCharacters = [
         category: "Mega Man",
     },
     {
+        label: "Metal Man",
+        value: "MetalMan",
+        creator: "plastics enjoyer",
+        category: "Mega Man",
+    },
+    {
+        label: "Air Man",
+        value: "AirMan",
+        creator: "plastics enjoyer",
+        category: "Mega Man",
+    },
+    {
+        label: "Bubble Man",
+        value: "BubbleMan",
+        creator: "plastics enjoyer",
+        category: "Mega Man",
+    },
+    {
+        label: "Quick Man",
+        value: "QuickMan",
+        creator: "plastics enjoyer",
+        category: "Mega Man",
+    },
+    {
+        label: "Crash Man",
+        value: "CrashMan",
+        creator: "plastics enjoyer",
+        category: "Mega Man",
+    },
+    {
+        label: "Flash Man",
+        value: "FlashMan",
+        creator: "plastics enjoyer",
+        category: "Mega Man",
+    },
+    {
+        label: "Heat Man",
+        value: "HeatMan",
+        creator: "plastics enjoyer",
+        category: "Mega Man",
+    },
+    {
+        label: "Wood Man",
+        value: "WoodMan",
+        creator: "plastics enjoyer",
+        category: "Mega Man",
+    },
+    {
         label: "Saturn Ness",
         value: "SaturnNess",
         creator: "BossCrafty",
@@ -760,6 +808,18 @@ export const customCharacters = [
         creator: "plastics enjoyer",
     },
     {
+        label: "Nick",
+        value: "Nick",
+        creator: "Atlantixa",
+        category: "Mother fangames",
+    },
+    {
+        label: "Astro",
+        value: "Astro",
+        creator: "Atlantixa",
+        category: "Mother fangames",
+    },
+    {
         label: "Niko",
         value: "Niko",
         creator: "plastics enjoyer",
@@ -1310,11 +1370,6 @@ export const customCharacters = [
         creator: "Kayne",
     },
     {
-        label: "Protogen Jas",
-        value: "Protogen",
-        creator: "Purple Peak",
-    },
-    {
         label: "Drakh",
         value: "Drakh",
         creator: "WhirlingWinds",
@@ -1400,14 +1455,46 @@ export const customCharacters = [
         creator: "WhirlingWinds",
     },
     {
+        label: "Michael",
+        value: "Michael",
+        creator: "ToddM_Arts",
+        category: "OCs",
+    },
+    {
+        label: "Catalli",
+        value: "Catalli",
+        creator: "ToddM_Arts",
+        category: "OCs",
+    },
+    {
+        label: "Evan",
+        value: "Evan",
+        creator: "ToddM_Arts",
+        category: "OCs",
+    },
+    {
+        label: "Ryan",
+        value: "Ryan",
+        creator: "ToddM_Arts",
+        category: "OCs",
+    },
+    {
+        label: "Protogen Jas",
+        value: "Protogen",
+        creator: "Purple Peak",
+        category: "OCs",
+    },
+    {
         label: "Swellman",
         value: "Swellman",
         creator: "Quatropus",
+        category: "OCs",
     },
     {
         label: "Jenn",
         value: "Jenn",
         creator: "Quatropus",
+        category: "OCs",
     },
 ];
 

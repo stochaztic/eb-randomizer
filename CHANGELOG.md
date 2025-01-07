@@ -3,7 +3,7 @@
 - Credits: EBSS AC 2024 winner Sitake added.
 - Flags: Updated defaults to match most common use case.
 - Music: Improve credits music selection, small music fixes.
-- PC sprites: Added Jean-Luc Picard, Dianna Troi, William Riker, Worf, Drakh, Toadsworth, Oersted, Kyle the Werecleaner, Kabbu, Harold, Frankly, Electro Pea, Chainsaw Consultant, Adachi Rei, Brendan, Hatsune Miku, May, Russel Seager, Cut Man, Guts Man, Ice Man, Bomb Man, Fire Man, Elec Man, Harry Du Bois, Kim Kitsuragi, Elster (LSTR), Ariane Yeong, Omori, Aubrey (Headspace), Kel (Headspace), Hero (Headspace), Basil (Headspace), Mari (Headspace), Sunny, Aubrey (Real world), Kel (Real world), Hero (Real world), Basil (Real world), Mari (Real world), Shijima, Majime, The Gardener, Big Sis, Kazuma Kiryu, and Rawk Hawk.
+- PC sprites: Added Jean-Luc Picard, Dianna Troi, William Riker, Worf, Drakh, Toadsworth, Oersted, Kyle the Werecleaner, Kabbu, Harold, Frankly, Electro Pea, Chainsaw Consultant, Adachi Rei, Brendan, Hatsune Miku, May, Russel Seager, Cut Man, Guts Man, Ice Man, Bomb Man, Fire Man, Elec Man, Harry Du Bois, Kim Kitsuragi, Elster (LSTR), Ariane Yeong, Omori, Aubrey (Headspace), Kel (Headspace), Hero (Headspace), Basil (Headspace), Mari (Headspace), Sunny, Aubrey (Real world), Kel (Real world), Hero (Real world), Basil (Real world), Mari (Real world), Shijima, Majime, The Gardener, Big Sis, Kazuma Kiryu, Fire Flower Mario, Rawk Hawk, Watt, Oboromaru, Parakarry, Bosch, Salem Skunk, Mollie Macaw, Chompy, Pennington, Metal Man, Air Man, Bubble Man, Quick Man, Frash Man, Flash Man, Heat Man, Wood Man, Nick, Astro, Michael, Catalli, Evan, and Ryan.
 - Structural: Website build process updated.
 
 ## v53 (2024-04-14)
