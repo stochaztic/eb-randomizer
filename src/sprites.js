@@ -638,6 +638,30 @@ export const customCharacters = [
         creator: "plastics enjoyer",
     },
     {
+        label: "Isaac",
+        value: "Isaac",
+        creator: "Adroopyboi",
+        category: "The Binding of Isaac",
+    },
+    {
+        label: "Blue Baby",
+        value: "BlueBaby",
+        creator: "Adroopyboi",
+        category: "The Binding of Isaac",
+    },
+    {
+        label: "Keeper",
+        value: "Keeper",
+        creator: "Adroopyboi",
+        category: "The Binding of Isaac",
+    },
+    {
+        label: "Apollyon",
+        value: "Apollyon",
+        creator: "Adroopyboi",
+        category: "The Binding of Isaac",
+    },
+    {
         label: "Kazuma Kiryu",
         value: "KazumaKiryu",
         creator: "Strawflowers",
