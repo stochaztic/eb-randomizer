@@ -1,5 +1,6 @@
 # Changelog
 ## v53.x / v54 (In progress)
+- Ancient Cave: Fixed problems with Starmaster desert cutscene.
 - Credits: EBSS AC 2024 winner Sitake added.
 - Flags: Updated defaults to match most common use case.
 - Music: Improve credits music selection, small music fixes.
